@@ -19,6 +19,10 @@
 		EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5727D9E41500356B33 /* RxGesture */; };
 		EEEA2C5B27D9E42300356B33 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5A27D9E42300356B33 /* Then */; };
 		EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C6827D9E46F00356B33 /* PinLayout */; };
+		EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFAEAD827DA67B900865B06 /* AppHomeRouter.swift */; };
+		EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFAEAD927DA67B900865B06 /* AppHomeViewController.swift */; };
+		EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFAEADA27DA67B900865B06 /* AppHomeBuilder.swift */; };
+		EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFAEADB27DA67B900865B06 /* AppHomeInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		EEEA2C4827D9DCE100356B33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEEA2C4B27D9DCE100356B33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEEA2C4D27D9DCE100356B33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Picture/Supporting/Info.plist; sourceTree = SOURCE_ROOT; };
+		EEFAEAD827DA67B900865B06 /* AppHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeRouter.swift; sourceTree = "<group>"; };
+		EEFAEAD927DA67B900865B06 /* AppHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeViewController.swift; sourceTree = "<group>"; };
+		EEFAEADA27DA67B900865B06 /* AppHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeBuilder.swift; sourceTree = "<group>"; };
+		EEFAEADB27DA67B900865B06 /* AppHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,11 +94,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		EEE5E42027DA2116006FDD9E /* Home */ = {
+		EEE5E42027DA2116006FDD9E /* AppHome */ = {
 			isa = PBXGroup;
 			children = (
+				EEFAEAD827DA67B900865B06 /* AppHomeRouter.swift */,
+				EEFAEAD927DA67B900865B06 /* AppHomeViewController.swift */,
+				EEFAEADA27DA67B900865B06 /* AppHomeBuilder.swift */,
+				EEFAEADB27DA67B900865B06 /* AppHomeInteractor.swift */,
 			);
-			path = Home;
+			path = AppHome;
 			sourceTree = "<group>";
 		};
 		EEEA2C3327D9DCE000356B33 = {
@@ -114,7 +126,7 @@
 			children = (
 				EEE5E41227D9FFA9006FDD9E /* AppDelegate */,
 				EEE5E41527DA1044006FDD9E /* AppRoot */,
-				EEE5E42027DA2116006FDD9E /* Home */,
+				EEE5E42027DA2116006FDD9E /* AppHome */,
 				EEE5E41F27DA10A3006FDD9E /* Resources */,
 				EEE5E41E27DA1079006FDD9E /* Supporting */,
 			);
@@ -203,12 +215,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,
+				EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */,
 				EEE5E41B27DA1063006FDD9E /* AppRootViewController.swift in Sources */,
+				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
 				EEE5E41A27DA1063006FDD9E /* AppRootRouter.swift in Sources */,
 				EEE5E41D27DA1063006FDD9E /* AppRootInteractor.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
 				EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */,
 				EEE5E41C27DA1063006FDD9E /* AppRootBuilder.swift in Sources */,
+				EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
