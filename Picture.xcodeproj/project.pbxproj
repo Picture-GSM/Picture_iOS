@@ -16,11 +16,6 @@
 		EEEA2C5527D9E3FE00356B33 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5427D9E3FE00356B33 /* RIBs */; };
 		EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5727D9E41500356B33 /* RxGesture */; };
 		EEEA2C5B27D9E42300356B33 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5A27D9E42300356B33 /* Then */; };
-		EEEA2C5E27D9E43800356B33 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5D27D9E43800356B33 /* RxBlocking */; };
-		EEEA2C6027D9E43800356B33 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5F27D9E43800356B33 /* RxCocoa */; };
-		EEEA2C6227D9E43800356B33 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C6127D9E43800356B33 /* RxRelay */; };
-		EEEA2C6427D9E43800356B33 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C6327D9E43800356B33 /* RxSwift */; };
-		EEEA2C6627D9E43800356B33 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C6527D9E43800356B33 /* RxTest */; };
 		EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C6827D9E46F00356B33 /* PinLayout */; };
 /* End PBXBuildFile section */
 
@@ -40,15 +35,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEEA2C6627D9E43800356B33 /* RxTest in Frameworks */,
-				EEEA2C6227D9E43800356B33 /* RxRelay in Frameworks */,
 				EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */,
 				EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */,
-				EEEA2C5E27D9E43800356B33 /* RxBlocking in Frameworks */,
-				EEEA2C6027D9E43800356B33 /* RxCocoa in Frameworks */,
 				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
 				EEEA2C5527D9E3FE00356B33 /* RIBs in Frameworks */,
-				EEEA2C6427D9E43800356B33 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,11 +95,6 @@
 				EEEA2C5427D9E3FE00356B33 /* RIBs */,
 				EEEA2C5727D9E41500356B33 /* RxGesture */,
 				EEEA2C5A27D9E42300356B33 /* Then */,
-				EEEA2C5D27D9E43800356B33 /* RxBlocking */,
-				EEEA2C5F27D9E43800356B33 /* RxCocoa */,
-				EEEA2C6127D9E43800356B33 /* RxRelay */,
-				EEEA2C6327D9E43800356B33 /* RxSwift */,
-				EEEA2C6527D9E43800356B33 /* RxTest */,
 				EEEA2C6827D9E46F00356B33 /* PinLayout */,
 			);
 			productName = Picture;
@@ -144,7 +129,6 @@
 				EEEA2C5327D9E3FE00356B33 /* XCRemoteSwiftPackageReference "RIBs" */,
 				EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture" */,
 				EEEA2C5927D9E42300356B33 /* XCRemoteSwiftPackageReference "Then" */,
-				EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */,
 			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
@@ -422,14 +406,6 @@
 				kind = branch;
 			};
 		};
-		EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/layoutBox/PinLayout.git";
@@ -455,31 +431,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EEEA2C5927D9E42300356B33 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
-		};
-		EEEA2C5D27D9E43800356B33 /* RxBlocking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxBlocking;
-		};
-		EEEA2C5F27D9E43800356B33 /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		EEEA2C6127D9E43800356B33 /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		EEEA2C6327D9E43800356B33 /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
-		};
-		EEEA2C6527D9E43800356B33 /* RxTest */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxTest;
 		};
 		EEEA2C6827D9E46F00356B33 /* PinLayout */ = {
 			isa = XCSwiftPackageProductDependency;
