@@ -20,20 +20,19 @@ final class AppRootComponent: Component<AppRootDependency> {
 // MARK: - Builder
 
 protocol AppRootBuildable: Buildable {
-    func build(withListener listener: AppRootListener) -> AppRootRouting
+    func build() -> LaunchRouting
 }
 
 final class AppRootBuilder: Builder<AppRootDependency>, AppRootBuildable {
-
+    
     override init(dependency: AppRootDependency) {
         super.init(dependency: dependency)
     }
-
-    func build(withListener listener: AppRootListener) -> AppRootRouting {
+    func build() -> LaunchRouting {
         let component = AppRootComponent(dependency: dependency)
         let viewController = AppRootViewController()
         let interactor = AppRootInteractor(presenter: viewController)
-        interactor.listener = listener
+        
         return AppRootRouter(interactor: interactor, viewController: viewController)
     }
 }
