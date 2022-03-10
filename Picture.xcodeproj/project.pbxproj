@@ -13,6 +13,15 @@
 		EEEA2C4727D9DCE000356B33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEA2C4527D9DCE000356B33 /* Main.storyboard */; };
 		EEEA2C4927D9DCE100356B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEEA2C4827D9DCE100356B33 /* Assets.xcassets */; };
 		EEEA2C4C27D9DCE100356B33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEA2C4A27D9DCE100356B33 /* LaunchScreen.storyboard */; };
+		EEEA2C5527D9E3FE00356B33 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5427D9E3FE00356B33 /* RIBs */; };
+		EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5727D9E41500356B33 /* RxGesture */; };
+		EEEA2C5B27D9E42300356B33 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5A27D9E42300356B33 /* Then */; };
+		EEEA2C5E27D9E43800356B33 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5D27D9E43800356B33 /* RxBlocking */; };
+		EEEA2C6027D9E43800356B33 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5F27D9E43800356B33 /* RxCocoa */; };
+		EEEA2C6227D9E43800356B33 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C6127D9E43800356B33 /* RxRelay */; };
+		EEEA2C6427D9E43800356B33 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C6327D9E43800356B33 /* RxSwift */; };
+		EEEA2C6627D9E43800356B33 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C6527D9E43800356B33 /* RxTest */; };
+		EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C6827D9E46F00356B33 /* PinLayout */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +40,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEEA2C6627D9E43800356B33 /* RxTest in Frameworks */,
+				EEEA2C6227D9E43800356B33 /* RxRelay in Frameworks */,
+				EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */,
+				EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */,
+				EEEA2C5E27D9E43800356B33 /* RxBlocking in Frameworks */,
+				EEEA2C6027D9E43800356B33 /* RxCocoa in Frameworks */,
+				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
+				EEEA2C5527D9E3FE00356B33 /* RIBs in Frameworks */,
+				EEEA2C6427D9E43800356B33 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +101,17 @@
 			dependencies = (
 			);
 			name = Picture;
+			packageProductDependencies = (
+				EEEA2C5427D9E3FE00356B33 /* RIBs */,
+				EEEA2C5727D9E41500356B33 /* RxGesture */,
+				EEEA2C5A27D9E42300356B33 /* Then */,
+				EEEA2C5D27D9E43800356B33 /* RxBlocking */,
+				EEEA2C5F27D9E43800356B33 /* RxCocoa */,
+				EEEA2C6127D9E43800356B33 /* RxRelay */,
+				EEEA2C6327D9E43800356B33 /* RxSwift */,
+				EEEA2C6527D9E43800356B33 /* RxTest */,
+				EEEA2C6827D9E46F00356B33 /* PinLayout */,
+			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +140,13 @@
 				Base,
 			);
 			mainGroup = EEEA2C3327D9DCE000356B33;
+			packageReferences = (
+				EEEA2C5327D9E3FE00356B33 /* XCRemoteSwiftPackageReference "RIBs" */,
+				EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture" */,
+				EEEA2C5927D9E42300356B33 /* XCRemoteSwiftPackageReference "Then" */,
+				EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */,
+			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,6 +396,97 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EEEA2C5327D9E3FE00356B33 /* XCRemoteSwiftPackageReference "RIBs" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uber/RIBs.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		EEEA2C5927D9E42300356B33 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/layoutBox/PinLayout.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EEEA2C5427D9E3FE00356B33 /* RIBs */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEEA2C5327D9E3FE00356B33 /* XCRemoteSwiftPackageReference "RIBs" */;
+			productName = RIBs;
+		};
+		EEEA2C5727D9E41500356B33 /* RxGesture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture" */;
+			productName = RxGesture;
+		};
+		EEEA2C5A27D9E42300356B33 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEEA2C5927D9E42300356B33 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		EEEA2C5D27D9E43800356B33 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		EEEA2C5F27D9E43800356B33 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		EEEA2C6127D9E43800356B33 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		EEEA2C6327D9E43800356B33 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		EEEA2C6527D9E43800356B33 /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEEA2C5C27D9E43800356B33 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
+		EEEA2C6827D9E46F00356B33 /* PinLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */;
+			productName = PinLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EEEA2C3427D9DCE000356B33 /* Project object */;
 }
