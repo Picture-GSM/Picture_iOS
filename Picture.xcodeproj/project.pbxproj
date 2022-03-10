@@ -86,6 +86,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		EEE5E42027DA2116006FDD9E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		EEEA2C3327D9DCE000356B33 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +114,7 @@
 			children = (
 				EEE5E41227D9FFA9006FDD9E /* AppDelegate */,
 				EEE5E41527DA1044006FDD9E /* AppRoot */,
+				EEE5E42027DA2116006FDD9E /* Home */,
 				EEE5E41F27DA10A3006FDD9E /* Resources */,
 				EEE5E41E27DA1079006FDD9E /* Supporting */,
 			);
