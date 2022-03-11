@@ -8,6 +8,7 @@
 import RIBs
 import RxSwift
 import UIKit
+import PinLayout
 
 protocol AppRootPresentableListener: AnyObject {
     // TODO: Declare properties and methods that the view controller can invoke to perform
@@ -18,4 +19,16 @@ protocol AppRootPresentableListener: AnyObject {
 final class AppRootViewController: UIViewController, AppRootPresentable, AppRootViewControllable {
 
     weak var listener: AppRootPresentableListener?
+    
+    //MARK: - Initalizer
+    init(){
+        super.init(nibName: nil, bundle: nil)
+        view.backgroundColor = .white
+    }
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+    }
+    
 }

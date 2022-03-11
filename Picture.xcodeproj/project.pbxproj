@@ -57,6 +57,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE9F6A2F27DB8F5A007F5F48 /* RIBs */ = {
+			isa = PBXGroup;
+			children = (
+				EEE5E41527DA1044006FDD9E /* AppRoot */,
+				EEE5E42027DA2116006FDD9E /* AppHome */,
+			);
+			path = RIBs;
+			sourceTree = "<group>";
+		};
+		EE9F6A3027DB8F84007F5F48 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				EEE5E41227D9FFA9006FDD9E /* AppDelegate */,
+				EE9F6A2F27DB8F5A007F5F48 /* RIBs */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		EEE5E41227D9FFA9006FDD9E /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,9 +142,7 @@
 		EEEA2C3E27D9DCE000356B33 /* Picture */ = {
 			isa = PBXGroup;
 			children = (
-				EEE5E41227D9FFA9006FDD9E /* AppDelegate */,
-				EEE5E41527DA1044006FDD9E /* AppRoot */,
-				EEE5E42027DA2116006FDD9E /* AppHome */,
+				EE9F6A3027DB8F84007F5F48 /* Source */,
 				EEE5E41F27DA10A3006FDD9E /* Resources */,
 				EEE5E41E27DA1079006FDD9E /* Supporting */,
 			);
