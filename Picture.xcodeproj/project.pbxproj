@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */; };
 		EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5E41327DA0F68006FDD9E /* AppComponent.swift */; };
 		EEE5E41A27DA1063006FDD9E /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5E41627DA1063006FDD9E /* AppRootRouter.swift */; };
 		EEE5E41B27DA1063006FDD9E /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5E41727DA1063006FDD9E /* AppRootViewController.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EEE5E41327DA0F68006FDD9E /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		EEE5E41627DA1063006FDD9E /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEE5E41727DA1063006FDD9E /* AppRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootViewController.swift; sourceTree = "<group>"; };
@@ -71,8 +73,57 @@
 			children = (
 				EEE5E41227D9FFA9006FDD9E /* AppDelegate */,
 				EE9F6A2F27DB8F5A007F5F48 /* RIBs */,
+				EE9F6A3227DB91D9007F5F48 /* Utils */,
+				EE9F6A3927DB934C007F5F48 /* Base */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		EE9F6A3227DB91D9007F5F48 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EE9F6A3327DB9211007F5F48 /* Extension */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EE9F6A3327DB9211007F5F48 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EE9F6A3727DB9271007F5F48 /* Foundation */,
+				EE9F6A3627DB926B007F5F48 /* UIKit */,
+				EE9F6A3527DB9267007F5F48 /* Rx */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EE9F6A3527DB9267007F5F48 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Rx;
+			sourceTree = "<group>";
+		};
+		EE9F6A3627DB926B007F5F48 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		EE9F6A3727DB9271007F5F48 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		EE9F6A3927DB934C007F5F48 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		EEE5E41227D9FFA9006FDD9E /* AppDelegate */ = {
@@ -233,6 +284,7 @@
 			files = (
 				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,
 				EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */,
+				EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */,
 				EEE5E41B27DA1063006FDD9E /* AppRootViewController.swift in Sources */,
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
 				EEE5E41A27DA1063006FDD9E /* AppRootRouter.swift in Sources */,

@@ -20,15 +20,6 @@ final class AppRootViewController: UIViewController, AppRootPresentable, AppRoot
 
     weak var listener: AppRootPresentableListener?
     
-    //MARK: - Initalizer
-    init(){
-        super.init(nibName: nil, bundle: nil)
-        view.backgroundColor = .white
-    }
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
-    }
+    
     
 }
