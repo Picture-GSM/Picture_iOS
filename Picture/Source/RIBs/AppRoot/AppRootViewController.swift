@@ -43,10 +43,12 @@ final class AppRootViewController: BaseViewController, AppRootPresentable, AppRo
     //MARK: - AddView
     override func addView() {
         view.addSubviews(scrollView)
+        scrollView.addSubviews(pageControl)
     }
     //MARK: - layout
     override func setLayout() {
         scrollView.pin.top().right().left().height(bounds.height/3)
+//        pageControl.pin.
     }
 
     

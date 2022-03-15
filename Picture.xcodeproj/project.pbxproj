@@ -10,6 +10,7 @@
 		EE35949A27E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949927E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift */; };
 		EE35949C27E0AC8000876A7D /* UIScrollView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949B27E0AC8000876A7D /* UIScrollView+Ext.swift */; };
 		EE3594A027E0B7D100876A7D /* ScrollView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949F27E0B7D100876A7D /* ScrollView + Ext.swift */; };
+		EE9D524327E0DD1A008E9AC2 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = EE9D524227E0DD1A008E9AC2 /* ReactorKit */; };
 		EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */; };
 		EE9F6A3D27DBA0FC007F5F48 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
@@ -64,6 +65,7 @@
 				EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */,
 				EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */,
 				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
+				EE9D524327E0DD1A008E9AC2 /* ReactorKit in Frameworks */,
 				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +257,7 @@
 				EEEA2C6827D9E46F00356B33 /* PinLayout */,
 				EECB9AEE27E02FE000FF2124 /* RxRealm */,
 				EECB9AF327E034C100FF2124 /* RIBs */,
+				EE9D524227E0DD1A008E9AC2 /* ReactorKit */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -290,6 +293,7 @@
 				EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */,
 				EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */,
 				EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */,
+				EE9D524127E0DD1A008E9AC2 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
 			projectDirPath = "";
@@ -544,6 +548,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EE9D524127E0DD1A008E9AC2 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxRealm.git";
@@ -587,6 +599,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		EE9D524227E0DD1A008E9AC2 /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE9D524127E0DD1A008E9AC2 /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
+		};
 		EECB9AEE27E02FE000FF2124 /* RxRealm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */;
