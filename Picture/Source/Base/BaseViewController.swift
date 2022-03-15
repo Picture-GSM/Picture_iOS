@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class BaseViewController : UIViewController{
     let bounds = UIScreen.main.bounds
-    
+    let disposeBag : DisposeBag = .init()
     //MARK: - Initalizer
     init(){
         super.init(nibName: nil, bundle: nil)

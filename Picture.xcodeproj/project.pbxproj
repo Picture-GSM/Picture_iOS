@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE35949A27E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949927E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift */; };
+		EE35949C27E0AC8000876A7D /* UIScrollView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949B27E0AC8000876A7D /* UIScrollView+Ext.swift */; };
+		EE3594A027E0B7D100876A7D /* ScrollView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949F27E0B7D100876A7D /* ScrollView + Ext.swift */; };
 		EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */; };
 		EE9F6A3D27DBA0FC007F5F48 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */; };
+		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
+		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
+		EECCF68327DEE7DF00F73854 /* RIBs+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECCF68227DEE7DF00F73854 /* RIBs+Utils.swift */; };
 		EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5E41327DA0F68006FDD9E /* AppComponent.swift */; };
 		EEE5E41A27DA1063006FDD9E /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5E41627DA1063006FDD9E /* AppRootRouter.swift */; };
 		EEE5E41B27DA1063006FDD9E /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5E41727DA1063006FDD9E /* AppRootViewController.swift */; };
@@ -17,7 +23,6 @@
 		EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEA2C3F27D9DCE000356B33 /* AppDelegate.swift */; };
 		EEEA2C4927D9DCE100356B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEEA2C4827D9DCE100356B33 /* Assets.xcassets */; };
 		EEEA2C4C27D9DCE100356B33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEA2C4A27D9DCE100356B33 /* LaunchScreen.storyboard */; };
-		EEEA2C5527D9E3FE00356B33 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5427D9E3FE00356B33 /* RIBs */; };
 		EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5727D9E41500356B33 /* RxGesture */; };
 		EEEA2C5B27D9E42300356B33 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5A27D9E42300356B33 /* Then */; };
 		EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C6827D9E46F00356B33 /* PinLayout */; };
@@ -28,8 +33,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE35949927E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationControllerDelegate.swift; sourceTree = "<group>"; };
+		EE35949B27E0AC8000876A7D /* UIScrollView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Ext.swift"; sourceTree = "<group>"; };
+		EE35949F27E0B7D100876A7D /* ScrollView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView + Ext.swift"; sourceTree = "<group>"; };
 		EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
+		EECCF68227DEE7DF00F73854 /* RIBs+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RIBs+Utils.swift"; sourceTree = "<group>"; };
 		EEE5E41327DA0F68006FDD9E /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		EEE5E41627DA1063006FDD9E /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEE5E41727DA1063006FDD9E /* AppRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootViewController.swift; sourceTree = "<group>"; };
@@ -51,16 +60,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECB9AF427E034C100FF2124 /* RIBs in Frameworks */,
 				EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */,
 				EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */,
 				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
-				EEEA2C5527D9E3FE00356B33 /* RIBs in Frameworks */,
+				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE35949627E0AA9700876A7D /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				EE35949927E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		EE9F6A2F27DB8F5A007F5F48 /* RIBs */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +102,7 @@
 		EE9F6A3227DB91D9007F5F48 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EE35949627E0AA9700876A7D /* Delegate */,
 				EE9F6A3327DB9211007F5F48 /* Extension */,
 			);
 			path = Utils;
@@ -95,6 +114,7 @@
 				EE9F6A3727DB9271007F5F48 /* Foundation */,
 				EE9F6A3627DB926B007F5F48 /* UIKit */,
 				EE9F6A3527DB9267007F5F48 /* Rx */,
+				EECCF68127DEE7C200F73854 /* RIBs */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -102,6 +122,7 @@
 		EE9F6A3527DB9267007F5F48 /* Rx */ = {
 			isa = PBXGroup;
 			children = (
+				EE35949B27E0AC8000876A7D /* UIScrollView+Ext.swift */,
 			);
 			path = Rx;
 			sourceTree = "<group>";
@@ -110,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */,
+				EE35949F27E0B7D100876A7D /* ScrollView + Ext.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -127,6 +149,14 @@
 				EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		EECCF68127DEE7C200F73854 /* RIBs */ = {
+			isa = PBXGroup;
+			children = (
+				EECCF68227DEE7DF00F73854 /* RIBs+Utils.swift */,
+			);
+			path = RIBs;
 			sourceTree = "<group>";
 		};
 		EEE5E41227D9FFA9006FDD9E /* AppDelegate */ = {
@@ -220,10 +250,11 @@
 			);
 			name = Picture;
 			packageProductDependencies = (
-				EEEA2C5427D9E3FE00356B33 /* RIBs */,
 				EEEA2C5727D9E41500356B33 /* RxGesture */,
 				EEEA2C5A27D9E42300356B33 /* Then */,
 				EEEA2C6827D9E46F00356B33 /* PinLayout */,
+				EECB9AEE27E02FE000FF2124 /* RxRealm */,
+				EECB9AF327E034C100FF2124 /* RIBs */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -254,10 +285,11 @@
 			);
 			mainGroup = EEEA2C3327D9DCE000356B33;
 			packageReferences = (
-				EEEA2C5327D9E3FE00356B33 /* XCRemoteSwiftPackageReference "RIBs" */,
 				EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture" */,
 				EEEA2C5927D9E42300356B33 /* XCRemoteSwiftPackageReference "Then" */,
 				EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */,
+				EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */,
+				EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */,
 			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
 			projectDirPath = "";
@@ -285,18 +317,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECCF68327DEE7DF00F73854 /* RIBs+Utils.swift in Sources */,
 				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,
 				EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */,
 				EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */,
 				EEE5E41B27DA1063006FDD9E /* AppRootViewController.swift in Sources */,
 				EE9F6A3D27DBA0FC007F5F48 /* ViewExt.swift in Sources */,
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
+				EE3594A027E0B7D100876A7D /* ScrollView + Ext.swift in Sources */,
 				EEE5E41A27DA1063006FDD9E /* AppRootRouter.swift in Sources */,
 				EEE5E41D27DA1063006FDD9E /* AppRootInteractor.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
+				EE35949A27E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift in Sources */,
 				EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */,
 				EEE5E41C27DA1063006FDD9E /* AppRootBuilder.swift in Sources */,
 				EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */,
+				EE35949C27E0AC8000876A7D /* UIScrollView+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,7 +544,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EEEA2C5327D9E3FE00356B33 /* XCRemoteSwiftPackageReference "RIBs" */ = {
+		EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxRealm.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/uber/RIBs.git";
 			requirement = {
@@ -543,9 +587,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EEEA2C5427D9E3FE00356B33 /* RIBs */ = {
+		EECB9AEE27E02FE000FF2124 /* RxRealm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EEEA2C5327D9E3FE00356B33 /* XCRemoteSwiftPackageReference "RIBs" */;
+			package = EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */;
+			productName = RxRealm;
+		};
+		EECB9AF327E034C100FF2124 /* RIBs */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */;
 			productName = RIBs;
 		};
 		EEEA2C5727D9E41500356B33 /* RxGesture */ = {
