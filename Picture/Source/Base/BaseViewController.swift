@@ -7,13 +7,15 @@
 
 import UIKit
 import RxSwift
+import ReactorKit
 
-class BaseViewController : UIViewController{
+class BaseViewController<T : Reactor> : UIViewController{
     let bounds = UIScreen.main.bounds
-    let disposeBag : DisposeBag = .init()
+    var disposeBag : DisposeBag = .init()
     //MARK: - Initalizer
-    init(){
+    init(reactor: T){
         super.init(nibName: nil, bundle: nil)
+        self.reactor = reactor
         setupBackgroundIfNotSet()
         addView()
         setLayout()
@@ -38,4 +40,15 @@ class BaseViewController : UIViewController{
     func addView(){}
     func setLayout(){}
     func configureUI(){}
+    //MARK: - Bind
+    func bindView(reactor: T){}
+    func bindAction(reactor: T){}
+    func bindState(reactor: T){}
+}
+extension BaseViewController: View{
+    func bind(reactor: T) {
+        bindView(reactor: reactor)
+        bindAction(reactor: reactor)
+        bindState(reactor: reactor)
+    }
 }

@@ -17,7 +17,7 @@ protocol AppRootPresentableListener: AnyObject {
     // interactor class.
 }
 
-final class AppRootViewController: BaseViewController, AppRootPresentable, AppRootViewControllable {
+final class AppRootViewController: UIViewController, AppRootPresentable, AppRootViewControllable {
 
     weak var listener: AppRootPresentableListener?
     
@@ -37,19 +37,19 @@ final class AppRootViewController: BaseViewController, AppRootPresentable, AppRo
     }
     
     //MARK: - ConfigureUI
-    override func configureUI() {
-        
-    }
+//    override func configureUI() {
+//        
+//    }
     //MARK: - AddView
-    override func addView() {
-        view.addSubviews(scrollView)
-        scrollView.addSubviews(pageControl)
-    }
+//    override func addView() {
+//        view.addSubviews(scrollView)
+//        scrollView.addSubviews(pageControl)
+//    }
     //MARK: - layout
-    override func setLayout() {
-        scrollView.pin.top().right().left().height(bounds.height/3)
-//        pageControl.pin.
-    }
+//    override func setLayout() {
+//        scrollView.pin.top().right().left().height(bounds.height/3)
+////        pageControl.pin.
+//    }
 
     
 }
