@@ -7,7 +7,7 @@
 
 import RIBs
 
-class AppComponent : Component<EmptyDependency>, AppRootDependency{
+class AppComponent : Component<EmptyDependency>, AppHomeDependency{
     init(){
         super.init(dependency: EmptyComponent())
     }

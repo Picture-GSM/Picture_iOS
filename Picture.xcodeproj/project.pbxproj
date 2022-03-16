@@ -11,16 +11,14 @@
 		EE35949C27E0AC8000876A7D /* UIScrollView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949B27E0AC8000876A7D /* UIScrollView+Ext.swift */; };
 		EE3594A027E0B7D100876A7D /* ScrollView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949F27E0B7D100876A7D /* ScrollView + Ext.swift */; };
 		EE9D524327E0DD1A008E9AC2 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = EE9D524227E0DD1A008E9AC2 /* ReactorKit */; };
+		EE9D524627E0E0BC008E9AC2 /* AppHomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D524527E0E0BC008E9AC2 /* AppHomeReactor.swift */; };
 		EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */; };
 		EE9F6A3D27DBA0FC007F5F48 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */; };
+		EEC348D927E18F2300CC9132 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = EEC348D827E18F2300CC9132 /* PanModal */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EECCF68327DEE7DF00F73854 /* RIBs+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECCF68227DEE7DF00F73854 /* RIBs+Utils.swift */; };
 		EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5E41327DA0F68006FDD9E /* AppComponent.swift */; };
-		EEE5E41A27DA1063006FDD9E /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5E41627DA1063006FDD9E /* AppRootRouter.swift */; };
-		EEE5E41B27DA1063006FDD9E /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5E41727DA1063006FDD9E /* AppRootViewController.swift */; };
-		EEE5E41C27DA1063006FDD9E /* AppRootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5E41827DA1063006FDD9E /* AppRootBuilder.swift */; };
-		EEE5E41D27DA1063006FDD9E /* AppRootInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE5E41927DA1063006FDD9E /* AppRootInteractor.swift */; };
 		EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEA2C3F27D9DCE000356B33 /* AppDelegate.swift */; };
 		EEEA2C4927D9DCE100356B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEEA2C4827D9DCE100356B33 /* Assets.xcassets */; };
 		EEEA2C4C27D9DCE100356B33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEA2C4A27D9DCE100356B33 /* LaunchScreen.storyboard */; };
@@ -37,14 +35,11 @@
 		EE35949927E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationControllerDelegate.swift; sourceTree = "<group>"; };
 		EE35949B27E0AC8000876A7D /* UIScrollView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Ext.swift"; sourceTree = "<group>"; };
 		EE35949F27E0B7D100876A7D /* ScrollView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView + Ext.swift"; sourceTree = "<group>"; };
+		EE9D524527E0E0BC008E9AC2 /* AppHomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeReactor.swift; sourceTree = "<group>"; };
 		EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
 		EECCF68227DEE7DF00F73854 /* RIBs+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RIBs+Utils.swift"; sourceTree = "<group>"; };
 		EEE5E41327DA0F68006FDD9E /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
-		EEE5E41627DA1063006FDD9E /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
-		EEE5E41727DA1063006FDD9E /* AppRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootViewController.swift; sourceTree = "<group>"; };
-		EEE5E41827DA1063006FDD9E /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
-		EEE5E41927DA1063006FDD9E /* AppRootInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootInteractor.swift; sourceTree = "<group>"; };
 		EEEA2C3C27D9DCE000356B33 /* Picture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Picture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEEA2C3F27D9DCE000356B33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEEA2C4827D9DCE100356B33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +62,7 @@
 				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
 				EE9D524327E0DD1A008E9AC2 /* ReactorKit in Frameworks */,
 				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
+				EEC348D927E18F2300CC9132 /* PanModal in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,10 +77,17 @@
 			path = Delegate;
 			sourceTree = "<group>";
 		};
+		EE9D524427E0E0A8008E9AC2 /* ReactorKit */ = {
+			isa = PBXGroup;
+			children = (
+				EE9D524527E0E0BC008E9AC2 /* AppHomeReactor.swift */,
+			);
+			path = ReactorKit;
+			sourceTree = "<group>";
+		};
 		EE9F6A2F27DB8F5A007F5F48 /* RIBs */ = {
 			isa = PBXGroup;
 			children = (
-				EEE5E41527DA1044006FDD9E /* AppRoot */,
 				EEE5E42027DA2116006FDD9E /* AppHome */,
 			);
 			path = RIBs;
@@ -170,17 +173,6 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		EEE5E41527DA1044006FDD9E /* AppRoot */ = {
-			isa = PBXGroup;
-			children = (
-				EEE5E41627DA1063006FDD9E /* AppRootRouter.swift */,
-				EEE5E41727DA1063006FDD9E /* AppRootViewController.swift */,
-				EEE5E41827DA1063006FDD9E /* AppRootBuilder.swift */,
-				EEE5E41927DA1063006FDD9E /* AppRootInteractor.swift */,
-			);
-			path = AppRoot;
-			sourceTree = "<group>";
-		};
 		EEE5E41E27DA1079006FDD9E /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +193,7 @@
 		EEE5E42027DA2116006FDD9E /* AppHome */ = {
 			isa = PBXGroup;
 			children = (
+				EE9D524427E0E0A8008E9AC2 /* ReactorKit */,
 				EEFAEAD827DA67B900865B06 /* AppHomeRouter.swift */,
 				EEFAEAD927DA67B900865B06 /* AppHomeViewController.swift */,
 				EEFAEADA27DA67B900865B06 /* AppHomeBuilder.swift */,
@@ -258,6 +251,7 @@
 				EECB9AEE27E02FE000FF2124 /* RxRealm */,
 				EECB9AF327E034C100FF2124 /* RIBs */,
 				EE9D524227E0DD1A008E9AC2 /* ReactorKit */,
+				EEC348D827E18F2300CC9132 /* PanModal */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -294,6 +288,7 @@
 				EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */,
 				EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */,
 				EE9D524127E0DD1A008E9AC2 /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				EEC348D727E18F2300CC9132 /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
 			projectDirPath = "";
@@ -324,17 +319,14 @@
 				EECCF68327DEE7DF00F73854 /* RIBs+Utils.swift in Sources */,
 				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,
 				EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */,
+				EE9D524627E0E0BC008E9AC2 /* AppHomeReactor.swift in Sources */,
 				EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */,
-				EEE5E41B27DA1063006FDD9E /* AppRootViewController.swift in Sources */,
 				EE9F6A3D27DBA0FC007F5F48 /* ViewExt.swift in Sources */,
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
 				EE3594A027E0B7D100876A7D /* ScrollView + Ext.swift in Sources */,
-				EEE5E41A27DA1063006FDD9E /* AppRootRouter.swift in Sources */,
-				EEE5E41D27DA1063006FDD9E /* AppRootInteractor.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
 				EE35949A27E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift in Sources */,
 				EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */,
-				EEE5E41C27DA1063006FDD9E /* AppRootBuilder.swift in Sources */,
 				EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */,
 				EE35949C27E0AC8000876A7D /* UIScrollView+Ext.swift in Sources */,
 			);
@@ -556,6 +548,14 @@
 				kind = branch;
 			};
 		};
+		EEC348D727E18F2300CC9132 /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxRealm.git";
@@ -603,6 +603,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EE9D524127E0DD1A008E9AC2 /* XCRemoteSwiftPackageReference "ReactorKit" */;
 			productName = ReactorKit;
+		};
+		EEC348D827E18F2300CC9132 /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEC348D727E18F2300CC9132 /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
 		};
 		EECB9AEE27E02FE000FF2124 /* RxRealm */ = {
 			isa = XCSwiftPackageProductDependency;
