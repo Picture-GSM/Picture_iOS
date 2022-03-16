@@ -25,7 +25,6 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
     weak var listener: AppHomePresentableListener?
     
     private let  images = [UIImage(systemName: "xmark"),UIImage(systemName: "xmark"),UIImage(systemName: "xmark")]
-    private let imageViews = [UIImageView]()
 
     private let scrollView = UIScrollView().then{
         $0.bounces = false
@@ -34,6 +33,7 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         $0.showsVerticalScrollIndicator = false
         $0.showsHorizontalScrollIndicator = false
         $0.alwaysBounceVertical = false
+        $0.backgroundColor = .red
     }
     private let pageControl = UIPageControl().then{
         $0.currentPage = 0
@@ -52,9 +52,7 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
             scrollView.contentSize.width = imageView.frame.width * CGFloat(i + 1)
         }
         
-        scrollView.isPagingEnabled = true
         scrollView.contentSize = CGSize(width: scrollView.bounds.width * CGFloat(images.count), height: scrollView.bounds.height)
-        
         pageControl.numberOfPages = images.count
     }
     
@@ -76,8 +74,9 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
                 }
                 self?.scrollView.setCurrentPage(currentPage, animated: true)
             }).disposed(by: disposeBag)
+        
         scrollView.rx.currentPage
             .bind(to: pageControl.rx.currentPage)
             .disposed(by: disposeBag)
-    }
+        }
 }
