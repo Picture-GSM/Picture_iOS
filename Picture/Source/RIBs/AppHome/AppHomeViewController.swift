@@ -20,11 +20,11 @@ protocol AppHomePresentableListener: AnyObject {
 }
 
 final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePresentable, AppHomeViewControllable {
-
+    
     //MARK: - Properties
     weak var listener: AppHomePresentableListener?
     
-    private let  images = [UIImage(systemName: "xmark"),UIImage(systemName: "xmark"),UIImage(systemName: "xmark")]
+    private let  images = [UIImage(named: "PageImage1"),UIImage(named: "PageImage2"),UIImage(named: "PageImage3"),UIImage(named: "PageImage4")]
 
     private let scrollView = UIScrollView().then{
         $0.bounces = false
@@ -33,7 +33,6 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         $0.showsVerticalScrollIndicator = false
         $0.showsHorizontalScrollIndicator = false
         $0.alwaysBounceVertical = false
-        $0.backgroundColor = .red
     }
     private let pageControl = UIPageControl().then{
         $0.currentPage = 0
@@ -41,10 +40,25 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         $0.currentPageIndicatorTintColor = .black
     }
     
+    private let titleLabel = UILabel().then{
+        $0.textColor = .black
+        $0.alpha = 0.5
+        $0.text = "전에 만든 사진"
+        $0.numberOfLines = 0
+        $0.font  = .systemFont(ofSize: 13)
+    }
+    
+    private let addImageBtn = ImageAddBtn().then{
+        $0.roundCorners()
+    }
+    
     //MARK: - Main
     override func configureUI() {
         for i in 0..<images.count {
-            let imageView = UIImageView()
+            let imageView = UIImageView().then{
+                $0.contentMode = .scaleAspectFill
+                $0.clipsToBounds = true
+            }
             let xPos = self.view.frame.width * CGFloat(i)
             imageView.frame = CGRect(x: xPos, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
             imageView.image = images[i]
@@ -57,12 +71,14 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
     }
     
     override func addView() {
-        view.addSubviews(scrollView,pageControl)
+        view.addSubviews(scrollView,pageControl,titleLabel)
     }
     
     override func setLayout() {
-        scrollView.pin.top().right().left().height(250)
-        pageControl.pin.bottom().height(30).left().right()
+        scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
+        pageControl.pin.below(of: scrollView).height(20).left().right()
+        titleLabel.pin.left(bounds.width/18.75).below(of: pageControl).width(200).height(20)
+        
     }
     
     //MARK: - Bind

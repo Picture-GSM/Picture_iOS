@@ -16,7 +16,7 @@ protocol AppHomeViewControllable: ViewControllable {
     // TODO: Declare methods the router invokes to manipulate the view hierarchy.
 }
 
-final class AppHomeRouter: LaunchRouter<AppHomeInteractable, AppHomeViewControllable>, AppHomeRouting {
+final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewControllable>, AppHomeRouting {
 
     // TODO: Constructor inject child builder protocols to allow building children.
     override init(interactor: AppHomeInteractable, viewController: AppHomeViewControllable) {

@@ -20,7 +20,7 @@ final class AppHomeComponent: Component<AppHomeDependency> {
 // MARK: - Builder
 
 protocol AppHomeBuildable: Buildable {
-    func build() -> LaunchRouting
+    func build(withListener listener: AppHomeListener) -> AppHomeRouter
 }
 
 final class AppHomeBuilder: Builder<AppHomeDependency>, AppHomeBuildable {
@@ -29,11 +29,11 @@ final class AppHomeBuilder: Builder<AppHomeDependency>, AppHomeBuildable {
         super.init(dependency: dependency)
     }
 
-    func build() -> LaunchRouting {
+    func build(withListener listener: AppHomeListener) -> AppHomeRouter{
         let component = AppHomeComponent(dependency: dependency)
         let viewController = AppHomeViewController(reactor: AppHomeReactor()) // 고쳐야됨
         let interactor = AppHomeInteractor(presenter: viewController)
-
+        interactor.listener = listener
         return AppHomeRouter(interactor: interactor, viewController: viewController)
     }
 }
