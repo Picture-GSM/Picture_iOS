@@ -39,7 +39,6 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         $0.pageIndicatorTintColor = .lightGray
         $0.currentPageIndicatorTintColor = .black
     }
-    
     private let titleLabel = UILabel().then{
         $0.textColor = .black
         $0.alpha = 0.5
@@ -49,11 +48,32 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
     }
     
     private let addImageBtn = ImageAddBtn().then{
-        $0.roundCorners()
+        $0.backgroundColor = .white
+        $0.addShadowWithRoundedCorners()
     }
     
     //MARK: - Main
     override func configureUI() {
+        title = "Home"
+        tabBarItem = UITabBarItem(title: "홈",
+                                  image: UIImage(systemName: "house"),
+                                  selectedImage: UIImage(systemName: "house.fill"))
+        
+        pageImageSetting()
+    }
+    
+    override func addView() {
+        view.addSubviews(scrollView,pageControl,titleLabel,addImageBtn)
+    }
+    
+    override func setLayout() {
+        scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
+        pageControl.pin.below(of: scrollView).height(20).left().right()
+        titleLabel.pin.left(bounds.width/18.75).below(of: pageControl).width(200).height(20)
+        addImageBtn.pin.bottomEnd().right().size(50)
+    }
+    
+    private func pageImageSetting(){
         for i in 0..<images.count {
             let imageView = UIImageView().then{
                 $0.contentMode = .scaleAspectFill
@@ -70,17 +90,6 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         pageControl.numberOfPages = images.count
     }
     
-    override func addView() {
-        view.addSubviews(scrollView,pageControl,titleLabel)
-    }
-    
-    override func setLayout() {
-        scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
-        pageControl.pin.below(of: scrollView).height(20).left().right()
-        titleLabel.pin.left(bounds.width/18.75).below(of: pageControl).width(200).height(20)
-        
-    }
-    
     //MARK: - Bind
     override func bindView(reactor: AppHomeReactor) {
         pageControl.rx.controlEvent(.valueChanged)
@@ -93,6 +102,11 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         
         scrollView.rx.currentPage
             .bind(to: pageControl.rx.currentPage)
+            .disposed(by: disposeBag)
+        
+        addImageBtn.rx.tap
+            .map{ Reactor.Action.AddBtnClicked}
+            .bind(to: reactor.action)
             .disposed(by: disposeBag)
         }
 }

@@ -9,12 +9,7 @@ import UIKit
 import Then
 import PinLayout
 
-final class ImageAddBtn : UIControl{
-    //MARK: - Properties
-    private let imageview = UIImageView(image: UIImage(systemName: "plus")).then{
-        $0.contentMode = .scaleAspectFit
-        $0.tintColor = .white
-    }
+final class ImageAddBtn : UIButton{
     //MARK: - Initalizer
     init(){
         super.init(frame: .zero)
@@ -28,8 +23,8 @@ final class ImageAddBtn : UIControl{
     
     //MARK: - Method
     private func setupViews(){
-        addSubviews(imageview)
-        
-        imageview.pin.center()
+        setImage(UIImage(systemName: "plus",
+            withConfiguration: UIImage.SymbolConfiguration(pointSize: 24, weight: .semibold)), for: .normal)
+        tintColor = .black
     }
 }

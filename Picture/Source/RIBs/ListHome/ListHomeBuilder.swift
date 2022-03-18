@@ -31,7 +31,7 @@ final class ListHomeBuilder: Builder<ListHomeDependency>, ListHomeBuildable {
 
     func build(withListener listener: ListHomeListener) -> ListHomeRouting {
         let component = ListHomeComponent(dependency: dependency)
-        let viewController = ListHomeViewController()
+        let viewController = ListHomeViewController(reactor: ListHomeReactor()) 
         let interactor = ListHomeInteractor(presenter: viewController)
         interactor.listener = listener
         return ListHomeRouter(interactor: interactor, viewController: viewController)

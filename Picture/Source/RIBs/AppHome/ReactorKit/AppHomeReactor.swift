@@ -11,7 +11,7 @@ final class AppHomeReactor : Reactor{
 
     //MARK: - Event
     enum Action{
-
+        case AddBtnClicked
     }
     enum Mutation{
 
@@ -25,5 +25,15 @@ final class AppHomeReactor : Reactor{
 
     init(){
         self.initialState = State()
+    }
+}
+
+extension AppHomeReactor{
+    func mutate(action: Action) -> Observable<Mutation> {
+        switch action{
+        case .AddBtnClicked:
+            print("Action")
+            return .empty()
+        }
     }
 }
