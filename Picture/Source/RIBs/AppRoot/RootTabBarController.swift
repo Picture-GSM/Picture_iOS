@@ -14,18 +14,19 @@ protocol AppRootPresentableListener: AnyObject {
 }
 
 final class RootTabBarController: UITabBarController, AppRootPresentable, AppRootViewControllable {
-
+    
     weak var listener: AppRootPresentableListener?
     
     override func viewDidLoad() {
-      super.viewDidLoad()
-      
-      tabBar.isTranslucent = false
-      tabBar.tintColor = .black
-      tabBar.backgroundColor = .white
+        super.viewDidLoad()
+        
+        tabBar.isTranslucent = false
+        tabBar.tintColor = .black
+        tabBar.backgroundColor = .white
+        
     }
     
     func setViewControllers(_ viewControllers: [ViewControllable]) {
-      super.setViewControllers(viewControllers.map(\.uiviewController), animated: false)
+        super.setViewControllers(viewControllers.map(\.uiviewController), animated: false)
     }
 }

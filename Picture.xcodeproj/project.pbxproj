@@ -10,11 +10,15 @@
 		EE35949A27E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949927E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift */; };
 		EE35949C27E0AC8000876A7D /* UIScrollView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949B27E0AC8000876A7D /* UIScrollView+Ext.swift */; };
 		EE3594A027E0B7D100876A7D /* ScrollView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949F27E0B7D100876A7D /* ScrollView + Ext.swift */; };
-		EE4D0D9227E42465007D2918 /* AppHomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D0D9127E42465007D2918 /* AppHomeCollectionView.swift */; };
+		EE4D0D9227E42465007D2918 /* AppHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */; };
 		EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2D327E4259A00CB0C78 /* Reusable */; };
-		EE83C2D727E425B800CB0C78 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2D627E425B800CB0C78 /* Differentiator */; };
-		EE83C2D927E425B800CB0C78 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2D827E425B800CB0C78 /* RxDataSources */; };
-		EE83C2DB27E425B800CB0C78 /* RxDataSources-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2DA27E425B800CB0C78 /* RxDataSources-Dynamic */; };
+		EE83C2DD27E42D8D00CB0C78 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2DC27E42D8D00CB0C78 /* BaseCollectionViewCell.swift */; };
+		EE83C2E027E442CC00CB0C78 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2DF27E442CC00CB0C78 /* Differentiator */; };
+		EE83C2E227E442CC00CB0C78 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2E127E442CC00CB0C78 /* RxDataSources */; };
+		EE83C2E427E4615900CB0C78 /* AppHomeCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2E327E4615900CB0C78 /* AppHomeCollectionViewSection.swift */; };
+		EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */; };
+		EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */; };
+		EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */; };
 		EE9D524327E0DD1A008E9AC2 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = EE9D524227E0DD1A008E9AC2 /* ReactorKit */; };
 		EE9D524627E0E0BC008E9AC2 /* AppHomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D524527E0E0BC008E9AC2 /* AppHomeReactor.swift */; };
 		EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */; };
@@ -24,6 +28,10 @@
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EECCF68327DEE7DF00F73854 /* RIBs+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECCF68227DEE7DF00F73854 /* RIBs+Utils.swift */; };
+		EED1288327E642710000D490 /* CameraHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1287F27E642710000D490 /* CameraHomeRouter.swift */; };
+		EED1288427E642710000D490 /* CameraHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1288027E642710000D490 /* CameraHomeViewController.swift */; };
+		EED1288527E642710000D490 /* CameraHomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1288127E642710000D490 /* CameraHomeBuilder.swift */; };
+		EED1288627E642710000D490 /* CameraHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1288227E642710000D490 /* CameraHomeInteractor.swift */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
 		EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */; };
 		EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */; };
@@ -50,12 +58,21 @@
 		EE35949927E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationControllerDelegate.swift; sourceTree = "<group>"; };
 		EE35949B27E0AC8000876A7D /* UIScrollView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Ext.swift"; sourceTree = "<group>"; };
 		EE35949F27E0B7D100876A7D /* ScrollView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView + Ext.swift"; sourceTree = "<group>"; };
-		EE4D0D9127E42465007D2918 /* AppHomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeCollectionView.swift; sourceTree = "<group>"; };
+		EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE83C2DC27E42D8D00CB0C78 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE83C2E327E4615900CB0C78 /* AppHomeCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeCollectionViewSection.swift; sourceTree = "<group>"; };
+		EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoRealmData.swift; sourceTree = "<group>"; };
+		EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
+		EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHomeCollectionViewSection.swift; sourceTree = "<group>"; };
 		EE9D524527E0E0BC008E9AC2 /* AppHomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeReactor.swift; sourceTree = "<group>"; };
 		EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
 		EEC348DB27E1FE7C00CC9132 /* ImageAddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAddBtn.swift; sourceTree = "<group>"; };
 		EECCF68227DEE7DF00F73854 /* RIBs+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RIBs+Utils.swift"; sourceTree = "<group>"; };
+		EED1287F27E642710000D490 /* CameraHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeRouter.swift; sourceTree = "<group>"; };
+		EED1288027E642710000D490 /* CameraHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeViewController.swift; sourceTree = "<group>"; };
+		EED1288127E642710000D490 /* CameraHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeBuilder.swift; sourceTree = "<group>"; };
+		EED1288227E642710000D490 /* CameraHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeInteractor.swift; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
@@ -84,14 +101,13 @@
 			files = (
 				EECB9AF427E034C100FF2124 /* RIBs in Frameworks */,
 				EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */,
-				EE83C2D727E425B800CB0C78 /* Differentiator in Frameworks */,
 				EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */,
-				EE83C2DB27E425B800CB0C78 /* RxDataSources-Dynamic in Frameworks */,
+				EE83C2E227E442CC00CB0C78 /* RxDataSources in Frameworks */,
 				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
 				EE9D524327E0DD1A008E9AC2 /* ReactorKit in Frameworks */,
 				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
-				EE83C2D927E425B800CB0C78 /* RxDataSources in Frameworks */,
 				EEC348D927E18F2300CC9132 /* PanModal in Frameworks */,
+				EE83C2E027E442CC00CB0C78 /* Differentiator in Frameworks */,
 				EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +137,7 @@
 				EEDBCD1127E2B85A00B9B9A3 /* AppRoot */,
 				EEE5E42027DA2116006FDD9E /* AppHome */,
 				EEFA58B727E2D1BA00DBB4A8 /* ListHome */,
+				EEDC837027E63F60004B6AC6 /* CameraHome */,
 			);
 			path = RIBs;
 			sourceTree = "<group>";
@@ -185,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */,
+				EE83C2DC27E42D8D00CB0C78 /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -193,7 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				EEC348DB27E1FE7C00CC9132 /* ImageAddBtn.swift */,
-				EE4D0D9127E42465007D2918 /* AppHomeCollectionView.swift */,
+				EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */,
+				EE83C2E327E4615900CB0C78 /* AppHomeCollectionViewSection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,6 +234,17 @@
 				EEDBCD1527E2B87100B9B9A3 /* AppRootInteractor.swift */,
 			);
 			path = AppRoot;
+			sourceTree = "<group>";
+		};
+		EEDC837027E63F60004B6AC6 /* CameraHome */ = {
+			isa = PBXGroup;
+			children = (
+				EED1287F27E642710000D490 /* CameraHomeRouter.swift */,
+				EED1288027E642710000D490 /* CameraHomeViewController.swift */,
+				EED1288127E642710000D490 /* CameraHomeBuilder.swift */,
+				EED1288227E642710000D490 /* CameraHomeInteractor.swift */,
+			);
+			path = CameraHome;
 			sourceTree = "<group>";
 		};
 		EEE5E41227D9FFA9006FDD9E /* AppDelegate */ = {
@@ -306,6 +336,8 @@
 		EEFA58C327E3515E00DBB4A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */,
+				EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,6 +345,7 @@
 		EEFA58C427E3528100DBB4A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -342,9 +375,8 @@
 				EE9D524227E0DD1A008E9AC2 /* ReactorKit */,
 				EEC348D827E18F2300CC9132 /* PanModal */,
 				EE83C2D327E4259A00CB0C78 /* Reusable */,
-				EE83C2D627E425B800CB0C78 /* Differentiator */,
-				EE83C2D827E425B800CB0C78 /* RxDataSources */,
-				EE83C2DA27E425B800CB0C78 /* RxDataSources-Dynamic */,
+				EE83C2DF27E442CC00CB0C78 /* Differentiator */,
+				EE83C2E127E442CC00CB0C78 /* RxDataSources */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -383,7 +415,7 @@
 				EE9D524127E0DD1A008E9AC2 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				EEC348D727E18F2300CC9132 /* XCRemoteSwiftPackageReference "PanModal" */,
 				EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */,
-				EE83C2D527E425B800CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
 			projectDirPath = "";
@@ -411,14 +443,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */,
+				EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */,
 				EEC348DC27E1FE7C00CC9132 /* ImageAddBtn.swift in Sources */,
 				EECCF68327DEE7DF00F73854 /* RIBs+Utils.swift in Sources */,
 				EEFA58C227E3119500DBB4A8 /* ListHomeReactor.swift in Sources */,
+				EE83C2E427E4615900CB0C78 /* AppHomeCollectionViewSection.swift in Sources */,
 				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,
 				EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */,
 				EE9D524627E0E0BC008E9AC2 /* AppHomeReactor.swift in Sources */,
 				EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */,
 				EEFA58BC27E2D22900DBB4A8 /* ListHomeRouter.swift in Sources */,
+				EED1288527E642710000D490 /* CameraHomeBuilder.swift in Sources */,
 				EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */,
 				EE9F6A3D27DBA0FC007F5F48 /* ViewExt.swift in Sources */,
 				EEFA58BF27E2D22900DBB4A8 /* ListHomeInteractor.swift in Sources */,
@@ -426,14 +462,19 @@
 				EEFA58BE27E2D22900DBB4A8 /* ListHomeBuilder.swift in Sources */,
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
 				EE3594A027E0B7D100876A7D /* ScrollView + Ext.swift in Sources */,
-				EE4D0D9227E42465007D2918 /* AppHomeCollectionView.swift in Sources */,
+				EE83C2DD27E42D8D00CB0C78 /* BaseCollectionViewCell.swift in Sources */,
+				EE4D0D9227E42465007D2918 /* AppHomeCollectionViewCell.swift in Sources */,
 				EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
 				EE35949A27E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift in Sources */,
+				EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */,
 				EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */,
+				EED1288627E642710000D490 /* CameraHomeInteractor.swift in Sources */,
 				EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */,
 				EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */,
 				EE35949C27E0AC8000876A7D /* UIScrollView+Ext.swift in Sources */,
+				EED1288427E642710000D490 /* CameraHomeViewController.swift in Sources */,
+				EED1288327E642710000D490 /* CameraHomeRouter.swift in Sources */,
 				EEFA58BD27E2D22900DBB4A8 /* ListHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -656,7 +697,7 @@
 				kind = branch;
 			};
 		};
-		EE83C2D527E425B800CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+		EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
 			requirement = {
@@ -728,20 +769,15 @@
 			package = EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */;
 			productName = Reusable;
 		};
-		EE83C2D627E425B800CB0C78 /* Differentiator */ = {
+		EE83C2DF27E442CC00CB0C78 /* Differentiator */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EE83C2D527E425B800CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			package = EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = Differentiator;
 		};
-		EE83C2D827E425B800CB0C78 /* RxDataSources */ = {
+		EE83C2E127E442CC00CB0C78 /* RxDataSources */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EE83C2D527E425B800CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			package = EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
-		};
-		EE83C2DA27E425B800CB0C78 /* RxDataSources-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EE83C2D527E425B800CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */;
-			productName = "RxDataSources-Dynamic";
 		};
 		EE9D524227E0DD1A008E9AC2 /* ReactorKit */ = {
 			isa = XCSwiftPackageProductDependency;

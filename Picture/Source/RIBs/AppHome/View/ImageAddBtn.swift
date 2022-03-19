@@ -25,6 +25,6 @@ final class ImageAddBtn : UIButton{
     private func setupViews(){
         setImage(UIImage(systemName: "plus",
             withConfiguration: UIImage.SymbolConfiguration(pointSize: 24, weight: .semibold)), for: .normal)
-        tintColor = .black
+        tintColor = .white
     }
 }

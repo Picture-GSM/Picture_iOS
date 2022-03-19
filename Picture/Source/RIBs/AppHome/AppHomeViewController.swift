@@ -8,10 +8,13 @@
 import RIBs
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 import UIKit
 import Then
+import Reusable
 import PinLayout
+
 
 protocol AppHomePresentableListener: AnyObject {
     // TODO: Declare properties and methods that the view controller can invoke to perform
@@ -46,9 +49,9 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         $0.numberOfLines = 0
         $0.font  = .systemFont(ofSize: 13)
     }
-    
+
     private let addImageBtn = ImageAddBtn().then{
-        $0.backgroundColor = .white
+        $0.backgroundColor = .systemBlue
         $0.addShadowWithRoundedCorners()
     }
     
@@ -70,7 +73,7 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
         pageControl.pin.below(of: scrollView).height(20).left().right()
         titleLabel.pin.left(bounds.width/18.75).below(of: pageControl).width(200).height(20)
-        addImageBtn.pin.bottomEnd().right().size(50)
+        addImageBtn.pin.below(of: titleLabel).right(bounds.width/18.75).size(50)
     }
     
     private func pageImageSetting(){
@@ -109,4 +112,8 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
         }
+    
+    override func bindState(reactor: AppHomeReactor) {
+        
+    }
 }

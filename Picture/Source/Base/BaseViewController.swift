@@ -20,6 +20,7 @@ class BaseViewController<T : Reactor> : UIViewController{
         addView()
         setLayout()
         configureUI()
+        delegate()
     }
     @available(* , unavailable)
     required init?(coder: NSCoder) {
@@ -28,6 +29,7 @@ class BaseViewController<T : Reactor> : UIViewController{
         addView()
         setLayout()
         configureUI()
+        delegate()
     }
     
     //MARK: - Method
@@ -40,6 +42,7 @@ class BaseViewController<T : Reactor> : UIViewController{
     func addView(){}
     func setLayout(){}
     func configureUI(){}
+    func delegate(){}
     //MARK: - Bind
     func bindView(reactor: T){}
     func bindAction(reactor: T){}
