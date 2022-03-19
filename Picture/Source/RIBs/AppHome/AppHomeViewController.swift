@@ -49,7 +49,15 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         $0.numberOfLines = 0
         $0.font  = .systemFont(ofSize: 13)
     }
-
+    private let collectionView : UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 10
+        layout.scrollDirection = .vertical
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = .red
+        return cv
+    }()
+    
     private let addImageBtn = ImageAddBtn().then{
         $0.backgroundColor = .systemBlue
         $0.addShadowWithRoundedCorners()
@@ -66,14 +74,15 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
     }
     
     override func addView() {
-        view.addSubviews(scrollView,pageControl,titleLabel,addImageBtn)
+        view.addSubviews(scrollView,pageControl,titleLabel,collectionView,addImageBtn)
     }
     
     override func setLayout() {
         scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
         pageControl.pin.below(of: scrollView).height(20).left().right()
         titleLabel.pin.left(bounds.width/18.75).below(of: pageControl).width(200).height(20)
-        addImageBtn.pin.below(of: titleLabel).right(bounds.width/18.75).size(50)
+        collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
+        addImageBtn.pin.top(bounds.height/81.2).right(bounds.width/18.75).size(50)
     }
     
     private func pageImageSetting(){
