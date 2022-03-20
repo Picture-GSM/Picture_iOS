@@ -47,7 +47,7 @@ final class ListHomeViewController: BaseViewController<ListHomeReactor>, ListHom
     
     //MARK: - Setlayout
     override func setLayout() {
-        collectionView.pin.all(view.safeAreaInsets)
+        collectionView.pin.all(view.pin.safeArea)
     }
     
     //MARK: - Bind

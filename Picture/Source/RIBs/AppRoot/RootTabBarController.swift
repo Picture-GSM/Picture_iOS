@@ -20,7 +20,7 @@ final class RootTabBarController: UITabBarController, AppRootPresentable, AppRoo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBar.isTranslucent = false
+        tabBar.isTranslucent = true
         tabBar.tintColor = .black
         tabBar.backgroundColor = .white
         

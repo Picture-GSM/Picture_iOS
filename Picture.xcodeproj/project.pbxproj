@@ -32,7 +32,6 @@
 		EED1288427E642710000D490 /* CameraHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1288027E642710000D490 /* CameraHomeViewController.swift */; };
 		EED1288527E642710000D490 /* CameraHomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1288127E642710000D490 /* CameraHomeBuilder.swift */; };
 		EED1288627E642710000D490 /* CameraHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1288227E642710000D490 /* CameraHomeInteractor.swift */; };
-		EED1288927E645360000D490 /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = EED1288827E645360000D490 /* JJFloatingActionButton */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
 		EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */; };
 		EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */; };
@@ -102,7 +101,6 @@
 			files = (
 				EECB9AF427E034C100FF2124 /* RIBs in Frameworks */,
 				EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */,
-				EED1288927E645360000D490 /* JJFloatingActionButton in Frameworks */,
 				EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */,
 				EE83C2E227E442CC00CB0C78 /* RxDataSources in Frameworks */,
 				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
@@ -379,7 +377,6 @@
 				EE83C2D327E4259A00CB0C78 /* Reusable */,
 				EE83C2DF27E442CC00CB0C78 /* Differentiator */,
 				EE83C2E127E442CC00CB0C78 /* RxDataSources */,
-				EED1288827E645360000D490 /* JJFloatingActionButton */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -419,7 +416,6 @@
 				EEC348D727E18F2300CC9132 /* XCRemoteSwiftPackageReference "PanModal" */,
 				EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */,
 				EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */,
-				EED1288727E645360000D490 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */,
 			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
 			projectDirPath = "";
@@ -741,14 +737,6 @@
 				kind = branch;
 			};
 		};
-		EED1288727E645360000D490 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jjochen/JJFloatingActionButton.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture.git";
@@ -810,11 +798,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */;
 			productName = RIBs;
-		};
-		EED1288827E645360000D490 /* JJFloatingActionButton */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EED1288727E645360000D490 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */;
-			productName = JJFloatingActionButton;
 		};
 		EEEA2C5727D9E41500356B33 /* RxGesture */ = {
 			isa = XCSwiftPackageProductDependency;

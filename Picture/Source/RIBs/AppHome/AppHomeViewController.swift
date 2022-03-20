@@ -82,7 +82,7 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         pageControl.pin.below(of: scrollView).height(20).left().right()
         titleLabel.pin.left(bounds.width/18.75).below(of: pageControl).width(200).height(20)
         collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
-        addImageBtn.pin.top(bounds.height/81.2).right(bounds.width/18.75).size(50)
+        addImageBtn.pin.below(of: collectionView).right().size(50)
     }
     
     private func pageImageSetting(){
