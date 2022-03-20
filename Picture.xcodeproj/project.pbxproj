@@ -416,6 +416,7 @@
 				EEC348D727E18F2300CC9132 /* XCRemoteSwiftPackageReference "PanModal" */,
 				EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */,
 				EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				EEB0E84527E771A8004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */,
 			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
 			projectDirPath = "";
@@ -708,6 +709,14 @@
 		EE9D524127E0DD1A008E9AC2 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactorKit/ReactorKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		EEB0E84527E771A8004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kciter/Floaty.git";
 			requirement = {
 				branch = master;
 				kind = branch;
