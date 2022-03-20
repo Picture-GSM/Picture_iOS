@@ -14,6 +14,7 @@ import UIKit
 import Then
 import Reusable
 import PinLayout
+import Floaty
 
 
 protocol AppHomePresentableListener: AnyObject {
@@ -58,9 +59,12 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         return cv
     }()
     
-    private let addImageBtn = ImageAddBtn().then{
-        $0.backgroundColor = .systemBlue
-        $0.addShadowWithRoundedCorners()
+
+
+    private let menuBtn = floatyAddBtn().then{
+        $0.addItem(icon: UIImage(systemName: "xmark"))
+        $0.addItem(icon: UIImage(systemName: "xmark"))
+        $0.addItem(icon: UIImage(systemName: "xmark"))
     }
     
     //MARK: - Main
@@ -74,7 +78,7 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
     }
     
     override func addView() {
-        view.addSubviews(scrollView,pageControl,titleLabel,collectionView,addImageBtn)
+        view.addSubviews(scrollView,pageControl,titleLabel,collectionView,menuBtn)
     }
     
     override func setLayout() {
@@ -82,7 +86,7 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         pageControl.pin.below(of: scrollView).height(20).left().right()
         titleLabel.pin.left(bounds.width/18.75).below(of: pageControl).width(200).height(20)
         collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
-        addImageBtn.pin.below(of: collectionView).right().size(50)
+        menuBtn.pin.below(of: collectionView).right(bounds.width/18.75).size(50)
     }
     
     private func pageImageSetting(){

@@ -1,5 +1,5 @@
 //
-//  ImageAddBtn.swift
+//  floatyAddBtn.swift
 //  Picture
 //
 //  Created by Ji-hoon Ahn on 2022/03/16.
@@ -8,11 +8,13 @@
 import UIKit
 import Then
 import PinLayout
+import Floaty
 
-final class ImageAddBtn : UIButton{
-        
+
+final class floatyAddBtn :  Floaty{
+    
     //MARK: - Initalizer
-    init(){
+    override init(){
         super.init(frame: .zero)
         setupViews()
     }
@@ -21,11 +23,10 @@ final class ImageAddBtn : UIButton{
         super.init(coder: coder)
         setupViews()
     }
-    
-    //MARK: - Method
     private func setupViews(){
-        setImage(UIImage(systemName: "plus",
-            withConfiguration: UIImage.SymbolConfiguration(pointSize: 24, weight: .semibold)), for: .normal)
-        tintColor = .white
+        self.buttonColor = .white
+        self.plusColor = .black
+        self.buttonShadowColor = .black
+        
     }
 }
