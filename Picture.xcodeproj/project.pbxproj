@@ -23,6 +23,7 @@
 		EE9D524627E0E0BC008E9AC2 /* AppHomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D524527E0E0BC008E9AC2 /* AppHomeReactor.swift */; };
 		EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */; };
 		EE9F6A3D27DBA0FC007F5F48 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */; };
+		EEB0E84A27E7787B004EDC14 /* Floaty in Frameworks */ = {isa = PBXBuildFile; productRef = EEB0E84927E7787B004EDC14 /* Floaty */; };
 		EEC348D927E18F2300CC9132 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = EEC348D827E18F2300CC9132 /* PanModal */; };
 		EEC348DC27E1FE7C00CC9132 /* ImageAddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* ImageAddBtn.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
@@ -108,6 +109,7 @@
 				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
 				EEC348D927E18F2300CC9132 /* PanModal in Frameworks */,
 				EE83C2E027E442CC00CB0C78 /* Differentiator in Frameworks */,
+				EEB0E84A27E7787B004EDC14 /* Floaty in Frameworks */,
 				EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +379,7 @@
 				EE83C2D327E4259A00CB0C78 /* Reusable */,
 				EE83C2DF27E442CC00CB0C78 /* Differentiator */,
 				EE83C2E127E442CC00CB0C78 /* RxDataSources */,
+				EEB0E84927E7787B004EDC14 /* Floaty */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -416,7 +419,7 @@
 				EEC348D727E18F2300CC9132 /* XCRemoteSwiftPackageReference "PanModal" */,
 				EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */,
 				EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */,
-				EEB0E84527E771A8004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */,
+				EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */,
 			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
 			projectDirPath = "";
@@ -714,7 +717,7 @@
 				kind = branch;
 			};
 		};
-		EEB0E84527E771A8004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */ = {
+		EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kciter/Floaty.git";
 			requirement = {
@@ -792,6 +795,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EE9D524127E0DD1A008E9AC2 /* XCRemoteSwiftPackageReference "ReactorKit" */;
 			productName = ReactorKit;
+		};
+		EEB0E84927E7787B004EDC14 /* Floaty */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */;
+			productName = Floaty;
 		};
 		EEC348D827E18F2300CC9132 /* PanModal */ = {
 			isa = XCSwiftPackageProductDependency;
