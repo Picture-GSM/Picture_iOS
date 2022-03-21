@@ -27,6 +27,7 @@ final class floatyAddBtn :  Floaty{
         self.buttonColor = .white
         self.plusColor = .black
         self.buttonShadowColor = .black
-        
+        self.openAnimationType = .fade
+        self.animationSpeed = 0.02
     }
 }

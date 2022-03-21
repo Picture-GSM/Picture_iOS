@@ -119,11 +119,6 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         scrollView.rx.currentPage
             .bind(to: pageControl.rx.currentPage)
             .disposed(by: disposeBag)
-        
-        addImageBtn.rx.tap
-            .map{ Reactor.Action.AddBtnClicked}
-            .bind(to: reactor.action)
-            .disposed(by: disposeBag)
         }
     
     override func bindState(reactor: AppHomeReactor) {
