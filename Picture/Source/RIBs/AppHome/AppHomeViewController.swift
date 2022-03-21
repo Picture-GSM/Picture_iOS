@@ -58,14 +58,8 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         cv.backgroundColor = .red
         return cv
     }()
-    
 
-
-    private let menuBtn = floatyAddBtn().then{
-        $0.addItem(icon: UIImage(systemName: "xmark"))
-        $0.addItem(icon: UIImage(systemName: "xmark"))
-        $0.addItem(icon: UIImage(systemName: "xmark"))
-    }
+    private let menuBtn = floatyAddBtn()
     
     //MARK: - Main
     override func configureUI() {
