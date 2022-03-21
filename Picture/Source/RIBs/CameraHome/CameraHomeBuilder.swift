@@ -30,7 +30,7 @@ final class CameraHomeBuilder: Builder<CameraHomeDependency>, CameraHomeBuildabl
     }
 
     func build(withListener listener: CameraHomeListener) -> CameraHomeRouting {
-        let component = CameraHomeComponent(dependency: dependency)
+        let _ = CameraHomeComponent(dependency: dependency)
         let viewController = CameraHomeViewController()
         let interactor = CameraHomeInteractor(presenter: viewController)
         interactor.listener = listener
