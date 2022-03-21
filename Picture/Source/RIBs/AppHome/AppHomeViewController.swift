@@ -18,9 +18,8 @@ import Floaty
 
 
 protocol AppHomePresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+    func didTapCamera()
+    func didTapAlbum()
 }
 
 final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePresentable, AppHomeViewControllable {
@@ -29,7 +28,7 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
     weak var listener: AppHomePresentableListener?
     
     private let  images = [UIImage(named: "PageImage1"),UIImage(named: "PageImage2"),UIImage(named: "PageImage3"),UIImage(named: "PageImage4")]
-
+    
     private let scrollView = UIScrollView().then{
         $0.bounces = false
         $0.isScrollEnabled = true
@@ -58,7 +57,7 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         cv.backgroundColor = .red
         return cv
     }()
-
+    
     private let menuBtn = floatyAddBtn()
     
     //MARK: - Main
@@ -113,7 +112,14 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         scrollView.rx.currentPage
             .bind(to: pageControl.rx.currentPage)
             .disposed(by: disposeBag)
+        
+        menuBtn.albumItem.rx.handler.asObserver().onNext { _ in
+            self.listener?.didTapAlbum()
         }
+        menuBtn.cameraItem.rx.handler.asObserver().onNext{ _ in
+            self.listener?.didTapCamera()
+        }
+    }
     
     override func bindState(reactor: AppHomeReactor) {
         

@@ -11,7 +11,7 @@ import PinLayout
 import Floaty
 
 
-final class floatyAddBtn :  Floaty{
+final class floatyAddBtn : Floaty{
     //MARK: - Properties
     let cameraItem = FloatyItem().then{
         $0.title = "Camera"

@@ -24,6 +24,7 @@
 		EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */; };
 		EE9F6A3D27DBA0FC007F5F48 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */; };
 		EEB0E84A27E7787B004EDC14 /* Floaty in Frameworks */ = {isa = PBXBuildFile; productRef = EEB0E84927E7787B004EDC14 /* Floaty */; };
+		EEB74FE227E88C7100A74263 /* PushModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB74FE127E88C7100A74263 /* PushModalPresentationController.swift */; };
 		EEC348D927E18F2300CC9132 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = EEC348D827E18F2300CC9132 /* PanModal */; };
 		EEC348DC27E1FE7C00CC9132 /* floatyAddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
@@ -68,6 +69,7 @@
 		EE9D524527E0E0BC008E9AC2 /* AppHomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeReactor.swift; sourceTree = "<group>"; };
 		EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
+		EEB74FE127E88C7100A74263 /* PushModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushModalPresentationController.swift; sourceTree = "<group>"; };
 		EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = floatyAddBtn.swift; sourceTree = "<group>"; };
 		EECCF68227DEE7DF00F73854 /* RIBs+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RIBs+Utils.swift"; sourceTree = "<group>"; };
 		EED1287F27E642710000D490 /* CameraHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeRouter.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				EE35949927E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift */,
+				EEB74FE127E88C7100A74263 /* PushModalPresentationController.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 				EED1288627E642710000D490 /* CameraHomeInteractor.swift in Sources */,
 				EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */,
 				EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */,
+				EEB74FE227E88C7100A74263 /* PushModalPresentationController.swift in Sources */,
 				EE35949C27E0AC8000876A7D /* UIScrollView+Ext.swift in Sources */,
 				EED1288427E642710000D490 /* CameraHomeViewController.swift in Sources */,
 				EED1288327E642710000D490 /* CameraHomeRouter.swift in Sources */,
