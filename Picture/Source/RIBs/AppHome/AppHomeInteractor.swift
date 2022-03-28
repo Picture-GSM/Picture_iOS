@@ -9,7 +9,10 @@ import RIBs
 import RxSwift
 
 protocol AppHomeRouting: ViewableRouting {
-    func attachTransportHome()
+    func attachTransportCamera()
+    func attachTransportAlbum()
+    
+    func detachTransportHome()
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
 }
 
@@ -46,10 +49,10 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
     
     //MARK: - Action
     func didTapCamera() {
-        router?.attachTransportHome()
+        router?.attachTransportCamera()
     }
     
     func didTapAlbum() {
-        router?.attachTransportHome()
+        router?.attachTransportAlbum()
     }
 }

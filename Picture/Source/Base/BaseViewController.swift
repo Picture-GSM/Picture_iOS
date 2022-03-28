@@ -9,18 +9,21 @@ import UIKit
 import RxSwift
 import ReactorKit
 
-class BaseViewController<T : Reactor> : UIViewController{
+class BaseViewController : UIViewController{
     let bounds = UIScreen.main.bounds
     var disposeBag : DisposeBag = .init()
     //MARK: - Initalizer
-    init(reactor: T){
+    init(){
         super.init(nibName: nil, bundle: nil)
-        self.reactor = reactor
         setupBackgroundIfNotSet()
         addView()
         setLayout()
         configureUI()
         delegate()
+        
+        bindView()
+        bindAction()
+        bindState()
     }
     @available(* , unavailable)
     required init?(coder: NSCoder) {
@@ -30,6 +33,10 @@ class BaseViewController<T : Reactor> : UIViewController{
         setLayout()
         configureUI()
         delegate()
+        
+        bindView()
+        bindAction()
+        bindState()
     }
     
     //MARK: - Method
@@ -43,15 +50,10 @@ class BaseViewController<T : Reactor> : UIViewController{
     func setLayout(){}
     func configureUI(){}
     func delegate(){}
+    
     //MARK: - Bind
-    func bindView(reactor: T){}
-    func bindAction(reactor: T){}
-    func bindState(reactor: T){}
+    func bindView(){}
+    func bindAction(){}
+    func bindState(){}
 }
-extension BaseViewController: View{
-    func bind(reactor: T) {
-        bindView(reactor: reactor)
-        bindAction(reactor: reactor)
-        bindState(reactor: reactor)
-    }
-}
+

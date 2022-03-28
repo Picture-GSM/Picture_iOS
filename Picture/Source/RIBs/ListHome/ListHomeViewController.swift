@@ -10,14 +10,24 @@ import RxSwift
 import UIKit
 import PinLayout
 import RxDataSources
+import ReactorKit
 
-protocol ListHomePresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+//MARK: - Action
+enum ListAction{
+    
+}
+//MARK: - State
+struct ListState{
+    
 }
 
-final class ListHomeViewController: BaseViewController<ListHomeReactor>, ListHomePresentable, ListHomeViewControllable {
+
+protocol ListHomePresentableListener: AnyObject {
+//    var action: ActionSubject<ListAction> { get }
+//    var state: Observable<ListState> { get }
+}
+
+final class ListHomeViewController: BaseViewController, ListHomePresentable, ListHomeViewControllable {
     //MARK: - Listener
     weak var listener: ListHomePresentableListener?
     
@@ -51,11 +61,10 @@ final class ListHomeViewController: BaseViewController<ListHomeReactor>, ListHom
     }
     
     //MARK: - Bind
-    override func bindView(reactor: ListHomeReactor) {
+    override func bindView() {
         
     }
-    
-    override func bindState(reactor: ListHomeReactor) {
-
+    override func bindAction() {
+        
     }
 }

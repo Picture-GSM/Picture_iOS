@@ -9,14 +9,25 @@ import RIBs
 import RxSwift
 import UIKit
 import AVFoundation
+import ReactorKit
 
-protocol CameraHomePresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+//MARK: - Action
+enum CameraAction{
+    
+}
+//MARK: - State
+struct CameraState{
+    
 }
 
-final class CameraHomeViewController: UIViewController, CameraHomePresentable, CameraHomeViewControllable {
+//MARK: - Listener
+protocol CameraHomePresentableListener: AnyObject {
+//    var action: ActionSubject<AlbumAction> { get }
+//    var state: Observable<AlbumState> { get }
+}
+
+final class CameraHomeViewController: BaseViewController, CameraHomePresentable, CameraHomeViewControllable {
 
     weak var listener: CameraHomePresentableListener?
+    
 }

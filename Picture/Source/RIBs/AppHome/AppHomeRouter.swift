@@ -7,7 +7,7 @@
 
 import RIBs
 
-protocol AppHomeInteractable: Interactable , CameraHomeListener{
+protocol AppHomeInteractable: Interactable , CameraHomeListener, AlbumHomeListener{
     var router: AppHomeRouting? { get set }
     var listener: AppHomeListener? { get set }
 }
@@ -19,21 +19,24 @@ protocol AppHomeViewControllable: ViewControllable {
 final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewControllable>, AppHomeRouting {
 
     private let transportCameraBuildable: CameraHomeBuildable
+    private let transportAlbumBuildable : AlbumHomeBuildable
     private var transportCameraRouting: Routing?
     private let transitioningDelegate: PushModalPresentationController
 
     // TODO: Constructor inject child builder protocols to allow building children.
      init(interactor: AppHomeInteractable,
           viewController: AppHomeViewControllable,
-          transportCameraBuildable : CameraHomeBuildable
+          transportCameraBuildable : CameraHomeBuildable,
+          transportAlbumBuildable : AlbumHomeBuildable
      ){
          self.transitioningDelegate = PushModalPresentationController()
-        self.transportCameraBuildable =  transportCameraBuildable
+         self.transportAlbumBuildable = transportAlbumBuildable
+         self.transportCameraBuildable =  transportCameraBuildable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
     
-    func attachTransportHome() {
+    func attachTransportCamera() {
         if transportCameraRouting != nil{
             return
         }
@@ -42,6 +45,26 @@ final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewContro
         presentWithPushTransition(router.viewControllable, animated: true)
         attachChild(router)
         self.transportCameraRouting = router
+    }
+    
+    func attachTransportAlbum() {
+        if transportCameraRouting != nil{
+            return
+        }
+        
+        let router = transportAlbumBuildable.build(withListener: interactor)
+        presentWithPushTransition(router.viewControllable, animated: true)
+        attachChild(router)
+        self.transportCameraRouting = router
+    }
+    func detachTransportHome() {
+        guard let router = transportCameraRouting else{
+            return
+        }
+        
+        viewController.dismiss(completion: nil)
+        self.transportCameraRouting = nil
+        detachChild(router)
     }
     //MARK: - Push Transition
     private func presentWithPushTransition(_ viewControllable: ViewControllable, animated: Bool) {

@@ -22,7 +22,7 @@ protocol AppHomePresentableListener: AnyObject {
     func didTapAlbum()
 }
 
-final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePresentable, AppHomeViewControllable {
+final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHomeViewControllable {
     
     //MARK: - Properties
     weak var listener: AppHomePresentableListener?
@@ -100,7 +100,7 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
     }
     
     //MARK: - Bind
-    override func bindView(reactor: AppHomeReactor) {
+    override func bindView() {
         pageControl.rx.controlEvent(.valueChanged)
             .subscribe(onNext:{ [weak self] in
                 guard let currentPage = self?.pageControl.currentPage else {
@@ -121,7 +121,7 @@ final class AppHomeViewController: BaseViewController<AppHomeReactor>, AppHomePr
         }
     }
     
-    override func bindState(reactor: AppHomeReactor) {
+    override func bindState() {
         
     }
 }

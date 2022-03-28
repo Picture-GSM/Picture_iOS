@@ -7,6 +7,7 @@
 
 import RIBs
 import RxSwift
+import ReactorKit
 
 protocol AlbumHomeRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -23,12 +24,15 @@ protocol AlbumHomeListener: AnyObject {
 
 final class AlbumHomeInteractor: PresentableInteractor<AlbumHomePresentable>, AlbumHomeInteractable, AlbumHomePresentableListener {
 
+
     weak var router: AlbumHomeRouting?
     weak var listener: AlbumHomeListener?
+    
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
     override init(presenter: AlbumHomePresentable) {
+        
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -43,3 +47,4 @@ final class AlbumHomeInteractor: PresentableInteractor<AlbumHomePresentable>, Al
         // TODO: Pause any business logic.
     }
 }
+

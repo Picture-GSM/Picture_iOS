@@ -12,7 +12,7 @@ protocol AppHomeDependency: Dependency {
     // created by this RIB.
 }
 
-final class AppHomeComponent: Component<AppHomeDependency> , CameraHomeDependency{
+final class AppHomeComponent: Component<AppHomeDependency> , CameraHomeDependency, AlbumHomeDependency{
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -31,15 +31,16 @@ final class AppHomeBuilder: Builder<AppHomeDependency>, AppHomeBuildable {
 
     func build(withListener listener: AppHomeListener) -> AppHomeRouter{
         let component = AppHomeComponent(dependency: dependency)
-        let viewController = AppHomeViewController(reactor: AppHomeReactor()) // 고쳐야됨
+        let viewController = AppHomeViewController()
         let interactor = AppHomeInteractor(presenter: viewController)
         interactor.listener = listener
         
         let transportCameraBuilder = CameraHomeBuilder(dependency: component)
-
+        let transportAlbumBuilder = AlbumHomeBuilder(dependency: component)
         
         return AppHomeRouter(interactor: interactor,
                              viewController: viewController,
-                             transportCameraBuildable: transportCameraBuilder)
+                             transportCameraBuildable: transportCameraBuilder,
+                             transportAlbumBuildable: transportAlbumBuilder)
     }
 }

@@ -8,14 +8,25 @@
 import RIBs
 import RxSwift
 import UIKit
+import ReactorKit
 
-protocol AlbumHomePresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+//MARK: - Action
+public enum AlbumAction{
+    
+}
+//MARK: - State
+public struct AlbumState {
+    
 }
 
-final class AlbumHomeViewController: UIViewController, AlbumHomePresentable, AlbumHomeViewControllable {
+//MARK: - Listener
+protocol AlbumHomePresentableListener: AnyObject {
+//    var action: ActionSubject<AlbumAction> { get }
+//    var state: Observable<AlbumState> { get }
+}
+
+final class AlbumHomeViewController: BaseViewController, AlbumHomePresentable, AlbumHomeViewControllable {
 
     weak var listener: AlbumHomePresentableListener?
+    
 }
