@@ -7,7 +7,6 @@
 
 import UIKit
 import RxSwift
-import ReactorKit
 
 class BaseViewController : UIViewController{
     let bounds = UIScreen.main.bounds
@@ -28,12 +27,14 @@ class BaseViewController : UIViewController{
     @available(* , unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        //MARK: - Setting
         setupBackgroundIfNotSet()
         addView()
         setLayout()
         configureUI()
         delegate()
         
+        //MARK: - Bind
         bindView()
         bindAction()
         bindState()
@@ -56,4 +57,3 @@ class BaseViewController : UIViewController{
     func bindAction(){}
     func bindState(){}
 }
-

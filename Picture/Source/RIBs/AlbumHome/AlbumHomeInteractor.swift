@@ -7,7 +7,6 @@
 
 import RIBs
 import RxSwift
-import ReactorKit
 
 protocol AlbumHomeRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.

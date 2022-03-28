@@ -7,6 +7,8 @@
 
 import UIKit
 import PinLayout
+import UIUtil
+
 
 class ListCollectionViewCell : BaseCollectionViewCell{
     

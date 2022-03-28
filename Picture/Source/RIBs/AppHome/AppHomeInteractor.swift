@@ -10,10 +10,10 @@ import RxSwift
 
 protocol AppHomeRouting: ViewableRouting {
     func attachTransportCamera()
+    
     func attachTransportAlbum()
     
     func detachTransportHome()
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
 }
 
 protocol AppHomePresentable: Presentable {
@@ -26,7 +26,7 @@ protocol AppHomeListener: AnyObject {
 }
 
 final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHomeInteractable, AppHomePresentableListener {
-
+    
     weak var router: AppHomeRouting?
     weak var listener: AppHomeListener?
 

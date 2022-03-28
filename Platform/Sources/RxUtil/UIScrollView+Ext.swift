@@ -9,8 +9,8 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-extension Reactive where Base: UIScrollView{
-    public var currentPage : Observable<Int>{
+public extension Reactive where Base: UIScrollView{
+    var currentPage : Observable<Int>{
         return didEndDecelerating.map({
             let pageWidth = self.base.frame.width
             let page = floor((self.base.contentOffset.x - pageWidth / 2) / pageWidth + 1)

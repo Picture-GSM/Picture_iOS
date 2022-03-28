@@ -10,21 +10,11 @@ import RxSwift
 import UIKit
 import PinLayout
 import RxDataSources
-import ReactorKit
 
 //MARK: - Action
-enum ListAction{
-    
-}
-//MARK: - State
-struct ListState{
-    
-}
-
 
 protocol ListHomePresentableListener: AnyObject {
-//    var action: ActionSubject<ListAction> { get }
-//    var state: Observable<ListState> { get }
+
 }
 
 final class ListHomeViewController: BaseViewController, ListHomePresentable, ListHomeViewControllable {

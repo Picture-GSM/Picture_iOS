@@ -8,6 +8,7 @@
 import UIKit
 import Then
 import Reusable
+import UIUtil
 
 final class AppHomeCollectionViewCell : BaseCollectionViewCell{
     //MARK: - Properties

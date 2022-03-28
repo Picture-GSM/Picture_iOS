@@ -7,8 +7,8 @@
 
 import UIKit
 
- extension UIScrollView{
-     func setCurrentPage(_ page : Int, animated: Bool){
+public extension UIScrollView{
+    func setCurrentPage(_ page : Int, animated: Bool){
          var rect = bounds
          rect.origin.x = rect.width * CGFloat(page)
          rect.origin.y = 0

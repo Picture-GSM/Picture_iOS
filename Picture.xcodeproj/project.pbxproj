@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE35949A27E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949927E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift */; };
-		EE35949C27E0AC8000876A7D /* UIScrollView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949B27E0AC8000876A7D /* UIScrollView+Ext.swift */; };
-		EE3594A027E0B7D100876A7D /* ScrollView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE35949F27E0B7D100876A7D /* ScrollView + Ext.swift */; };
 		EE4D0D9227E42465007D2918 /* AppHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */; };
 		EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2D327E4259A00CB0C78 /* Reusable */; };
 		EE83C2DD27E42D8D00CB0C78 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2DC27E42D8D00CB0C78 /* BaseCollectionViewCell.swift */; };
@@ -19,12 +16,8 @@
 		EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */; };
 		EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */; };
 		EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */; };
-		EE9D524327E0DD1A008E9AC2 /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = EE9D524227E0DD1A008E9AC2 /* ReactorKit */; };
-		EE9D524627E0E0BC008E9AC2 /* AppHomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D524527E0E0BC008E9AC2 /* AppHomeReactor.swift */; };
 		EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */; };
-		EE9F6A3D27DBA0FC007F5F48 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */; };
 		EEB0E84A27E7787B004EDC14 /* Floaty in Frameworks */ = {isa = PBXBuildFile; productRef = EEB0E84927E7787B004EDC14 /* Floaty */; };
-		EEB74FE227E88C7100A74263 /* PushModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB74FE127E88C7100A74263 /* PushModalPresentationController.swift */; };
 		EEB74FE827E89E6100A74263 /* AlbumHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB74FE427E89E6100A74263 /* AlbumHomeRouter.swift */; };
 		EEB74FE927E89E6100A74263 /* AlbumHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB74FE527E89E6100A74263 /* AlbumHomeViewController.swift */; };
 		EEB74FEA27E89E6100A74263 /* AlbumHomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB74FE627E89E6100A74263 /* AlbumHomeBuilder.swift */; };
@@ -33,7 +26,6 @@
 		EEC348DC27E1FE7C00CC9132 /* floatyAddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
-		EECCF68327DEE7DF00F73854 /* RIBs+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECCF68227DEE7DF00F73854 /* RIBs+Utils.swift */; };
 		EED1288327E642710000D490 /* CameraHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1287F27E642710000D490 /* CameraHomeRouter.swift */; };
 		EED1288427E642710000D490 /* CameraHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1288027E642710000D490 /* CameraHomeViewController.swift */; };
 		EED1288527E642710000D490 /* CameraHomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1288127E642710000D490 /* CameraHomeBuilder.swift */; };
@@ -49,11 +41,13 @@
 		EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5727D9E41500356B33 /* RxGesture */; };
 		EEEA2C5B27D9E42300356B33 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5A27D9E42300356B33 /* Then */; };
 		EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C6827D9E46F00356B33 /* PinLayout */; };
+		EEED8B9227F1577700A7B052 /* RIBsUtil in Frameworks */ = {isa = PBXBuildFile; productRef = EEED8B9127F1577700A7B052 /* RIBsUtil */; };
+		EEED8B9427F1577700A7B052 /* RxUtil in Frameworks */ = {isa = PBXBuildFile; productRef = EEED8B9327F1577700A7B052 /* RxUtil */; };
+		EEED8B9627F1577700A7B052 /* UIUtil in Frameworks */ = {isa = PBXBuildFile; productRef = EEED8B9527F1577700A7B052 /* UIUtil */; };
 		EEFA58BC27E2D22900DBB4A8 /* ListHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA58B827E2D22900DBB4A8 /* ListHomeRouter.swift */; };
 		EEFA58BD27E2D22900DBB4A8 /* ListHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA58B927E2D22900DBB4A8 /* ListHomeViewController.swift */; };
 		EEFA58BE27E2D22900DBB4A8 /* ListHomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA58BA27E2D22900DBB4A8 /* ListHomeBuilder.swift */; };
 		EEFA58BF27E2D22900DBB4A8 /* ListHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA58BB27E2D22900DBB4A8 /* ListHomeInteractor.swift */; };
-		EEFA58C227E3119500DBB4A8 /* ListHomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA58C127E3119500DBB4A8 /* ListHomeReactor.swift */; };
 		EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFAEAD827DA67B900865B06 /* AppHomeRouter.swift */; };
 		EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFAEAD927DA67B900865B06 /* AppHomeViewController.swift */; };
 		EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFAEADA27DA67B900865B06 /* AppHomeBuilder.swift */; };
@@ -61,28 +55,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EE35949927E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationControllerDelegate.swift; sourceTree = "<group>"; };
-		EE35949B27E0AC8000876A7D /* UIScrollView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Ext.swift"; sourceTree = "<group>"; };
-		EE35949F27E0B7D100876A7D /* ScrollView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScrollView + Ext.swift"; sourceTree = "<group>"; };
 		EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeCollectionViewCell.swift; sourceTree = "<group>"; };
-		EE6D065827F14BDF00C1E0A6 /* Platform */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Platform; sourceTree = "<group>"; };
 		EE6D065927F14C4700C1E0A6 /* CX */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CX; sourceTree = "<group>"; };
 		EE6D065A27F14C7800C1E0A6 /* List */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = List; sourceTree = "<group>"; };
+		EE6D065D27F151CA00C1E0A6 /* Platform */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Platform; sourceTree = "<group>"; };
 		EE83C2DC27E42D8D00CB0C78 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE83C2E327E4615900CB0C78 /* AppHomeCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeCollectionViewSection.swift; sourceTree = "<group>"; };
 		EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoRealmData.swift; sourceTree = "<group>"; };
 		EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHomeCollectionViewSection.swift; sourceTree = "<group>"; };
-		EE9D524527E0E0BC008E9AC2 /* AppHomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeReactor.swift; sourceTree = "<group>"; };
 		EE9F6A3A27DB9356007F5F48 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
-		EEB74FE127E88C7100A74263 /* PushModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushModalPresentationController.swift; sourceTree = "<group>"; };
 		EEB74FE427E89E6100A74263 /* AlbumHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHomeRouter.swift; sourceTree = "<group>"; };
 		EEB74FE527E89E6100A74263 /* AlbumHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHomeViewController.swift; sourceTree = "<group>"; };
 		EEB74FE627E89E6100A74263 /* AlbumHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHomeBuilder.swift; sourceTree = "<group>"; };
 		EEB74FE727E89E6100A74263 /* AlbumHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHomeInteractor.swift; sourceTree = "<group>"; };
 		EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = floatyAddBtn.swift; sourceTree = "<group>"; };
-		EECCF68227DEE7DF00F73854 /* RIBs+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RIBs+Utils.swift"; sourceTree = "<group>"; };
 		EED1287F27E642710000D490 /* CameraHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeRouter.swift; sourceTree = "<group>"; };
 		EED1288027E642710000D490 /* CameraHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeViewController.swift; sourceTree = "<group>"; };
 		EED1288127E642710000D490 /* CameraHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeBuilder.swift; sourceTree = "<group>"; };
@@ -101,7 +88,6 @@
 		EEFA58B927E2D22900DBB4A8 /* ListHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHomeViewController.swift; sourceTree = "<group>"; };
 		EEFA58BA27E2D22900DBB4A8 /* ListHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHomeBuilder.swift; sourceTree = "<group>"; };
 		EEFA58BB27E2D22900DBB4A8 /* ListHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHomeInteractor.swift; sourceTree = "<group>"; };
-		EEFA58C127E3119500DBB4A8 /* ListHomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHomeReactor.swift; sourceTree = "<group>"; };
 		EEFAEAD827DA67B900865B06 /* AppHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeRouter.swift; sourceTree = "<group>"; };
 		EEFAEAD927DA67B900865B06 /* AppHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeViewController.swift; sourceTree = "<group>"; };
 		EEFAEADA27DA67B900865B06 /* AppHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeBuilder.swift; sourceTree = "<group>"; };
@@ -113,14 +99,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEED8B9627F1577700A7B052 /* UIUtil in Frameworks */,
 				EECB9AF427E034C100FF2124 /* RIBs in Frameworks */,
 				EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */,
 				EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */,
 				EE83C2E227E442CC00CB0C78 /* RxDataSources in Frameworks */,
 				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
-				EE9D524327E0DD1A008E9AC2 /* ReactorKit in Frameworks */,
 				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
+				EEED8B9427F1577700A7B052 /* RxUtil in Frameworks */,
 				EEC348D927E18F2300CC9132 /* PanModal in Frameworks */,
+				EEED8B9227F1577700A7B052 /* RIBsUtil in Frameworks */,
 				EE83C2E027E442CC00CB0C78 /* Differentiator in Frameworks */,
 				EEB0E84A27E7787B004EDC14 /* Floaty in Frameworks */,
 				EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */,
@@ -133,18 +121,8 @@
 		EE35949627E0AA9700876A7D /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				EE35949927E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift */,
-				EEB74FE127E88C7100A74263 /* PushModalPresentationController.swift */,
 			);
 			path = Delegate;
-			sourceTree = "<group>";
-		};
-		EE9D524427E0E0A8008E9AC2 /* ReactorKit */ = {
-			isa = PBXGroup;
-			children = (
-				EE9D524527E0E0BC008E9AC2 /* AppHomeReactor.swift */,
-			);
-			path = ReactorKit;
 			sourceTree = "<group>";
 		};
 		EE9F6A2F27DB8F5A007F5F48 /* RIBs */ = {
@@ -175,44 +153,8 @@
 			isa = PBXGroup;
 			children = (
 				EE35949627E0AA9700876A7D /* Delegate */,
-				EE9F6A3327DB9211007F5F48 /* Extension */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		EE9F6A3327DB9211007F5F48 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				EE9F6A3727DB9271007F5F48 /* Foundation */,
-				EE9F6A3627DB926B007F5F48 /* UIKit */,
-				EE9F6A3527DB9267007F5F48 /* Rx */,
-				EECCF68127DEE7C200F73854 /* RIBs */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		EE9F6A3527DB9267007F5F48 /* Rx */ = {
-			isa = PBXGroup;
-			children = (
-				EE35949B27E0AC8000876A7D /* UIScrollView+Ext.swift */,
-			);
-			path = Rx;
-			sourceTree = "<group>";
-		};
-		EE9F6A3627DB926B007F5F48 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				EE9F6A3C27DBA0FC007F5F48 /* ViewExt.swift */,
-				EE35949F27E0B7D100876A7D /* ScrollView + Ext.swift */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		EE9F6A3727DB9271007F5F48 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Foundation;
 			sourceTree = "<group>";
 		};
 		EE9F6A3927DB934C007F5F48 /* Base */ = {
@@ -243,14 +185,6 @@
 				EE83C2E327E4615900CB0C78 /* AppHomeCollectionViewSection.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		EECCF68127DEE7C200F73854 /* RIBs */ = {
-			isa = PBXGroup;
-			children = (
-				EECCF68227DEE7DF00F73854 /* RIBs+Utils.swift */,
-			);
-			path = RIBs;
 			sourceTree = "<group>";
 		};
 		EEDBCD1127E2B85A00B9B9A3 /* AppRoot */ = {
@@ -305,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				EEC348DA27E1FE6900CC9132 /* View */,
-				EE9D524427E0E0A8008E9AC2 /* ReactorKit */,
 				EEFAEAD827DA67B900865B06 /* AppHomeRouter.swift */,
 				EEFAEAD927DA67B900865B06 /* AppHomeViewController.swift */,
 				EEFAEADA27DA67B900865B06 /* AppHomeBuilder.swift */,
@@ -317,11 +250,12 @@
 		EEEA2C3327D9DCE000356B33 = {
 			isa = PBXGroup;
 			children = (
-				EE6D065827F14BDF00C1E0A6 /* Platform */,
+				EE6D065D27F151CA00C1E0A6 /* Platform */,
 				EE6D065A27F14C7800C1E0A6 /* List */,
 				EE6D065927F14C4700C1E0A6 /* CX */,
 				EEEA2C3E27D9DCE000356B33 /* Picture */,
 				EEEA2C3D27D9DCE000356B33 /* Products */,
+				EEED8B9027F1577700A7B052 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -343,25 +277,23 @@
 			path = Picture;
 			sourceTree = "<group>";
 		};
+		EEED8B9027F1577700A7B052 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EEFA58B727E2D1BA00DBB4A8 /* ListHome */ = {
 			isa = PBXGroup;
 			children = (
 				EEFA58C327E3515E00DBB4A8 /* View */,
-				EEFA58C027E3106200DBB4A8 /* ReactorKit */,
 				EEFA58B827E2D22900DBB4A8 /* ListHomeRouter.swift */,
 				EEFA58B927E2D22900DBB4A8 /* ListHomeViewController.swift */,
 				EEFA58BA27E2D22900DBB4A8 /* ListHomeBuilder.swift */,
 				EEFA58BB27E2D22900DBB4A8 /* ListHomeInteractor.swift */,
 			);
 			path = ListHome;
-			sourceTree = "<group>";
-		};
-		EEFA58C027E3106200DBB4A8 /* ReactorKit */ = {
-			isa = PBXGroup;
-			children = (
-				EEFA58C127E3119500DBB4A8 /* ListHomeReactor.swift */,
-			);
-			path = ReactorKit;
 			sourceTree = "<group>";
 		};
 		EEFA58C327E3515E00DBB4A8 /* View */ = {
@@ -403,12 +335,14 @@
 				EEEA2C6827D9E46F00356B33 /* PinLayout */,
 				EECB9AEE27E02FE000FF2124 /* RxRealm */,
 				EECB9AF327E034C100FF2124 /* RIBs */,
-				EE9D524227E0DD1A008E9AC2 /* ReactorKit */,
 				EEC348D827E18F2300CC9132 /* PanModal */,
 				EE83C2D327E4259A00CB0C78 /* Reusable */,
 				EE83C2DF27E442CC00CB0C78 /* Differentiator */,
 				EE83C2E127E442CC00CB0C78 /* RxDataSources */,
 				EEB0E84927E7787B004EDC14 /* Floaty */,
+				EEED8B9127F1577700A7B052 /* RIBsUtil */,
+				EEED8B9327F1577700A7B052 /* RxUtil */,
+				EEED8B9527F1577700A7B052 /* UIUtil */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -444,7 +378,6 @@
 				EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */,
 				EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */,
 				EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */,
-				EE9D524127E0DD1A008E9AC2 /* XCRemoteSwiftPackageReference "ReactorKit" */,
 				EEC348D727E18F2300CC9132 /* XCRemoteSwiftPackageReference "PanModal" */,
 				EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */,
 				EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */,
@@ -479,36 +412,28 @@
 				EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */,
 				EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */,
 				EEC348DC27E1FE7C00CC9132 /* floatyAddBtn.swift in Sources */,
-				EECCF68327DEE7DF00F73854 /* RIBs+Utils.swift in Sources */,
-				EEFA58C227E3119500DBB4A8 /* ListHomeReactor.swift in Sources */,
 				EE83C2E427E4615900CB0C78 /* AppHomeCollectionViewSection.swift in Sources */,
 				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,
 				EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */,
-				EE9D524627E0E0BC008E9AC2 /* AppHomeReactor.swift in Sources */,
 				EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */,
 				EEFA58BC27E2D22900DBB4A8 /* ListHomeRouter.swift in Sources */,
 				EED1288527E642710000D490 /* CameraHomeBuilder.swift in Sources */,
 				EE9F6A3B27DB9356007F5F48 /* BaseViewController.swift in Sources */,
-				EE9F6A3D27DBA0FC007F5F48 /* ViewExt.swift in Sources */,
 				EEFA58BF27E2D22900DBB4A8 /* ListHomeInteractor.swift in Sources */,
 				EEDBCD1927E2B87100B9B9A3 /* AppRootInteractor.swift in Sources */,
 				EEFA58BE27E2D22900DBB4A8 /* ListHomeBuilder.swift in Sources */,
 				EEB74FEB27E89E6100A74263 /* AlbumHomeInteractor.swift in Sources */,
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
-				EE3594A027E0B7D100876A7D /* ScrollView + Ext.swift in Sources */,
 				EE83C2DD27E42D8D00CB0C78 /* BaseCollectionViewCell.swift in Sources */,
 				EE4D0D9227E42465007D2918 /* AppHomeCollectionViewCell.swift in Sources */,
 				EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
-				EE35949A27E0AACB00876A7D /* AdaptivePresentationControllerDelegate.swift in Sources */,
 				EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */,
 				EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */,
 				EED1288627E642710000D490 /* CameraHomeInteractor.swift in Sources */,
 				EEB74FE827E89E6100A74263 /* AlbumHomeRouter.swift in Sources */,
 				EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */,
 				EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */,
-				EEB74FE227E88C7100A74263 /* PushModalPresentationController.swift in Sources */,
-				EE35949C27E0AC8000876A7D /* UIScrollView+Ext.swift in Sources */,
 				EED1288427E642710000D490 /* CameraHomeViewController.swift in Sources */,
 				EEB74FE927E89E6100A74263 /* AlbumHomeViewController.swift in Sources */,
 				EED1288327E642710000D490 /* CameraHomeRouter.swift in Sources */,
@@ -743,14 +668,6 @@
 				kind = branch;
 			};
 		};
-		EE9D524127E0DD1A008E9AC2 /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactorKit/ReactorKit.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kciter/Floaty.git";
@@ -825,11 +742,6 @@
 			package = EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
 		};
-		EE9D524227E0DD1A008E9AC2 /* ReactorKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EE9D524127E0DD1A008E9AC2 /* XCRemoteSwiftPackageReference "ReactorKit" */;
-			productName = ReactorKit;
-		};
 		EEB0E84927E7787B004EDC14 /* Floaty */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */;
@@ -864,6 +776,18 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */;
 			productName = PinLayout;
+		};
+		EEED8B9127F1577700A7B052 /* RIBsUtil */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RIBsUtil;
+		};
+		EEED8B9327F1577700A7B052 /* RxUtil */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RxUtil;
+		};
+		EEED8B9527F1577700A7B052 /* UIUtil */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UIUtil;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
