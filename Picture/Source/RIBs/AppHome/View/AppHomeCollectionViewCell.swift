@@ -22,7 +22,7 @@ final class AppHomeCollectionViewCell : BaseCollectionViewCell{
         $0.backgroundColor = .black
     }
     //MARK: - initalizer
-    override func configure() {
+    override func configureUI() {
         backgroundColor = .yellow
     }
     override func addView() {

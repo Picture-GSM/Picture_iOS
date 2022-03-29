@@ -9,28 +9,29 @@ import UIKit
 import Reusable
 import RxSwift
 
-class BaseTableViewCell : UITableViewCell,Reusable{
+class BaseCollectionViewCell : UICollectionViewCell,Reusable{
     
     var disposeBag = DisposeBag()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configure()
+    override init(frame: CGRect) {
+        super.init(frame: .zero)
+        addView()
+        configureUI()
+        setUpLayout()
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func configure() {
-        selectionStyle = .none
-    }
-    
+        
     //MARK: - Reusable
     override func prepareForReuse() {
         super.prepareForReuse()
         disposeBag = DisposeBag()
     }
     
+    func addView() {}
+    func configureUI() {}
+    func setUpLayout() {}
 }

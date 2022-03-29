@@ -23,7 +23,7 @@ class ListCollectionViewCell : BaseCollectionViewCell{
     }
     
     //MARK: - Method
-    override func configure() {
+    override func configureUI() {
         
     }
     //MARK: - AddView

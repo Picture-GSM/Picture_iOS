@@ -48,6 +48,7 @@ class BaseViewController : UIViewController {
     func setLayout(){}
     func configureUI(){}
     func keyBoardLayout(){}
+    func delegate() {}
 
     
     //MARK: - Bind
