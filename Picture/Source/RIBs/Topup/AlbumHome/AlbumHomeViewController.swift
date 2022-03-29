@@ -19,4 +19,8 @@ final class AlbumHomeViewController: BaseViewController, AlbumHomePresentable, A
 
     weak var listener: AlbumHomePresentableListener?
     
+    override func configureUI() {
+        title = "Album"
+        
+    }
 }

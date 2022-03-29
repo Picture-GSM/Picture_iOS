@@ -8,13 +8,11 @@
 import RIBs
 
 protocol AppHomeDependency: Dependency {
-    // TODO: Declare the set of dependencies required by this RIB, but cannot be
-    // created by this RIB.
+    var topupBuildable : TopupBuildable{get}
 }
 
-final class AppHomeComponent: Component<AppHomeDependency> , CameraHomeDependency, AlbumHomeDependency{
-
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+final class AppHomeComponent: Component<AppHomeDependency>  {
+    var topupBuildable : TopupBuildable {dependency.topupBuildable}
 }
 
 // MARK: - Builder
@@ -34,13 +32,11 @@ final class AppHomeBuilder: Builder<AppHomeDependency>, AppHomeBuildable {
         let viewController = AppHomeViewController()
         let interactor = AppHomeInteractor(presenter: viewController)
         interactor.listener = listener
-        
-        let transportCameraBuilder = CameraHomeBuilder(dependency: component)
-        let transportAlbumBuilder = AlbumHomeBuilder(dependency: component)
-        
-        return AppHomeRouter(interactor: interactor,
-                             viewController: viewController,
-                             transportCameraBuildable: transportCameraBuilder,
-                             transportAlbumBuildable: transportAlbumBuilder)
+                
+        return AppHomeRouter(
+            interactor: interactor,
+            viewController: viewController,
+            topupBuildable: component.topupBuildable
+        )
     }
 }

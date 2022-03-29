@@ -7,13 +7,14 @@
 
 import RIBs
 import RxSwift
-import UIKit
-import AVFoundation
 
+import UIKit
+import Then
+import AVFoundation
 
 //MARK: - Listener
 protocol CameraHomePresentableListener: AnyObject {
-
+    
     
 }
 
@@ -21,4 +22,18 @@ final class CameraHomeViewController: BaseViewController, CameraHomePresentable,
 
     weak var listener: CameraHomePresentableListener?
     
+
+    //MARK: - Main
+    override func configureUI() {
+        title = "Camera"
+        
+    }
+    
+    //MARK: - AddView
+    override func addView() {
+    }
+    
+    //MARK: - Setlayout
+    override func setLayout() {
+    }
 }

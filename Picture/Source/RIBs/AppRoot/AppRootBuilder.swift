@@ -8,14 +8,9 @@
 import RIBs
 
 protocol AppRootDependency: Dependency {
-    // TODO: Declare the set of dependencies required by this RIB, but cannot be
-    // created by this RIB.
 }
 
-final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency{
 
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
-}
 
 // MARK: - Builder
 
@@ -30,9 +25,10 @@ final class AppRootBuilder: Builder<AppRootDependency>, AppRootBuildable {
     }
 
     func build() -> LaunchRouting {
-        let component = AppRootComponent(dependency: dependency)
-        
         let tabbar = RootTabBarController()
+
+        let component = AppRootComponent(dependency: dependency,
+                                         rootViewController: tabbar)
         
         let interactor = AppRootInteractor(presenter: tabbar)
         

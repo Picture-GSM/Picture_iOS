@@ -9,7 +9,6 @@ import UIKit
 import PinLayout
 import UIUtil
 
-
 class ListCollectionViewCell : BaseCollectionViewCell{
     
     private let iv  = UIImageView().then{

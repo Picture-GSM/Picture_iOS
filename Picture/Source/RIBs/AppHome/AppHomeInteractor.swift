@@ -9,11 +9,8 @@ import RIBs
 import RxSwift
 
 protocol AppHomeRouting: ViewableRouting {
-    func attachTransportCamera()
-    
-    func attachTransportAlbum()
-    
-    func detachTransportHome()
+    func attachTopup()
+    func detachTopup()
 }
 
 protocol AppHomePresentable: Presentable {
@@ -49,10 +46,17 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
     
     //MARK: - Action
     func didTapCamera() {
-        router?.attachTransportCamera()
+        router?.attachTopup()
     }
     
     func didTapAlbum() {
-        router?.attachTransportAlbum()
+        router?.attachTopup()
+    }
+    func topupDidClose() {
+        router?.detachTopup()
+    }
+    
+    func topupDidFinish() {
+        router?.detachTopup()
     }
 }

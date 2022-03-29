@@ -11,8 +11,6 @@ import UIKit
 import PinLayout
 import RxDataSources
 
-//MARK: - Action
-
 protocol ListHomePresentableListener: AnyObject {
 
 }
