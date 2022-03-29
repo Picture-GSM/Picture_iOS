@@ -29,7 +29,7 @@ protocol TopupListener: AnyObject {
 }
 
 protocol TopupInteractorDependency{
-    
+    var btnState : btnOption {get}
 }
 
 final class TopupInteractor: Interactor, TopupInteractable, AdaptivePresentationControllerDelegate {
@@ -39,20 +39,23 @@ final class TopupInteractor: Interactor, TopupInteractable, AdaptivePresentation
     
     let presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
 
+    private let dependency: TopupInteractorDependency
+    
     private var isEnterAmountRoot: Bool = false
     
-    
-    override init() {
+    init(
+        dependency : TopupInteractorDependency
+    ) {
         self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()
+        self.dependency = dependency
         super.init()
         self.presentationDelegateProxy.delegate = self
     }
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        if isEnterAmountRoot {
+        if dependency.btnState.rawValue == "camera" {
             isEnterAmountRoot = false
-
             router?.attachCamera(closeButtonType:.close)
         }else{
             isEnterAmountRoot = true

@@ -37,3 +37,4 @@ final class CameraHomeViewController: BaseViewController, CameraHomePresentable,
     override func setLayout() {
     }
 }
+

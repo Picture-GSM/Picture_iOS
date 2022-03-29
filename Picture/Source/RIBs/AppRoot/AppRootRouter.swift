@@ -37,6 +37,7 @@ final class AppRootRouter: LaunchRouter<AppRootInteractable, AppRootViewControll
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
+    //MARK: - Tabbar
     func attachTabs() {
         let appHomeRouting = appHome.build(withListener: interactor)
         let listHomeRouting = listHome.build(withListener: interactor)

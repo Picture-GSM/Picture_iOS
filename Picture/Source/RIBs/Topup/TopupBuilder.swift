@@ -9,9 +9,12 @@ import RIBs
 
 protocol TopupDependency: Dependency {
     var topupBaseViewController: ViewControllable { get }
+    var btnState : btnOption {get}
 }
 
-final class TopupComponent: Component<TopupDependency>, CameraHomeDependency, AlbumHomeDependency{
+final class TopupComponent: Component<TopupDependency>, CameraHomeDependency, AlbumHomeDependency, TopupInteractorDependency{
+    var btnState: btnOption {dependency.btnState}
+    
     fileprivate var topupBaseViewController: ViewControllable {
         return dependency.topupBaseViewController
     }
@@ -31,7 +34,7 @@ final class TopupBuilder: Builder<TopupDependency>, TopupBuildable {
 
     func build(withListener listener: TopupListener) -> TopupRouting {
         let component = TopupComponent(dependency: dependency)
-        let interactor = TopupInteractor()
+        let interactor = TopupInteractor(dependency: component)
         interactor.listener = listener
         
         let cameraHomeBuilder = CameraHomeBuilder(dependency: component)

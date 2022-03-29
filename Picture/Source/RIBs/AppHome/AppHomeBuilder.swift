@@ -32,7 +32,7 @@ final class AppHomeBuilder: Builder<AppHomeDependency>, AppHomeBuildable {
         let viewController = AppHomeViewController()
         let interactor = AppHomeInteractor(presenter: viewController)
         interactor.listener = listener
-                
+        
         return AppHomeRouter(
             interactor: interactor,
             viewController: viewController,

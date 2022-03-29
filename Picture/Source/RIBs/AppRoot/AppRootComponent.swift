@@ -10,6 +10,9 @@ import RIBsUtil
 
 final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, TopupDependency{
     
+    var btnState: btnOption{
+        return  .album
+    }
     
     lazy var topupBuildable: TopupBuildable = {
         return TopupBuilder(dependency: self)

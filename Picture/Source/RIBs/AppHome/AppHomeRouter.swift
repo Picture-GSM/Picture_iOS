@@ -19,6 +19,8 @@ protocol AppHomeViewControllable: ViewControllable {
 }
 
 final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewControllable>, AppHomeRouting {
+
+    
     
     private let topupBuildable : TopupBuildable
     private var topupRouting : Routing?
@@ -32,8 +34,8 @@ final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewContro
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
-    
-    func attachTopup() {
+    //MARK: - Attach
+    func attachTopup(btnState: btnOption) {
         if topupRouting != nil{
             return
         }
@@ -41,7 +43,7 @@ final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewContro
         topupRouting = router
         attachChild(router)
     }
-    
+    //MARK: - Detach
     func detachTopup() {
         guard let router = topupRouting else{
             return
