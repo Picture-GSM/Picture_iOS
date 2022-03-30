@@ -9,7 +9,7 @@ import UIKit
 import PinLayout
 import UIUtil
 
-class ListCollectionViewCell : BaseCollectionViewCell{
+class ListCollectionViewCell : BaseCollectionViewCell<Any>{
     
     private let iv  = UIImageView().then{
         $0.contentMode = .scaleAspectFill

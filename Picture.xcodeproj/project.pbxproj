@@ -30,6 +30,8 @@
 		EEC05DEA27F2A35D00FE6016 /* ButtonOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DE927F2A35D00FE6016 /* ButtonOptions.swift */; };
 		EEC348D927E18F2300CC9132 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = EEC348D827E18F2300CC9132 /* PanModal */; };
 		EEC348DC27E1FE7C00CC9132 /* floatyAddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */; };
+		EEC4B6DA27F432250027D1EF /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6D927F432250027D1EF /* AlbumCollectionViewCell.swift */; };
+		EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EED1288327E642710000D490 /* CameraHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1287F27E642710000D490 /* CameraHomeRouter.swift */; };
@@ -82,6 +84,8 @@
 		EEB74FE727E89E6100A74263 /* AlbumHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHomeInteractor.swift; sourceTree = "<group>"; };
 		EEC05DE927F2A35D00FE6016 /* ButtonOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOptions.swift; sourceTree = "<group>"; };
 		EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = floatyAddBtn.swift; sourceTree = "<group>"; };
+		EEC4B6D927F432250027D1EF /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
 		EED1287F27E642710000D490 /* CameraHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeRouter.swift; sourceTree = "<group>"; };
 		EED1288027E642710000D490 /* CameraHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeViewController.swift; sourceTree = "<group>"; };
 		EED1288127E642710000D490 /* CameraHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeBuilder.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 		EE9F6A3227DB91D9007F5F48 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 		EEB74FE327E89E4900A74263 /* AlbumHome */ = {
 			isa = PBXGroup;
 			children = (
+				EEC4B6D827F432190027D1EF /* View */,
 				EEB74FE427E89E6100A74263 /* AlbumHomeRouter.swift */,
 				EEB74FE527E89E6100A74263 /* AlbumHomeViewController.swift */,
 				EEB74FE627E89E6100A74263 /* AlbumHomeBuilder.swift */,
@@ -206,6 +212,14 @@
 				EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */,
 				EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */,
 				EE83C2E327E4615900CB0C78 /* AppHomeCollectionViewSection.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EEC4B6D827F432190027D1EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEC4B6D927F432250027D1EF /* AlbumCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -445,6 +459,7 @@
 				EE04494127F1836400599936 /* TopupRouter.swift in Sources */,
 				EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */,
 				EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */,
+				EEC4B6DA27F432250027D1EF /* AlbumCollectionViewCell.swift in Sources */,
 				EE6ED5E427F2CC2600534E68 /* BaseViewController.swift in Sources */,
 				EEFA58BC27E2D22900DBB4A8 /* ListHomeRouter.swift in Sources */,
 				EED1288527E642710000D490 /* CameraHomeBuilder.swift in Sources */,
@@ -463,6 +478,7 @@
 				EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */,
 				EED1288627E642710000D490 /* CameraHomeInteractor.swift in Sources */,
 				EE04494327F1836400599936 /* TopupInteractor.swift in Sources */,
+				EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */,
 				EEB74FE827E89E6100A74263 /* AlbumHomeRouter.swift in Sources */,
 				EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */,
 				EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */,

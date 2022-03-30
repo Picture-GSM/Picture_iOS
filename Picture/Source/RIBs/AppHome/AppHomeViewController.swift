@@ -52,14 +52,13 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         $0.numberOfLines = 0
         $0.font  = .systemFont(ofSize: 13)
     }
-    private let collectionView : UICollectionView = {
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 10
-        layout.scrollDirection = .vertical
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .red
-        return cv
-    }()
+        layout.scrollDirection = .horizontal
+        
+        $0.backgroundColor = .red
+    }
     
     private let menuBtn = floatyAddBtn()
     
@@ -84,6 +83,7 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
         menuBtn.pin.below(of: collectionView).right(bounds.width/18.75).size(50)
     }
+    
     
     private func pageImageSetting(){
         for i in 0..<images.count {

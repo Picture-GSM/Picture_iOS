@@ -20,14 +20,10 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
     weak var listener: ListHomePresentableListener?
     
     //MARK: - Properties
-    private let collectionView : UICollectionView = {
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 10
-        
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .red
-        return cv
-    }()
+        $0.backgroundColor = .red
+    }
     
     
     //MARK: - initalizer
