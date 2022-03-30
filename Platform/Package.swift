@@ -30,6 +30,7 @@ let package = Package(
         .target(
             name: "UIUtil",
             dependencies: [
+                "RIBsUtil"
             ]),
         .target(
             name: "RxUtil",
@@ -42,7 +43,6 @@ let package = Package(
             dependencies: [
                 "RIBs"
             ]),
-
 
     ]
 )

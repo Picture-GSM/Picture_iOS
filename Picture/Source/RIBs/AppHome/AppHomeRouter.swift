@@ -9,27 +9,31 @@ import RIBs
 import RIBsUtil
 import UIUtil
 
-protocol AppHomeInteractable: Interactable ,TopupListener {
+protocol AppHomeInteractable: Interactable ,TopupListener, AlbumHomeListener {
     var router: AppHomeRouting? { get set }
     var listener: AppHomeListener? { get set }
 }
 
 protocol AppHomeViewControllable: ViewControllable {
-    // TODO: Declare methods the router invokes to manipulate the view hierarchy.
+    
 }
 
 final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewControllable>, AppHomeRouting {
-
-    
     
     private let topupBuildable : TopupBuildable
     private var topupRouting : Routing?
     
+    private let albumBuildable : AlbumHomeBuildable
+    private var albumRouting : Routing?
+    
+    
     // TODO: Constructor inject child builder protocols to allow building children.
     init(interactor: AppHomeInteractable,
          viewController: AppHomeViewControllable,
-         topupBuildable : TopupBuildable
+         topupBuildable : TopupBuildable,
+         albumBuildable : AlbumHomeBuildable
     ){
+        self.albumBuildable = albumBuildable
         self.topupBuildable = topupBuildable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
@@ -43,6 +47,17 @@ final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewContro
         topupRouting = router
         attachChild(router)
     }
+    func attachAlbum() {
+        if albumRouting != nil {
+            return
+        }
+        let router = albumBuildable.build(withListener: interactor)
+        viewController.pushViewController(router.viewControllable, animated: true)
+        albumRouting = router
+        attachChild(router)
+    }
+    
+    
     //MARK: - Detach
     func detachTopup() {
         guard let router = topupRouting else{
@@ -50,5 +65,14 @@ final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewContro
         }
         detachChild(router)
         self.topupRouting = nil
+    }
+
+    func detachAlbum() {
+        guard let router = albumRouting else{
+            return
+        }
+        viewController.popToRoot(animated: true)
+        detachChild(router)
+        self.albumRouting = nil
     }
 }

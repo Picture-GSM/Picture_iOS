@@ -11,6 +11,9 @@ import RxSwift
 protocol AppHomeRouting: ViewableRouting {
     func attachTopup(btnState : btnOption)
     func detachTopup()
+
+    func attachAlbum()
+    func detachAlbum()
 }
 
 protocol AppHomePresentable: Presentable {
@@ -23,6 +26,8 @@ protocol AppHomeListener: AnyObject {
 }
 
 final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHomeInteractable, AppHomePresentableListener {
+
+    
     
     weak var router: AppHomeRouting?
     weak var listener: AppHomeListener?
@@ -50,7 +55,7 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
     }
     
     func didTapAlbum() {
-        router?.attachTopup(btnState: .album)
+        router?.attachAlbum()
     }
     func topupDidClose() {
         router?.detachTopup()
@@ -58,5 +63,9 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
     
     func topupDidFinish() {
         router?.detachTopup()
+    }
+
+    func transportHomeDidTapClose() {
+        router?.detachAlbum()
     }
 }

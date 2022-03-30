@@ -9,7 +9,7 @@ import RIBs
 import RxSwift
 
 protocol AlbumHomeRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+
 }
 
 protocol AlbumHomePresentable: Presentable {
@@ -18,11 +18,10 @@ protocol AlbumHomePresentable: Presentable {
 }
 
 protocol AlbumHomeListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func transportHomeDidTapClose()
 }
 
 final class AlbumHomeInteractor: PresentableInteractor<AlbumHomePresentable>, AlbumHomeInteractable, AlbumHomePresentableListener {
-
 
     weak var router: AlbumHomeRouting?
     weak var listener: AlbumHomeListener?
@@ -45,5 +44,10 @@ final class AlbumHomeInteractor: PresentableInteractor<AlbumHomePresentable>, Al
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+    
+    func didTapBackButton() {
+        listener?.transportHomeDidTapClose()
+    }
+    
 }
 

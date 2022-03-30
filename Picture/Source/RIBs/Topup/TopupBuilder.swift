@@ -9,11 +9,9 @@ import RIBs
 
 protocol TopupDependency: Dependency {
     var topupBaseViewController: ViewControllable { get }
-    var btnState : btnOption {get}
 }
 
 final class TopupComponent: Component<TopupDependency>, CameraHomeDependency, AlbumHomeDependency, TopupInteractorDependency{
-    var btnState: btnOption {dependency.btnState}
     
     fileprivate var topupBaseViewController: ViewControllable {
         return dependency.topupBaseViewController

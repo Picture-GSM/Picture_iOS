@@ -22,6 +22,9 @@ final class CameraHomeViewController: BaseViewController, CameraHomePresentable,
 
     weak var listener: CameraHomePresentableListener?
     
+    var backFacingCamera : AVCaptureDevice?
+    var frontFacingCamera : AVCaptureDevice?
+    
 
     //MARK: - Main
     override func configureUI() {

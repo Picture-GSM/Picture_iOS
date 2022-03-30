@@ -13,7 +13,7 @@ import Foundation
 
 protocol TopupRouting: Routing {
     func cleanupViews()
-
+    
     func attachCamera(closeButtonType: DismissButtonType)
     func detachCamera()
     
@@ -26,19 +26,23 @@ protocol TopupRouting: Routing {
 protocol TopupListener: AnyObject {
     func topupDidClose()
     func topupDidFinish()
+    
 }
 
 protocol TopupInteractorDependency{
-    var btnState : btnOption {get}
+    
 }
 
 final class TopupInteractor: Interactor, TopupInteractable, AdaptivePresentationControllerDelegate {
+
+    
+    
     //MARK: -  Properties
     weak var router: TopupRouting?
     weak var listener: TopupListener?
     
     let presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
-
+    
     private let dependency: TopupInteractorDependency
     
     private var isEnterAmountRoot: Bool = false
@@ -51,16 +55,10 @@ final class TopupInteractor: Interactor, TopupInteractable, AdaptivePresentation
         super.init()
         self.presentationDelegateProxy.delegate = self
     }
-
+    
     override func didBecomeActive() {
         super.didBecomeActive()
-        if dependency.btnState.rawValue == "camera" {
-            isEnterAmountRoot = false
-            router?.attachCamera(closeButtonType:.close)
-        }else{
-            isEnterAmountRoot = true
-            router?.attachAlbum()
-        }
+        router?.attachCamera(closeButtonType:.close)
     }
     
     override func willResignActive() {
@@ -71,4 +69,9 @@ final class TopupInteractor: Interactor, TopupInteractable, AdaptivePresentation
     func presetationControllerDidDismiss() {
         listener?.topupDidClose()
     }
+    
+    func transportHomeDidTapClose() {
+        
+    }
+    
 }
