@@ -27,7 +27,6 @@
 		EEB74FE927E89E6100A74263 /* AlbumHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB74FE527E89E6100A74263 /* AlbumHomeViewController.swift */; };
 		EEB74FEA27E89E6100A74263 /* AlbumHomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB74FE627E89E6100A74263 /* AlbumHomeBuilder.swift */; };
 		EEB74FEB27E89E6100A74263 /* AlbumHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB74FE727E89E6100A74263 /* AlbumHomeInteractor.swift */; };
-		EEC05DEA27F2A35D00FE6016 /* ButtonOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC05DE927F2A35D00FE6016 /* ButtonOptions.swift */; };
 		EEC348D927E18F2300CC9132 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = EEC348D827E18F2300CC9132 /* PanModal */; };
 		EEC348DC27E1FE7C00CC9132 /* floatyAddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */; };
 		EEC4B6DA27F432250027D1EF /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6D927F432250027D1EF /* AlbumCollectionViewCell.swift */; };
@@ -82,7 +81,6 @@
 		EEB74FE527E89E6100A74263 /* AlbumHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHomeViewController.swift; sourceTree = "<group>"; };
 		EEB74FE627E89E6100A74263 /* AlbumHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHomeBuilder.swift; sourceTree = "<group>"; };
 		EEB74FE727E89E6100A74263 /* AlbumHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHomeInteractor.swift; sourceTree = "<group>"; };
-		EEC05DE927F2A35D00FE6016 /* ButtonOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonOptions.swift; sourceTree = "<group>"; };
 		EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = floatyAddBtn.swift; sourceTree = "<group>"; };
 		EEC4B6D927F432250027D1EF /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
@@ -282,7 +280,6 @@
 				EEFAEAD927DA67B900865B06 /* AppHomeViewController.swift */,
 				EEFAEADA27DA67B900865B06 /* AppHomeBuilder.swift */,
 				EEFAEADB27DA67B900865B06 /* AppHomeInteractor.swift */,
-				EEC05DE927F2A35D00FE6016 /* ButtonOptions.swift */,
 			);
 			path = AppHome;
 			sourceTree = "<group>";
@@ -452,7 +449,6 @@
 				EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */,
 				EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */,
 				EE04494227F1836400599936 /* TopupBuilder.swift in Sources */,
-				EEC05DEA27F2A35D00FE6016 /* ButtonOptions.swift in Sources */,
 				EEC348DC27E1FE7C00CC9132 /* floatyAddBtn.swift in Sources */,
 				EE83C2E427E4615900CB0C78 /* AppHomeCollectionViewSection.swift in Sources */,
 				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,

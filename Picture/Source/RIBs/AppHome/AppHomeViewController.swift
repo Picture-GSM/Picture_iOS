@@ -10,7 +10,6 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-
 import UIKit
 import UIUtil
 import RxUtil
@@ -19,7 +18,7 @@ import Reusable
 import PinLayout
 import Floaty
 
-
+//MARK: - Listener
 protocol AppHomePresentableListener: AnyObject {
     func didTapCamera()
     func didTapAlbum()
@@ -47,8 +46,8 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     }
     private let pageControl = UIPageControl().then{
         $0.currentPage = 0
-        $0.pageIndicatorTintColor = .lightGray
-        $0.currentPageIndicatorTintColor = .black
+        $0.pageIndicatorTintColor = .black
+        $0.currentPageIndicatorTintColor = .white
     }
     
     private let imagePicker = UIImagePickerController().then{
@@ -84,23 +83,17 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     }
     
     override func addView() {
-        view.addSubviews(scrollView,titleLabel,collectionView,menuBtn)
+        view.addSubviews(scrollView,pageControl,titleLabel,collectionView,menuBtn)
     }
     
     override func setLayout() {
         scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
-        
+        pageControl.pin.bottomCenter(to: scrollView.anchor.bottomCenter).height(20).width(375)
         titleLabel.pin.left(bounds.width/18.75).below(of: scrollView).width(200).height(20)
         collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
         menuBtn.pin.below(of: collectionView).right(bounds.width/18.75).size(50)
     }
     
-    override func delegate() {
-        
-    }
-    
-    //MARK: - Page
-
     
     //MARK: - Bind
     override func bindView() {
@@ -128,6 +121,7 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     }
     
 }
+
 //MARK: - Page
 private extension AppHomeViewController{
     func pageImageSetting(){

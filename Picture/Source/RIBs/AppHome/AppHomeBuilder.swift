@@ -13,7 +13,7 @@ protocol AppHomeDependency: Dependency {
   
 }
 
-final class AppHomeComponent: Component<AppHomeDependency>  , PageDashboardDependency, StoredImageDashboardDependency{
+final class AppHomeComponent: Component<AppHomeDependency>  {
     var topupBuildable : TopupBuildable {dependency.topupBuildable}
     var albumBuildable : AlbumHomeBuildable {dependency.albumBuildable}
 
@@ -37,8 +37,6 @@ final class AppHomeBuilder: Builder<AppHomeDependency>, AppHomeBuildable {
         let interactor = AppHomeInteractor(presenter: viewController)
         interactor.listener = listener
         
-        let storedImageDashboardBuildable = StoredImageDashboardBuilder(dependency: component)
-        let pageDashboardBuildable = PageDashboardBuilder(dependency: component)
         
         return AppHomeRouter(
             interactor: interactor,

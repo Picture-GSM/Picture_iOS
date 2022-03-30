@@ -38,7 +38,7 @@ final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewContro
         interactor.router = self
     }
     //MARK: - Attach
-    func attachTopup(btnState: btnOption) {
+    func attachTopup() {
         if topupRouting != nil{
             return
         }
