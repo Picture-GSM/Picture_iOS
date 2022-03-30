@@ -7,10 +7,6 @@
 
 import UIKit
 import RIBs
-import Photos
-
-var allphotos : PHFetchResult<PHAsset>? = nil
-var photocount = Int()
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,32 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let result = AppRootBuilder(dependency: AppComponent()).build()
         self.launchRouter = result
         //MARK: - Image Setting
-        imagepickerSetting()
-        
         result.launch(from: window)
         
         return true
-    }
-    
-    private func imagepickerSetting(){
-        PHPhotoLibrary.requestAuthorization { (status) in
-            switch status{
-            case .authorized:
-                print("Good to Proceed")
-                let fetchOptions = PHFetchOptions()
-                allphotos = PHAsset.fetchAssets(with: .image, options: fetchOptions)
-                photocount = allphotos?.count ?? 0
-                print(photocount)
-            case.denied,.restricted:
-                print("Not alloed")
-            case .notDetermined:
-                print("Not determinded yet")
-            case .limited:
-                print("Limited")
-            @unknown default:
-                print("error")
-            }
-        }
     }
     
 }

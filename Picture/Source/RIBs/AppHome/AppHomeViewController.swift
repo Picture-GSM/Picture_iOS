@@ -26,25 +26,26 @@ protocol AppHomePresentableListener: AnyObject {
 }
 
 final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHomeViewControllable {
+
+    
     
     //MARK: - Properties
     weak var listener: AppHomePresentableListener?
     
-    private let  images = [UIImage(named: "PageImage1"),UIImage(named: "PageImage2"),UIImage(named: "PageImage3"),UIImage(named: "PageImage4")]
     
-    private let scrollView = UIScrollView().then{
-        $0.bounces = false
-        $0.isScrollEnabled = true
-        $0.isPagingEnabled = true
-        $0.showsVerticalScrollIndicator = false
-        $0.showsHorizontalScrollIndicator = false
-        $0.alwaysBounceVertical = false
+    private let pageStackView = UIStackView().then{
+        $0.axis = .vertical
+        $0.alignment = .fill
+        $0.distribution = .equalSpacing
+        $0.spacing = 4
     }
-    private let pageControl = UIPageControl().then{
-        $0.currentPage = 0
-        $0.pageIndicatorTintColor = .lightGray
-        $0.currentPageIndicatorTintColor = .black
+    
+    
+    private let imagePicker = UIImagePickerController().then{
+        $0.sourceType = .photoLibrary
+        $0.allowsEditing = true
     }
+    
     private let titleLabel = UILabel().then{
         $0.textColor = .black
         $0.alpha = 0.5
@@ -68,53 +69,29 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         tabBarItem = UITabBarItem(title: "홈",
                                   image: UIImage(systemName: "house"),
                                   selectedImage: UIImage(systemName: "house.fill"))
-        
-        pageImageSetting()
     }
     
     override func addView() {
-        view.addSubviews(scrollView,pageControl,titleLabel,collectionView,menuBtn)
+        view.addSubviews(pageStackView,titleLabel,collectionView,menuBtn)
     }
     
     override func setLayout() {
-        scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
-        pageControl.pin.below(of: scrollView).height(20).left().right()
-        titleLabel.pin.left(bounds.width/18.75).below(of: pageControl).width(200).height(20)
+        pageStackView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
+//        scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
+//        pageControl.pin.below(of: scrollView).height(20).left().right()
+        titleLabel.pin.left(bounds.width/18.75).below(of: pageStackView).width(200).height(20)
         collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
         menuBtn.pin.below(of: collectionView).right(bounds.width/18.75).size(50)
     }
     
-    
-    private func pageImageSetting(){
-        for i in 0..<images.count {
-            let imageView = UIImageView().then{
-                $0.contentMode = .scaleAspectFill
-                $0.clipsToBounds = true
-            }
-            let xPos = self.view.frame.width * CGFloat(i)
-            imageView.frame = CGRect(x: xPos, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
-            imageView.image = images[i]
-            scrollView.addSubview(imageView)
-            scrollView.contentSize.width = imageView.frame.width * CGFloat(i + 1)
-        }
+    override func delegate() {
         
-        scrollView.contentSize = CGSize(width: scrollView.bounds.width * CGFloat(images.count), height: scrollView.bounds.height)
-        pageControl.numberOfPages = images.count
     }
+    
+
     
     //MARK: - Bind
     override func bindView() {
-        pageControl.rx.controlEvent(.valueChanged)
-            .subscribe(onNext:{ [weak self] in
-                guard let currentPage = self?.pageControl.currentPage else {
-                    return
-                }
-                self?.scrollView.setCurrentPage(currentPage, animated: true)
-            }).disposed(by: disposeBag)
-        
-        scrollView.rx.currentPage
-            .bind(to: pageControl.rx.currentPage)
-            .disposed(by: disposeBag)
         
         menuBtn.albumItem.rx.handler.asObserver().onNext { _ in
             self.listener?.didTapAlbum()
@@ -126,5 +103,13 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     
     override func bindState() {
         
+    }
+    
+    func addDashboard(_ view: ViewControllable) {
+        let vc = view.uiviewController
+        
+        addChild(vc)
+        pageStackView.addArrangedSubview(vc.view)
+        vc.didMove(toParent: self)
     }
 }

@@ -10,11 +10,13 @@ import RIBs
 protocol AppHomeDependency: Dependency {
     var topupBuildable : TopupBuildable{get}
     var albumBuildable : AlbumHomeBuildable {get}
+    var pageDashboardBuildable : PageDashboardBuildable {get}
 }
 
 final class AppHomeComponent: Component<AppHomeDependency>  {
     var topupBuildable : TopupBuildable {dependency.topupBuildable}
     var albumBuildable : AlbumHomeBuildable {dependency.albumBuildable}
+    var pageDashboardBuildable : PageDashboardBuildable {dependency.pageDashboardBuildable}
 }
 
 // MARK: - Builder
@@ -39,7 +41,8 @@ final class AppHomeBuilder: Builder<AppHomeDependency>, AppHomeBuildable {
             interactor: interactor,
             viewController: viewController,
             topupBuildable: component.topupBuildable,
-            albumBuildable: component.albumBuildable)
+            albumBuildable: component.albumBuildable,
+            pageDashboardBuildable: component.pageDashboardBuildable)
         
     }
 }

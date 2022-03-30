@@ -8,7 +8,12 @@
 import RIBs
 import RIBsUtil
 
-final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, TopupDependency, AlbumHomeDependency{
+final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, TopupDependency, AlbumHomeDependency, PageDashboardDependency{
+    
+    lazy var pageDashboardBuildable: PageDashboardBuildable = {
+        return PageDashboardBuilder(dependency: self)
+    }()
+    
     
     lazy var albumBuildable: AlbumHomeBuildable = {
        return AlbumHomeBuilder(dependency: self)

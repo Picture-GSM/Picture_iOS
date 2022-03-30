@@ -9,6 +9,8 @@ import RIBs
 import RxSwift
 
 protocol AppHomeRouting: ViewableRouting {
+    func attachPageDashboard()
+
     func attachTopup(btnState : btnOption)
     func detachTopup()
 
@@ -41,6 +43,7 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
 
     override func didBecomeActive() {
         super.didBecomeActive()
+        router?.attachPageDashboard()
         // TODO: Implement business logic here.
     }
 

@@ -32,6 +32,10 @@
 		EEC348DC27E1FE7C00CC9132 /* floatyAddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */; };
 		EEC4B6DA27F432250027D1EF /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6D927F432250027D1EF /* AlbumCollectionViewCell.swift */; };
 		EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */; };
+		EEC4B6EE27F479BF0027D1EF /* PageDashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6EA27F479BF0027D1EF /* PageDashboardRouter.swift */; };
+		EEC4B6EF27F479BF0027D1EF /* PageDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6EB27F479BF0027D1EF /* PageDashboardViewController.swift */; };
+		EEC4B6F027F479BF0027D1EF /* PageDashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6EC27F479BF0027D1EF /* PageDashboardBuilder.swift */; };
+		EEC4B6F127F479BF0027D1EF /* PageDashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6ED27F479BF0027D1EF /* PageDashboardInteractor.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EED1288327E642710000D490 /* CameraHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1287F27E642710000D490 /* CameraHomeRouter.swift */; };
@@ -86,6 +90,10 @@
 		EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = floatyAddBtn.swift; sourceTree = "<group>"; };
 		EEC4B6D927F432250027D1EF /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
+		EEC4B6EA27F479BF0027D1EF /* PageDashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDashboardRouter.swift; sourceTree = "<group>"; };
+		EEC4B6EB27F479BF0027D1EF /* PageDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDashboardViewController.swift; sourceTree = "<group>"; };
+		EEC4B6EC27F479BF0027D1EF /* PageDashboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDashboardBuilder.swift; sourceTree = "<group>"; };
+		EEC4B6ED27F479BF0027D1EF /* PageDashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDashboardInteractor.swift; sourceTree = "<group>"; };
 		EED1287F27E642710000D490 /* CameraHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeRouter.swift; sourceTree = "<group>"; };
 		EED1288027E642710000D490 /* CameraHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeViewController.swift; sourceTree = "<group>"; };
 		EED1288127E642710000D490 /* CameraHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeBuilder.swift; sourceTree = "<group>"; };
@@ -224,6 +232,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		EEC4B6E127F479800027D1EF /* PageDashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				EEC4B6EA27F479BF0027D1EF /* PageDashboardRouter.swift */,
+				EEC4B6EB27F479BF0027D1EF /* PageDashboardViewController.swift */,
+				EEC4B6EC27F479BF0027D1EF /* PageDashboardBuilder.swift */,
+				EEC4B6ED27F479BF0027D1EF /* PageDashboardInteractor.swift */,
+			);
+			path = PageDashBoard;
+			sourceTree = "<group>";
+		};
 		EEDBCD1127E2B85A00B9B9A3 /* AppRoot */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +296,7 @@
 		EEE5E42027DA2116006FDD9E /* AppHome */ = {
 			isa = PBXGroup;
 			children = (
+				EEC4B6E127F479800027D1EF /* PageDashBoard */,
 				EEC348DA27E1FE6900CC9132 /* View */,
 				EEFAEAD827DA67B900865B06 /* AppHomeRouter.swift */,
 				EEFAEAD927DA67B900865B06 /* AppHomeViewController.swift */,
@@ -449,12 +469,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEC4B6EF27F479BF0027D1EF /* PageDashboardViewController.swift in Sources */,
 				EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */,
 				EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */,
 				EE04494227F1836400599936 /* TopupBuilder.swift in Sources */,
 				EEC05DEA27F2A35D00FE6016 /* ButtonOptions.swift in Sources */,
 				EEC348DC27E1FE7C00CC9132 /* floatyAddBtn.swift in Sources */,
 				EE83C2E427E4615900CB0C78 /* AppHomeCollectionViewSection.swift in Sources */,
+				EEC4B6F027F479BF0027D1EF /* PageDashboardBuilder.swift in Sources */,
 				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,
 				EE04494127F1836400599936 /* TopupRouter.swift in Sources */,
 				EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */,
@@ -463,7 +485,9 @@
 				EE6ED5E427F2CC2600534E68 /* BaseViewController.swift in Sources */,
 				EEFA58BC27E2D22900DBB4A8 /* ListHomeRouter.swift in Sources */,
 				EED1288527E642710000D490 /* CameraHomeBuilder.swift in Sources */,
+				EEC4B6F127F479BF0027D1EF /* PageDashboardInteractor.swift in Sources */,
 				EE04494527F1C92E00599936 /* AppRootComponent.swift in Sources */,
+				EEC4B6EE27F479BF0027D1EF /* PageDashboardRouter.swift in Sources */,
 				EEFA58BF27E2D22900DBB4A8 /* ListHomeInteractor.swift in Sources */,
 				EEDBCD1927E2B87100B9B9A3 /* AppRootInteractor.swift in Sources */,
 				EEFA58BE27E2D22900DBB4A8 /* ListHomeBuilder.swift in Sources */,

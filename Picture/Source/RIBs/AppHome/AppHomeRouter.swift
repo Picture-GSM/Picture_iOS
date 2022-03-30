@@ -9,16 +9,20 @@ import RIBs
 import RIBsUtil
 import UIUtil
 
-protocol AppHomeInteractable: Interactable ,TopupListener, AlbumHomeListener {
+protocol AppHomeInteractable: Interactable ,TopupListener, AlbumHomeListener, PageDashboardListener {
     var router: AppHomeRouting? { get set }
     var listener: AppHomeListener? { get set }
 }
 
 protocol AppHomeViewControllable: ViewControllable {
-    
+    func addDashboard(_ view: ViewControllable)
 }
 
 final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewControllable>, AppHomeRouting {
+    
+    
+    private let pageDashboardBuildable : PageDashboardBuildable
+    private var pageRouting : Routing?
     
     private let topupBuildable : TopupBuildable
     private var topupRouting : Routing?
@@ -31,14 +35,28 @@ final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewContro
     init(interactor: AppHomeInteractable,
          viewController: AppHomeViewControllable,
          topupBuildable : TopupBuildable,
-         albumBuildable : AlbumHomeBuildable
+         albumBuildable : AlbumHomeBuildable,
+         pageDashboardBuildable : PageDashboardBuildable
     ){
+        self.pageDashboardBuildable = pageDashboardBuildable
         self.albumBuildable = albumBuildable
         self.topupBuildable = topupBuildable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
     //MARK: - Attach
+    func attachPageDashboard() {
+        if pageRouting != nil{
+            return
+        }
+        let router = pageDashboardBuildable.build(withListener: interactor)
+        
+        let dashboard = router.viewControllable
+        viewController.addDashboard(dashboard)
+        
+        self.pageRouting = router
+        attachChild(router)
+    }
     func attachTopup(btnState: btnOption) {
         if topupRouting != nil{
             return
