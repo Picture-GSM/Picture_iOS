@@ -9,7 +9,6 @@ import RIBs
 import RxSwift
 
 protocol AppHomeRouting: ViewableRouting {
-    func attachPageDashboard()
 
     func attachTopup(btnState : btnOption)
     func detachTopup()
@@ -28,8 +27,6 @@ protocol AppHomeListener: AnyObject {
 }
 
 final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHomeInteractable, AppHomePresentableListener {
-
-    
     
     weak var router: AppHomeRouting?
     weak var listener: AppHomeListener?
@@ -43,7 +40,6 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        router?.attachPageDashboard()
         // TODO: Implement business logic here.
     }
 
@@ -71,4 +67,5 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
     func transportHomeDidTapClose() {
         router?.detachAlbum()
     }
+    
 }

@@ -27,19 +27,29 @@ protocol AppHomePresentableListener: AnyObject {
 
 final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHomeViewControllable {
 
-    
+    let images : [UIImage?] = [
+        UIImage(named: "PageImage1"),
+        UIImage(named: "PageImage2"),
+        UIImage(named: "PageImage3"),
+        UIImage(named: "PageImage4")]
     
     //MARK: - Properties
     weak var listener: AppHomePresentableListener?
     
-    
-    private let pageStackView = UIStackView().then{
-        $0.axis = .vertical
-        $0.alignment = .fill
-        $0.distribution = .equalSpacing
-        $0.spacing = 4
+    private let scrollView = UIScrollView().then{
+        $0.backgroundColor = .blue
+        $0.bounces = false
+        $0.isScrollEnabled = true
+        $0.isPagingEnabled = true
+        $0.showsVerticalScrollIndicator = false
+        $0.showsHorizontalScrollIndicator = false
+        $0.alwaysBounceVertical = false
     }
-    
+    private let pageControl = UIPageControl().then{
+        $0.currentPage = 0
+        $0.pageIndicatorTintColor = .lightGray
+        $0.currentPageIndicatorTintColor = .black
+    }
     
     private let imagePicker = UIImagePickerController().then{
         $0.sourceType = .photoLibrary
@@ -69,15 +79,18 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         tabBarItem = UITabBarItem(title: "홈",
                                   image: UIImage(systemName: "house"),
                                   selectedImage: UIImage(systemName: "house.fill"))
+        
+        pageImageSetting()
     }
     
     override func addView() {
-        view.addSubviews(pageStackView,titleLabel,collectionView,menuBtn)
+        view.addSubviews(scrollView,titleLabel,collectionView,menuBtn)
     }
     
     override func setLayout() {
-        pageStackView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
-        titleLabel.pin.left(bounds.width/18.75).below(of: pageStackView).width(200).height(20)
+        scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
+        
+        titleLabel.pin.left(bounds.width/18.75).below(of: scrollView).width(200).height(20)
         collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
         menuBtn.pin.below(of: collectionView).right(bounds.width/18.75).size(50)
     }
@@ -86,10 +99,19 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         
     }
     
+    //MARK: - Page
 
     
     //MARK: - Bind
     override func bindView() {
+        pageControl.rx.controlEvent(.valueChanged)
+            .subscribe(onNext:{ [weak self] in
+                guard let currentPage = self?.pageControl.currentPage else {
+                    return
+                }
+                self?.scrollView.setCurrentPage(currentPage, animated: true)
+            }).disposed(by: disposeBag)
+        
         
         menuBtn.albumItem.rx.handler.asObserver().onNext { _ in
             self.listener?.didTapAlbum()
@@ -100,14 +122,28 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     }
     
     override func bindState() {
-        
+        scrollView.rx.currentPage
+            .bind(to: pageControl.rx.currentPage)
+            .disposed(by: disposeBag)
     }
     
-    func addDashboard(_ view: ViewControllable) {
-        let vc = view.uiviewController
+}
+//MARK: - Page
+private extension AppHomeViewController{
+    func pageImageSetting(){
+        for i in 0..<images.count {
+            let imageView = UIImageView().then{
+                $0.contentMode = .scaleAspectFill
+                $0.clipsToBounds = true
+            }
+            let xPos = bounds.width * CGFloat(i)
+            imageView.frame = CGRect(x: xPos, y: 0, width: scrollView.bounds.width, height: scrollView.bounds.height)
+            imageView.image = images[i]
+            scrollView.addSubview(imageView)
+            scrollView.contentSize.width = imageView.frame.width * CGFloat(i + 1)
+        }
         
-        addChild(vc)
-        pageStackView.addArrangedSubview(vc.view)
-        vc.didMove(toParent: self)
+        scrollView.contentSize = CGSize(width: scrollView.bounds.width * CGFloat(images.count), height: scrollView.bounds.height)
+        pageControl.numberOfPages = images.count
     }
 }

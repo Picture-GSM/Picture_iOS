@@ -8,12 +8,7 @@
 import RIBs
 import RIBsUtil
 
-final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, TopupDependency, AlbumHomeDependency, PageDashboardDependency{
-    
-    lazy var pageDashboardBuildable: PageDashboardBuildable = {
-        return PageDashboardBuilder(dependency: self)
-    }()
-    
+final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, TopupDependency, AlbumHomeDependency{
     
     lazy var albumBuildable: AlbumHomeBuildable = {
        return AlbumHomeBuilder(dependency: self)
@@ -36,6 +31,4 @@ final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , 
         self.rootViewController = rootViewController
         super.init(dependency: dependency)
     }
-    
-    
 }
