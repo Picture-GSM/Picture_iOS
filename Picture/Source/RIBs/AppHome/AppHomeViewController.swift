@@ -77,8 +77,6 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     
     override func setLayout() {
         pageStackView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
-//        scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
-//        pageControl.pin.below(of: scrollView).height(20).left().right()
         titleLabel.pin.left(bounds.width/18.75).below(of: pageStackView).width(200).height(20)
         collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
         menuBtn.pin.below(of: collectionView).right(bounds.width/18.75).size(50)

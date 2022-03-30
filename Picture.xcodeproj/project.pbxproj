@@ -36,6 +36,10 @@
 		EEC4B6EF27F479BF0027D1EF /* PageDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6EB27F479BF0027D1EF /* PageDashboardViewController.swift */; };
 		EEC4B6F027F479BF0027D1EF /* PageDashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6EC27F479BF0027D1EF /* PageDashboardBuilder.swift */; };
 		EEC4B6F127F479BF0027D1EF /* PageDashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6ED27F479BF0027D1EF /* PageDashboardInteractor.swift */; };
+		EEC4B6F727F47F530027D1EF /* StoredImageDashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6F327F47F530027D1EF /* StoredImageDashboardRouter.swift */; };
+		EEC4B6F827F47F530027D1EF /* StoredImageDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6F427F47F530027D1EF /* StoredImageDashboardViewController.swift */; };
+		EEC4B6F927F47F530027D1EF /* StoredImageDashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6F527F47F530027D1EF /* StoredImageDashboardBuilder.swift */; };
+		EEC4B6FA27F47F530027D1EF /* StoredImageDashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6F627F47F530027D1EF /* StoredImageDashboardInteractor.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EED1288327E642710000D490 /* CameraHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1287F27E642710000D490 /* CameraHomeRouter.swift */; };
@@ -94,6 +98,10 @@
 		EEC4B6EB27F479BF0027D1EF /* PageDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDashboardViewController.swift; sourceTree = "<group>"; };
 		EEC4B6EC27F479BF0027D1EF /* PageDashboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDashboardBuilder.swift; sourceTree = "<group>"; };
 		EEC4B6ED27F479BF0027D1EF /* PageDashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDashboardInteractor.swift; sourceTree = "<group>"; };
+		EEC4B6F327F47F530027D1EF /* StoredImageDashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredImageDashboardRouter.swift; sourceTree = "<group>"; };
+		EEC4B6F427F47F530027D1EF /* StoredImageDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredImageDashboardViewController.swift; sourceTree = "<group>"; };
+		EEC4B6F527F47F530027D1EF /* StoredImageDashboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredImageDashboardBuilder.swift; sourceTree = "<group>"; };
+		EEC4B6F627F47F530027D1EF /* StoredImageDashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredImageDashboardInteractor.swift; sourceTree = "<group>"; };
 		EED1287F27E642710000D490 /* CameraHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeRouter.swift; sourceTree = "<group>"; };
 		EED1288027E642710000D490 /* CameraHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeViewController.swift; sourceTree = "<group>"; };
 		EED1288127E642710000D490 /* CameraHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeBuilder.swift; sourceTree = "<group>"; };
@@ -232,7 +240,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		EEC4B6E127F479800027D1EF /* PageDashBoard */ = {
+		EEC4B6E127F479800027D1EF /* PageDashboard */ = {
 			isa = PBXGroup;
 			children = (
 				EEC4B6EA27F479BF0027D1EF /* PageDashboardRouter.swift */,
@@ -240,7 +248,18 @@
 				EEC4B6EC27F479BF0027D1EF /* PageDashboardBuilder.swift */,
 				EEC4B6ED27F479BF0027D1EF /* PageDashboardInteractor.swift */,
 			);
-			path = PageDashBoard;
+			path = PageDashboard;
+			sourceTree = "<group>";
+		};
+		EEC4B6F227F47EFB0027D1EF /* StoredImageDashboard */ = {
+			isa = PBXGroup;
+			children = (
+				EEC4B6F327F47F530027D1EF /* StoredImageDashboardRouter.swift */,
+				EEC4B6F427F47F530027D1EF /* StoredImageDashboardViewController.swift */,
+				EEC4B6F527F47F530027D1EF /* StoredImageDashboardBuilder.swift */,
+				EEC4B6F627F47F530027D1EF /* StoredImageDashboardInteractor.swift */,
+			);
+			path = StoredImageDashboard;
 			sourceTree = "<group>";
 		};
 		EEDBCD1127E2B85A00B9B9A3 /* AppRoot */ = {
@@ -296,7 +315,8 @@
 		EEE5E42027DA2116006FDD9E /* AppHome */ = {
 			isa = PBXGroup;
 			children = (
-				EEC4B6E127F479800027D1EF /* PageDashBoard */,
+				EEC4B6F227F47EFB0027D1EF /* StoredImageDashboard */,
+				EEC4B6E127F479800027D1EF /* PageDashboard */,
 				EEC348DA27E1FE6900CC9132 /* View */,
 				EEFAEAD827DA67B900865B06 /* AppHomeRouter.swift */,
 				EEFAEAD927DA67B900865B06 /* AppHomeViewController.swift */,
@@ -476,10 +496,12 @@
 				EEC05DEA27F2A35D00FE6016 /* ButtonOptions.swift in Sources */,
 				EEC348DC27E1FE7C00CC9132 /* floatyAddBtn.swift in Sources */,
 				EE83C2E427E4615900CB0C78 /* AppHomeCollectionViewSection.swift in Sources */,
+				EEC4B6F927F47F530027D1EF /* StoredImageDashboardBuilder.swift in Sources */,
 				EEC4B6F027F479BF0027D1EF /* PageDashboardBuilder.swift in Sources */,
 				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,
 				EE04494127F1836400599936 /* TopupRouter.swift in Sources */,
 				EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */,
+				EEC4B6FA27F47F530027D1EF /* StoredImageDashboardInteractor.swift in Sources */,
 				EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */,
 				EEC4B6DA27F432250027D1EF /* AlbumCollectionViewCell.swift in Sources */,
 				EE6ED5E427F2CC2600534E68 /* BaseViewController.swift in Sources */,
@@ -507,9 +529,11 @@
 				EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */,
 				EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */,
 				EED1288427E642710000D490 /* CameraHomeViewController.swift in Sources */,
+				EEC4B6F827F47F530027D1EF /* StoredImageDashboardViewController.swift in Sources */,
 				EEB74FE927E89E6100A74263 /* AlbumHomeViewController.swift in Sources */,
 				EED1288327E642710000D490 /* CameraHomeRouter.swift in Sources */,
 				EEFA58BD27E2D22900DBB4A8 /* ListHomeViewController.swift in Sources */,
+				EEC4B6F727F47F530027D1EF /* StoredImageDashboardRouter.swift in Sources */,
 				EEB74FEA27E89E6100A74263 /* AlbumHomeBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
