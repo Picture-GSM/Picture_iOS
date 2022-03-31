@@ -1,36 +1,34 @@
 //
-//  AppHomeInteractor.swift
+//  ChooseImageInteractor.swift
 //  Picture
 //
-//  Created by Ji-hoon Ahn on 2022/03/11.
+//  Created by Ji-hoon Ahn on 2022/03/31.
 //
 
 import RIBs
 import RxSwift
 
-protocol AppHomeRouting: ViewableRouting {
-
+protocol ChooseImageRouting: ViewableRouting {
+    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
 }
 
-protocol AppHomePresentable: Presentable {
-    var listener: AppHomePresentableListener? { get set }
+protocol ChooseImagePresentable: Presentable {
+    var listener: ChooseImagePresentableListener? { get set }
     // TODO: Declare methods the interactor can invoke the presenter to present data.
 }
 
-protocol AppHomeListener: AnyObject {
+protocol ChooseImageListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
-final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHomeInteractable, AppHomePresentableListener {
+final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener {
 
-    
-    
-    weak var router: AppHomeRouting?
-    weak var listener: AppHomeListener?
+    weak var router: ChooseImageRouting?
+    weak var listener: ChooseImageListener?
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: AppHomePresentable) {
+    override init(presenter: ChooseImagePresentable) {
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -43,12 +41,5 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
-    }
-    
-    func didTapCamera() {
-    }
-    
-    func didTapAlbum() {
-        
     }
 }

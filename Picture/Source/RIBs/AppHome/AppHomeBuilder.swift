@@ -8,19 +8,14 @@
 import RIBs
 
 protocol AppHomeDependency: Dependency {
-    var topupBuildable : TopupBuildable{get}
-    var albumBuildable : AlbumHomeBuildable {get}
   
 }
 
 final class AppHomeComponent: Component<AppHomeDependency>  {
-    var topupBuildable : TopupBuildable {dependency.topupBuildable}
-    var albumBuildable : AlbumHomeBuildable {dependency.albumBuildable}
 
 }
 
 // MARK: - Builder
-
 protocol AppHomeBuildable: Buildable {
     func build(withListener listener: AppHomeListener) -> AppHomeRouter
 }
@@ -40,8 +35,7 @@ final class AppHomeBuilder: Builder<AppHomeDependency>, AppHomeBuildable {
         
         return AppHomeRouter(
             interactor: interactor,
-            viewController: viewController,
-            topupBuildable: component.topupBuildable,
-            albumBuildable: component.albumBuildable)
+            viewController: viewController
+        )
     }
 }

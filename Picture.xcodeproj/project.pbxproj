@@ -7,10 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE04493C27F1602700599936 /* CameraControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04493B27F1602700599936 /* CameraControlView.swift */; };
-		EE04494127F1836400599936 /* TopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04493E27F1836400599936 /* TopupRouter.swift */; };
-		EE04494227F1836400599936 /* TopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04493F27F1836400599936 /* TopupBuilder.swift */; };
-		EE04494327F1836400599936 /* TopupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04494027F1836400599936 /* TopupInteractor.swift */; };
 		EE04494527F1C92E00599936 /* AppRootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04494427F1C92E00599936 /* AppRootComponent.swift */; };
 		EE4D0D9227E42465007D2918 /* AppHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */; };
 		EE6ED5E427F2CC2600534E68 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ED5E327F2CC2600534E68 /* BaseViewController.swift */; };
@@ -22,21 +18,27 @@
 		EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */; };
 		EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */; };
 		EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */; };
-		EEB0E84A27E7787B004EDC14 /* Floaty in Frameworks */ = {isa = PBXBuildFile; productRef = EEB0E84927E7787B004EDC14 /* Floaty */; };
-		EEB74FE827E89E6100A74263 /* AlbumHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB74FE427E89E6100A74263 /* AlbumHomeRouter.swift */; };
-		EEB74FE927E89E6100A74263 /* AlbumHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB74FE527E89E6100A74263 /* AlbumHomeViewController.swift */; };
-		EEB74FEA27E89E6100A74263 /* AlbumHomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB74FE627E89E6100A74263 /* AlbumHomeBuilder.swift */; };
-		EEB74FEB27E89E6100A74263 /* AlbumHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB74FE727E89E6100A74263 /* AlbumHomeInteractor.swift */; };
+		EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */; };
+		EEA102D227F544240081AD84 /* TopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102CF27F544240081AD84 /* TopupRouter.swift */; };
+		EEA102D327F544240081AD84 /* TopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102D027F544240081AD84 /* TopupBuilder.swift */; };
+		EEA102D427F544240081AD84 /* TopupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102D127F544240081AD84 /* TopupInteractor.swift */; };
+		EEA102DC27F549C30081AD84 /* CameraRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102D827F549C30081AD84 /* CameraRouter.swift */; };
+		EEA102DD27F549C30081AD84 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102D927F549C30081AD84 /* CameraViewController.swift */; };
+		EEA102DE27F549C30081AD84 /* CameraBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102DA27F549C30081AD84 /* CameraBuilder.swift */; };
+		EEA102DF27F549C30081AD84 /* CameraInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102DB27F549C30081AD84 /* CameraInteractor.swift */; };
+		EEA102E427F549D80081AD84 /* PhotoLibraryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E027F549D80081AD84 /* PhotoLibraryRouter.swift */; };
+		EEA102E527F549D80081AD84 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E127F549D80081AD84 /* PhotoLibraryViewController.swift */; };
+		EEA102E627F549D80081AD84 /* PhotoLibraryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E227F549D80081AD84 /* PhotoLibraryBuilder.swift */; };
+		EEA102E727F549D80081AD84 /* PhotoLibraryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E327F549D80081AD84 /* PhotoLibraryInteractor.swift */; };
+		EEA102ED27F54DB00081AD84 /* ChooseImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E927F54DB00081AD84 /* ChooseImageRouter.swift */; };
+		EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */; };
+		EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */; };
+		EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */; };
 		EEC348D927E18F2300CC9132 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = EEC348D827E18F2300CC9132 /* PanModal */; };
-		EEC348DC27E1FE7C00CC9132 /* floatyAddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */; };
-		EEC4B6DA27F432250027D1EF /* AlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6D927F432250027D1EF /* AlbumCollectionViewCell.swift */; };
+		EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */; };
 		EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
-		EED1288327E642710000D490 /* CameraHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1287F27E642710000D490 /* CameraHomeRouter.swift */; };
-		EED1288427E642710000D490 /* CameraHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1288027E642710000D490 /* CameraHomeViewController.swift */; };
-		EED1288527E642710000D490 /* CameraHomeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1288127E642710000D490 /* CameraHomeBuilder.swift */; };
-		EED1288627E642710000D490 /* CameraHomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED1288227E642710000D490 /* CameraHomeInteractor.swift */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
 		EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */; };
 		EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */; };
@@ -62,10 +64,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EE04493B27F1602700599936 /* CameraControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraControlView.swift; sourceTree = "<group>"; };
-		EE04493E27F1836400599936 /* TopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupRouter.swift; sourceTree = "<group>"; };
-		EE04493F27F1836400599936 /* TopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupBuilder.swift; sourceTree = "<group>"; };
-		EE04494027F1836400599936 /* TopupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupInteractor.swift; sourceTree = "<group>"; };
 		EE04494427F1C92E00599936 /* AppRootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootComponent.swift; sourceTree = "<group>"; };
 		EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE6D065927F14C4700C1E0A6 /* CX */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CX; sourceTree = "<group>"; };
@@ -77,17 +75,24 @@
 		EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoRealmData.swift; sourceTree = "<group>"; };
 		EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHomeCollectionViewSection.swift; sourceTree = "<group>"; };
-		EEB74FE427E89E6100A74263 /* AlbumHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHomeRouter.swift; sourceTree = "<group>"; };
-		EEB74FE527E89E6100A74263 /* AlbumHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHomeViewController.swift; sourceTree = "<group>"; };
-		EEB74FE627E89E6100A74263 /* AlbumHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHomeBuilder.swift; sourceTree = "<group>"; };
-		EEB74FE727E89E6100A74263 /* AlbumHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumHomeInteractor.swift; sourceTree = "<group>"; };
-		EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = floatyAddBtn.swift; sourceTree = "<group>"; };
-		EEC4B6D927F432250027D1EF /* AlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerControllerDelegate.swift; sourceTree = "<group>"; };
+		EEA102CF27F544240081AD84 /* TopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupRouter.swift; sourceTree = "<group>"; };
+		EEA102D027F544240081AD84 /* TopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupBuilder.swift; sourceTree = "<group>"; };
+		EEA102D127F544240081AD84 /* TopupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupInteractor.swift; sourceTree = "<group>"; };
+		EEA102D827F549C30081AD84 /* CameraRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRouter.swift; sourceTree = "<group>"; };
+		EEA102D927F549C30081AD84 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		EEA102DA27F549C30081AD84 /* CameraBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraBuilder.swift; sourceTree = "<group>"; };
+		EEA102DB27F549C30081AD84 /* CameraInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInteractor.swift; sourceTree = "<group>"; };
+		EEA102E027F549D80081AD84 /* PhotoLibraryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryRouter.swift; sourceTree = "<group>"; };
+		EEA102E127F549D80081AD84 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
+		EEA102E227F549D80081AD84 /* PhotoLibraryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryBuilder.swift; sourceTree = "<group>"; };
+		EEA102E327F549D80081AD84 /* PhotoLibraryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryInteractor.swift; sourceTree = "<group>"; };
+		EEA102E927F54DB00081AD84 /* ChooseImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageRouter.swift; sourceTree = "<group>"; };
+		EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageViewController.swift; sourceTree = "<group>"; };
+		EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageBuilder.swift; sourceTree = "<group>"; };
+		EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageInteractor.swift; sourceTree = "<group>"; };
+		EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBtn.swift; sourceTree = "<group>"; };
 		EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
-		EED1287F27E642710000D490 /* CameraHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeRouter.swift; sourceTree = "<group>"; };
-		EED1288027E642710000D490 /* CameraHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeViewController.swift; sourceTree = "<group>"; };
-		EED1288127E642710000D490 /* CameraHomeBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeBuilder.swift; sourceTree = "<group>"; };
-		EED1288227E642710000D490 /* CameraHomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraHomeInteractor.swift; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
@@ -124,7 +129,6 @@
 				EEC348D927E18F2300CC9132 /* PanModal in Frameworks */,
 				EEED8B9227F1577700A7B052 /* RIBsUtil in Frameworks */,
 				EE83C2E027E442CC00CB0C78 /* Differentiator in Frameworks */,
-				EEB0E84A27E7787B004EDC14 /* Floaty in Frameworks */,
 				EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,26 +136,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE04493A27F1601500599936 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				EE04493B27F1602700599936 /* CameraControlView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		EE04493D27F1834B00599936 /* Topup */ = {
-			isa = PBXGroup;
-			children = (
-				EEDC837027E63F60004B6AC6 /* CameraHome */,
-				EEB74FE327E89E4900A74263 /* AlbumHome */,
-				EE04493E27F1836400599936 /* TopupRouter.swift */,
-				EE04493F27F1836400599936 /* TopupBuilder.swift */,
-				EE04494027F1836400599936 /* TopupInteractor.swift */,
-			);
-			path = Topup;
-			sourceTree = "<group>";
-		};
 		EE6ED5E727F2CD3500534E68 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,8 +150,9 @@
 			children = (
 				EEDBCD1127E2B85A00B9B9A3 /* AppRoot */,
 				EEE5E42027DA2116006FDD9E /* AppHome */,
+				EEA102E827F54D7B0081AD84 /* ChooseImage */,
+				EEA102CE27F544060081AD84 /* Topup */,
 				EEFA58B727E2D1BA00DBB4A8 /* ListHome */,
-				EE04493D27F1834B00599936 /* Topup */,
 			);
 			path = RIBs;
 			sourceTree = "<group>";
@@ -192,32 +177,58 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		EEB74FE327E89E4900A74263 /* AlbumHome */ = {
+		EEA102CE27F544060081AD84 /* Topup */ = {
 			isa = PBXGroup;
 			children = (
-				EEC4B6D827F432190027D1EF /* View */,
-				EEB74FE427E89E6100A74263 /* AlbumHomeRouter.swift */,
-				EEB74FE527E89E6100A74263 /* AlbumHomeViewController.swift */,
-				EEB74FE627E89E6100A74263 /* AlbumHomeBuilder.swift */,
-				EEB74FE727E89E6100A74263 /* AlbumHomeInteractor.swift */,
+				EEA102D727F5474F0081AD84 /* PhotoLibrary */,
+				EEA102D627F547410081AD84 /* Camera */,
+				EEA102CF27F544240081AD84 /* TopupRouter.swift */,
+				EEA102D027F544240081AD84 /* TopupBuilder.swift */,
+				EEA102D127F544240081AD84 /* TopupInteractor.swift */,
 			);
-			path = AlbumHome;
+			path = Topup;
+			sourceTree = "<group>";
+		};
+		EEA102D627F547410081AD84 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				EEA102D827F549C30081AD84 /* CameraRouter.swift */,
+				EEA102D927F549C30081AD84 /* CameraViewController.swift */,
+				EEA102DA27F549C30081AD84 /* CameraBuilder.swift */,
+				EEA102DB27F549C30081AD84 /* CameraInteractor.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		EEA102D727F5474F0081AD84 /* PhotoLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				EEA102E027F549D80081AD84 /* PhotoLibraryRouter.swift */,
+				EEA102E127F549D80081AD84 /* PhotoLibraryViewController.swift */,
+				EEA102E227F549D80081AD84 /* PhotoLibraryBuilder.swift */,
+				EEA102E327F549D80081AD84 /* PhotoLibraryInteractor.swift */,
+			);
+			path = PhotoLibrary;
+			sourceTree = "<group>";
+		};
+		EEA102E827F54D7B0081AD84 /* ChooseImage */ = {
+			isa = PBXGroup;
+			children = (
+				EEA102E927F54DB00081AD84 /* ChooseImageRouter.swift */,
+				EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */,
+				EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */,
+				EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */,
+			);
+			path = ChooseImage;
 			sourceTree = "<group>";
 		};
 		EEC348DA27E1FE6900CC9132 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EEC348DB27E1FE7C00CC9132 /* floatyAddBtn.swift */,
+				EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */,
 				EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */,
 				EE83C2E327E4615900CB0C78 /* AppHomeCollectionViewSection.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		EEC4B6D827F432190027D1EF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				EEC4B6D927F432250027D1EF /* AlbumCollectionViewCell.swift */,
+				EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,18 +243,6 @@
 				EE04494427F1C92E00599936 /* AppRootComponent.swift */,
 			);
 			path = AppRoot;
-			sourceTree = "<group>";
-		};
-		EEDC837027E63F60004B6AC6 /* CameraHome */ = {
-			isa = PBXGroup;
-			children = (
-				EE04493A27F1601500599936 /* View */,
-				EED1287F27E642710000D490 /* CameraHomeRouter.swift */,
-				EED1288027E642710000D490 /* CameraHomeViewController.swift */,
-				EED1288127E642710000D490 /* CameraHomeBuilder.swift */,
-				EED1288227E642710000D490 /* CameraHomeInteractor.swift */,
-			);
-			path = CameraHome;
 			sourceTree = "<group>";
 		};
 		EEE5E41227D9FFA9006FDD9E /* AppDelegate */ = {
@@ -376,7 +375,6 @@
 				EE83C2D327E4259A00CB0C78 /* Reusable */,
 				EE83C2DF27E442CC00CB0C78 /* Differentiator */,
 				EE83C2E127E442CC00CB0C78 /* RxDataSources */,
-				EEB0E84927E7787B004EDC14 /* Floaty */,
 				EEED8B9127F1577700A7B052 /* RIBsUtil */,
 				EEED8B9327F1577700A7B052 /* RxUtil */,
 				EEED8B9527F1577700A7B052 /* UIUtil */,
@@ -448,41 +446,44 @@
 			files = (
 				EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */,
 				EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */,
-				EE04494227F1836400599936 /* TopupBuilder.swift in Sources */,
-				EEC348DC27E1FE7C00CC9132 /* floatyAddBtn.swift in Sources */,
+				EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */,
+				EEA102DE27F549C30081AD84 /* CameraBuilder.swift in Sources */,
+				EEA102D227F544240081AD84 /* TopupRouter.swift in Sources */,
+				EEA102ED27F54DB00081AD84 /* ChooseImageRouter.swift in Sources */,
 				EE83C2E427E4615900CB0C78 /* AppHomeCollectionViewSection.swift in Sources */,
 				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,
-				EE04494127F1836400599936 /* TopupRouter.swift in Sources */,
 				EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */,
 				EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */,
-				EEC4B6DA27F432250027D1EF /* AlbumCollectionViewCell.swift in Sources */,
+				EEA102E627F549D80081AD84 /* PhotoLibraryBuilder.swift in Sources */,
 				EE6ED5E427F2CC2600534E68 /* BaseViewController.swift in Sources */,
 				EEFA58BC27E2D22900DBB4A8 /* ListHomeRouter.swift in Sources */,
-				EED1288527E642710000D490 /* CameraHomeBuilder.swift in Sources */,
+				EEA102E427F549D80081AD84 /* PhotoLibraryRouter.swift in Sources */,
 				EE04494527F1C92E00599936 /* AppRootComponent.swift in Sources */,
+				EEA102DD27F549C30081AD84 /* CameraViewController.swift in Sources */,
 				EEFA58BF27E2D22900DBB4A8 /* ListHomeInteractor.swift in Sources */,
 				EEDBCD1927E2B87100B9B9A3 /* AppRootInteractor.swift in Sources */,
 				EEFA58BE27E2D22900DBB4A8 /* ListHomeBuilder.swift in Sources */,
-				EEB74FEB27E89E6100A74263 /* AlbumHomeInteractor.swift in Sources */,
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
 				EE6ED5E627F2CD2C00534E68 /* BaseCollectionViewCell.swift in Sources */,
+				EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */,
+				EEA102E727F549D80081AD84 /* PhotoLibraryInteractor.swift in Sources */,
 				EE4D0D9227E42465007D2918 /* AppHomeCollectionViewCell.swift in Sources */,
 				EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */,
+				EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */,
+				EEA102DF27F549C30081AD84 /* CameraInteractor.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
+				EEA102E527F549D80081AD84 /* PhotoLibraryViewController.swift in Sources */,
+				EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */,
 				EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */,
-				EE04493C27F1602700599936 /* CameraControlView.swift in Sources */,
+				EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */,
 				EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */,
-				EED1288627E642710000D490 /* CameraHomeInteractor.swift in Sources */,
-				EE04494327F1836400599936 /* TopupInteractor.swift in Sources */,
 				EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */,
-				EEB74FE827E89E6100A74263 /* AlbumHomeRouter.swift in Sources */,
 				EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */,
 				EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */,
-				EED1288427E642710000D490 /* CameraHomeViewController.swift in Sources */,
-				EEB74FE927E89E6100A74263 /* AlbumHomeViewController.swift in Sources */,
-				EED1288327E642710000D490 /* CameraHomeRouter.swift in Sources */,
 				EEFA58BD27E2D22900DBB4A8 /* ListHomeViewController.swift in Sources */,
-				EEB74FEA27E89E6100A74263 /* AlbumHomeBuilder.swift in Sources */,
+				EEA102D327F544240081AD84 /* TopupBuilder.swift in Sources */,
+				EEA102DC27F549C30081AD84 /* CameraRouter.swift in Sources */,
+				EEA102D427F544240081AD84 /* TopupInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,11 +786,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
-		};
-		EEB0E84927E7787B004EDC14 /* Floaty */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */;
-			productName = Floaty;
 		};
 		EEC348D827E18F2300CC9132 /* PanModal */ = {
 			isa = XCSwiftPackageProductDependency;

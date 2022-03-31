@@ -16,7 +16,6 @@ import RxUtil
 import Then
 import Reusable
 import PinLayout
-import Floaty
 
 //MARK: - Listener
 protocol AppHomePresentableListener: AnyObject {
@@ -34,6 +33,7 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     
     //MARK: - Properties
     weak var listener: AppHomePresentableListener?
+    
     
     private let scrollView = UIScrollView().then{
         $0.backgroundColor = .blue
@@ -70,7 +70,7 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         $0.backgroundColor = .red
     }
     
-    private let menuBtn = floatyAddBtn()
+    
     
     //MARK: - Main
     override func configureUI() {
@@ -91,10 +91,8 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         pageControl.pin.bottomCenter(to: scrollView.anchor.bottomCenter).height(20).width(375)
         titleLabel.pin.left(bounds.width/18.75).below(of: scrollView).width(200).height(20)
         collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
-        menuBtn.pin.below(of: collectionView).right(bounds.width/18.75).size(50)
+        menuBtn.pin.bottom(view.pin.safeArea).size(200)
     }
-    
-    
     //MARK: - Bind
     override func bindView() {
         pageControl.rx.controlEvent(.valueChanged)
@@ -106,12 +104,6 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
             }).disposed(by: disposeBag)
         
         
-        menuBtn.albumItem.rx.handler.asObserver().onNext { _ in
-            self.listener?.didTapAlbum()
-        }
-        menuBtn.cameraItem.rx.handler.asObserver().onNext{ _ in
-            self.listener?.didTapCamera()
-        }
     }
     
     override func bindState() {
@@ -119,7 +111,6 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
             .bind(to: pageControl.rx.currentPage)
             .disposed(by: disposeBag)
     }
-    
 }
 
 //MARK: - Page

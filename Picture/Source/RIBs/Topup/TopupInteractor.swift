@@ -2,76 +2,53 @@
 //  TopupInteractor.swift
 //  Picture
 //
-//  Created by Ji-hoon Ahn on 2022/03/28.
+//  Created by Ji-hoon Ahn on 2022/03/31.
 //
 
 import RIBs
 import RxSwift
 import UIUtil
-import RIBsUtil
-import Foundation
 
 protocol TopupRouting: Routing {
     func cleanupViews()
-    
-    func attachCamera(closeButtonType: DismissButtonType)
+
+    func attachCamera()
     func detachCamera()
     
-    func attachAlbum()
-    func detachAlbum()
-    
-    func popToRoot()
+    func attachPhotoLibrary()
+    func detachPhotoLibrary()
 }
 
 protocol TopupListener: AnyObject {
     func topupDidClose()
     func topupDidFinish()
-    
 }
 
-protocol TopupInteractorDependency{
-    
-}
+final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationControllerDelegate {
 
-final class TopupInteractor: Interactor, TopupInteractable, AdaptivePresentationControllerDelegate {
-
-    
-    
-    //MARK: -  Properties
     weak var router: TopupRouting?
     weak var listener: TopupListener?
     
-    let presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
+    var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
     
-    private let dependency: TopupInteractorDependency
-    
-    private var isEnterAmountRoot: Bool = false
-    
-    init(
-        dependency : TopupInteractorDependency
-    ) {
+    override init() {
         self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()
-        self.dependency = dependency
         super.init()
         self.presentationDelegateProxy.delegate = self
     }
-    
+
     override func didBecomeActive() {
         super.didBecomeActive()
-        router?.attachCamera(closeButtonType:.close)
+        // TODO: Implement business logic here.
     }
-    
+
     override func willResignActive() {
         super.willResignActive()
+
         router?.cleanupViews()
+        // TODO: Pause any business logic.
     }
-    
     func presetationControllerDidDismiss() {
         listener?.topupDidClose()
     }
-    
-    func transportHomeDidTapClose() {
-        
-    }
-    
 }

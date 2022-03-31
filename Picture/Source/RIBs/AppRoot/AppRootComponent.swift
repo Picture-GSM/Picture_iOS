@@ -8,16 +8,11 @@
 import RIBs
 import RIBsUtil
 
-final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, TopupDependency, AlbumHomeDependency{
+final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency{
+
     
-    lazy var albumBuildable: AlbumHomeBuildable = {
-       return AlbumHomeBuilder(dependency: self)
-    }()
     
-    lazy var topupBuildable: TopupBuildable = {
-        return TopupBuilder(dependency: self)
-    }()
-    
+
     var topupBaseViewController: ViewControllable{
         rootViewController.topViewControllable
     }
