@@ -12,6 +12,8 @@ import Then
 
 protocol ChooseImagePresentableListener: AnyObject {
     func didTapBack()
+    func didTapOriginerImageButton()
+    func didTapPieceImageButton()
 }
 
 final class ChooseImageViewController: BaseViewController, ChooseImagePresentable, ChooseImageViewControllable {
@@ -38,10 +40,18 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
     }
     
     private let originalImageBtn = ImageBtn(title: "원본").then{
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = .white
+        $0.layer.applySketchShadow(color: .gray, alpha: 0.4, x: 0, y: 10, blur: 16, spread: 0)
     }
     private let pieceImageBtn = ImageBtn(title: "작품").then{
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = .white
+        $0.layer.applySketchShadow(color: .gray, alpha: 0.4, x: 0, y: 10, blur: 10, spread: 0)
+    }
+    
+    private let startBtn = UIButton().then{
+        $0.backgroundColor = .black
+        $0.setTitle("시작", for: .normal)
+        $0.setTitleColor(UIColor.white, for: .normal)
     }
     
     override func addView() {
@@ -61,6 +71,15 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
                 self?.listener?.didTapBack()
             })
             .disposed(by: disposeBag)
+        
+        originalImageBtn.rx.tap
+            .subscribe(onNext:{ [weak self ] in
+                self?.listener?.didTapOriginerImageButton()
+            }).disposed(by: disposeBag)
+        
+        pieceImageBtn.rx.tap
+            .subscribe(onNext:{ [weak self] in
+                self?.listener?.didTapPieceImageButton()
+            }).disposed(by: disposeBag)
     }
-    
 }

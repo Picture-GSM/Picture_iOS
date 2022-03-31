@@ -6,10 +6,12 @@
 //
 
 import RIBs
+import UIUtil
 
-protocol ChooseImageInteractable: Interactable {
+protocol ChooseImageInteractable: Interactable , TopupListener{
     var router: ChooseImageRouting? { get set }
     var listener: ChooseImageListener? { get set }
+    var presentationDelegateProxy  : AdaptivePresentationControllerDelegateProxy {get}
 }
 
 protocol ChooseImageViewControllable: ViewControllable {
@@ -17,10 +19,36 @@ protocol ChooseImageViewControllable: ViewControllable {
 }
 
 final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseImageViewControllable>, ChooseImageRouting {
-
-    // TODO: Constructor inject child builder protocols to allow building children.
-    override init(interactor: ChooseImageInteractable, viewController: ChooseImageViewControllable) {
+    
+    private let topupBuildable : TopupBuildable
+    private var topupRouting : Routing?
+    
+     init(
+        interactor: ChooseImageInteractable,
+        viewController: ChooseImageViewControllable,
+        topupBuildable : TopupBuildable
+     ) {
+         self.topupBuildable = topupBuildable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
+    
+    func attachTopup() {
+        if topupRouting != nil{
+            return
+        }
+        let router = topupBuildable.build(withListener: interactor)
+        topupRouting = router
+        attachChild(router)
+    }
+    
+    func detachTopup() {
+        guard let router = topupRouting else{
+            return
+        }
+        
+        detachChild(router)
+        self.topupRouting = nil
+    }
+    
 }

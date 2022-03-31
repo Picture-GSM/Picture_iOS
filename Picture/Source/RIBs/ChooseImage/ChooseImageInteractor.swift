@@ -7,29 +7,33 @@
 
 import RIBs
 import RxSwift
+import UIUtil
 
 protocol ChooseImageRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func attachTopup()
+    func detachTopup()
 }
 
 protocol ChooseImagePresentable: Presentable {
     var listener: ChooseImagePresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
 }
 
 protocol ChooseImageListener: AnyObject {
     func transportHomeDidClose()
 }
 
-final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener {
+final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener, AdaptivePresentationControllerDelegate {
+
+
 
 
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?
+    
+    let presentationDelegateProxy : AdaptivePresentationControllerDelegateProxy
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic
-    // in constructor.
     override init(presenter: ChooseImagePresentable) {
+        self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()
         super.init(presenter: presenter)
         presenter.listener = self
     }
@@ -48,4 +52,23 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         listener?.transportHomeDidClose()
     }
     
+    func didTapOriginerImageButton() {
+        print("originer")
+    }
+    
+    func didTapPieceImageButton() {
+        print("piece")
+    }
+    func topupDidClose() {
+        router?.detachTopup()
+    }
+    
+    func topupDidFinish() {
+        router?.detachTopup()
+    }
+    
+    
+    func presetationControllerDidDismiss() {
+        router?.detachTopup()
+    }
 }

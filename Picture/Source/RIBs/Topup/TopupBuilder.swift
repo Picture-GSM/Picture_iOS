@@ -8,15 +8,15 @@
 import RIBs
 
 protocol TopupDependency: Dependency {
-    var topupViewController: TopupViewControllable { get }
+    var topupBaseViewController: ViewControllable { get }
 
 }
 
 final class TopupComponent: Component<TopupDependency> {
 
     // TODO: Make sure to convert the variable into lower-camelcase.
-    fileprivate var topupViewController: TopupViewControllable {
-        return dependency.topupViewController
+    fileprivate var topupBaseViewController: ViewControllable {
+        return dependency.topupBaseViewController
     }
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
@@ -38,6 +38,10 @@ final class TopupBuilder: Builder<TopupDependency>, TopupBuildable {
         let component = TopupComponent(dependency: dependency)
         let interactor = TopupInteractor()
         interactor.listener = listener
-        return TopupRouter(interactor: interactor, viewController: component.topupViewController)
+        
+        return TopupRouter(
+            interactor: interactor,
+            viewController: component.topupBaseViewController
+        )
     }
 }

@@ -8,13 +8,12 @@
 import RIBs
 
 protocol ChooseImageDependency: Dependency {
-    // TODO: Declare the set of dependencies required by this RIB, but cannot be
-    // created by this RIB.
+    var topupBuildable: TopupBuildable { get }
 }
 
 final class ChooseImageComponent: Component<ChooseImageDependency> {
+    var topupBuildable: TopupBuildable { dependency.topupBuildable }
 
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
 
 // MARK: - Builder
@@ -24,16 +23,22 @@ protocol ChooseImageBuildable: Buildable {
 }
 
 final class ChooseImageBuilder: Builder<ChooseImageDependency>, ChooseImageBuildable {
-
+    
     override init(dependency: ChooseImageDependency) {
         super.init(dependency: dependency)
     }
-
+    
     func build(withListener listener: ChooseImageListener) -> ChooseImageRouting {
         let component = ChooseImageComponent(dependency: dependency)
         let viewController = ChooseImageViewController()
+        
         let interactor = ChooseImageInteractor(presenter: viewController)
         interactor.listener = listener
-        return ChooseImageRouter(interactor: interactor, viewController: viewController)
+        
+        
+        return ChooseImageRouter(
+            interactor: interactor,
+            viewController: viewController,
+            topupBuildable: component.topupBuildable)
     }
 }

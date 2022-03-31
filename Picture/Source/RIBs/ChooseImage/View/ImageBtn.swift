@@ -12,8 +12,10 @@ class ImageBtn : UIButton{
     private let title : String
     //MARK: - Init
     init(title : String){
+        
         self.title = title
         super.init(frame: .zero)
+        
         setupLayout()
     }
     
@@ -25,7 +27,8 @@ class ImageBtn : UIButton{
     private func setupLayout(){
         setTitle(title, for: .normal)
         setTitleColor( .black, for: .normal)
-        titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        self.layer.cornerRadius = 20
     }
     
 }

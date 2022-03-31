@@ -99,7 +99,7 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         addBtn.pin.bottom(view.pin.safeArea.bottom + 20).right(20).size(50)
     }
 
-    
+
     //MARK: - Bind
     override func bindView() {
         pageControl.rx.controlEvent(.valueChanged)
