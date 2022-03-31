@@ -11,7 +11,7 @@ protocol AppHomeDependency: Dependency {
   
 }
 
-final class AppHomeComponent: Component<AppHomeDependency>  {
+final class AppHomeComponent: Component<AppHomeDependency> , ChooseImageDependency {
 
 }
 
@@ -32,10 +32,12 @@ final class AppHomeBuilder: Builder<AppHomeDependency>, AppHomeBuildable {
         let interactor = AppHomeInteractor(presenter: viewController)
         interactor.listener = listener
         
+        let chooseImageBuilder = ChooseImageBuilder(dependency: component)
         
         return AppHomeRouter(
             interactor: interactor,
-            viewController: viewController
+            viewController: viewController,
+            chooseImageBuildable: chooseImageBuilder
         )
     }
 }

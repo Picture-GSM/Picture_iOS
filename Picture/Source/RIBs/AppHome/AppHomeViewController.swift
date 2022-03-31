@@ -19,8 +19,7 @@ import PinLayout
 
 //MARK: - Listener
 protocol AppHomePresentableListener: AnyObject {
-    func didTapCamera()
-    func didTapAlbum()
+    func didTapAddBtn()
 }
 
 final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHomeViewControllable {
@@ -92,12 +91,15 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     }
     
     override func setLayout() {
+        super.setLayout()
         scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
         pageControl.pin.bottomCenter(to: scrollView.anchor.bottomCenter).height(20).width(375)
         titleLabel.pin.left(bounds.width/18.75).below(of: scrollView).width(200).height(20)
         collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
-        addBtn.pin.below(of: collectionView).right().size(50)
+        addBtn.pin.bottom(view.pin.safeArea.bottom + 5).right(20).size(40)
     }
+
+    
     //MARK: - Bind
     override func bindView() {
         pageControl.rx.controlEvent(.valueChanged)
@@ -110,7 +112,7 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         
         addBtn.rx.tap
             .subscribe(onNext: { [weak self] in
-                self?.listener?.didTapCamera()
+                self?.listener?.didTapAddBtn()
             })
             .disposed(by: disposeBag)
         

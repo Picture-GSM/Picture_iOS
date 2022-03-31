@@ -9,7 +9,8 @@ import RIBs
 import RxSwift
 
 protocol AppHomeRouting: ViewableRouting {
-
+    func attachChooseImage()
+    func detachChooseImage()
 }
 
 protocol AppHomePresentable: Presentable {
@@ -44,12 +45,13 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
         super.willResignActive()
         // TODO: Pause any business logic.
     }
-    
-    func didTapCamera() {
-        print("Camera")
+    //MARK: - Attach
+    func didTapAddBtn() {
+        router?.attachChooseImage()
+    }
+    //MARK: - Detach
+    func transportHomeDidClose() {
+        router?.detachChooseImage()
     }
     
-    func didTapAlbum() {
-        
-    }
 }

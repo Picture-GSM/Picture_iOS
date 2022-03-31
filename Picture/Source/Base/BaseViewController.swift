@@ -38,7 +38,6 @@ class BaseViewController : UIViewController {
         super.init(coder: coder)
         //MARK: - setting
         addView()
-        setLayout()
         configureUI()
         keyBoardLayout()
         delegate()
@@ -48,6 +47,12 @@ class BaseViewController : UIViewController {
         bindAction()
         bindState()
     }
+    //MARK: - Layout
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setLayout()
+    }
+    
     
     private func setupBackgroundIfNotSet(){
         if self.view.backgroundColor == nil{

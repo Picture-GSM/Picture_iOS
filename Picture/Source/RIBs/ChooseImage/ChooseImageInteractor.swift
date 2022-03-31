@@ -18,10 +18,11 @@ protocol ChooseImagePresentable: Presentable {
 }
 
 protocol ChooseImageListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func transportHomeDidClose()
 }
 
 final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener {
+
 
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?
@@ -42,4 +43,9 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+    
+    func didTapBack() {
+        listener?.transportHomeDidClose()
+    }
+    
 }
