@@ -96,7 +96,7 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         pageControl.pin.bottomCenter(to: scrollView.anchor.bottomCenter).height(20).width(375)
         titleLabel.pin.left(bounds.width/18.75).below(of: scrollView).width(200).height(20)
         collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
-        addBtn.pin.bottom(view.pin.safeArea.bottom + 5).right(20).size(40)
+        addBtn.pin.bottom(view.pin.safeArea.bottom + 20).right(20).size(50)
     }
 
     

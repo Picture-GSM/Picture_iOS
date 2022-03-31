@@ -34,6 +34,7 @@
 		EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */; };
 		EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */; };
 		EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */; };
+		EEA102F327F588750081AD84 /* ImageBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102F227F588750081AD84 /* ImageBtn.swift */; };
 		EEC348D927E18F2300CC9132 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = EEC348D827E18F2300CC9132 /* PanModal */; };
 		EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */; };
 		EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */; };
@@ -91,6 +92,7 @@
 		EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageViewController.swift; sourceTree = "<group>"; };
 		EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageBuilder.swift; sourceTree = "<group>"; };
 		EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageInteractor.swift; sourceTree = "<group>"; };
+		EEA102F227F588750081AD84 /* ImageBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBtn.swift; sourceTree = "<group>"; };
 		EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBtn.swift; sourceTree = "<group>"; };
 		EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
@@ -214,12 +216,21 @@
 		EEA102E827F54D7B0081AD84 /* ChooseImage */ = {
 			isa = PBXGroup;
 			children = (
+				EEA102F127F588670081AD84 /* View */,
 				EEA102E927F54DB00081AD84 /* ChooseImageRouter.swift */,
 				EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */,
 				EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */,
 				EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */,
 			);
 			path = ChooseImage;
+			sourceTree = "<group>";
+		};
+		EEA102F127F588670081AD84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEA102F227F588750081AD84 /* ImageBtn.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		EEC348DA27E1FE6900CC9132 /* View */ = {
@@ -483,6 +494,7 @@
 				EEFA58BD27E2D22900DBB4A8 /* ListHomeViewController.swift in Sources */,
 				EEA102D327F544240081AD84 /* TopupBuilder.swift in Sources */,
 				EEA102DC27F549C30081AD84 /* CameraRouter.swift in Sources */,
+				EEA102F327F588750081AD84 /* ImageBtn.swift in Sources */,
 				EEA102D427F544240081AD84 /* TopupInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
