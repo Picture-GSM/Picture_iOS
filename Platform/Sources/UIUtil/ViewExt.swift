@@ -13,7 +13,7 @@ public extension UIView{
     }
 }
 //MARK: - CornerRadius & Shadow
-extension UIView {
+public extension UIView {
   func addShadowWithRoundedCorners(
     _ radius: CGFloat = 16,
     shadowColor: CGColor = UIColor.black.cgColor,

@@ -70,6 +70,11 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         $0.backgroundColor = .red
     }
     
+    private let addBtn = AddBtn().then{
+        $0.backgroundColor = .white
+        $0.layer.applySketchShadow(color: .gray, alpha: 0.25, x: 0, y: 4, blur: 10, spread: 0)
+        $0.layer.cornerRadius = 20
+    }
     
     
     //MARK: - Main
@@ -83,7 +88,7 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     }
     
     override func addView() {
-        view.addSubviews(scrollView,pageControl,titleLabel,collectionView,menuBtn)
+        view.addSubviews(scrollView,pageControl,titleLabel,collectionView,addBtn)
     }
     
     override func setLayout() {
@@ -91,7 +96,7 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         pageControl.pin.bottomCenter(to: scrollView.anchor.bottomCenter).height(20).width(375)
         titleLabel.pin.left(bounds.width/18.75).below(of: scrollView).width(200).height(20)
         collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
-        menuBtn.pin.bottom(view.pin.safeArea).size(200)
+        addBtn.pin.below(of: collectionView).right().size(50)
     }
     //MARK: - Bind
     override func bindView() {
@@ -103,6 +108,11 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
                 self?.scrollView.setCurrentPage(currentPage, animated: true)
             }).disposed(by: disposeBag)
         
+        addBtn.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.listener?.didTapCamera()
+            })
+            .disposed(by: disposeBag)
         
     }
     

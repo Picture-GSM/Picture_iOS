@@ -46,6 +46,7 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
     }
     
     func didTapCamera() {
+        print("Camera")
     }
     
     func didTapAlbum() {
