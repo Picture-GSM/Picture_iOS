@@ -12,6 +12,9 @@ import UIUtil
 protocol ChooseImageRouting: ViewableRouting {
     func attachTopup()
     func detachTopup()
+    
+    func attachPhotoLibrary()
+    func detachPhotoLibrary()
 }
 
 protocol ChooseImagePresentable: Presentable {
@@ -23,9 +26,6 @@ protocol ChooseImageListener: AnyObject {
 }
 
 final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener, AdaptivePresentationControllerDelegate {
-
-
-
 
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?
@@ -52,13 +52,14 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         listener?.transportHomeDidClose()
     }
     
-    func didTapOriginerImageButton() {
+    func didTapOriginerImage() {
         router?.attachTopup()
     }
     
-    func didTapPieceImageButton() {
-        router?.attachTopup()
+    func didTapPieceImage() {
+        router?.attachPhotoLibrary()
     }
+    
     func topupDidClose() {
         router?.detachTopup()
     }

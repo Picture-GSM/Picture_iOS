@@ -13,13 +13,15 @@ import PinLayout
 
 protocol ChooseImagePresentableListener: AnyObject {
     func didTapBack()
-    func didTapOriginerImageButton()
-    func didTapPieceImageButton()
+    func didTapOriginerImage()
+    func didTapPieceImage()
 }
 
 final class ChooseImageViewController: BaseViewController, ChooseImagePresentable, ChooseImageViewControllable {
     
     weak var listener: ChooseImagePresentableListener?
+    
+    private let alert = UIAlertController(title: "선택!", message: "이미지 선정 방법을 선택해주세요", preferredStyle: .alert)
     
     private let backButton = UIButton().then {
         $0.backgroundColor = .white
@@ -56,6 +58,16 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
         $0.setTitleColor(UIColor.white, for: .normal)
     }
     
+    //MARK: - Method
+    override func configureUI() {
+        alert.addAction(UIAlertAction.init(title: "사진", style: .cancel, handler: { [weak self] _ in
+            self?.listener?.didTapOriginerImage()
+        }))
+        alert.addAction(UIAlertAction.init(title: "앨범", style: .destructive, handler: { [weak self] _ in
+            self?.listener?.didTapPieceImage()
+        }))
+    }
+    
     override func addView() {
         view.addSubviews(backButton,titleLabel,originalImageBtn,pieceImageBtn,startBtn)
     }
@@ -76,15 +88,14 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
             .disposed(by: disposeBag)
         
         originalImageBtn.rx.tap
-            .subscribe(onNext:{ [weak self ] in
-                self?.listener?.didTapOriginerImageButton()
+            .subscribe(onNext:{ [weak self] in
+                self?.present(self!.alert, animated: true)
             }).disposed(by: disposeBag)
         
         pieceImageBtn.rx.tap
             .subscribe(onNext:{ [weak self] in
-                self?.listener?.didTapPieceImageButton()
+                self?.present(self!.alert, animated: true)
             }).disposed(by: disposeBag)
-        
         
     }
 }

@@ -84,10 +84,22 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
     
     //MARK: - Detach
     func detachCamera() {
+        guard let router = cameraRouting else {
+            return
+        }
         
+        navigationControllable?.popViewController(animated: true)
+        detachChild(router)
+        cameraRouting = nil
     }
     func detachPhotoLibrary() {
+        guard let router = cameraRouting else {
+          return
+        }
         
+        dismissPresentedNavigation(completion: nil)
+        detachChild(router)
+        cameraRouting = nil
     }
     
     func popToRoot() {

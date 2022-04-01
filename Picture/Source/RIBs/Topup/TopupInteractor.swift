@@ -44,9 +44,7 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
 
     override func willResignActive() {
         super.willResignActive()
-
         router?.cleanupViews()
-        // TODO: Pause any business logic.
     }
     func presetationControllerDidDismiss() {
         listener?.topupDidClose()
