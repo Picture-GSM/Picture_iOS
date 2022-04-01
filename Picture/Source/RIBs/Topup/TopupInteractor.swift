@@ -39,7 +39,7 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        router?.attachPhotoLibrary()
+        router?.attachCamera()
     }
 
     override func willResignActive() {

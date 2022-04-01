@@ -9,6 +9,7 @@ import RIBs
 import RxSwift
 import UIKit
 import Then
+import PinLayout
 
 protocol ChooseImagePresentableListener: AnyObject {
     func didTapBack()
@@ -50,18 +51,20 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
     
     private let startBtn = UIButton().then{
         $0.backgroundColor = .black
+        $0.layer.cornerRadius = 20
         $0.setTitle("시작", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
     }
     
     override func addView() {
-        view.addSubviews(backButton,titleLabel,originalImageBtn,pieceImageBtn)
+        view.addSubviews(backButton,titleLabel,originalImageBtn,pieceImageBtn,startBtn)
     }
     override func setLayout() {
         backButton.pin.top(view.pin.safeArea.top + 5).size(40).left(20)
         titleLabel.pin.below(of: backButton, aligned: .start).right(view.pin.safeArea).marginHorizontal(0).height(100)
         originalImageBtn.pin.size(bounds.width/2.5).centerLeft(20)
         pieceImageBtn.pin.size(bounds.width/2.5).centerRight(20)
+        startBtn.pin.bottom(bounds.height/15).hCenter().width(80%).maxWidth(300).height(40)
     }
     
     //MARK: - Bind
@@ -81,5 +84,7 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
             .subscribe(onNext:{ [weak self] in
                 self?.listener?.didTapPieceImageButton()
             }).disposed(by: disposeBag)
+        
+        
     }
 }
