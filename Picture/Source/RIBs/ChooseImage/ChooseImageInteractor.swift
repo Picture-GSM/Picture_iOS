@@ -53,11 +53,11 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     }
     
     func didTapOriginerImageButton() {
-        print("originer")
+        router?.attachTopup()
     }
     
     func didTapPieceImageButton() {
-        print("piece")
+        router?.attachTopup()
     }
     func topupDidClose() {
         router?.detachTopup()

@@ -6,26 +6,26 @@
 //
 
 import RIBs
+import RIBsUtil
 
 protocol TopupDependency: Dependency {
     var topupBaseViewController: ViewControllable { get }
 
 }
 
-final class TopupComponent: Component<TopupDependency> {
+final class TopupComponent: Component<TopupDependency> , CameraDependency, PhotoLibraryDependency{
 
     // TODO: Make sure to convert the variable into lower-camelcase.
     fileprivate var topupBaseViewController: ViewControllable {
         return dependency.topupBaseViewController
     }
 
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
 
 // MARK: - Builder
 
 protocol TopupBuildable: Buildable {
-    func build(withListener listener: TopupListener) -> TopupRouting
+    func build(withListener listener: TopupListener) -> Routing
 }
 
 final class TopupBuilder: Builder<TopupDependency>, TopupBuildable {
@@ -34,14 +34,19 @@ final class TopupBuilder: Builder<TopupDependency>, TopupBuildable {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: TopupListener) -> TopupRouting {
+    func build(withListener listener: TopupListener) -> Routing {
         let component = TopupComponent(dependency: dependency)
         let interactor = TopupInteractor()
         interactor.listener = listener
         
+        let cameraBuilder = CameraBuilder(dependency: component)
+        let photoLibraryBuilder = PhotoLibraryBuilder(dependency: component)
+        
         return TopupRouter(
             interactor: interactor,
-            viewController: component.topupBaseViewController
+            viewController: component.topupBaseViewController,
+            cameraBuildable: cameraBuilder,
+            photoLibraryBuildable: photoLibraryBuilder
         )
     }
 }

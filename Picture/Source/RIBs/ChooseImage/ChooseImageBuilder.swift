@@ -19,7 +19,7 @@ final class ChooseImageComponent: Component<ChooseImageDependency> {
 // MARK: - Builder
 
 protocol ChooseImageBuildable: Buildable {
-    func build(withListener listener: ChooseImageListener) -> ChooseImageRouting
+    func build(withListener listener: ChooseImageListener) -> ViewableRouting
 }
 
 final class ChooseImageBuilder: Builder<ChooseImageDependency>, ChooseImageBuildable {
@@ -28,7 +28,7 @@ final class ChooseImageBuilder: Builder<ChooseImageDependency>, ChooseImageBuild
         super.init(dependency: dependency)
     }
     
-    func build(withListener listener: ChooseImageListener) -> ChooseImageRouting {
+    func build(withListener listener: ChooseImageListener) -> ViewableRouting {
         let component = ChooseImageComponent(dependency: dependency)
         let viewController = ChooseImageViewController()
         

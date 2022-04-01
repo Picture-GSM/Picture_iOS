@@ -15,7 +15,7 @@ protocol PhotoLibraryPresentableListener: AnyObject {
     // interactor class.
 }
 
-final class PhotoLibraryViewController: UICollectionViewController, PhotoLibraryPresentable, PhotoLibraryViewControllable {
+final class PhotoLibraryViewController: UIViewController, PhotoLibraryPresentable, PhotoLibraryViewControllable {
     
     weak var listener: PhotoLibraryPresentableListener?
     

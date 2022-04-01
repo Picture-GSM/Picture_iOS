@@ -7,8 +7,9 @@
 
 import RIBs
 import UIUtil
+import RIBsUtil
 
-protocol ChooseImageInteractable: Interactable , TopupListener{
+protocol ChooseImageInteractable: Interactable , TopupListener, CameraListener, PhotoLibraryListener{
     var router: ChooseImageRouting? { get set }
     var listener: ChooseImageListener? { get set }
     var presentationDelegateProxy  : AdaptivePresentationControllerDelegateProxy {get}
@@ -19,6 +20,7 @@ protocol ChooseImageViewControllable: ViewControllable {
 }
 
 final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseImageViewControllable>, ChooseImageRouting {
+
     
     private let topupBuildable : TopupBuildable
     private var topupRouting : Routing?
@@ -28,15 +30,17 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         viewController: ChooseImageViewControllable,
         topupBuildable : TopupBuildable
      ) {
+
          self.topupBuildable = topupBuildable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
     
     func attachTopup() {
-        if topupRouting != nil{
-            return
+        if topupRouting != nil {
+          return
         }
+        
         let router = topupBuildable.build(withListener: interactor)
         topupRouting = router
         attachChild(router)

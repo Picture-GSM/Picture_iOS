@@ -15,7 +15,12 @@ protocol CameraPresentableListener: AnyObject {
     // interactor class.
 }
 
-final class CameraViewController: UIViewController, CameraPresentable, CameraViewControllable {
+final class CameraViewController: BaseViewController, CameraPresentable, CameraViewControllable {
 
     weak var listener: CameraPresentableListener?
+    
+    
+    override func configureUI() {
+        title = "camera"
+    }
 }
