@@ -67,6 +67,7 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         guard let router = topupRouting else{
             return
         }
+
         detachChild(router)
         self.topupRouting = nil
     }

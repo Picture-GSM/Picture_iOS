@@ -36,6 +36,7 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()
         super.init(presenter: presenter)
         presenter.listener = self
+        self.presentationDelegateProxy.delegate = self
     }
 
     override func didBecomeActive() {
@@ -46,6 +47,9 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    func presetationControllerDidDismiss() {
+        router?.detachPhotoLibrary()
     }
     
     func didTapBack() {
@@ -69,7 +73,5 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     }
     
     
-    func presetationControllerDidDismiss() {
-        router?.detachTopup()
-    }
+
 }
