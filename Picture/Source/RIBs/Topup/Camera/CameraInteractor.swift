@@ -18,10 +18,12 @@ protocol CameraPresentable: Presentable {
 }
 
 protocol CameraListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func cameraDidTapClose()
 }
 
 final class CameraInteractor: PresentableInteractor<CameraPresentable>, CameraInteractable, CameraPresentableListener {
+
+    
 
     weak var router: CameraRouting?
     weak var listener: CameraListener?
@@ -41,5 +43,9 @@ final class CameraInteractor: PresentableInteractor<CameraPresentable>, CameraIn
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    func didTapCloseBtn() {
+        listener?.cameraDidTapClose()
     }
 }

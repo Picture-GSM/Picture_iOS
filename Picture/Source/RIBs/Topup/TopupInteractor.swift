@@ -26,6 +26,7 @@ protocol TopupListener: AnyObject {
 
 final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationControllerDelegate {
 
+
     weak var router: TopupRouting?
     weak var listener: TopupListener?
     
@@ -41,7 +42,7 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
         super.didBecomeActive()
         router?.attachCamera()
     }
-
+    
     override func willResignActive() {
         super.willResignActive()
         router?.cleanupViews()
@@ -49,4 +50,9 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
     func presetationControllerDidDismiss() {
         listener?.topupDidClose()
     }
+    func cameraDidTapClose() {
+        router?.detachCamera()
+        listener?.topupDidClose()
+    }
+    
 }

@@ -8,19 +8,39 @@
 import RIBs
 import RxSwift
 import UIKit
+import AVFoundation
+import PinLayout
 
 protocol CameraPresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+    func didTapCloseBtn()
 }
 
 final class CameraViewController: BaseViewController, CameraPresentable, CameraViewControllable {
 
     weak var listener: CameraPresentableListener?
     
+    //MARK: - Properties
+    private let cameraToolBar = CameraBottomBar()
     
+    
+    
+    //MARK: - Method
     override func configureUI() {
         title = "camera"
+        setupNavigationItem(with: .close, target: self, action: #selector(didTapClose))
     }
+    override func addView() {
+        view.addSubviews(cameraToolBar)
+    }
+    override func setLayout() {
+        cameraToolBar.pin.bottom().width(100%).height(81.2)
+    }
+    
+    
+    //MARK: - NavigationAction
+    @objc
+    private func didTapClose(){
+        listener?.didTapCloseBtn()
+    }
+    
 }

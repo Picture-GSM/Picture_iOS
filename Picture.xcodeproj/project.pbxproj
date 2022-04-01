@@ -20,6 +20,7 @@
 		EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */; };
 		EEA0117227F6A06A00FEF909 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = EEA0117127F6A06A00FEF909 /* NVActivityIndicatorView */; };
 		EEA0117427F6A06A00FEF909 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = EEA0117327F6A06A00FEF909 /* NVActivityIndicatorViewExtended */; };
+		EEA0118227F6D18D00FEF909 /* CameraBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA0118127F6D18C00FEF909 /* CameraBottomBar.swift */; };
 		EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */; };
 		EEA102D227F544240081AD84 /* TopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102CF27F544240081AD84 /* TopupRouter.swift */; };
 		EEA102D327F544240081AD84 /* TopupBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102D027F544240081AD84 /* TopupBuilder.swift */; };
@@ -78,6 +79,7 @@
 		EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoRealmData.swift; sourceTree = "<group>"; };
 		EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHomeCollectionViewSection.swift; sourceTree = "<group>"; };
+		EEA0118127F6D18C00FEF909 /* CameraBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraBottomBar.swift; sourceTree = "<group>"; };
 		EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerControllerDelegate.swift; sourceTree = "<group>"; };
 		EEA102CF27F544240081AD84 /* TopupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupRouter.swift; sourceTree = "<group>"; };
 		EEA102D027F544240081AD84 /* TopupBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopupBuilder.swift; sourceTree = "<group>"; };
@@ -183,6 +185,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		EEA0118027F6D16200FEF909 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEA0118127F6D18C00FEF909 /* CameraBottomBar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EEA102CE27F544060081AD84 /* Topup */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +208,7 @@
 		EEA102D627F547410081AD84 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
+				EEA0118027F6D16200FEF909 /* View */,
 				EEA102D827F549C30081AD84 /* CameraRouter.swift */,
 				EEA102D927F549C30081AD84 /* CameraViewController.swift */,
 				EEA102DA27F549C30081AD84 /* CameraBuilder.swift */,
@@ -491,6 +502,7 @@
 				EEA102DF27F549C30081AD84 /* CameraInteractor.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
 				EEA102E527F549D80081AD84 /* PhotoLibraryViewController.swift in Sources */,
+				EEA0118227F6D18D00FEF909 /* CameraBottomBar.swift in Sources */,
 				EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */,
 				EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */,
 				EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */,
@@ -646,9 +658,11 @@
 				DEVELOPMENT_TEAM = 7JA353ZJMP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Picture/Supporting/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera permissions for taking photos and videos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Album permissions to save videos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortraitUpsideDown;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -674,9 +688,11 @@
 				DEVELOPMENT_TEAM = 7JA353ZJMP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Picture/Supporting/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera permissions for taking photos and videos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Album permissions to save videos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortraitUpsideDown;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
