@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import PinLayout
 
 protocol CameraBottomDelegate : AnyObject {
     func didTapAlbumBtn()
@@ -18,11 +19,16 @@ final class CameraBottomBar : UIView{
     
     var disposeBag = DisposeBag()
     //MARK: - delegate
-    weak var delegate : CameraBottomDelegate?
+    public weak var delegate : CameraBottomDelegate?
     
     private let photoLibraryBtn = UIButton().then{
         $0.setImage(UIImage(systemName: "square.grid.2x2.fill",withConfiguration: UIImage.SymbolConfiguration(pointSize: 27, weight: .semibold)), for: .normal)
         $0.tintColor = .white
+    }
+    private let takePictureBtn = UIButton().then{
+        $0.backgroundColor = .white
+        $0.layer.borderColor = UIColor.gray.cgColor
+        $0.layer.borderWidth = 4
     }
     
     //MARK: - init
@@ -39,11 +45,16 @@ final class CameraBottomBar : UIView{
         bind()
     }
     //MARK: - Setlayout
+    override func layoutSubviews() {
+        takePictureBtn.layer.cornerRadius = takePictureBtn.frame.height/2
+        takePictureBtn.pin.top(10).hCenter().size(50)
+        photoLibraryBtn.pin.top(10).left(20).size(40)
+    }
+    
+    //MARK: - Method
     private func setlayout(){
         backgroundColor = .darkGray
-        addSubviews(photoLibraryBtn)
-        
-        photoLibraryBtn.pin.left(20).hCenter().size(40)
+        addSubviews(photoLibraryBtn,takePictureBtn)
     }
     
     //MARK: - Bind
@@ -53,6 +64,9 @@ final class CameraBottomBar : UIView{
                 self?.delegate?.didTapAlbumBtn()
             }).disposed(by: disposeBag)
         
+        takePictureBtn.rx.tap
+            .subscribe(onNext:{ [weak self] in
+                self?.delegate?.didTapTakePicture()
+            }).disposed(by: disposeBag)
     }
-    
 }

@@ -38,7 +38,6 @@
 		EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */; };
 		EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */; };
 		EEA102F327F588750081AD84 /* ImageBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102F227F588750081AD84 /* ImageBtn.swift */; };
-		EEC348D927E18F2300CC9132 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = EEC348D827E18F2300CC9132 /* PanModal */; };
 		EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */; };
 		EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
@@ -133,7 +132,6 @@
 				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
 				EEA0117427F6A06A00FEF909 /* NVActivityIndicatorViewExtended in Frameworks */,
 				EEED8B9427F1577700A7B052 /* RxUtil in Frameworks */,
-				EEC348D927E18F2300CC9132 /* PanModal in Frameworks */,
 				EEED8B9227F1577700A7B052 /* RIBsUtil in Frameworks */,
 				EEA0117227F6A06A00FEF909 /* NVActivityIndicatorView in Frameworks */,
 				EE83C2E027E442CC00CB0C78 /* Differentiator in Frameworks */,
@@ -397,7 +395,6 @@
 				EEEA2C6827D9E46F00356B33 /* PinLayout */,
 				EECB9AEE27E02FE000FF2124 /* RxRealm */,
 				EECB9AF327E034C100FF2124 /* RIBs */,
-				EEC348D827E18F2300CC9132 /* PanModal */,
 				EE83C2D327E4259A00CB0C78 /* Reusable */,
 				EE83C2DF27E442CC00CB0C78 /* Differentiator */,
 				EE83C2E127E442CC00CB0C78 /* RxDataSources */,
@@ -441,7 +438,6 @@
 				EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */,
 				EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */,
 				EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */,
-				EEC348D727E18F2300CC9132 /* XCRemoteSwiftPackageReference "PanModal" */,
 				EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */,
 				EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */,
@@ -764,14 +760,6 @@
 				kind = branch;
 			};
 		};
-		EEC348D727E18F2300CC9132 /* XCRemoteSwiftPackageReference "PanModal" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/slackhq/PanModal.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxRealm.git";
@@ -839,11 +827,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EEA0117027F6A06A00FEF909 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorViewExtended;
-		};
-		EEC348D827E18F2300CC9132 /* PanModal */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEC348D727E18F2300CC9132 /* XCRemoteSwiftPackageReference "PanModal" */;
-			productName = PanModal;
 		};
 		EECB9AEE27E02FE000FF2124 /* RxRealm */ = {
 			isa = XCSwiftPackageProductDependency;

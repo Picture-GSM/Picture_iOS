@@ -24,7 +24,6 @@ protocol CameraListener: AnyObject {
 final class CameraInteractor: PresentableInteractor<CameraPresentable>, CameraInteractable, CameraPresentableListener {
 
     
-
     weak var router: CameraRouting?
     weak var listener: CameraListener?
 
@@ -48,4 +47,5 @@ final class CameraInteractor: PresentableInteractor<CameraPresentable>, CameraIn
     func didTapCloseBtn() {
         listener?.cameraDidTapClose()
     }
+    
 }

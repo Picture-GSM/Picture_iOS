@@ -15,7 +15,8 @@ protocol CameraPresentableListener: AnyObject {
     func didTapCloseBtn()
 }
 
-final class CameraViewController: BaseViewController, CameraPresentable, CameraViewControllable {
+final class CameraViewController: BaseViewController, CameraPresentable, CameraViewControllable , CameraBottomDelegate{
+
 
     weak var listener: CameraPresentableListener?
     
@@ -35,7 +36,9 @@ final class CameraViewController: BaseViewController, CameraPresentable, CameraV
     override func setLayout() {
         cameraToolBar.pin.bottom().width(100%).height(81.2)
     }
-    
+    override func delegate() {
+        cameraToolBar.delegate = self
+    }
     
     //MARK: - NavigationAction
     @objc
@@ -43,4 +46,11 @@ final class CameraViewController: BaseViewController, CameraPresentable, CameraV
         listener?.didTapCloseBtn()
     }
     
+    func didTapAlbumBtn() {
+        listener?.didTapCloseBtn()
+    }
+    
+    func didTapTakePicture() {
+        listener?.didTapCloseBtn()
+    }
 }
