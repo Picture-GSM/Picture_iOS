@@ -72,10 +72,4 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     func topupDidFinish() {
         router?.detachTopup()
     }
-    
-    func cameraDidTapClose() {
-        router?.detachTopup()
-    }
-    
-
 }

@@ -19,10 +19,10 @@ protocol CameraPresentable: Presentable {
 
 protocol CameraListener: AnyObject {
     func cameraDidTapClose()
+    func photoLibraryTransportTap()
 }
 
 final class CameraInteractor: PresentableInteractor<CameraPresentable>, CameraInteractable, CameraPresentableListener {
-
     
     weak var router: CameraRouting?
     weak var listener: CameraListener?
@@ -48,4 +48,11 @@ final class CameraInteractor: PresentableInteractor<CameraPresentable>, CameraIn
         listener?.cameraDidTapClose()
     }
     
+    func didTapTransportPhotoLibrary() {
+        listener?.photoLibraryTransportTap()
+    }
+    
+    func didTapTakePicture() {
+        
+    }
 }

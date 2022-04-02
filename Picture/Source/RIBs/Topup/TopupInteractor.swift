@@ -54,5 +54,8 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
         router?.detachCamera()
         listener?.topupDidClose()
     }
+    func photoLibraryTransportTap() {
+        print("s")
+    }
     
 }

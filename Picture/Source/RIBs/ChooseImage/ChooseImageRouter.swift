@@ -9,7 +9,7 @@ import RIBs
 import UIUtil
 import RIBsUtil
 
-protocol ChooseImageInteractable: Interactable , TopupListener, CameraListener, PhotoLibraryListener{
+protocol ChooseImageInteractable: Interactable , TopupListener, PhotoLibraryListener{
     var router: ChooseImageRouting? { get set }
     var listener: ChooseImageListener? { get set }
     var presentationDelegateProxy  : AdaptivePresentationControllerDelegateProxy {get}
