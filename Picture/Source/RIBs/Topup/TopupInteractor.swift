@@ -17,6 +17,8 @@ protocol TopupRouting: Routing {
     
     func attachPhotoLibrary()
     func detachPhotoLibrary()
+    
+    
 }
 
 protocol TopupListener: AnyObject {
@@ -25,6 +27,8 @@ protocol TopupListener: AnyObject {
 }
 
 final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationControllerDelegate {
+
+    
 
 
     weak var router: TopupRouting?
@@ -55,7 +59,9 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
         listener?.topupDidClose()
     }
     func photoLibraryTransportTap() {
-        print("s")
+        router?.attachPhotoLibrary()
     }
-    
+    func didPhotoLibraryDidTapClose() {
+        router?.detachPhotoLibrary()
+    }
 }

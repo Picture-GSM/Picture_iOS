@@ -69,16 +69,10 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
         if photoLibraryRouting != nil{
             return
         }
-        let router = photoLibraryBuildable.build(withListener: interactor)
-        
-        if let navigationControllable = navigationControllable {
-            navigationControllable.pushViewController(router.viewControllable, animated: true)
-            resetChildRouting()
-        }else{
-            presentInsideNavigation(router.viewControllable)
-        }
+        let router = photoLibraryBuildable.build(withListener: interactor, closeButtonType: .back)
+        navigationControllable?.pushViewController(router.viewControllable, animated: true)
+        photoLibraryRouting = router
         attachChild(router)
-        photoLibraryRouting = nil
     }
     
     
@@ -88,16 +82,16 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
             return
         }
         
-        navigationControllable?.popViewController(animated: true)
+        dismissPresentedNavigation(completion: nil)
         detachChild(router)
         cameraRouting = nil
     }
     func detachPhotoLibrary() {
-        guard let router = cameraRouting else {
+        guard let router = photoLibraryRouting else {
           return
         }
         
-        dismissPresentedNavigation(completion: nil)
+        navigationControllable?.popViewController(animated: true)
         detachChild(router)
         cameraRouting = nil
     }

@@ -18,7 +18,7 @@ protocol PhotoLibraryPresentable: Presentable {
 }
 
 protocol PhotoLibraryListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func didPhotoLibraryDidTapClose()
 }
 
 final class PhotoLibraryInteractor: PresentableInteractor<PhotoLibraryPresentable>, PhotoLibraryInteractable, PhotoLibraryPresentableListener {
@@ -41,5 +41,9 @@ final class PhotoLibraryInteractor: PresentableInteractor<PhotoLibraryPresentabl
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    func didTapClose() {
+        listener?.didPhotoLibraryDidTapClose()
     }
 }

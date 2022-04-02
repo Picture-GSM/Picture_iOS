@@ -6,7 +6,7 @@
 //
 
 import RIBs
-
+import RIBsUtil
 protocol PhotoLibraryDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
     // created by this RIB.
@@ -20,7 +20,7 @@ final class PhotoLibraryComponent: Component<PhotoLibraryDependency> {
 // MARK: - Builder
 
 protocol PhotoLibraryBuildable: Buildable {
-    func build(withListener listener: PhotoLibraryListener) -> PhotoLibraryRouting
+    func build(withListener listener: PhotoLibraryListener, closeButtonType: DismissButtonType) -> PhotoLibraryRouting
 }
 
 final class PhotoLibraryBuilder: Builder<PhotoLibraryDependency>, PhotoLibraryBuildable {
@@ -29,9 +29,9 @@ final class PhotoLibraryBuilder: Builder<PhotoLibraryDependency>, PhotoLibraryBu
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: PhotoLibraryListener) -> PhotoLibraryRouting {
+    func build(withListener listener: PhotoLibraryListener, closeButtonType: DismissButtonType) -> PhotoLibraryRouting {
         let component = PhotoLibraryComponent(dependency: dependency)
-        let viewController = PhotoLibraryViewController()
+        let viewController = PhotoLibraryViewController(closeButtonType: closeButtonType)
         let interactor = PhotoLibraryInteractor(presenter: viewController)
         interactor.listener = listener
         return PhotoLibraryRouter(interactor: interactor, viewController: viewController)

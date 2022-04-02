@@ -8,21 +8,34 @@
 import RIBs
 import RxSwift
 import UIKit
+import RIBsUtil
 
 protocol PhotoLibraryPresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+    func didTapClose()
 }
 
 final class PhotoLibraryViewController: UIViewController, PhotoLibraryPresentable, PhotoLibraryViewControllable {
     
     weak var listener: PhotoLibraryPresentableListener?
-    
-    private let disposeBag = DisposeBag()
-    
+        
     fileprivate let selectedPhotoSubject = PublishSubject<UIImage>()
     
     
+    init(closeButtonType : DismissButtonType){
+        super.init(nibName: nil, bundle: nil)
+        setupNavigationItem(with: closeButtonType, target: self, action: #selector(didTapClose))
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        setupNavigationItem(with: .close, target: self, action: #selector(didTapClose))
+    }
+    
+    //MARK: - navigationButton Action
+    @objc
+    private func didTapClose(){
+        listener?.didTapClose()
+    }
     
 }

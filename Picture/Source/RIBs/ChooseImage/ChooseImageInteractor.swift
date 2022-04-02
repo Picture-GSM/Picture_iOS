@@ -27,7 +27,6 @@ protocol ChooseImageListener: AnyObject {
 
 final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener, AdaptivePresentationControllerDelegate {
 
-
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?
     
@@ -65,6 +64,10 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         router?.attachPhotoLibrary()
     }
     
+    func didPhotoLibraryDidTapClose() {
+        router?.detachPhotoLibrary()
+    }
+    
     func topupDidClose() {
         router?.detachTopup()
     }
@@ -72,4 +75,5 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     func topupDidFinish() {
         router?.detachTopup()
     }
+    
 }

@@ -52,7 +52,7 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         if photoLibraryRouting != nil{
             return
         }
-        let router = photoLibraryBuildable.build(withListener: interactor)
+        let router = photoLibraryBuildable.build(withListener: interactor, closeButtonType: .close)
         
         let navigation = NavigationControllerable(root: router.viewControllable)
         navigation.navigationController.presentationController?.delegate = interactor.presentationDelegateProxy
@@ -76,6 +76,8 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         guard let router = photoLibraryRouting else{
             return
         }
+        
+        viewControllable.dismiss(completion: nil)
         
         detachChild(router)
         self.photoLibraryRouting = nil

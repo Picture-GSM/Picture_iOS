@@ -49,10 +49,10 @@ final class CameraViewController: BaseViewController, CameraPresentable, CameraV
     }
     
     func didTapAlbumBtn() {
-        print("엘범으로 넘어감")
+        listener?.didTapTransportPhotoLibrary()
     }
     
     func didTapTakePicture() {
-        print("사진 확인 페이지로 넘어감")
+        listener?.didTapTakePicture()
     }
 }
