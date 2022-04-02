@@ -20,17 +20,39 @@ final class PhotoLibraryViewController: UIViewController, PhotoLibraryPresentabl
         
     fileprivate let selectedPhotoSubject = PublishSubject<UIImage>()
     
-    
+    //MARK: - init
     init(closeButtonType : DismissButtonType){
         super.init(nibName: nil, bundle: nil)
         setupNavigationItem(with: closeButtonType, target: self, action: #selector(didTapClose))
+        configureUI()
+        addView()
+        setupLayout()
     }
     
+    @available( * , unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        
+
         setupNavigationItem(with: .close, target: self, action: #selector(didTapClose))
+        configureUI()
+        addView()
+        setupLayout()
     }
+    
+    //MARK: - setup
+    private func configureUI(){
+        view.backgroundColor = .white
+        title = "Album"
+    }
+    
+    private func addView(){
+        
+    }
+    
+    private func setupLayout(){
+        
+    }
+    
     
     //MARK: - navigationButton Action
     @objc

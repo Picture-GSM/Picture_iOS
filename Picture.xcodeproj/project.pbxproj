@@ -42,6 +42,7 @@
 		EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
+		EED91AB627F8C93700159C9B /* PhotoWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED91AB527F8C93700159C9B /* PhotoWriter.swift */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
 		EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */; };
 		EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */; };
@@ -98,6 +99,7 @@
 		EEA102F227F588750081AD84 /* ImageBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBtn.swift; sourceTree = "<group>"; };
 		EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBtn.swift; sourceTree = "<group>"; };
 		EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
+		EED91AB527F8C93700159C9B /* PhotoWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWriter.swift; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		EEA102D727F5474F0081AD84 /* PhotoLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				EED91AB427F8C92F00159C9B /* Class */,
 				EEA102E027F549D80081AD84 /* PhotoLibraryRouter.swift */,
 				EEA102E127F549D80081AD84 /* PhotoLibraryViewController.swift */,
 				EEA102E227F549D80081AD84 /* PhotoLibraryBuilder.swift */,
@@ -255,6 +258,14 @@
 				EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EED91AB427F8C92F00159C9B /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				EED91AB527F8C93700159C9B /* PhotoWriter.swift */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		EEDBCD1127E2B85A00B9B9A3 /* AppRoot */ = {
@@ -470,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */,
+				EED91AB627F8C93700159C9B /* PhotoWriter.swift in Sources */,
 				EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */,
 				EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */,
 				EEA102DE27F549C30081AD84 /* CameraBuilder.swift in Sources */,
