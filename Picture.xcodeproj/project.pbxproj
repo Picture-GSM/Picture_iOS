@@ -40,6 +40,10 @@
 		EEA102F327F588750081AD84 /* ImageBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102F227F588750081AD84 /* ImageBtn.swift */; };
 		EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */; };
 		EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */; };
+		EEC784C027FA7E94005ED2D1 /* DecideImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC784BC27FA7E94005ED2D1 /* DecideImageRouter.swift */; };
+		EEC784C127FA7E94005ED2D1 /* DecideImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC784BD27FA7E94005ED2D1 /* DecideImageViewController.swift */; };
+		EEC784C227FA7E94005ED2D1 /* DecideImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC784BE27FA7E94005ED2D1 /* DecideImageBuilder.swift */; };
+		EEC784C327FA7E94005ED2D1 /* DecideImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC784BF27FA7E94005ED2D1 /* DecideImageInteractor.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EED91AB627F8C93700159C9B /* PhotoWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED91AB527F8C93700159C9B /* PhotoWriter.swift */; };
@@ -100,6 +104,10 @@
 		EEA102F227F588750081AD84 /* ImageBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBtn.swift; sourceTree = "<group>"; };
 		EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBtn.swift; sourceTree = "<group>"; };
 		EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
+		EEC784BC27FA7E94005ED2D1 /* DecideImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideImageRouter.swift; sourceTree = "<group>"; };
+		EEC784BD27FA7E94005ED2D1 /* DecideImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideImageViewController.swift; sourceTree = "<group>"; };
+		EEC784BE27FA7E94005ED2D1 /* DecideImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideImageBuilder.swift; sourceTree = "<group>"; };
+		EEC784BF27FA7E94005ED2D1 /* DecideImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideImageInteractor.swift; sourceTree = "<group>"; };
 		EED91AB527F8C93700159C9B /* PhotoWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWriter.swift; sourceTree = "<group>"; };
 		EED91AB827F8CB0700159C9B /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
@@ -198,6 +206,7 @@
 		EEA102CE27F544060081AD84 /* Topup */ = {
 			isa = PBXGroup;
 			children = (
+				EEC784BB27FA7E41005ED2D1 /* DecideImage */,
 				EEA102D727F5474F0081AD84 /* PhotoLibrary */,
 				EEA102D627F547410081AD84 /* Camera */,
 				EEA102CF27F544240081AD84 /* TopupRouter.swift */,
@@ -261,6 +270,17 @@
 				EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EEC784BB27FA7E41005ED2D1 /* DecideImage */ = {
+			isa = PBXGroup;
+			children = (
+				EEC784BC27FA7E94005ED2D1 /* DecideImageRouter.swift */,
+				EEC784BD27FA7E94005ED2D1 /* DecideImageViewController.swift */,
+				EEC784BE27FA7E94005ED2D1 /* DecideImageBuilder.swift */,
+				EEC784BF27FA7E94005ED2D1 /* DecideImageInteractor.swift */,
+			);
+			path = DecideImage;
 			sourceTree = "<group>";
 		};
 		EED91AB427F8C92F00159C9B /* Class */ = {
@@ -493,6 +513,7 @@
 			files = (
 				EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */,
 				EED91AB627F8C93700159C9B /* PhotoWriter.swift in Sources */,
+				EEC784C227FA7E94005ED2D1 /* DecideImageBuilder.swift in Sources */,
 				EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */,
 				EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */,
 				EEA102DE27F549C30081AD84 /* CameraBuilder.swift in Sources */,
@@ -513,6 +534,7 @@
 				EEFA58BE27E2D22900DBB4A8 /* ListHomeBuilder.swift in Sources */,
 				EED91AB927F8CB0700159C9B /* PhotoCell.swift in Sources */,
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
+				EEC784C127FA7E94005ED2D1 /* DecideImageViewController.swift in Sources */,
 				EE6ED5E627F2CD2C00534E68 /* BaseCollectionViewCell.swift in Sources */,
 				EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */,
 				EEA102E727F549D80081AD84 /* PhotoLibraryInteractor.swift in Sources */,
@@ -523,6 +545,7 @@
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
 				EEA102E527F549D80081AD84 /* PhotoLibraryViewController.swift in Sources */,
 				EEA0118227F6D18D00FEF909 /* CameraBottomBar.swift in Sources */,
+				EEC784C327FA7E94005ED2D1 /* DecideImageInteractor.swift in Sources */,
 				EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */,
 				EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */,
 				EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */,
@@ -533,6 +556,7 @@
 				EEFA58BD27E2D22900DBB4A8 /* ListHomeViewController.swift in Sources */,
 				EEA102D327F544240081AD84 /* TopupBuilder.swift in Sources */,
 				EEA102DC27F549C30081AD84 /* CameraRouter.swift in Sources */,
+				EEC784C027FA7E94005ED2D1 /* DecideImageRouter.swift in Sources */,
 				EEA102F327F588750081AD84 /* ImageBtn.swift in Sources */,
 				EEA102D427F544240081AD84 /* TopupInteractor.swift in Sources */,
 			);
