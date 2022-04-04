@@ -33,7 +33,7 @@ final class DecideImageBuilder: Builder<DecideImageDependency>, DecideImageBuild
     func build(withListener listener: DecideImageListener,image : UIImage) -> DecideImageRouting {
         let component = DecideImageComponent(dependency: dependency)
         let viewController = DecideImageViewController()
-        let interactor = DecideImageInteractor(presenter: viewController)
+        let interactor = DecideImageInteractor(presenter: viewController, image: image)
         interactor.listener = listener
         return DecideImageRouter(interactor: interactor, viewController: viewController)
     }

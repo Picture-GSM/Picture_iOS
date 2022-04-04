@@ -7,6 +7,7 @@
 
 import RIBs
 import RxSwift
+import UIKit
 
 protocol DecideImageRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -14,11 +15,12 @@ protocol DecideImageRouting: ViewableRouting {
 
 protocol DecideImagePresentable: Presentable {
     var listener: DecideImagePresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+
+    func setImage(_ image : UIImage)
 }
 
 protocol DecideImageListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func didTapClose()
 }
 
 final class DecideImageInteractor: PresentableInteractor<DecideImagePresentable>, DecideImageInteractable, DecideImagePresentableListener {
@@ -26,20 +28,31 @@ final class DecideImageInteractor: PresentableInteractor<DecideImagePresentable>
     weak var router: DecideImageRouting?
     weak var listener: DecideImageListener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic
-    // in constructor.
-    override init(presenter: DecideImagePresentable) {
+    private let image : UIImage
+    
+    init(
+        presenter: DecideImagePresentable,
+        image : UIImage
+    ) {
+        self.image = image
         super.init(presenter: presenter)
         presenter.listener = self
     }
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        presenter.setImage(image)
     }
 
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    func didTapClose() {
+        listener?.didTapClose()
+    }
+    func didTapSave() {
+        print("DidTap Save")
     }
 }

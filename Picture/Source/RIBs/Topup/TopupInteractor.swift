@@ -82,5 +82,8 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
     func didDecideImageDidTap(image : UIImage) {
         router?.attachDecideImage(image)
     }
-
+    func didTapClose() {
+        router?.detachDecideImage()
+    }
+    
 }

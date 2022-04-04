@@ -140,7 +140,7 @@ extension PhotoLibraryViewController : UICollectionViewDataSource, UICollectionV
         let asset = self.images[indexPath.row]
         let manager = PHImageManager.default()
         
-        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height:100), contentMode: .aspectFit, options: nil) { image, _ in
+        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height:100), contentMode: .aspectFill, options: nil) { image, _ in
             DispatchQueue.main.async { [weak self] in
                 self?.listener?.didTapPhotoLibraryImage(image ?? UIImage())
             }

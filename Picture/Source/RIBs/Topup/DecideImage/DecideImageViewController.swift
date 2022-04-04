@@ -11,12 +11,13 @@ import UIKit
 import PinLayout
 
 protocol DecideImagePresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+    func didTapClose()
+    func didTapSave()
 }
 
 final class DecideImageViewController: BaseViewController, DecideImagePresentable, DecideImageViewControllable {
+
+    
 
     weak var listener: DecideImagePresentableListener?
     
@@ -25,8 +26,9 @@ final class DecideImageViewController: BaseViewController, DecideImagePresentabl
     }
     
     override func configureUI() {
-        title = "Decide"
         view.backgroundColor = .white
+        setupNavigationItem(with: .back, target: self, action: #selector(didTapClose))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(didTapSave))
     }
     override func addView() {
         view.addSubviews(imageView)
@@ -34,4 +36,21 @@ final class DecideImageViewController: BaseViewController, DecideImagePresentabl
     override func setLayout() {
         imageView.pin.height(40%).width(100%).center()
     }
+    
+    //MARK: - listener
+    func setImage(_ image: UIImage) {
+        imageView.image = image
+    }
+    //MARK: - Selector
+    @objc
+    private func didTapClose(){
+        listener?.didTapClose()
+    }
+    
+    @objc
+    private func didTapSave(){
+        listener?.didTapSave()
+    }
+    
+    
 }
