@@ -29,7 +29,7 @@ final class PhotoLibraryViewController: UIViewController, PhotoLibraryPresentabl
     
     var selectedCollection : PHAssetCollection?
     private var photos : PHFetchResult<PHAsset>!
-    
+    private var image : UIImage = .init()
     
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         let layout = UICollectionViewFlowLayout()
@@ -114,9 +114,7 @@ extension PhotoLibraryViewController : UICollectionViewDataSource, UICollectionV
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoLibrary", for: indexPath) as? PhotoCell else{
             return UICollectionViewCell()
         }
-            
         cell.setImage(photos.object(at: indexPath.row))
-        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -127,5 +125,6 @@ extension PhotoLibraryViewController : UICollectionViewDataSource, UICollectionV
         guard ((collectionView.dequeueReusableCell(withReuseIdentifier: "photoLibrary", for: indexPath) as? PhotoCell) != nil) else{return}
 
         listener?.didTapPhotoLibraryImage(photos.object(at: indexPath.row).getImageFromPHAsset())
+
     }
 }
