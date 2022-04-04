@@ -21,6 +21,7 @@ protocol PhotoLibraryPresentable: Presentable {
 
 protocol PhotoLibraryListener: AnyObject {
     func didPhotoLibraryDidTapClose()
+    func didDecideImageDidTap(image : UIImage)
 }
 
 
@@ -54,7 +55,7 @@ final class PhotoLibraryInteractor: PresentableInteractor<PhotoLibraryPresentabl
         listener?.didPhotoLibraryDidTapClose()
     }
     func didTapPhotoLibraryImage(_ image: UIImage) {
-        
+        listener?.didDecideImageDidTap(image: image)
     }
 
 }

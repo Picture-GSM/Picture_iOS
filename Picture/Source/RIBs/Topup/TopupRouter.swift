@@ -95,7 +95,7 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
         let router = decideImageBuildable.build(withListener: interactor, image: image)
         
         navigationControllable?.pushViewController(router.viewControllable, animated: true)
-        photoLibraryRouting = router
+        decideImageRouting = router
         attachChild(router)
     }
     
