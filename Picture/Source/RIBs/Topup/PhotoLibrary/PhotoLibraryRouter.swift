@@ -6,8 +6,10 @@
 //
 
 import RIBs
+import RIBsUtil
+import UIKit
 
-protocol PhotoLibraryInteractable: Interactable {
+protocol PhotoLibraryInteractable: Interactable, DecideImageListener {
     var router: PhotoLibraryRouting? { get set }
     var listener: PhotoLibraryListener? { get set }
 }
@@ -18,9 +20,30 @@ protocol PhotoLibraryViewControllable: ViewControllable {
 
 final class PhotoLibraryRouter: ViewableRouter<PhotoLibraryInteractable, PhotoLibraryViewControllable>, PhotoLibraryRouting {
 
-    // TODO: Constructor inject child builder protocols to allow building children.
-    override init(interactor: PhotoLibraryInteractable, viewController: PhotoLibraryViewControllable) {
+    private var navigationControllable: NavigationControllerable?
+    
+    private let decideImageBuildable : DecideImageBuildable
+    private var decideImageRouting : Routing?
+    
+    init(
+        interactor: PhotoLibraryInteractable,
+        viewController: PhotoLibraryViewControllable,
+        decideImageBuildable : DecideImageBuildable
+    ) {
+        self.decideImageBuildable = decideImageBuildable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
+    
+    func attachDecidePhotoLibraryImage(_ image: UIImage) {
+        if decideImageRouting != nil{
+            return
+        }
+        let router = decideImageBuildable.build(withListener: interactor, image: image)
+        
+        
+        decideImageRouting = router
+        attachChild(router)
+    }
+    
 }

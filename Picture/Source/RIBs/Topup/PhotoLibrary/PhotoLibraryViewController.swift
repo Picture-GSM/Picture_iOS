@@ -15,6 +15,7 @@ import PinLayout
 
 protocol PhotoLibraryPresentableListener: AnyObject {
     func didTapClose()
+    func didTapPhotoLibraryImage(_ image : UIImage)
 }
 
 final class PhotoLibraryViewController: UIViewController, PhotoLibraryPresentable, PhotoLibraryViewControllable {
@@ -134,6 +135,15 @@ extension PhotoLibraryViewController : UICollectionViewDataSource, UICollectionV
     }
     //MARK: - CollectionView Action
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
+        guard ((collectionView.dequeueReusableCell(withReuseIdentifier: "photoLibrary", for: indexPath) as? PhotoCell) != nil) else{return}
+        
+        let asset = self.images[indexPath.row]
+        let manager = PHImageManager.default()
+        
+        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height:100), contentMode: .aspectFit, options: nil) { image, _ in
+            DispatchQueue.main.async { [weak self] in
+                self?.listener?.didTapPhotoLibraryImage(image ?? UIImage())
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import RIBs
+import UIKit
 
 protocol DecideImageDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
@@ -20,7 +21,7 @@ final class DecideImageComponent: Component<DecideImageDependency> {
 // MARK: - Builder
 
 protocol DecideImageBuildable: Buildable {
-    func build(withListener listener: DecideImageListener) -> DecideImageRouting
+    func build(withListener listener: DecideImageListener, image : UIImage) -> DecideImageRouting
 }
 
 final class DecideImageBuilder: Builder<DecideImageDependency>, DecideImageBuildable {
@@ -29,7 +30,7 @@ final class DecideImageBuilder: Builder<DecideImageDependency>, DecideImageBuild
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: DecideImageListener) -> DecideImageRouting {
+    func build(withListener listener: DecideImageListener,image : UIImage) -> DecideImageRouting {
         let component = DecideImageComponent(dependency: dependency)
         let viewController = DecideImageViewController()
         let interactor = DecideImageInteractor(presenter: viewController)

@@ -30,6 +30,8 @@ protocol ChooseImageListener: AnyObject {
 
 final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener, AdaptivePresentationControllerDelegate {
 
+    
+
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?
     

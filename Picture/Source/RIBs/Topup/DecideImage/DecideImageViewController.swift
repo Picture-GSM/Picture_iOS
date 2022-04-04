@@ -8,6 +8,7 @@
 import RIBs
 import RxSwift
 import UIKit
+import PinLayout
 
 protocol DecideImagePresentableListener: AnyObject {
     // TODO: Declare properties and methods that the view controller can invoke to perform
@@ -15,7 +16,22 @@ protocol DecideImagePresentableListener: AnyObject {
     // interactor class.
 }
 
-final class DecideImageViewController: UIViewController, DecideImagePresentable, DecideImageViewControllable {
+final class DecideImageViewController: BaseViewController, DecideImagePresentable, DecideImageViewControllable {
 
     weak var listener: DecideImagePresentableListener?
+    
+    private let imageView = UIImageView().then{
+        $0.backgroundColor = .red
+    }
+    
+    override func configureUI() {
+        title = "Decide"
+        view.backgroundColor = .white
+    }
+    override func addView() {
+        view.addSubviews(imageView)
+    }
+    override func setLayout() {
+        imageView.pin.height(40%).width(100%).center()
+    }
 }

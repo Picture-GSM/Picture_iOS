@@ -8,6 +8,7 @@
 import RIBs
 import RxSwift
 import UIUtil
+import UIKit
 
 protocol TopupRouting: Routing {
     func cleanupViews()
@@ -18,6 +19,8 @@ protocol TopupRouting: Routing {
     func attachPhotoLibrary()
     func detachPhotoLibrary()
     
+    func attachDecideImage(_ image : UIImage)
+    func detachDecideImage()
     
 }
 
@@ -43,6 +46,7 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
     override func didBecomeActive() {
         super.didBecomeActive()
         router?.attachCamera()
+//        router?.attachPhotoLibrary()
     }
     
     override func willResignActive() {
@@ -62,5 +66,6 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
     func didPhotoLibraryDidTapClose() {
         router?.detachPhotoLibrary()
     }
+
     
 }

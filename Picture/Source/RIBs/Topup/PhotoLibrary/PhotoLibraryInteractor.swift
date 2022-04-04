@@ -8,9 +8,11 @@
 import RIBs
 import RxSwift
 import UIUtil
+import UIKit
 
 protocol PhotoLibraryRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func attachDecidePhotoLibraryImage(_ image : UIImage)
+
 }
 
 protocol PhotoLibraryPresentable: Presentable {
@@ -21,6 +23,7 @@ protocol PhotoLibraryPresentable: Presentable {
 protocol PhotoLibraryListener: AnyObject {
     func didPhotoLibraryDidTapClose()
 }
+
 
 final class PhotoLibraryInteractor: PresentableInteractor<PhotoLibraryPresentable>, PhotoLibraryInteractable, PhotoLibraryPresentableListener {
 
@@ -50,4 +53,8 @@ final class PhotoLibraryInteractor: PresentableInteractor<PhotoLibraryPresentabl
         listener?.didPhotoLibraryDidTapClose()
     }
     
+    func didTapPhotoLibraryImage(_ image: UIImage) {
+        
+        router?.attachDecidePhotoLibraryImage(image)
+    }
 }

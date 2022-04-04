@@ -8,8 +8,9 @@
 import RIBs
 import RIBsUtil
 import UIUtil
+import UIKit
 
-protocol TopupInteractable: Interactable , CameraListener, PhotoLibraryListener{
+protocol TopupInteractable: Interactable , CameraListener, PhotoLibraryListener, DecideImageListener{
     var router: TopupRouting? { get set }
     var listener: TopupListener? { get set }
     var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy { get }
@@ -21,6 +22,7 @@ protocol TopupViewControllable: ViewControllable {
 }
 
 final class TopupRouter: Router<TopupInteractable>, TopupRouting {
+
     
     private var navigationControllable : NavigationControllerable?
     
@@ -30,12 +32,19 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
     private let photoLibraryBuildable : PhotoLibraryBuildable
     private var photoLibraryRouting : Routing?
     
+    private let decideImageBuildable : DecideImageBuildable
+    private var decideImageRouting : Routing?
+    
+    private var isEnterAmountRoot: Bool = false
+
     init(
         interactor: TopupInteractable,
         viewController: ViewControllable,
         cameraBuildable : CameraBuildable,
-        photoLibraryBuildable : PhotoLibraryBuildable
+        photoLibraryBuildable : PhotoLibraryBuildable,
+        decideImageBuildable : DecideImageBuildable
     ) {
+        self.decideImageBuildable = decideImageBuildable
         self.cameraBuildable = cameraBuildable
         self.photoLibraryBuildable = photoLibraryBuildable
         self.viewController = viewController
@@ -70,10 +79,26 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
             return
         }
         let router = photoLibraryBuildable.build(withListener: interactor, closeButtonType: .back)
+        if let navigationControllable = navigationControllable{
+            navigationControllable.pushViewController(router.viewControllable, animated: true)
+        }else{
+            presentInsideNavigation(router.viewControllable)
+        }
+        photoLibraryRouting = router
+        attachChild(router)
+    }
+    func attachDecideImage(_ image: UIImage) {
+        if decideImageRouting != nil{
+            return
+        }
+        let router = decideImageBuildable.build(withListener: interactor, image: image)
+        
         navigationControllable?.pushViewController(router.viewControllable, animated: true)
         photoLibraryRouting = router
         attachChild(router)
     }
+    
+
     
     
     //MARK: - Detach
@@ -96,6 +121,16 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
         photoLibraryRouting = nil
     }
     
+    func detachDecideImage() {
+        guard let router = decideImageRouting else{
+            return
+        }
+        navigationControllable?.popViewController(animated: true)
+        detachChild(router)
+        decideImageRouting = nil
+    }
+    
+    //MARK: - Root
     func popToRoot() {
       navigationControllable?.popToRoot(animated: true)
       resetChildRouting()
@@ -126,6 +161,11 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
             self.photoLibraryRouting = nil
         }
     }
+    
+
+    
+    
+    
     // MARK: - Private
 
     private let viewController: ViewControllable
