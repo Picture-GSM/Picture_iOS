@@ -27,12 +27,9 @@ final class PhotoLibraryViewController: UIViewController, PhotoLibraryPresentabl
     let bounds = UIScreen.main.bounds
     private var disposeBag : DisposeBag = .init()
     
-    private let selectedPhotoSubject = PublishSubject<UIImage>()
-    var selectedPhoto : Observable<UIImage>{
-        return selectedPhotoSubject.asObserver()
-    }
+    var selectedCollection : PHAssetCollection?
+    private var photos : PHFetchResult<PHAsset>!
     
-    private var images = [PHAsset]()
     
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         let layout = UICollectionViewFlowLayout()
@@ -69,7 +66,7 @@ final class PhotoLibraryViewController: UIViewController, PhotoLibraryPresentabl
     private func configureUI(){
         view.backgroundColor = .white
         title = "Album"
-        populatePhotos()
+        fetchImagesFromGallery(collection: self.selectedCollection)
     }
     
     private func addView(){
@@ -91,42 +88,34 @@ final class PhotoLibraryViewController: UIViewController, PhotoLibraryPresentabl
     }
     
     //MARK: - Photo
-    private func populatePhotos(){
-        PHPhotoLibrary.requestAuthorization { [weak self] status in
-            if status == .authorized{
-                let assets = PHAsset.fetchAssets(with: PHAssetMediaType.image, options: nil)
-                assets.enumerateObjects { object, count, stop in
-                    self?.images.append(object)
-                }
-                
-                self?.images.reverse()
-                
-                DispatchQueue.main.async {
-                    self?.collectionView.reloadData()
-                }
+    private func fetchImagesFromGallery(collection : PHAssetCollection?){
+        DispatchQueue.main.async {
+            let fetchOptions = PHFetchOptions()
+            fetchOptions.predicate = NSPredicate(format: "mediaType = %d", PHAssetMediaType.image.rawValue)
+            if let collection = collection {
+                self.photos = PHAsset.fetchAssets(in: collection, options: fetchOptions)
+            }else{
+                self.photos = PHAsset.fetchAssets(with: fetchOptions)
             }
+            self.collectionView.reloadData()
         }
     }
 }
 //MARK: - collectionView
 extension PhotoLibraryViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        if let photos = photos{
+            return photos.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoLibrary", for: indexPath) as? PhotoCell else{
             return UICollectionViewCell()
         }
-        
-        let asset = self.images[indexPath.row]
-        let manager = PHImageManager.default()
-        
-        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height:100), contentMode: .aspectFit, options: nil) { image, _ in
-            DispatchQueue.main.async {
-                cell.imageView.image = image
-            }
-        }
+            
+        cell.setImage(photos.object(at: indexPath.row))
         
         return cell
     }
@@ -136,14 +125,7 @@ extension PhotoLibraryViewController : UICollectionViewDataSource, UICollectionV
     //MARK: - CollectionView Action
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard ((collectionView.dequeueReusableCell(withReuseIdentifier: "photoLibrary", for: indexPath) as? PhotoCell) != nil) else{return}
-        
-        let asset = self.images[indexPath.row]
-        let manager = PHImageManager.default()
-        
-        manager.requestImage(for: asset, targetSize: CGSize(width: 100, height:100), contentMode: .aspectFill, options: nil) { image, _ in
-            DispatchQueue.main.async { [weak self] in
-                self?.listener?.didTapPhotoLibraryImage(image ?? UIImage())
-            }
-        }
+
+        listener?.didTapPhotoLibraryImage(photos.object(at: indexPath.row).getImageFromPHAsset())
     }
 }

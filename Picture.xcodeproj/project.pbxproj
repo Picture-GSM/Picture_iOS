@@ -44,6 +44,7 @@
 		EEC784C127FA7E94005ED2D1 /* DecideImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC784BD27FA7E94005ED2D1 /* DecideImageViewController.swift */; };
 		EEC784C227FA7E94005ED2D1 /* DecideImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC784BE27FA7E94005ED2D1 /* DecideImageBuilder.swift */; };
 		EEC784C327FA7E94005ED2D1 /* DecideImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC784BF27FA7E94005ED2D1 /* DecideImageInteractor.swift */; };
+		EEC784C727FACCEB005ED2D1 /* PHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC784C627FACCEB005ED2D1 /* PHAsset.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EED91AB627F8C93700159C9B /* PhotoWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED91AB527F8C93700159C9B /* PhotoWriter.swift */; };
@@ -108,6 +109,7 @@
 		EEC784BD27FA7E94005ED2D1 /* DecideImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideImageViewController.swift; sourceTree = "<group>"; };
 		EEC784BE27FA7E94005ED2D1 /* DecideImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideImageBuilder.swift; sourceTree = "<group>"; };
 		EEC784BF27FA7E94005ED2D1 /* DecideImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideImageInteractor.swift; sourceTree = "<group>"; };
+		EEC784C627FACCEB005ED2D1 /* PHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAsset.swift; sourceTree = "<group>"; };
 		EED91AB527F8C93700159C9B /* PhotoWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWriter.swift; sourceTree = "<group>"; };
 		EED91AB827F8CB0700159C9B /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */,
+				EEC784C627FACCEB005ED2D1 /* PHAsset.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				EEA102E727F549D80081AD84 /* PhotoLibraryInteractor.swift in Sources */,
 				EE4D0D9227E42465007D2918 /* AppHomeCollectionViewCell.swift in Sources */,
 				EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */,
+				EEC784C727FACCEB005ED2D1 /* PHAsset.swift in Sources */,
 				EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */,
 				EEA102DF27F549C30081AD84 /* CameraInteractor.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,

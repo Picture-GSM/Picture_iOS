@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Reusable
 import PinLayout
+import Photos
 
 class PhotoCell : UICollectionViewCell,Reusable{
     
@@ -33,7 +34,6 @@ class PhotoCell : UICollectionViewCell,Reusable{
     override func layoutSubviews() {
         super.layoutSubviews()
         imageView.pin.all()
-
     }
     
     override func prepareForReuse() {
@@ -42,11 +42,11 @@ class PhotoCell : UICollectionViewCell,Reusable{
         
     }
 
-    func flash() {
-      imageView.alpha = 0
-      setNeedsDisplay()
-      UIView.animate(withDuration: 0.5, animations: { [weak self] in
-        self?.imageView.alpha = 1
-      })
+ 
+    func setImage(_ asset : PHAsset){
+        self.imageView.image = asset.getAssetThumbnail(size: CGSize(width: self.frame.width * 3, height: self.frame.height * 3))
+    }
+    func setImage(_ image : UIImage){
+        self.imageView.image = image
     }
 }
