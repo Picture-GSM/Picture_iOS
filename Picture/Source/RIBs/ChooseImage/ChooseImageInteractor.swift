@@ -13,11 +13,6 @@ protocol ChooseImageRouting: ViewableRouting {
     func attachTopup(cameraStatus : Bool)
     func detachTopup()
     
-    func attachPhotoLibrary()
-    func detachPhotoLibrary()
-    
-    func detachPhotoLibraryAdptive()
-    
 }
 
 protocol ChooseImagePresentable: Presentable {
@@ -28,20 +23,16 @@ protocol ChooseImageListener: AnyObject {
     func transportHomeDidClose()
 }
 
-final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener, AdaptivePresentationControllerDelegate {
-
+final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener {
     
 
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?
     
-    let presentationDelegateProxy : AdaptivePresentationControllerDelegateProxy
 
     override init(presenter: ChooseImagePresentable) {
-        self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()
         super.init(presenter: presenter)
         presenter.listener = self
-        self.presentationDelegateProxy.delegate = self
     }
 
     override func didBecomeActive() {
@@ -53,9 +44,7 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         super.willResignActive()
         // TODO: Pause any business logic.
     }
-    func presetationControllerDidDismiss() {
-        router?.detachPhotoLibraryAdptive()
-    }
+
     
     func didTapBack() {
         listener?.transportHomeDidClose()
@@ -67,10 +56,6 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     
     func didTapPhotoLibrary() {
         router?.attachTopup(cameraStatus: false)
-    }
-    
-    func didPhotoLibraryDidTapClose() {
-        router?.detachPhotoLibrary()
     }
     
     func topupDidClose() {

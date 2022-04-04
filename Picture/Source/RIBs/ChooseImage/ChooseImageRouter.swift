@@ -9,10 +9,9 @@ import RIBs
 import UIUtil
 import RIBsUtil
 
-protocol ChooseImageInteractable: Interactable , TopupListener, PhotoLibraryListener{
+protocol ChooseImageInteractable: Interactable , TopupListener{
     var router: ChooseImageRouting? { get set }
     var listener: ChooseImageListener? { get set }
-    var presentationDelegateProxy  : AdaptivePresentationControllerDelegateProxy {get}
 }
 
 protocol ChooseImageViewControllable: ViewControllable {
@@ -22,8 +21,7 @@ protocol ChooseImageViewControllable: ViewControllable {
 final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseImageViewControllable>, ChooseImageRouting {
 
     
-    private let photoLibraryBuildable : PhotoLibraryBuildable
-    private var photoLibraryRouting : Routing?
+
     
     private let topupBuildable : TopupBuildable
     private var topupRouting : Routing?
@@ -31,10 +29,8 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
     init(
         interactor: ChooseImageInteractable,
         viewController: ChooseImageViewControllable,
-        topupBuildable : TopupBuildable,
-        photoLibraryBuildable : PhotoLibraryBuildable
+        topupBuildable : TopupBuildable
     ) {
-        self.photoLibraryBuildable = photoLibraryBuildable
         self.topupBuildable = topupBuildable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
@@ -49,19 +45,7 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         attachChild(router)
     }
     
-    func attachPhotoLibrary() {
-        if photoLibraryRouting != nil{
-            return
-        }
-        let router = photoLibraryBuildable.build(withListener: interactor, closeButtonType: .close)
-        
-        let navigation = NavigationControllerable(root: router.viewControllable)
-        navigation.navigationController.presentationController?.delegate = interactor.presentationDelegateProxy
-        viewControllable.present(navigation, animated: true, completion: nil)
-        
-        photoLibraryRouting = router
-        attachChild(router)
-    }
+
     
     //MARK: - Detach
     func detachTopup() {
@@ -71,25 +55,5 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
 
         detachChild(router)
         self.topupRouting = nil
-    }
-    
-    func detachPhotoLibrary() {
-        guard let router = photoLibraryRouting else{
-            return
-        }
-        
-        viewControllable.dismiss(completion: nil)
-        
-        detachChild(router)
-        photoLibraryRouting = nil
-    }
-    
-    func detachPhotoLibraryAdptive() {
-        guard let router = photoLibraryRouting else{
-            return
-        }
-                
-        detachChild(router)
-        photoLibraryRouting = nil
     }
 }

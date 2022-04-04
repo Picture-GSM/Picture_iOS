@@ -19,18 +19,12 @@ protocol PhotoLibraryViewControllable: ViewControllable {
 }
 
 final class PhotoLibraryRouter: ViewableRouter<PhotoLibraryInteractable, PhotoLibraryViewControllable>, PhotoLibraryRouting {
+    
 
-    private var navigationControllable: NavigationControllerable?
-    
-    private let decideImageBuildable : DecideImageBuildable
-    private var decideImageRouting : Routing?
-    
-    init(
+    override init(
         interactor: PhotoLibraryInteractable,
-        viewController: PhotoLibraryViewControllable,
-        decideImageBuildable : DecideImageBuildable
+        viewController: PhotoLibraryViewControllable
     ) {
-        self.decideImageBuildable = decideImageBuildable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }

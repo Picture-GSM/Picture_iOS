@@ -40,8 +40,7 @@ final class ChooseImageBuilder: Builder<ChooseImageDependency>, ChooseImageBuild
         return ChooseImageRouter(
             interactor: interactor,
             viewController: viewController,
-            topupBuildable: component.topupBuildable,
-            photoLibraryBuildable: photoLibraryBuilder
+            topupBuildable: component.topupBuildable
         )
     }
 }

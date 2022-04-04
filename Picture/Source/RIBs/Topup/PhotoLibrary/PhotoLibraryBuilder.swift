@@ -12,7 +12,7 @@ protocol PhotoLibraryDependency: Dependency {
     // created by this RIB.
 }
 
-final class PhotoLibraryComponent: Component<PhotoLibraryDependency>,DecideImageDependency {
+final class PhotoLibraryComponent: Component<PhotoLibraryDependency> {
 
     // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
@@ -34,13 +34,10 @@ final class PhotoLibraryBuilder: Builder<PhotoLibraryDependency>, PhotoLibraryBu
         let viewController = PhotoLibraryViewController(closeButtonType: closeButtonType)
         let interactor = PhotoLibraryInteractor(presenter: viewController)
         interactor.listener = listener
-        
-        let decideImageBuilder = DecideImageBuilder(dependency: component)
-        
+                
         return PhotoLibraryRouter(
             interactor: interactor,
-            viewController: viewController,
-            decideImageBuildable: decideImageBuilder
+            viewController: viewController
         )
     }
 }
