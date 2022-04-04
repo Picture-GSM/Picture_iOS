@@ -6,6 +6,7 @@
 //
 
 import RIBs
+import RIBsUtil
 import RxSwift
 import UIUtil
 import UIKit
@@ -16,7 +17,7 @@ protocol TopupRouting: Routing {
     func attachCamera()
     func detachCamera()
     
-    func attachPhotoLibrary()
+    func attachPhotoLibrary(closeButtonType: DismissButtonType)
     func detachPhotoLibrary()
     
     func attachDecideImage(_ image : UIImage)
@@ -36,8 +37,13 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
     weak var listener: TopupListener?
     
     var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
+       
+    private var cameraStatusRoot : Bool = false
     
-    override init() {
+    init(
+        cameraStatus :Bool
+    ) {
+        self.cameraStatusRoot = cameraStatus
         self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()
         super.init()
         self.presentationDelegateProxy.delegate = self
@@ -45,8 +51,11 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        router?.attachCamera()
-//        router?.attachPhotoLibrary()
+        if cameraStatusRoot {
+            router?.attachCamera()
+        }else{
+            router?.attachPhotoLibrary(closeButtonType: .close)
+        }
     }
     
     override func willResignActive() {
@@ -57,15 +66,18 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
         listener?.topupDidClose()
     }
     func cameraDidTapClose() {
-        router?.detachCamera()
         listener?.topupDidClose()
+        router?.detachCamera()
     }
     func photoLibraryTransportTap() {
-        router?.attachPhotoLibrary()
+        router?.attachPhotoLibrary(closeButtonType: .back)
     }
     func didPhotoLibraryDidTapClose() {
-        router?.detachPhotoLibrary()
+        if cameraStatusRoot{
+            router?.detachPhotoLibrary()
+        }
+        else{
+            listener?.topupDidClose()
+        }
     }
-
-    
 }

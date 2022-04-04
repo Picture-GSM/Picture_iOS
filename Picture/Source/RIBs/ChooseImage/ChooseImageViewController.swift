@@ -13,8 +13,8 @@ import PinLayout
 
 protocol ChooseImagePresentableListener: AnyObject {
     func didTapBack()
-    func didTapOriginerImage()
-    func didTapPieceImage()
+    func didTapCamera()
+    func didTapPhotoLibrary()
 }
 
 final class ChooseImageViewController: BaseViewController, ChooseImagePresentable, ChooseImageViewControllable {
@@ -61,10 +61,10 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
     //MARK: - Method
     override func configureUI() {
         alert.addAction(UIAlertAction.init(title: "사진", style: .cancel, handler: { [weak self] _ in
-            self?.listener?.didTapOriginerImage()
+            self?.listener?.didTapCamera()
         }))
         alert.addAction(UIAlertAction.init(title: "앨범", style: .destructive, handler: { [weak self] _ in
-            self?.listener?.didTapPieceImage()
+            self?.listener?.didTapPhotoLibrary()
         }))
     }
     

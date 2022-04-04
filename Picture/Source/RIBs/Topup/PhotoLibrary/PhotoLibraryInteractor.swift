@@ -11,7 +11,6 @@ import UIUtil
 import UIKit
 
 protocol PhotoLibraryRouting: ViewableRouting {
-    func attachDecidePhotoLibraryImage(_ image : UIImage)
 
 }
 
@@ -26,6 +25,8 @@ protocol PhotoLibraryListener: AnyObject {
 
 
 final class PhotoLibraryInteractor: PresentableInteractor<PhotoLibraryPresentable>, PhotoLibraryInteractable, PhotoLibraryPresentableListener {
+
+    
 
     weak var router: PhotoLibraryRouting?
     weak var listener: PhotoLibraryListener?
@@ -52,9 +53,8 @@ final class PhotoLibraryInteractor: PresentableInteractor<PhotoLibraryPresentabl
     func didTapClose() {
         listener?.didPhotoLibraryDidTapClose()
     }
-    
     func didTapPhotoLibraryImage(_ image: UIImage) {
         
-        router?.attachDecidePhotoLibraryImage(image)
     }
+
 }

@@ -35,15 +35,4 @@ final class PhotoLibraryRouter: ViewableRouter<PhotoLibraryInteractable, PhotoLi
         interactor.router = self
     }
     
-    func attachDecidePhotoLibraryImage(_ image: UIImage) {
-        if decideImageRouting != nil{
-            return
-        }
-        let router = decideImageBuildable.build(withListener: interactor, image: image)
-        
-        
-        decideImageRouting = router
-        attachChild(router)
-    }
-    
 }

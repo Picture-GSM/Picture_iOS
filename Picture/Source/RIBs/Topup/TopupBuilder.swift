@@ -10,10 +10,10 @@ import RIBsUtil
 
 protocol TopupDependency: Dependency {
     var topupBaseViewController: ViewControllable { get }
-
 }
 
 final class TopupComponent: Component<TopupDependency> , CameraDependency, PhotoLibraryDependency, DecideImageDependency{
+    
 
     // TODO: Make sure to convert the variable into lower-camelcase.
     fileprivate var topupBaseViewController: ViewControllable {
@@ -25,7 +25,7 @@ final class TopupComponent: Component<TopupDependency> , CameraDependency, Photo
 // MARK: - Builder
 
 protocol TopupBuildable: Buildable {
-    func build(withListener listener: TopupListener) -> Routing
+    func build(withListener listener: TopupListener, cameraStatus :Bool) -> Routing
 }
 
 final class TopupBuilder: Builder<TopupDependency>, TopupBuildable {
@@ -34,9 +34,9 @@ final class TopupBuilder: Builder<TopupDependency>, TopupBuildable {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: TopupListener) -> Routing {
+    func build(withListener listener: TopupListener,cameraStatus :Bool) -> Routing {
         let component = TopupComponent(dependency: dependency)
-        let interactor = TopupInteractor()
+        let interactor = TopupInteractor(cameraStatus: cameraStatus)
         interactor.listener = listener
         
         let cameraBuilder = CameraBuilder(dependency: component)

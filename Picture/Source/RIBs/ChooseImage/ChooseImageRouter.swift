@@ -20,6 +20,7 @@ protocol ChooseImageViewControllable: ViewControllable {
 }
 
 final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseImageViewControllable>, ChooseImageRouting {
+
     
     private let photoLibraryBuildable : PhotoLibraryBuildable
     private var photoLibraryRouting : Routing?
@@ -39,11 +40,11 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         interactor.router = self
     }
     //MARK: - Attach
-    func attachTopup() {
+    func attachTopup(cameraStatus: Bool) {
         if topupRouting != nil {
             return
         }
-        let router = topupBuildable.build(withListener: interactor)
+        let router = topupBuildable.build(withListener: interactor, cameraStatus: cameraStatus)
         topupRouting = router
         attachChild(router)
     }

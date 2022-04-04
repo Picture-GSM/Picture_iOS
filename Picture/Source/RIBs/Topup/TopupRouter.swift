@@ -74,11 +74,12 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
         attachChild(router)
         cameraRouting = nil
     }
-    func attachPhotoLibrary() {
+    
+    func attachPhotoLibrary(closeButtonType: DismissButtonType) {
         if photoLibraryRouting != nil{
             return
         }
-        let router = photoLibraryBuildable.build(withListener: interactor, closeButtonType: .back)
+        let router = photoLibraryBuildable.build(withListener: interactor, closeButtonType: closeButtonType)
         if let navigationControllable = navigationControllable{
             navigationControllable.pushViewController(router.viewControllable, animated: true)
         }else{
@@ -99,8 +100,6 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
     }
     
 
-    
-    
     //MARK: - Detach
     func detachCamera() {
         guard let router = cameraRouting else {

@@ -10,7 +10,7 @@ import RxSwift
 import UIUtil
 
 protocol ChooseImageRouting: ViewableRouting {
-    func attachTopup()
+    func attachTopup(cameraStatus : Bool)
     func detachTopup()
     
     func attachPhotoLibrary()
@@ -61,12 +61,12 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         listener?.transportHomeDidClose()
     }
     
-    func didTapOriginerImage() {
-        router?.attachTopup()
+    func didTapCamera() {
+        router?.attachTopup(cameraStatus: true)
     }
     
-    func didTapPieceImage() {
-        router?.attachPhotoLibrary()
+    func didTapPhotoLibrary() {
+        router?.attachTopup(cameraStatus: false)
     }
     
     func didPhotoLibraryDidTapClose() {
