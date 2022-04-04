@@ -7,6 +7,7 @@
 
 import RIBs
 import RxSwift
+import UIUtil
 
 protocol PhotoLibraryRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -25,6 +26,7 @@ final class PhotoLibraryInteractor: PresentableInteractor<PhotoLibraryPresentabl
 
     weak var router: PhotoLibraryRouting?
     weak var listener: PhotoLibraryListener?
+    
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
@@ -40,10 +42,12 @@ final class PhotoLibraryInteractor: PresentableInteractor<PhotoLibraryPresentabl
 
     override func willResignActive() {
         super.willResignActive()
+        
         // TODO: Pause any business logic.
     }
     
     func didTapClose() {
         listener?.didPhotoLibraryDidTapClose()
     }
+    
 }

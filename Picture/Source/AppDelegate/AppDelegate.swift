@@ -9,7 +9,7 @@ import UIKit
 import RIBs
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate  {
 
     var window: UIWindow?
     

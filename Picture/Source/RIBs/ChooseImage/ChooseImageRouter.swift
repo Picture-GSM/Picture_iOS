@@ -80,6 +80,15 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         viewControllable.dismiss(completion: nil)
         
         detachChild(router)
-        self.photoLibraryRouting = nil
+        photoLibraryRouting = nil
+    }
+    
+    func detachPhotoLibraryAdptive() {
+        guard let router = photoLibraryRouting else{
+            return
+        }
+                
+        detachChild(router)
+        photoLibraryRouting = nil
     }
 }

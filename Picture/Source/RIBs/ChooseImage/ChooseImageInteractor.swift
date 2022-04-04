@@ -15,6 +15,9 @@ protocol ChooseImageRouting: ViewableRouting {
     
     func attachPhotoLibrary()
     func detachPhotoLibrary()
+    
+    func detachPhotoLibraryAdptive()
+    
 }
 
 protocol ChooseImagePresentable: Presentable {
@@ -49,7 +52,7 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         // TODO: Pause any business logic.
     }
     func presetationControllerDidDismiss() {
-        router?.detachPhotoLibrary()
+        router?.detachPhotoLibraryAdptive()
     }
     
     func didTapBack() {

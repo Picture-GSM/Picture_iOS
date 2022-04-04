@@ -28,8 +28,6 @@ protocol TopupListener: AnyObject {
 
 final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationControllerDelegate {
 
-    
-
 
     weak var router: TopupRouting?
     weak var listener: TopupListener?
@@ -64,4 +62,5 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
     func didPhotoLibraryDidTapClose() {
         router?.detachPhotoLibrary()
     }
+    
 }
