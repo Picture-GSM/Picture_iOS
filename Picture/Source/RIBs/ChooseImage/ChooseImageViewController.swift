@@ -13,14 +13,16 @@ import PinLayout
 
 protocol ChooseImagePresentableListener: AnyObject {
     func didTapBack()
-    func didTapCamera()
-    func didTapPhotoLibrary()
+    func didTapCamera(originerPictureStatus : Bool)
+    func didTapPhotoLibrary(originerPictureStatus : Bool)
 }
 
 final class ChooseImageViewController: BaseViewController, ChooseImagePresentable, ChooseImageViewControllable {
     
+    
     weak var listener: ChooseImagePresentableListener?
     
+    private var imageSelectStatus : Bool = false
     private let alert = UIAlertController(title: "선택!", message: "이미지 선정 방법을 선택해주세요", preferredStyle: .alert)
     
     private let backButton = UIButton().then {
@@ -61,10 +63,10 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
     //MARK: - Method
     override func configureUI() {
         alert.addAction(UIAlertAction.init(title: "사진", style: .cancel, handler: { [weak self] _ in
-            self?.listener?.didTapCamera()
+            self?.listener?.didTapCamera(originerPictureStatus: self!.imageSelectStatus)
         }))
         alert.addAction(UIAlertAction.init(title: "앨범", style: .destructive, handler: { [weak self] _ in
-            self?.listener?.didTapPhotoLibrary()
+            self?.listener?.didTapPhotoLibrary(originerPictureStatus: self!.imageSelectStatus)
         }))
     }
     
@@ -89,13 +91,23 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
         
         originalImageBtn.rx.tap
             .subscribe(onNext:{ [weak self] in
+                self?.imageSelectStatus = true
                 self?.present(self!.alert, animated: true)
             }).disposed(by: disposeBag)
         
         pieceImageBtn.rx.tap
             .subscribe(onNext:{ [weak self] in
+                self?.imageSelectStatus = false
                 self?.present(self!.alert, animated: true)
             }).disposed(by: disposeBag)
-        
     }
+    //MARK: - Presenter
+    func setOriginerPicture(image: UIImage) {
+        originalImageBtn.setImage(image, for: .normal)
+    }
+    
+    func setPiecePicture(image: UIImage) {
+        pieceImageBtn.setImage(image, for: .normal)
+    }
+    
 }

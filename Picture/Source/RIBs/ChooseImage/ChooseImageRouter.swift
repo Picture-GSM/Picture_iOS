@@ -36,11 +36,14 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         interactor.router = self
     }
     //MARK: - Attach
-    func attachTopup(cameraStatus: Bool) {
+    func attachTopup(cameraStatus: Bool,originerPictureStatus  : Bool) {
         if topupRouting != nil {
             return
         }
-        let router = topupBuildable.build(withListener: interactor, cameraStatus: cameraStatus)
+        let router = topupBuildable.build(
+            withListener: interactor,
+            cameraStatus: cameraStatus,
+            originerPictureStatus: originerPictureStatus)
         topupRouting = router
         attachChild(router)
     }

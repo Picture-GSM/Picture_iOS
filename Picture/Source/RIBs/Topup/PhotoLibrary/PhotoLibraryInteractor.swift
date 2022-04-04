@@ -27,8 +27,6 @@ protocol PhotoLibraryListener: AnyObject {
 
 final class PhotoLibraryInteractor: PresentableInteractor<PhotoLibraryPresentable>, PhotoLibraryInteractable, PhotoLibraryPresentableListener {
 
-    
-
     weak var router: PhotoLibraryRouting?
     weak var listener: PhotoLibraryListener?
     

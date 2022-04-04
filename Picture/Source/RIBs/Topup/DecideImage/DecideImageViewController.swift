@@ -12,12 +12,10 @@ import PinLayout
 
 protocol DecideImagePresentableListener: AnyObject {
     func didTapClose()
-    func didTapSave()
+    func didTapSave(image : UIImage)
 }
 
 final class DecideImageViewController: BaseViewController, DecideImagePresentable, DecideImageViewControllable {
-
-    
 
     weak var listener: DecideImagePresentableListener?
     
@@ -49,8 +47,7 @@ final class DecideImageViewController: BaseViewController, DecideImagePresentabl
     
     @objc
     private func didTapSave(){
-        listener?.didTapSave()
+        listener?.didTapSave(image: imageView.image ?? UIImage())
     }
-    
     
 }

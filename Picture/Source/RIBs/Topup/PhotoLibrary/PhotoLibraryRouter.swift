@@ -9,7 +9,7 @@ import RIBs
 import RIBsUtil
 import UIKit
 
-protocol PhotoLibraryInteractable: Interactable, DecideImageListener {
+protocol PhotoLibraryInteractable: Interactable {
     var router: PhotoLibraryRouting? { get set }
     var listener: PhotoLibraryListener? { get set }
 }

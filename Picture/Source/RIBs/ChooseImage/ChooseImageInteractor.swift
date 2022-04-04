@@ -8,15 +8,19 @@
 import RIBs
 import RxSwift
 import UIUtil
+import UIKit
 
 protocol ChooseImageRouting: ViewableRouting {
-    func attachTopup(cameraStatus : Bool)
+    func attachTopup(cameraStatus : Bool, originerPictureStatus : Bool)
     func detachTopup()
     
 }
 
 protocol ChooseImagePresentable: Presentable {
     var listener: ChooseImagePresentableListener? { get set }
+    
+    func setOriginerPicture(image : UIImage)
+    func setPiecePicture(image: UIImage)
 }
 
 protocol ChooseImageListener: AnyObject {
@@ -24,7 +28,7 @@ protocol ChooseImageListener: AnyObject {
 }
 
 final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener {
-    
+
 
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?
@@ -50,12 +54,12 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         listener?.transportHomeDidClose()
     }
     
-    func didTapCamera() {
-        router?.attachTopup(cameraStatus: true)
+    func didTapCamera(originerPictureStatus : Bool) {
+        router?.attachTopup(cameraStatus: true, originerPictureStatus: originerPictureStatus)
     }
     
-    func didTapPhotoLibrary() {
-        router?.attachTopup(cameraStatus: false)
+    func didTapPhotoLibrary(originerPictureStatus : Bool) {
+        router?.attachTopup(cameraStatus: false, originerPictureStatus: originerPictureStatus)
     }
     
     func topupDidClose() {
@@ -66,4 +70,11 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         router?.detachTopup()
     }
     
+    func setOriginerPicture(image: UIImage) {
+        presenter.setOriginerPicture(image: image)
+    }
+    
+    func setPiecePicture(image: UIImage) {
+        presenter.setPiecePicture(image: image)
+    }
 }

@@ -159,6 +159,10 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
             detachChild(photoLibraryRouting)
             self.photoLibraryRouting = nil
         }
+        if let decideImageRouting = decideImageRouting {
+            detachChild(decideImageRouting)
+            self.decideImageRouting = nil
+        }
     }
     
 

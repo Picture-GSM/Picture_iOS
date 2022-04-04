@@ -23,11 +23,16 @@ protocol TopupRouting: Routing {
     func attachDecideImage(_ image : UIImage)
     func detachDecideImage()
     
+    func popToRoot()
+
 }
 
 protocol TopupListener: AnyObject {
     func topupDidClose()
     func topupDidFinish()
+
+    func setOriginerPicture(image : UIImage)
+    func setPiecePicture(image : UIImage)
 }
 
 final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationControllerDelegate {
@@ -37,11 +42,14 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
     
     var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
        
-    private var cameraStatusRoot : Bool = false
+    private var cameraStatusRoot : Bool
+    private var originerPictureStatus : Bool
     
     init(
-        cameraStatus :Bool
+        cameraStatus :Bool,
+        originerPictureStatus : Bool
     ) {
+        self.originerPictureStatus = originerPictureStatus
         self.cameraStatusRoot = cameraStatus
         self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()
         super.init()
@@ -84,6 +92,14 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
     }
     func didTapClose() {
         router?.detachDecideImage()
+    }
+    func didTapSave(image: UIImage) {
+        listener?.topupDidFinish()
+        if originerPictureStatus{
+            listener?.setOriginerPicture(image: image)
+        }else{
+            listener?.setPiecePicture(image: image)
+        }
     }
     
 }

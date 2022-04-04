@@ -117,6 +117,7 @@ extension PhotoLibraryViewController : UICollectionViewDataSource, UICollectionV
         cell.setImage(photos.object(at: indexPath.row))
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: bounds.width/3, height: bounds.width/3)
     }
@@ -125,6 +126,5 @@ extension PhotoLibraryViewController : UICollectionViewDataSource, UICollectionV
         guard ((collectionView.dequeueReusableCell(withReuseIdentifier: "photoLibrary", for: indexPath) as? PhotoCell) != nil) else{return}
 
         listener?.didTapPhotoLibraryImage(photos.object(at: indexPath.row).getImageFromPHAsset())
-
     }
 }

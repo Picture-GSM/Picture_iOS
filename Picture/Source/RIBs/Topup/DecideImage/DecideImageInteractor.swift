@@ -21,6 +21,7 @@ protocol DecideImagePresentable: Presentable {
 
 protocol DecideImageListener: AnyObject {
     func didTapClose()
+    func didTapSave(image : UIImage)
 }
 
 final class DecideImageInteractor: PresentableInteractor<DecideImagePresentable>, DecideImageInteractable, DecideImagePresentableListener {
@@ -52,7 +53,7 @@ final class DecideImageInteractor: PresentableInteractor<DecideImagePresentable>
     func didTapClose() {
         listener?.didTapClose()
     }
-    func didTapSave() {
-        print("DidTap Save")
+    func didTapSave(image : UIImage) {
+        listener?.didTapSave(image: image)
     }
 }
