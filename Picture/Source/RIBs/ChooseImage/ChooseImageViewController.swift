@@ -14,16 +14,19 @@ import PinLayout
 protocol ChooseImagePresentableListener: AnyObject {
     func didTapBack()
     func didTapCamera(originerPictureStatus : Bool)
-    func didTapPhotoLibrary(originerPictureStatus : Bool)
 }
 
-final class ChooseImageViewController: BaseViewController, ChooseImagePresentable, ChooseImageViewControllable {
-    
+final class ChooseImageViewController: BaseViewController, ChooseImagePresentable, ChooseImageViewControllable{
     
     weak var listener: ChooseImagePresentableListener?
-    
+        
     private var imageSelectStatus : Bool = false
     private let alert = UIAlertController(title: "선택!", message: "이미지 선정 방법을 선택해주세요", preferredStyle: .alert)
+    
+    private let imagePicker = UIImagePickerController().then{
+        $0.sourceType = .photoLibrary
+        $0.allowsEditing = true
+    }
     
     private let backButton = UIButton().then {
         $0.backgroundColor = .white
@@ -59,14 +62,14 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
         $0.setTitle("시작", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
     }
-    
+
     //MARK: - Method
     override func configureUI() {
         alert.addAction(UIAlertAction.init(title: "사진", style: .cancel, handler: { [weak self] _ in
             self?.listener?.didTapCamera(originerPictureStatus: self!.imageSelectStatus)
         }))
         alert.addAction(UIAlertAction.init(title: "앨범", style: .destructive, handler: { [weak self] _ in
-            self?.listener?.didTapPhotoLibrary(originerPictureStatus: self!.imageSelectStatus)
+            self?.present(self!.imagePicker, animated: true)
         }))
     }
     
@@ -80,7 +83,20 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
         pieceImageBtn.pin.size(bounds.width/2.5).centerRight(20)
         startBtn.pin.bottom(bounds.height/15).hCenter().width(80%).maxWidth(300).height(40)
     }
+    override func delegate() {
+        imagePicker.delegate = self
+    }
     
+
+    //MARK: - Presenter
+    func setOriginerPicture(image: UIImage) {
+        originalImageBtn.setImage(image, for: .normal)
+    }
+    
+    func setPiecePicture(image: UIImage) {
+        pieceImageBtn.setImage(image, for: .normal)
+    }
+        
     //MARK: - Bind
     override func bindView() {
         backButton.rx.tap
@@ -101,12 +117,23 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
                 self?.present(self!.alert, animated: true)
             }).disposed(by: disposeBag)
     }
-    //MARK: - Presenter
-    func setOriginerPicture(image: UIImage) {
-        originalImageBtn.setImage(image, for: .normal)
-    }
-    
-    func setPiecePicture(image: UIImage) {
-        pieceImageBtn.setImage(image, for: .normal)
+}
+
+extension ChooseImageViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var image : UIImage? = nil
+
+        if let possibleimage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+            image = possibleimage
+        }else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            image = possibleImage
+        }
+
+        if imageSelectStatus{
+            originalImageBtn.setImage(image, for: .normal)
+        }else{
+            pieceImageBtn.setImage(image, for: .normal)
+        }
+        self.dismiss(animated: true)
     }
 }

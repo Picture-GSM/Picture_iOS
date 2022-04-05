@@ -8,7 +8,7 @@
 import UIKit
 
 public protocol ImagePickerDelegate: AnyObject{
-    func imagedidSelect(_ image : UIImage)
+    func imageDidSelect(_ image : UIImage)
 }
 
 public final class ImagePickerDelegateProxy : NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
@@ -17,9 +17,9 @@ public final class ImagePickerDelegateProxy : NSObject, UIImagePickerControllerD
     
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let possible = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
-            delegate?.imagedidSelect(possible)
+            delegate?.imageDidSelect(possible)
         }else if let possibleImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            delegate?.imagedidSelect(possibleImage)
+            delegate?.imageDidSelect(possibleImage)
         }
         picker.dismiss(animated: true)
     }

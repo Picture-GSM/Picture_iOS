@@ -11,7 +11,7 @@ import UIUtil
 import UIKit
 
 protocol ChooseImageRouting: ViewableRouting {
-    func attachTopup(cameraStatus : Bool, originerPictureStatus : Bool)
+    func attachTopup(originerPictureStatus : Bool)
     func detachTopup()
     
 }
@@ -27,12 +27,13 @@ protocol ChooseImageListener: AnyObject {
     func transportHomeDidClose()
 }
 
-final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener {
+final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener{
+
 
 
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?
-    
+
 
     override init(presenter: ChooseImagePresentable) {
         super.init(presenter: presenter)
@@ -55,12 +56,8 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     }
     
     func didTapCamera(originerPictureStatus : Bool) {
-        router?.attachTopup(cameraStatus: true, originerPictureStatus: originerPictureStatus)
+        router?.attachTopup(originerPictureStatus: originerPictureStatus)
         
-    }
-    
-    func didTapPhotoLibrary(originerPictureStatus : Bool) {
-        router?.attachTopup(cameraStatus: false, originerPictureStatus: originerPictureStatus)
     }
     
     func topupDidClose() {
@@ -78,4 +75,6 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     func setPiecePicture(image: UIImage) {
         presenter.setPiecePicture(image: image)
     }
+
+    
 }

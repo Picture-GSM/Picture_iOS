@@ -43,15 +43,12 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
     
     var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
        
-    private var cameraStatusRoot : Bool
     private var originerPictureStatus : Bool
     
     init(
-        cameraStatus :Bool,
         originerPictureStatus : Bool
     ) {
         self.originerPictureStatus = originerPictureStatus
-        self.cameraStatusRoot = cameraStatus
         self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()
         super.init()
         self.presentationDelegateProxy.delegate = self

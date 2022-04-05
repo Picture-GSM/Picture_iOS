@@ -25,7 +25,7 @@ final class TopupComponent: Component<TopupDependency> , CameraDependency, Decid
 // MARK: - Builder
 
 protocol TopupBuildable: Buildable {
-    func build(withListener listener: TopupListener, cameraStatus :Bool, originerPictureStatus: Bool) -> Routing
+    func build(withListener listener: TopupListener, originerPictureStatus: Bool) -> Routing
 }
 
 final class TopupBuilder: Builder<TopupDependency>, TopupBuildable {
@@ -34,9 +34,9 @@ final class TopupBuilder: Builder<TopupDependency>, TopupBuildable {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: TopupListener,cameraStatus :Bool, originerPictureStatus: Bool) -> Routing {
+    func build(withListener listener: TopupListener, originerPictureStatus: Bool) -> Routing {
         let component = TopupComponent(dependency: dependency)
-        let interactor = TopupInteractor(cameraStatus: cameraStatus, originerPictureStatus: originerPictureStatus)
+        let interactor = TopupInteractor(originerPictureStatus: originerPictureStatus)
         interactor.listener = listener
         
         let cameraBuilder = CameraBuilder(dependency: component)
