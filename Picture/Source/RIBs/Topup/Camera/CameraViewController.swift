@@ -24,18 +24,25 @@ final class CameraViewController: BaseViewController, CameraPresentable, CameraV
     
     //MARK: - Properties
     private let cameraToolBar = CameraBottomBar()
+    private let cameraPreview = UIView()
     
+    private var backFacingCamera : AVCaptureDevice?
+    private var frontFacingCamera : AVCaptureDevice?
+    private var currentDevice: AVCaptureDevice!
+
     
     
     //MARK: - Method
     override func configureUI() {
         title = "camera"
         setupNavigationItem(with: .close, target: self, action: #selector(didTapClose))
+        cameraPreview.backgroundColor = .red
     }
     override func addView() {
-        view.addSubviews(cameraToolBar)
+        view.addSubviews(cameraPreview,cameraToolBar)
     }
     override func setLayout() {
+        cameraPreview.pin.all()
         cameraToolBar.pin.bottom().width(100%).height(81.2)
     }
     override func delegate() {

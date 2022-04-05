@@ -56,6 +56,7 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     
     func didTapCamera(originerPictureStatus : Bool) {
         router?.attachTopup(cameraStatus: true, originerPictureStatus: originerPictureStatus)
+        
     }
     
     func didTapPhotoLibrary(originerPictureStatus : Bool) {

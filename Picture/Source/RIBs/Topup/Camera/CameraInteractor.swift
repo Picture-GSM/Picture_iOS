@@ -53,6 +53,6 @@ final class CameraInteractor: PresentableInteractor<CameraPresentable>, CameraIn
     }
     
     func didTapTakePicture() {
-        
+
     }
 }

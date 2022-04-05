@@ -14,6 +14,7 @@ import Photos
 class PhotoCell : UICollectionViewCell,Reusable{
     
     let imageView = UIImageView()
+
     var representedAssetIdentifier: String!
     
     override init(frame: CGRect) {

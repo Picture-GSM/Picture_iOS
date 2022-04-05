@@ -18,7 +18,7 @@ extension UIImageView{
             contentMode: contentMode,
             options: options) { image, _ in
                 guard let image = image else {return}
-                self.contentMode = .scaleAspectFit
+                self.contentMode = .scaleAspectFill
                 self.image = image
             }
     }
