@@ -17,9 +17,6 @@ protocol TopupRouting: Routing {
     func attachCamera()
     func detachCamera()
     
-    func attachPhotoLibrary(closeButtonType: DismissButtonType)
-    func detachPhotoLibrary()
-    
     func attachDecideImage(_ image : UIImage)
     func detachDecideImage()
     
@@ -36,6 +33,10 @@ protocol TopupListener: AnyObject {
 }
 
 final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationControllerDelegate {
+
+    
+    
+
 
     weak var router: TopupRouting?
     weak var listener: TopupListener?
@@ -58,11 +59,7 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        if cameraStatusRoot {
-            router?.attachCamera()
-        }else{
-            router?.attachPhotoLibrary(closeButtonType: .close)
-        }
+        router?.attachCamera()
     }
     
     override func willResignActive() {
@@ -76,16 +73,10 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
         listener?.topupDidClose()
         router?.detachCamera()
     }
-    func photoLibraryTransportTap() {
-        router?.attachPhotoLibrary(closeButtonType: .back)
-    }
+
     func didPhotoLibraryDidTapClose() {
-        if cameraStatusRoot{
-            router?.detachPhotoLibrary()
-        }
-        else{
-            listener?.topupDidClose()
-        }
+        listener?.topupDidClose()
+        
     }
     func didDecideImageDidTap(image : UIImage) {
         router?.attachDecideImage(image)

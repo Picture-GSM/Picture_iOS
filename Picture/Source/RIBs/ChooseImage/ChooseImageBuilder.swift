@@ -11,7 +11,7 @@ protocol ChooseImageDependency: Dependency {
     var topupBuildable: TopupBuildable { get }
 }
 
-final class ChooseImageComponent: Component<ChooseImageDependency> , PhotoLibraryDependency{
+final class ChooseImageComponent: Component<ChooseImageDependency> {
     var topupBuildable: TopupBuildable { dependency.topupBuildable }
 
 }
@@ -35,7 +35,6 @@ final class ChooseImageBuilder: Builder<ChooseImageDependency>, ChooseImageBuild
         let interactor = ChooseImageInteractor(presenter: viewController)
         interactor.listener = listener
         
-        let photoLibraryBuilder = PhotoLibraryBuilder(dependency: component)
         
         return ChooseImageRouter(
             interactor: interactor,

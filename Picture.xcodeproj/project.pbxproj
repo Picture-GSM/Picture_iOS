@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE04494527F1C92E00599936 /* AppRootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE04494427F1C92E00599936 /* AppRootComponent.swift */; };
+		EE09754227FC376600DE636A /* ImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE09754127FC376600DE636A /* ImagePickerDelegate.swift */; };
 		EE4D0D9227E42465007D2918 /* AppHomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */; };
 		EE6ED5E427F2CC2600534E68 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ED5E327F2CC2600534E68 /* BaseViewController.swift */; };
 		EE6ED5E627F2CD2C00534E68 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ED5E527F2CD2C00534E68 /* BaseCollectionViewCell.swift */; };
@@ -29,10 +30,6 @@
 		EEA102DD27F549C30081AD84 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102D927F549C30081AD84 /* CameraViewController.swift */; };
 		EEA102DE27F549C30081AD84 /* CameraBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102DA27F549C30081AD84 /* CameraBuilder.swift */; };
 		EEA102DF27F549C30081AD84 /* CameraInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102DB27F549C30081AD84 /* CameraInteractor.swift */; };
-		EEA102E427F549D80081AD84 /* PhotoLibraryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E027F549D80081AD84 /* PhotoLibraryRouter.swift */; };
-		EEA102E527F549D80081AD84 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E127F549D80081AD84 /* PhotoLibraryViewController.swift */; };
-		EEA102E627F549D80081AD84 /* PhotoLibraryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E227F549D80081AD84 /* PhotoLibraryBuilder.swift */; };
-		EEA102E727F549D80081AD84 /* PhotoLibraryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E327F549D80081AD84 /* PhotoLibraryInteractor.swift */; };
 		EEA102ED27F54DB00081AD84 /* ChooseImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E927F54DB00081AD84 /* ChooseImageRouter.swift */; };
 		EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */; };
 		EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */; };
@@ -47,8 +44,6 @@
 		EEC784C727FACCEB005ED2D1 /* PHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC784C627FACCEB005ED2D1 /* PHAsset.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
-		EED91AB627F8C93700159C9B /* PhotoWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED91AB527F8C93700159C9B /* PhotoWriter.swift */; };
-		EED91AB927F8CB0700159C9B /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED91AB827F8CB0700159C9B /* PhotoCell.swift */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
 		EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */; };
 		EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */; };
@@ -75,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		EE04494427F1C92E00599936 /* AppRootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootComponent.swift; sourceTree = "<group>"; };
+		EE09754127FC376600DE636A /* ImagePickerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerDelegate.swift; sourceTree = "<group>"; };
 		EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE6D065927F14C4700C1E0A6 /* CX */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CX; sourceTree = "<group>"; };
 		EE6D065A27F14C7800C1E0A6 /* List */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = List; sourceTree = "<group>"; };
@@ -94,10 +90,6 @@
 		EEA102D927F549C30081AD84 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		EEA102DA27F549C30081AD84 /* CameraBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraBuilder.swift; sourceTree = "<group>"; };
 		EEA102DB27F549C30081AD84 /* CameraInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInteractor.swift; sourceTree = "<group>"; };
-		EEA102E027F549D80081AD84 /* PhotoLibraryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryRouter.swift; sourceTree = "<group>"; };
-		EEA102E127F549D80081AD84 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
-		EEA102E227F549D80081AD84 /* PhotoLibraryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryBuilder.swift; sourceTree = "<group>"; };
-		EEA102E327F549D80081AD84 /* PhotoLibraryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryInteractor.swift; sourceTree = "<group>"; };
 		EEA102E927F54DB00081AD84 /* ChooseImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageRouter.swift; sourceTree = "<group>"; };
 		EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageViewController.swift; sourceTree = "<group>"; };
 		EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageBuilder.swift; sourceTree = "<group>"; };
@@ -110,8 +102,6 @@
 		EEC784BE27FA7E94005ED2D1 /* DecideImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideImageBuilder.swift; sourceTree = "<group>"; };
 		EEC784BF27FA7E94005ED2D1 /* DecideImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideImageInteractor.swift; sourceTree = "<group>"; };
 		EEC784C627FACCEB005ED2D1 /* PHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAsset.swift; sourceTree = "<group>"; };
-		EED91AB527F8C93700159C9B /* PhotoWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoWriter.swift; sourceTree = "<group>"; };
-		EED91AB827F8CB0700159C9B /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
@@ -210,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				EEC784BB27FA7E41005ED2D1 /* DecideImage */,
-				EEA102D727F5474F0081AD84 /* PhotoLibrary */,
 				EEA102D627F547410081AD84 /* Camera */,
 				EEA102CF27F544240081AD84 /* TopupRouter.swift */,
 				EEA102D027F544240081AD84 /* TopupBuilder.swift */,
@@ -231,19 +220,6 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
-		EEA102D727F5474F0081AD84 /* PhotoLibrary */ = {
-			isa = PBXGroup;
-			children = (
-				EED91AB727F8CAFF00159C9B /* View */,
-				EED91AB427F8C92F00159C9B /* Class */,
-				EEA102E027F549D80081AD84 /* PhotoLibraryRouter.swift */,
-				EEA102E127F549D80081AD84 /* PhotoLibraryViewController.swift */,
-				EEA102E227F549D80081AD84 /* PhotoLibraryBuilder.swift */,
-				EEA102E327F549D80081AD84 /* PhotoLibraryInteractor.swift */,
-			);
-			path = PhotoLibrary;
-			sourceTree = "<group>";
-		};
 		EEA102E827F54D7B0081AD84 /* ChooseImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +228,7 @@
 				EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */,
 				EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */,
 				EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */,
+				EE09754127FC376600DE636A /* ImagePickerDelegate.swift */,
 			);
 			path = ChooseImage;
 			sourceTree = "<group>";
@@ -284,22 +261,6 @@
 				EEC784BF27FA7E94005ED2D1 /* DecideImageInteractor.swift */,
 			);
 			path = DecideImage;
-			sourceTree = "<group>";
-		};
-		EED91AB427F8C92F00159C9B /* Class */ = {
-			isa = PBXGroup;
-			children = (
-				EED91AB527F8C93700159C9B /* PhotoWriter.swift */,
-			);
-			path = Class;
-			sourceTree = "<group>";
-		};
-		EED91AB727F8CAFF00159C9B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				EED91AB827F8CB0700159C9B /* PhotoCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		EEDBCD1127E2B85A00B9B9A3 /* AppRoot */ = {
@@ -515,7 +476,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */,
-				EED91AB627F8C93700159C9B /* PhotoWriter.swift in Sources */,
 				EEC784C227FA7E94005ED2D1 /* DecideImageBuilder.swift in Sources */,
 				EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */,
 				EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */,
@@ -523,31 +483,27 @@
 				EEA102D227F544240081AD84 /* TopupRouter.swift in Sources */,
 				EEA102ED27F54DB00081AD84 /* ChooseImageRouter.swift in Sources */,
 				EE83C2E427E4615900CB0C78 /* AppHomeCollectionViewSection.swift in Sources */,
+				EE09754227FC376600DE636A /* ImagePickerDelegate.swift in Sources */,
 				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,
 				EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */,
 				EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */,
-				EEA102E627F549D80081AD84 /* PhotoLibraryBuilder.swift in Sources */,
 				EE6ED5E427F2CC2600534E68 /* BaseViewController.swift in Sources */,
 				EEFA58BC27E2D22900DBB4A8 /* ListHomeRouter.swift in Sources */,
-				EEA102E427F549D80081AD84 /* PhotoLibraryRouter.swift in Sources */,
 				EE04494527F1C92E00599936 /* AppRootComponent.swift in Sources */,
 				EEA102DD27F549C30081AD84 /* CameraViewController.swift in Sources */,
 				EEFA58BF27E2D22900DBB4A8 /* ListHomeInteractor.swift in Sources */,
 				EEDBCD1927E2B87100B9B9A3 /* AppRootInteractor.swift in Sources */,
 				EEFA58BE27E2D22900DBB4A8 /* ListHomeBuilder.swift in Sources */,
-				EED91AB927F8CB0700159C9B /* PhotoCell.swift in Sources */,
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
 				EEC784C127FA7E94005ED2D1 /* DecideImageViewController.swift in Sources */,
 				EE6ED5E627F2CD2C00534E68 /* BaseCollectionViewCell.swift in Sources */,
 				EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */,
-				EEA102E727F549D80081AD84 /* PhotoLibraryInteractor.swift in Sources */,
 				EE4D0D9227E42465007D2918 /* AppHomeCollectionViewCell.swift in Sources */,
 				EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */,
 				EEC784C727FACCEB005ED2D1 /* PHAsset.swift in Sources */,
 				EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */,
 				EEA102DF27F549C30081AD84 /* CameraInteractor.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
-				EEA102E527F549D80081AD84 /* PhotoLibraryViewController.swift in Sources */,
 				EEA0118227F6D18D00FEF909 /* CameraBottomBar.swift in Sources */,
 				EEC784C327FA7E94005ED2D1 /* DecideImageInteractor.swift in Sources */,
 				EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */,

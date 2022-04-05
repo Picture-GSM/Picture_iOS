@@ -13,7 +13,6 @@ import PinLayout
 
 protocol CameraPresentableListener: AnyObject {
     func didTapCloseBtn()
-    func didTapTransportPhotoLibrary()
     func didTapTakePicture()
 }
 
@@ -55,10 +54,7 @@ final class CameraViewController: BaseViewController, CameraPresentable, CameraV
         listener?.didTapCloseBtn()
     }
     
-    func didTapAlbumBtn() {
-        listener?.didTapTransportPhotoLibrary()
-    }
-    
+
     func didTapTakePicture() {
         listener?.didTapTakePicture()
     }

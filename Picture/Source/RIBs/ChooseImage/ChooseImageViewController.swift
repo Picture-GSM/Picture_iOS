@@ -109,5 +109,4 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
     func setPiecePicture(image: UIImage) {
         pieceImageBtn.setImage(image, for: .normal)
     }
-    
 }

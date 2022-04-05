@@ -12,7 +12,7 @@ protocol TopupDependency: Dependency {
     var topupBaseViewController: ViewControllable { get }
 }
 
-final class TopupComponent: Component<TopupDependency> , CameraDependency, PhotoLibraryDependency, DecideImageDependency{
+final class TopupComponent: Component<TopupDependency> , CameraDependency, DecideImageDependency{
     
 
     // TODO: Make sure to convert the variable into lower-camelcase.
@@ -40,14 +40,12 @@ final class TopupBuilder: Builder<TopupDependency>, TopupBuildable {
         interactor.listener = listener
         
         let cameraBuilder = CameraBuilder(dependency: component)
-        let photoLibraryBuilder = PhotoLibraryBuilder(dependency: component)
         let decideImageBuilder = DecideImageBuilder(dependency: component)
         
         return TopupRouter(
             interactor: interactor,
             viewController: component.topupBaseViewController,
             cameraBuildable: cameraBuilder,
-            photoLibraryBuildable: photoLibraryBuilder,
             decideImageBuildable: decideImageBuilder
         )
     }
