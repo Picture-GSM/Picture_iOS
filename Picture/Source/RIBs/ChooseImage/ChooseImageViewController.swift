@@ -15,7 +15,6 @@ import UIUtil
 
 protocol ChooseImagePresentableListener: AnyObject {
     func didTapBack()
-
 }
 
 final class ChooseImageViewController: BaseViewController, ChooseImagePresentable, ChooseImageViewControllable{
@@ -105,7 +104,7 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
 
     //MARK: - Presenter
     func setOriginerPicture(image: UIImage) {
-        originalImageBtn.setImage(UIImage().CropImage(image: image), for: .normal)
+        originalImageBtn.setImage(image, for: .normal)
     }
     
     func setPiecePicture(image: UIImage) {
