@@ -34,8 +34,6 @@ protocol TopupListener: AnyObject {
 
 final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationControllerDelegate {
 
-    
-    
 
 
     weak var router: TopupRouting?
@@ -70,7 +68,10 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
         listener?.topupDidClose()
         router?.detachCamera()
     }
-
+    func cameraDidTapTakePicture(_ image: UIImage) {
+        router?.attachDecideImage(image)
+    }
+    
     func didPhotoLibraryDidTapClose() {
         listener?.topupDidClose()
         
@@ -89,5 +90,7 @@ final class TopupInteractor: Interactor, TopupInteractable,AdaptivePresentationC
             listener?.setPiecePicture(image: image)
         }
     }
+
+    
     
 }

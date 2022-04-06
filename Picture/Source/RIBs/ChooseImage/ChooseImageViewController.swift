@@ -11,6 +11,7 @@ import UIKit
 import Then
 import PinLayout
 import Photos
+import UIUtil
 
 protocol ChooseImagePresentableListener: AnyObject {
     func didTapBack()
@@ -50,10 +51,14 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
     
     private let originalImageBtn = ImageBtn(title: "원본").then{
         $0.backgroundColor = .white
+        $0.contentMode = .scaleToFill
+        $0.clipsToBounds = true
         $0.layer.applySketchShadow(color: .gray, alpha: 0.4, x: 0, y: 10, blur: 16, spread: 0)
     }
     private let pieceImageBtn = ImageBtn(title: "작품").then{
         $0.backgroundColor = .white
+        $0.contentMode = .scaleToFill
+        $0.clipsToBounds = true
         $0.layer.applySketchShadow(color: .gray, alpha: 0.4, x: 0, y: 10, blur: 10, spread: 0)
     }
     
@@ -95,7 +100,7 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
 
     //MARK: - Presenter
     func setOriginerPicture(image: UIImage) {
-        originalImageBtn.setImage(image, for: .normal)
+        originalImageBtn.setImage(UIImage().CropImage(image: image), for: .normal)
     }
     
     func setPiecePicture(image: UIImage) {

@@ -20,7 +20,8 @@ final class DecideImageViewController: BaseViewController, DecideImagePresentabl
     weak var listener: DecideImagePresentableListener?
     
     private let imageView = UIImageView().then{
-        $0.backgroundColor = .red
+        $0.contentMode = .scaleToFill
+        $0.clipsToBounds = true
     }
     
     override func configureUI() {
@@ -32,12 +33,12 @@ final class DecideImageViewController: BaseViewController, DecideImagePresentabl
         view.addSubviews(imageView)
     }
     override func setLayout() {
-        imageView.pin.height(40%).width(100%).center()
+        imageView.pin.size(bounds.width).center()
     }
     
     //MARK: - listener
     func setImage(_ image: UIImage) {
-        imageView.image = image
+        imageView.image = UIImage().CropImage(image: image)
     }
     //MARK: - Selector
     @objc

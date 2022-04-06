@@ -13,13 +13,13 @@ import PinLayout
 
 protocol CameraPresentableListener: AnyObject {
     func didTapCloseBtn()
-    func didTapTakePicture()
+    func didTapTakePicture(image : UIImage)
 }
 
 final class CameraViewController: BaseViewController, CameraPresentable, CameraViewControllable , CameraBottomDelegate{
     
     weak var listener: CameraPresentableListener?
-    
+        
     //MARK: - Properties
     private let cameraToolBar = CameraBottomBar()
     
@@ -27,9 +27,9 @@ final class CameraViewController: BaseViewController, CameraPresentable, CameraV
     private var session : AVCaptureSession?
     private let output = AVCapturePhotoOutput()
     private let previewLayer = AVCaptureVideoPreviewLayer()
-    
-    
+
     //MARK: - Method
+    
     override func configureUI() {
         title = "camera"
         setupNavigationItem(with: .close, target: self, action: #selector(didTapClose))
@@ -79,10 +79,10 @@ final class CameraViewController: BaseViewController, CameraPresentable, CameraV
                 if session.canAddOutput(output){
                     session.addOutput(output)
                 }
-                
+
                 previewLayer.videoGravity = .resizeAspectFill
                 previewLayer.session = session
-                
+
                 session.startRunning()
                 self.session = session
             }
@@ -91,7 +91,7 @@ final class CameraViewController: BaseViewController, CameraPresentable, CameraV
             }
         }
     }
-    
+
     
     //MARK: - NavigationAction
     @objc
@@ -102,7 +102,10 @@ final class CameraViewController: BaseViewController, CameraPresentable, CameraV
 
     func didTapTakePicture() {
         output.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
-        listener?.didTapTakePicture()
+    }
+    
+    func cameraCaptureDone(_ image: UIImage) -> UIImage {
+        return UIImage()
     }
 }
 
@@ -111,8 +114,8 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate{
         guard let data = photo.fileDataRepresentation() else {
             return
         }
-        
-        print("Fin")
+
+        listener?.didTapTakePicture(image: UIImage(data: data)!)
         session?.stopRunning()
     }
 }

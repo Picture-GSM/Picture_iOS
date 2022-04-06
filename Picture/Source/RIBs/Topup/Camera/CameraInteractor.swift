@@ -7,6 +7,7 @@
 
 import RIBs
 import RxSwift
+import UIKit
 
 protocol CameraRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -19,9 +20,12 @@ protocol CameraPresentable: Presentable {
 
 protocol CameraListener: AnyObject {
     func cameraDidTapClose()
+    func cameraDidTapTakePicture(_ image : UIImage)
+    
 }
 
 final class CameraInteractor: PresentableInteractor<CameraPresentable>, CameraInteractable, CameraPresentableListener {
+
     
     weak var router: CameraRouting?
     weak var listener: CameraListener?
@@ -48,7 +52,7 @@ final class CameraInteractor: PresentableInteractor<CameraPresentable>, CameraIn
     }
     
 
-    func didTapTakePicture() {
-
+    func didTapTakePicture(image: UIImage) {
+        listener?.cameraDidTapTakePicture(image)
     }
 }

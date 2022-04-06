@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import PinLayout
+import Then
 
 protocol CameraBottomDelegate : AnyObject {
     func didTapTakePicture()
