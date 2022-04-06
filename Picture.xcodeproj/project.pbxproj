@@ -30,6 +30,10 @@
 		EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */; };
 		EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */; };
 		EEC784C727FACCEB005ED2D1 /* PHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC784C627FACCEB005ED2D1 /* PHAsset.swift */; };
+		EEC90ACA27FE5E80005C2D0A /* LoadingModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC627FE5E80005C2D0A /* LoadingModalRouter.swift */; };
+		EEC90ACB27FE5E80005C2D0A /* LoadingModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC727FE5E80005C2D0A /* LoadingModalViewController.swift */; };
+		EEC90ACC27FE5E80005C2D0A /* LoadingModalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC827FE5E80005C2D0A /* LoadingModalBuilder.swift */; };
+		EEC90ACD27FE5E80005C2D0A /* LoadingModalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC927FE5E80005C2D0A /* LoadingModalInteractor.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
@@ -78,6 +82,10 @@
 		EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBtn.swift; sourceTree = "<group>"; };
 		EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
 		EEC784C627FACCEB005ED2D1 /* PHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAsset.swift; sourceTree = "<group>"; };
+		EEC90AC627FE5E80005C2D0A /* LoadingModalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModalRouter.swift; sourceTree = "<group>"; };
+		EEC90AC727FE5E80005C2D0A /* LoadingModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModalViewController.swift; sourceTree = "<group>"; };
+		EEC90AC827FE5E80005C2D0A /* LoadingModalBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModalBuilder.swift; sourceTree = "<group>"; };
+		EEC90AC927FE5E80005C2D0A /* LoadingModalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModalInteractor.swift; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
@@ -136,6 +144,7 @@
 			children = (
 				EEDBCD1127E2B85A00B9B9A3 /* AppRoot */,
 				EEE5E42027DA2116006FDD9E /* AppHome */,
+				EEC90AC527FE5D1F005C2D0A /* Loading */,
 				EEA102E827F54D7B0081AD84 /* ChooseImage */,
 				EEFA58B727E2D1BA00DBB4A8 /* ListHome */,
 			);
@@ -193,6 +202,17 @@
 				EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EEC90AC527FE5D1F005C2D0A /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				EEC90AC627FE5E80005C2D0A /* LoadingModalRouter.swift */,
+				EEC90AC727FE5E80005C2D0A /* LoadingModalViewController.swift */,
+				EEC90AC827FE5E80005C2D0A /* LoadingModalBuilder.swift */,
+				EEC90AC927FE5E80005C2D0A /* LoadingModalInteractor.swift */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 		EEDBCD1127E2B85A00B9B9A3 /* AppRoot */ = {
@@ -415,6 +435,7 @@
 				EE09754227FC376600DE636A /* ImagePickerDelegate.swift in Sources */,
 				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,
 				EEFAEADE27DA67B900865B06 /* AppHomeBuilder.swift in Sources */,
+				EEC90ACB27FE5E80005C2D0A /* LoadingModalViewController.swift in Sources */,
 				EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */,
 				EE6ED5E427F2CC2600534E68 /* BaseViewController.swift in Sources */,
 				EEFA58BC27E2D22900DBB4A8 /* ListHomeRouter.swift in Sources */,
@@ -423,10 +444,12 @@
 				EEDBCD1927E2B87100B9B9A3 /* AppRootInteractor.swift in Sources */,
 				EEFA58BE27E2D22900DBB4A8 /* ListHomeBuilder.swift in Sources */,
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
+				EEC90ACD27FE5E80005C2D0A /* LoadingModalInteractor.swift in Sources */,
 				EE6ED5E627F2CD2C00534E68 /* BaseCollectionViewCell.swift in Sources */,
 				EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */,
 				EE4D0D9227E42465007D2918 /* AppHomeCollectionViewCell.swift in Sources */,
 				EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */,
+				EEC90ACC27FE5E80005C2D0A /* LoadingModalBuilder.swift in Sources */,
 				EEC784C727FACCEB005ED2D1 /* PHAsset.swift in Sources */,
 				EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
@@ -436,6 +459,7 @@
 				EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */,
 				EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */,
 				EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */,
+				EEC90ACA27FE5E80005C2D0A /* LoadingModalRouter.swift in Sources */,
 				EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */,
 				EEFA58BD27E2D22900DBB4A8 /* ListHomeViewController.swift in Sources */,
 				EEA102F327F588750081AD84 /* ImageBtn.swift in Sources */,
