@@ -15,7 +15,7 @@ import UIUtil
 
 protocol ChooseImagePresentableListener: AnyObject {
     func didTapBack()
-    func didTapCamera(originerPictureStatus : Bool)
+
 }
 
 final class ChooseImageViewController: BaseViewController, ChooseImagePresentable, ChooseImageViewControllable{
@@ -26,7 +26,6 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
     private let alert = UIAlertController(title: "선택!", message: "이미지 선정 방법을 선택해주세요", preferredStyle: .alert)
     
     private let imagePicker = UIImagePickerController().then{
-        $0.sourceType = .photoLibrary
         $0.allowsEditing = true
     }
     
@@ -73,9 +72,15 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
     //MARK: - Method
     override func configureUI() {
         alert.addAction(UIAlertAction.init(title: "사진", style: .cancel, handler: { [weak self] _ in
-            self?.listener?.didTapCamera(originerPictureStatus: self!.imageSelectStatus)
+            self?.imagePicker.sourceType = .camera
+            self?.imagePicker.cameraDevice = .rear
+            self?.imagePicker.cameraCaptureMode = .photo
+            DispatchQueue.main.async {
+                self?.present(self!.imagePicker, animated: true)
+            }
         }))
         alert.addAction(UIAlertAction.init(title: "앨범", style: .destructive, handler: { [weak self] _ in
+            self?.imagePicker.sourceType = .photoLibrary
             DispatchQueue.main.async {
                 self?.present(self!.imagePicker, animated: true)
             }

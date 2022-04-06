@@ -8,11 +8,10 @@
 import RIBs
 
 protocol ChooseImageDependency: Dependency {
-    var topupBuildable: TopupBuildable { get }
+
 }
 
 final class ChooseImageComponent: Component<ChooseImageDependency> {
-    var topupBuildable: TopupBuildable { dependency.topupBuildable }
 
 }
 
@@ -38,8 +37,7 @@ final class ChooseImageBuilder: Builder<ChooseImageDependency>, ChooseImageBuild
         
         return ChooseImageRouter(
             interactor: interactor,
-            viewController: viewController,
-            topupBuildable: component.topupBuildable
+            viewController: viewController
         )
     }
 }

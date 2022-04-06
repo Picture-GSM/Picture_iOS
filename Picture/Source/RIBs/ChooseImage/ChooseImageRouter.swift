@@ -9,7 +9,7 @@ import RIBs
 import UIUtil
 import RIBsUtil
 
-protocol ChooseImageInteractable: Interactable , TopupListener{
+protocol ChooseImageInteractable: Interactable {
     var router: ChooseImageRouting? { get set }
     var listener: ChooseImageListener? { get set }
 }
@@ -21,40 +21,12 @@ protocol ChooseImageViewControllable: ViewControllable {
 final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseImageViewControllable>, ChooseImageRouting {
 
     
-
-    private let topupBuildable : TopupBuildable
-    private var topupRouting : Routing?
-    
-    init(
+    override init(
         interactor: ChooseImageInteractable,
-        viewController: ChooseImageViewControllable,
-        topupBuildable : TopupBuildable
+        viewController: ChooseImageViewControllable
     ) {
-        self.topupBuildable = topupBuildable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
-    //MARK: - Attach
-    func attachTopup(originerPictureStatus  : Bool) {
-        if topupRouting != nil {
-            return
-        }
-        let router = topupBuildable.build(
-            withListener: interactor,
-            originerPictureStatus: originerPictureStatus)
-        topupRouting = router
-        attachChild(router)
-    }
-    
 
-    
-    //MARK: - Detach
-    func detachTopup() {
-        guard let router = topupRouting else{
-            return
-        }
-
-        detachChild(router)
-        self.topupRouting = nil
-    }
 }

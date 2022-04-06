@@ -8,21 +8,14 @@
 import RIBs
 import RIBsUtil
 
-final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, ChooseImageDependency, TopupDependency{
+final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, ChooseImageDependency{
     
-    lazy var topupBuildable: TopupBuildable = {
-        return TopupBuilder(dependency: self)
-    }()
-    
+
     lazy var chooseImageBuildable: ChooseImageBuildable = {
         return ChooseImageBuilder(dependency: self)
     }()
     
     
-
-    var topupBaseViewController: ViewControllable{
-        rootViewController.topViewControllable
-    }
     
     private let rootViewController : ViewControllable
 
