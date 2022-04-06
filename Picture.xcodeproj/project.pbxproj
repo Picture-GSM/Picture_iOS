@@ -35,6 +35,7 @@
 		EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */; };
 		EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */; };
 		EEA102F327F588750081AD84 /* ImageBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102F227F588750081AD84 /* ImageBtn.swift */; };
+		EEA2B86727FD697A00E0E1CD /* CameraCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA2B86627FD697A00E0E1CD /* CameraCaptureDelegate.swift */; };
 		EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */; };
 		EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */; };
 		EEC784C027FA7E94005ED2D1 /* DecideImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC784BC27FA7E94005ED2D1 /* DecideImageRouter.swift */; };
@@ -95,6 +96,7 @@
 		EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageBuilder.swift; sourceTree = "<group>"; };
 		EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageInteractor.swift; sourceTree = "<group>"; };
 		EEA102F227F588750081AD84 /* ImageBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBtn.swift; sourceTree = "<group>"; };
+		EEA2B86627FD697A00E0E1CD /* CameraCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureDelegate.swift; sourceTree = "<group>"; };
 		EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBtn.swift; sourceTree = "<group>"; };
 		EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
 		EEC784BC27FA7E94005ED2D1 /* DecideImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideImageRouter.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				EEA102D927F549C30081AD84 /* CameraViewController.swift */,
 				EEA102DA27F549C30081AD84 /* CameraBuilder.swift */,
 				EEA102DB27F549C30081AD84 /* CameraInteractor.swift */,
+				EEA2B86627FD697A00E0E1CD /* CameraCaptureDelegate.swift */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				EEDBCD1927E2B87100B9B9A3 /* AppRootInteractor.swift in Sources */,
 				EEFA58BE27E2D22900DBB4A8 /* ListHomeBuilder.swift in Sources */,
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
+				EEA2B86727FD697A00E0E1CD /* CameraCaptureDelegate.swift in Sources */,
 				EEC784C127FA7E94005ED2D1 /* DecideImageViewController.swift in Sources */,
 				EE6ED5E627F2CD2C00534E68 /* BaseCollectionViewCell.swift in Sources */,
 				EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */,
