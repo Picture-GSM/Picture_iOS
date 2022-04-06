@@ -101,15 +101,7 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
     override func delegate() {
         imagePicker.delegate = self
     }
-
-    //MARK: - Presenter
-    func setOriginerPicture(image: UIImage) {
-        originalImageBtn.setImage(image, for: .normal)
-    }
-    
-    func setPiecePicture(image: UIImage) {
-        pieceImageBtn.setImage(image, for: .normal)
-    }
+ 
         
     //MARK: - Bind
     override func bindView() {
