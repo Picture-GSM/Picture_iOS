@@ -10,6 +10,7 @@ import RxSwift
 import UIKit
 import Then
 import PinLayout
+import Photos
 
 protocol ChooseImagePresentableListener: AnyObject {
     func didTapBack()
@@ -63,19 +64,23 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
         $0.setTitleColor(UIColor.white, for: .normal)
     }
 
+    
     //MARK: - Method
     override func configureUI() {
         alert.addAction(UIAlertAction.init(title: "사진", style: .cancel, handler: { [weak self] _ in
             self?.listener?.didTapCamera(originerPictureStatus: self!.imageSelectStatus)
         }))
         alert.addAction(UIAlertAction.init(title: "앨범", style: .destructive, handler: { [weak self] _ in
-            self?.present(self!.imagePicker, animated: true)
+            DispatchQueue.main.async {
+                self?.present(self!.imagePicker, animated: true)
+            }
         }))
     }
     
     override func addView() {
         view.addSubviews(backButton,titleLabel,originalImageBtn,pieceImageBtn,startBtn)
     }
+    
     override func setLayout() {
         backButton.pin.top(view.pin.safeArea.top + 5).size(40).left(20)
         titleLabel.pin.below(of: backButton, aligned: .start).right(view.pin.safeArea).marginHorizontal(0).height(100)
@@ -83,10 +88,10 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
         pieceImageBtn.pin.size(bounds.width/2.5).centerRight(20)
         startBtn.pin.bottom(bounds.height/15).hCenter().width(80%).maxWidth(300).height(40)
     }
+    
     override func delegate() {
         imagePicker.delegate = self
     }
-    
 
     //MARK: - Presenter
     func setOriginerPicture(image: UIImage) {

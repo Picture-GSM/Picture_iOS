@@ -60,6 +60,7 @@ class BaseViewController : UIViewController {
         }
     }
     
+
     //MARK: - Override Point
     func addView(){}
     func setLayout(){}
