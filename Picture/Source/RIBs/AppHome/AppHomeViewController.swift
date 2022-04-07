@@ -8,7 +8,6 @@
 import RIBs
 import RxSwift
 import RxCocoa
-import RxDataSources
 
 import UIKit
 import UIUtil

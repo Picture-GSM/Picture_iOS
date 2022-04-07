@@ -9,7 +9,6 @@ import RIBs
 import RxSwift
 import UIKit
 import PinLayout
-import RxDataSources
 import RealmSwift
 import RxRealm
 

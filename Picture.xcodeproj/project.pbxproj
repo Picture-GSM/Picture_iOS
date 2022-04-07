@@ -35,10 +35,7 @@
 		EEC90ADF27FEA1FA005C2D0A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */; };
 		EEC90AE227FED05C005C2D0A /* ImageSaveDocumentDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AE127FED05C005C2D0A /* ImageSaveDocumentDirectory.swift */; };
 		EEC90AE827FEDBAC005C2D0A /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AE727FEDBAC005C2D0A /* ListModel.swift */; };
-		EEC90B0B27FEED77005C2D0A /* Reactive+RxRealmDataSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90B0A27FEED77005C2D0A /* Reactive+RxRealmDataSources.swift */; };
-		EEC90B0D27FEED91005C2D0A /* RealmBindObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90B0C27FEED91005C2D0A /* RealmBindObserver.swift */; };
-		EEC90B0F27FEEDB3005C2D0A /* RxCollectionViewRealmDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90B0E27FEEDB3005C2D0A /* RxCollectionViewRealmDataSource.swift */; };
-		EEC90B1127FEEDE3005C2D0A /* RxTableViewRealmDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90B1027FEEDE3005C2D0A /* RxTableViewRealmDataSource.swift */; };
+		EEC90B1427FEEFC9005C2D0A /* RxRealmDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = EEC90B1327FEEFC9005C2D0A /* RxRealmDataSources */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
@@ -95,10 +92,7 @@
 		EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		EEC90AE127FED05C005C2D0A /* ImageSaveDocumentDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveDocumentDirectory.swift; sourceTree = "<group>"; };
 		EEC90AE727FEDBAC005C2D0A /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
-		EEC90B0A27FEED77005C2D0A /* Reactive+RxRealmDataSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+RxRealmDataSources.swift"; sourceTree = "<group>"; };
-		EEC90B0C27FEED91005C2D0A /* RealmBindObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmBindObserver.swift; sourceTree = "<group>"; };
-		EEC90B0E27FEEDB3005C2D0A /* RxCollectionViewRealmDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCollectionViewRealmDataSource.swift; sourceTree = "<group>"; };
-		EEC90B1027FEEDE3005C2D0A /* RxTableViewRealmDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxTableViewRealmDataSource.swift; sourceTree = "<group>"; };
+		EEC90B1227FEEEF4005C2D0A /* RxRealmDataSources */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RxRealmDataSources; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
@@ -124,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEC90B1427FEEFC9005C2D0A /* RxRealmDataSources in Frameworks */,
 				EEED8B9627F1577700A7B052 /* UIUtil in Frameworks */,
 				EECB9AF427E034C100FF2124 /* RIBs in Frameworks */,
 				EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */,
@@ -249,10 +244,6 @@
 		EEC90B0927FEE5ED005C2D0A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				EEC90B0A27FEED77005C2D0A /* Reactive+RxRealmDataSources.swift */,
-				EEC90B0C27FEED91005C2D0A /* RealmBindObserver.swift */,
-				EEC90B0E27FEEDB3005C2D0A /* RxCollectionViewRealmDataSource.swift */,
-				EEC90B1027FEEDE3005C2D0A /* RxTableViewRealmDataSource.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -310,6 +301,7 @@
 		EEEA2C3327D9DCE000356B33 = {
 			isa = PBXGroup;
 			children = (
+				EEC90B1227FEEEF4005C2D0A /* RxRealmDataSources */,
 				EE6D065D27F151CA00C1E0A6 /* Platform */,
 				EE6D065A27F14C7800C1E0A6 /* List */,
 				EE6D065927F14C4700C1E0A6 /* CX */,
@@ -400,6 +392,7 @@
 				EEED8B9327F1577700A7B052 /* RxUtil */,
 				EEED8B9527F1577700A7B052 /* UIUtil */,
 				EEC90AD327FE7FE7005C2D0A /* NVActivityIndicatorView */,
+				EEC90B1327FEEFC9005C2D0A /* RxRealmDataSources */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -483,7 +476,6 @@
 				EEC90ADA27FE8E7B005C2D0A /* ImageVerificationRouter.swift in Sources */,
 				EEFA58BE27E2D22900DBB4A8 /* ListHomeBuilder.swift in Sources */,
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
-				EEC90B0B27FEED77005C2D0A /* Reactive+RxRealmDataSources.swift in Sources */,
 				EEC90ACD27FE5E80005C2D0A /* LoadingModalInteractor.swift in Sources */,
 				EE6ED5E627F2CD2C00534E68 /* BaseCollectionViewCell.swift in Sources */,
 				EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */,
@@ -495,14 +487,11 @@
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
 				EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */,
 				EEC90ADF27FEA1FA005C2D0A /* ImageManager.swift in Sources */,
-				EEC90B0D27FEED91005C2D0A /* RealmBindObserver.swift in Sources */,
 				EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */,
-				EEC90B1127FEEDE3005C2D0A /* RxTableViewRealmDataSource.swift in Sources */,
 				EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */,
 				EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */,
 				EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */,
 				EEC90ACA27FE5E80005C2D0A /* LoadingModalRouter.swift in Sources */,
-				EEC90B0F27FEEDB3005C2D0A /* RxCollectionViewRealmDataSource.swift in Sources */,
 				EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */,
 				EEC90ADB27FE8E7B005C2D0A /* ImageVerificationViewController.swift in Sources */,
 				EEFA58BD27E2D22900DBB4A8 /* ListHomeViewController.swift in Sources */,
@@ -802,6 +791,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
+		};
+		EEC90B1327FEEFC9005C2D0A /* RxRealmDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RxRealmDataSources;
 		};
 		EECB9AEE27E02FE000FF2124 /* RxRealm */ = {
 			isa = XCSwiftPackageProductDependency;
