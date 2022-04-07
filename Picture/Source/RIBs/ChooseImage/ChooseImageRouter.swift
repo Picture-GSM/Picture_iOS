@@ -49,7 +49,7 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         guard let router = loadingModalRouting else {
             return
         }
-        viewControllable.dismiss(completion: nil)
+        viewControllable.dismiss(animated: false, completion: nil)
         loadingModalRouting = nil
         detachChild(router)
     }

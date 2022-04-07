@@ -55,4 +55,9 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     func didTapStartButton() {
         router?.attachLoading()
     }
+    
+    func didClearTrainingMachine() {
+        router?.detachLoading()
+    }
+
 }

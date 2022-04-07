@@ -12,9 +12,7 @@ import PinLayout
 import NVActivityIndicatorView
 
 protocol LoadingModalPresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+    func didClearTrainingMachine()
 }
 
 final class LoadingModalViewController: BaseViewController, LoadingModalPresentable, LoadingModalViewControllable {
@@ -41,6 +39,8 @@ final class LoadingModalViewController: BaseViewController, LoadingModalPresenta
     override func configureUI() {
         view.backgroundColor = .black.withAlphaComponent(0.1)
         activityIndicator.startAnimating()
+        
+        test()
     }
     override func addView() {
         view.addSubview(bgView)
@@ -51,5 +51,12 @@ final class LoadingModalViewController: BaseViewController, LoadingModalPresenta
         bgView.pin.center().size(bounds.width/1.85)
         activityIndicator.pin.top(bounds.height/20).hCenter()
         label.pin.bottomCenter(bounds.height/20).width(bgView.frame.width).height(20)
+    }
+    
+    private func test(){
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            self.listener?.didClearTrainingMachine()
+            self.activityIndicator.stopAnimating()
+        }
     }
 }
