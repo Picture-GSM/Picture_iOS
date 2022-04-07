@@ -36,6 +36,7 @@
 		EEC90ADC27FE8E7B005C2D0A /* ImageVerificationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AD827FE8E7B005C2D0A /* ImageVerificationBuilder.swift */; };
 		EEC90ADD27FE8E7B005C2D0A /* ImageVerificationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */; };
 		EEC90ADF27FEA1FA005C2D0A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */; };
+		EEC90AE227FED05C005C2D0A /* ImageSaveDocumentDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AE127FED05C005C2D0A /* ImageSaveDocumentDirectory.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
@@ -91,6 +92,7 @@
 		EEC90AD827FE8E7B005C2D0A /* ImageVerificationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVerificationBuilder.swift; sourceTree = "<group>"; };
 		EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVerificationInteractor.swift; sourceTree = "<group>"; };
 		EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		EEC90AE127FED05C005C2D0A /* ImageSaveDocumentDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveDocumentDirectory.swift; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				EEC90AD727FE8E7B005C2D0A /* ImageVerificationViewController.swift */,
 				EEC90AD827FE8E7B005C2D0A /* ImageVerificationBuilder.swift */,
 				EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */,
+				EEC90AE127FED05C005C2D0A /* ImageSaveDocumentDirectory.swift */,
 			);
 			path = ImageVerification;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */,
 				EEC90ACC27FE5E80005C2D0A /* LoadingModalBuilder.swift in Sources */,
 				EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */,
+				EEC90AE227FED05C005C2D0A /* ImageSaveDocumentDirectory.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
 				EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */,
 				EEC90ADF27FEA1FA005C2D0A /* ImageManager.swift in Sources */,

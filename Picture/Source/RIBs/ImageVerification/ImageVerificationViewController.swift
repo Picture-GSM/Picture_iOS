@@ -9,6 +9,8 @@ import RIBs
 import RxSwift
 import UIKit
 import PinLayout
+import RxRealm
+import RealmSwift
 
 protocol ImageVerificationPresentableListener: AnyObject {
     func didTapClose()
@@ -17,8 +19,8 @@ protocol ImageVerificationPresentableListener: AnyObject {
 
 final class ImageVerificationViewController: BaseViewController, ImageVerificationPresentable, ImageVerificationViewControllable {
 
+    let localReam = try! Realm()
     
-
     weak var listener: ImageVerificationPresentableListener?
     
     private let imageView = UIImageView().then{
@@ -47,6 +49,11 @@ final class ImageVerificationViewController: BaseViewController, ImageVerificati
     
     @objc
     private func didTapSave(){
+        let task = Photo(date: Date())
+        try! localReam.write{
+            localReam.add(task)
+            ImageDirectory.shared.saveImageToDocumentDirectory(imageName: "\(task.id).png", image: imageView.image!)
+        }
         ImageManager.shared.saveImage(image: imageView.image ?? UIImage())
         listener?.didTapSaveSuccess()
     }
