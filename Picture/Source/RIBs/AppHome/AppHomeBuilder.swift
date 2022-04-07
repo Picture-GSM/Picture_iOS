@@ -8,19 +8,18 @@
 import RIBs
 
 protocol AppHomeDependency: Dependency {
-    // TODO: Declare the set of dependencies required by this RIB, but cannot be
-    // created by this RIB.
+    var chooseImageBuildable: ChooseImageBuildable {get}
 }
 
-final class AppHomeComponent: Component<AppHomeDependency> {
+final class AppHomeComponent: Component<AppHomeDependency>  {
+    
+    var chooseImageBuildable: ChooseImageBuildable { dependency.chooseImageBuildable }
 
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
 }
 
 // MARK: - Builder
-
 protocol AppHomeBuildable: Buildable {
-    func build(withListener listener: AppHomeListener) -> AppHomeRouting
+    func build(withListener listener: AppHomeListener) -> AppHomeRouter
 }
 
 final class AppHomeBuilder: Builder<AppHomeDependency>, AppHomeBuildable {
@@ -29,11 +28,16 @@ final class AppHomeBuilder: Builder<AppHomeDependency>, AppHomeBuildable {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: AppHomeListener) -> AppHomeRouting {
+    func build(withListener listener: AppHomeListener) -> AppHomeRouter{
         let component = AppHomeComponent(dependency: dependency)
         let viewController = AppHomeViewController()
         let interactor = AppHomeInteractor(presenter: viewController)
         interactor.listener = listener
-        return AppHomeRouter(interactor: interactor, viewController: viewController)
+        
+        return AppHomeRouter(
+            interactor: interactor,
+            viewController: viewController,
+            chooseImageBuildable: component.chooseImageBuildable
+        )
     }
 }

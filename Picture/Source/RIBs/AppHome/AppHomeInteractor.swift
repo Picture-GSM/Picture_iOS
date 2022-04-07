@@ -9,7 +9,8 @@ import RIBs
 import RxSwift
 
 protocol AppHomeRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func attachChooseImage()
+    func detachChooseImage()
 }
 
 protocol AppHomePresentable: Presentable {
@@ -23,6 +24,8 @@ protocol AppHomeListener: AnyObject {
 
 final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHomeInteractable, AppHomePresentableListener {
 
+    
+    
     weak var router: AppHomeRouting?
     weak var listener: AppHomeListener?
 
@@ -42,4 +45,13 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+    //MARK: - Attach
+    func didTapAddBtn() {
+        router?.attachChooseImage()
+    }
+    //MARK: - Detach
+    func transportHomeDidClose() {
+        router?.detachChooseImage()
+    }
+    
 }

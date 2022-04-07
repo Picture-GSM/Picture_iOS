@@ -2,14 +2,14 @@
 //  AppRootInteractor.swift
 //  Picture
 //
-//  Created by Ji-hoon Ahn on 2022/03/10.
+//  Created by Ji-hoon Ahn on 2022/03/17.
 //
 
 import RIBs
 import RxSwift
 
 protocol AppRootRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func attachTabs()
 }
 
 protocol AppRootPresentable: Presentable {
@@ -23,6 +23,7 @@ protocol AppRootListener: AnyObject {
 
 final class AppRootInteractor: PresentableInteractor<AppRootPresentable>, AppRootInteractable, AppRootPresentableListener {
 
+
     weak var router: AppRootRouting?
     weak var listener: AppRootListener?
 
@@ -35,7 +36,7 @@ final class AppRootInteractor: PresentableInteractor<AppRootPresentable>, AppRoo
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        router?.attachTabs()
     }
 
     override func willResignActive() {
