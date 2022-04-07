@@ -13,12 +13,9 @@
 		EE6ED5E427F2CC2600534E68 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ED5E327F2CC2600534E68 /* BaseViewController.swift */; };
 		EE6ED5E627F2CD2C00534E68 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ED5E527F2CD2C00534E68 /* BaseCollectionViewCell.swift */; };
 		EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2D327E4259A00CB0C78 /* Reusable */; };
-		EE83C2E027E442CC00CB0C78 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2DF27E442CC00CB0C78 /* Differentiator */; };
-		EE83C2E227E442CC00CB0C78 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2E127E442CC00CB0C78 /* RxDataSources */; };
 		EE83C2E427E4615900CB0C78 /* AppHomeCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2E327E4615900CB0C78 /* AppHomeCollectionViewSection.swift */; };
 		EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */; };
 		EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */; };
-		EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */; };
 		EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */; };
 		EEA102ED27F54DB00081AD84 /* ChooseImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E927F54DB00081AD84 /* ChooseImageRouter.swift */; };
 		EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */; };
@@ -37,6 +34,7 @@
 		EEC90ADD27FE8E7B005C2D0A /* ImageVerificationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */; };
 		EEC90ADF27FEA1FA005C2D0A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */; };
 		EEC90AE227FED05C005C2D0A /* ImageSaveDocumentDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AE127FED05C005C2D0A /* ImageSaveDocumentDirectory.swift */; };
+		EEC90AE827FEDBAC005C2D0A /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AE727FEDBAC005C2D0A /* ListModel.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
@@ -75,7 +73,6 @@
 		EE83C2E327E4615900CB0C78 /* AppHomeCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeCollectionViewSection.swift; sourceTree = "<group>"; };
 		EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoRealmData.swift; sourceTree = "<group>"; };
 		EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
-		EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHomeCollectionViewSection.swift; sourceTree = "<group>"; };
 		EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerControllerDelegate.swift; sourceTree = "<group>"; };
 		EEA102E927F54DB00081AD84 /* ChooseImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageRouter.swift; sourceTree = "<group>"; };
 		EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +90,7 @@
 		EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVerificationInteractor.swift; sourceTree = "<group>"; };
 		EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		EEC90AE127FED05C005C2D0A /* ImageSaveDocumentDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveDocumentDirectory.swift; sourceTree = "<group>"; };
+		EEC90AE727FEDBAC005C2D0A /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
@@ -122,13 +120,11 @@
 				EECB9AF427E034C100FF2124 /* RIBs in Frameworks */,
 				EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */,
 				EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */,
-				EE83C2E227E442CC00CB0C78 /* RxDataSources in Frameworks */,
 				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
 				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
 				EEED8B9427F1577700A7B052 /* RxUtil in Frameworks */,
 				EEC90AD427FE7FE7005C2D0A /* NVActivityIndicatorView in Frameworks */,
 				EEED8B9227F1577700A7B052 /* RIBsUtil in Frameworks */,
-				EE83C2E027E442CC00CB0C78 /* Differentiator in Frameworks */,
 				EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +237,14 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
+		EEC90AE627FEDB9F005C2D0A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EEC90AE727FEDBAC005C2D0A /* ListModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		EEDBCD1127E2B85A00B9B9A3 /* AppRoot */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +335,7 @@
 		EEFA58B727E2D1BA00DBB4A8 /* ListHome */ = {
 			isa = PBXGroup;
 			children = (
+				EEC90AE627FEDB9F005C2D0A /* Models */,
 				EEFA58C327E3515E00DBB4A8 /* View */,
 				EEFA58B827E2D22900DBB4A8 /* ListHomeRouter.swift */,
 				EEFA58B927E2D22900DBB4A8 /* ListHomeViewController.swift */,
@@ -344,7 +349,6 @@
 			isa = PBXGroup;
 			children = (
 				EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */,
-				EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -380,8 +384,6 @@
 				EECB9AEE27E02FE000FF2124 /* RxRealm */,
 				EECB9AF327E034C100FF2124 /* RIBs */,
 				EE83C2D327E4259A00CB0C78 /* Reusable */,
-				EE83C2DF27E442CC00CB0C78 /* Differentiator */,
-				EE83C2E127E442CC00CB0C78 /* RxDataSources */,
 				EEED8B9127F1577700A7B052 /* RIBsUtil */,
 				EEED8B9327F1577700A7B052 /* RxUtil */,
 				EEED8B9527F1577700A7B052 /* UIUtil */,
@@ -422,7 +424,6 @@
 				EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */,
 				EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */,
 				EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */,
-				EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */,
 				EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
@@ -452,7 +453,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */,
 				EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */,
 				EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */,
 				EEA102ED27F54DB00081AD84 /* ChooseImageRouter.swift in Sources */,
@@ -492,6 +492,7 @@
 				EEFA58BD27E2D22900DBB4A8 /* ListHomeViewController.swift in Sources */,
 				EEA102F327F588750081AD84 /* ImageBtn.swift in Sources */,
 				EEC90ADD27FE8E7B005C2D0A /* ImageVerificationInteractor.swift in Sources */,
+				EEC90AE827FEDBAC005C2D0A /* ListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,14 +718,6 @@
 				kind = branch;
 			};
 		};
-		EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kciter/Floaty.git";
@@ -788,16 +781,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */;
 			productName = Reusable;
-		};
-		EE83C2DF27E442CC00CB0C78 /* Differentiator */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */;
-			productName = Differentiator;
-		};
-		EE83C2E127E442CC00CB0C78 /* RxDataSources */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */;
-			productName = RxDataSources;
 		};
 		EEC90AD327FE7FE7005C2D0A /* NVActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;

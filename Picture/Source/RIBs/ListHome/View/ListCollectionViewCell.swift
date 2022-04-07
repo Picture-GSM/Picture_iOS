@@ -24,7 +24,7 @@ class ListCollectionViewCell : BaseCollectionViewCell<Any>{
     
     //MARK: - Method
     override func configureUI() {
-        
+        contentView.backgroundColor = .gray
     }
     //MARK: - AddView
     override func addView() {

@@ -7,6 +7,7 @@
 
 import RIBs
 import RxSwift
+import RealmSwift
 
 protocol ListHomeRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -14,7 +15,7 @@ protocol ListHomeRouting: ViewableRouting {
 
 protocol ListHomePresentable: Presentable {
     var listener: ListHomePresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+    
 }
 
 protocol ListHomeListener: AnyObject {
@@ -22,12 +23,12 @@ protocol ListHomeListener: AnyObject {
 }
 
 final class ListHomeInteractor: PresentableInteractor<ListHomePresentable>, ListHomeInteractable, ListHomePresentableListener {
-
+    
     weak var router: ListHomeRouting?
     weak var listener: ListHomeListener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic
-    // in constructor.
+    
+    
     override init(presenter: ListHomePresentable) {
         super.init(presenter: presenter)
         presenter.listener = self

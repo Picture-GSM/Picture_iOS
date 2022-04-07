@@ -10,18 +10,23 @@ import RxSwift
 import UIKit
 import PinLayout
 import RxDataSources
+import RealmSwift
+import RxRealm
 
 protocol ListHomePresentableListener: AnyObject {
 
 }
 
 final class ListHomeViewController: BaseViewController, ListHomePresentable, ListHomeViewControllable {
+    
     //MARK: - Listener
     weak var listener: ListHomePresentableListener?
     
     //MARK: - Properties
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         let layout = UICollectionViewFlowLayout()
+        $0.register(ListCollectionViewCell.self, forCellWithReuseIdentifier: "List")
+        $0.collectionViewLayout = layout
         $0.backgroundColor = .red
     }
     
@@ -37,6 +42,8 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
     }
     //MARK: - delegate
     override func delegate() {
+        collectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        collectionView.rx.setDataSource(self).disposed(by: disposeBag)
     }
     
     //MARK: - Setlayout
@@ -49,6 +56,18 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
         
     }
     override func bindAction() {
-        
+
     }
+}
+extension ListHomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "List", for: indexPath) as? ListCollectionViewCell else {return UICollectionViewCell()}
+        return cell
+    }
+    
+    
 }
