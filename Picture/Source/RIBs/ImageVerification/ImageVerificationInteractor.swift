@@ -19,6 +19,7 @@ protocol ImageVerificationPresentable: Presentable {
 
 protocol ImageVerificationListener: AnyObject {
     func didTapImageVerificationClose()
+    func didTapImageVerificationSaveSuccess()
 }
 
 final class ImageVerificationInteractor: PresentableInteractor<ImageVerificationPresentable>, ImageVerificationInteractable, ImageVerificationPresentableListener {
@@ -45,5 +46,8 @@ final class ImageVerificationInteractor: PresentableInteractor<ImageVerification
     
     func didTapClose() {
         listener?.didTapImageVerificationClose()
+    }
+    func didTapSaveSuccess() {
+        listener?.didTapImageVerificationSaveSuccess()
     }
 }

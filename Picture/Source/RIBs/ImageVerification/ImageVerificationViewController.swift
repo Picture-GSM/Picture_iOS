@@ -12,6 +12,7 @@ import PinLayout
 
 protocol ImageVerificationPresentableListener: AnyObject {
     func didTapClose()
+    func didTapSaveSuccess()
 }
 
 final class ImageVerificationViewController: BaseViewController, ImageVerificationPresentable, ImageVerificationViewControllable {
@@ -20,6 +21,8 @@ final class ImageVerificationViewController: BaseViewController, ImageVerificati
     
     private let imageView = UIImageView().then{
         $0.backgroundColor = .lightGray
+        $0.contentMode = .scaleAspectFill
+        $0.image = UIImage(named: "PageImage1")
     }
     
     //MARK: - Method
@@ -43,6 +46,8 @@ final class ImageVerificationViewController: BaseViewController, ImageVerificati
     
     @objc
     private func didTapSave(){
-        
+        print("저장")
+        ImageManager.shared.saveImage(image: imageView.image ?? UIImage())
+        listener?.didTapSaveSuccess()
     }
 }

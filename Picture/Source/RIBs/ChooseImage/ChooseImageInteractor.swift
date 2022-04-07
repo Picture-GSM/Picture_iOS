@@ -29,8 +29,6 @@ protocol ChooseImageListener: AnyObject {
 
 final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener,AdaptivePresentationControllerDelegate{
 
-    
-
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?
     var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
@@ -70,11 +68,15 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     func didTapImageVerificationClose() {
         router?.detachImageVerification()
     }
+    func didTapImageVerificationSaveSuccess() {
+        router?.detachImageVerification()
+        listener?.transportHomeDidClose()
+    }
+    
     
     //MARK: - presentationControllable
     func presetationControllerDidDismiss() {
         router?.detachImageVerification()
     }
-
     
 }
