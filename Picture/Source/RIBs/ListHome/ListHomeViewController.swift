@@ -11,6 +11,7 @@ import UIKit
 import PinLayout
 import RealmSwift
 import RxRealm
+import RxRealmDataSources
 
 protocol ListHomePresentableListener: AnyObject {
 
@@ -25,15 +26,15 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         let layout = UICollectionViewFlowLayout()
         $0.register(ListCollectionViewCell.self, forCellWithReuseIdentifier: "List")
+        $0.showsVerticalScrollIndicator = false
         $0.collectionViewLayout = layout
-        $0.backgroundColor = .red
     }
-    
     
     //MARK: - initalizer
     override func configureUI() {
         title = "List"
         tabBarItem = UITabBarItem(title: "목록",image: UIImage(systemName: "doc"),selectedImage: UIImage(systemName: "doc.fill"))
+        setupRightItem(with: "삭제", target: self, action: #selector(didTapDeleteItem))
     }
     //MARK: - addView
     override func addView() {
@@ -41,8 +42,8 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
     }
     //MARK: - delegate
     override func delegate() {
-        collectionView.rx.setDelegate(self).disposed(by: disposeBag)
-        collectionView.rx.setDataSource(self).disposed(by: disposeBag)
+        collectionView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
     }
     
     //MARK: - Setlayout
@@ -54,19 +55,27 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
     override func bindView() {
         
     }
-    override func bindAction() {
-
+    override func bindState() {
+        let dataSource = RxCollectionViewRealmDataSource<Photo>(cellIdentifier: "List", cellType: ListCollectionViewCell.self){ cell , indexPath, item in
+            
+            cell.date.text = Date().usingDate(time: item.date)
+            cell.iv.image = ImageDirectory.shared.loadImageFromDocumentDirecotry(imageName: "\(item.id).png")
+        }
+        let realm = try! Realm()
+        let photoset = Observable.changeset(from: realm.objects(Photo.self)).share()
+        photoset
+            .bind(to: collectionView.rx.realmChanges(dataSource))
+            .disposed(by: disposeBag)
+    }
+    
+    @objc
+    private func didTapDeleteItem(){
+        
     }
 }
-extension ListHomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+
+extension ListHomeViewController : UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: bounds.width/2 - 5 , height: bounds.height/3.25)
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "List", for: indexPath) as? ListCollectionViewCell else {return UICollectionViewCell()}
-        return cell
-    }
-    
-    
 }

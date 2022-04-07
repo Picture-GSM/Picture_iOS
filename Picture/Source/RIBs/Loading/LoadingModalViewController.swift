@@ -23,7 +23,7 @@ final class LoadingModalViewController: BaseViewController, LoadingModalPresenta
     private var pieceImage : UIImage = .init()
     
     private let bgView = UIView().then{
-        $0.backgroundColor = .darkGray
+        $0.backgroundColor = .darkGray.withAlphaComponent(0.7)
         $0.layer.cornerRadius = 20
     }
     private lazy var activityIndicator = NVActivityIndicatorView(

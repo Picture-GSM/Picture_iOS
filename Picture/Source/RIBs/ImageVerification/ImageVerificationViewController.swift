@@ -32,7 +32,7 @@ final class ImageVerificationViewController: BaseViewController, ImageVerificati
     override func configureUI() {
         title = "Verification"
         setupNavigationItem(with: .close, target: self, action: #selector(didTapClose))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(didTapSave))
+        setupRightItem(with: "저장", target: self, action: #selector(didTapSave))
     }
     override func addView() {
         view.addSubviews(imageView)

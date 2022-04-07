@@ -10,7 +10,7 @@ import Then
 import Reusable
 import UIUtil
 
-final class AppHomeCollectionViewCell : BaseCollectionViewCell<Any>{
+final class AppHomeCollectionViewCell : BaseCollectionViewCell{
     //MARK: - Properties
     private let imageView = UIImageView(image: UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 15, weight: .regular))).then{
         $0.backgroundColor = .red

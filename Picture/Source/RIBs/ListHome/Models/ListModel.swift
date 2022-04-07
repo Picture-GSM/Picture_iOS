@@ -6,4 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
+struct ListModel{
+    var image : UIImage
+    var date : Date
+}

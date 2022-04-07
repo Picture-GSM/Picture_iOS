@@ -18,4 +18,11 @@ public extension UIViewController{
             action: action
         )
     }
+    func setupRightItem(with buttonType : String, target : Any?, action : Selector?){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: buttonType,
+            style: .plain,
+            target: target,
+            action: action)
+    }
 }

@@ -9,7 +9,7 @@ import UIKit
 import Reusable
 import RxSwift
 
-class BaseCollectionViewCell<T> : UICollectionViewCell,Reusable{
+class BaseCollectionViewCell : UICollectionViewCell,Reusable{
     
     var disposeBag = DisposeBag()
     
@@ -18,15 +18,19 @@ class BaseCollectionViewCell<T> : UICollectionViewCell,Reusable{
         super.init(frame: .zero)
         addView()
         configureUI()
-        setUpLayout()
     }
     
     @available(*, unavailable)
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        addView()
+        configureUI()
     }
 
-    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setUpLayout()
+    }
     //MARK: - Reusable
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -34,16 +38,6 @@ class BaseCollectionViewCell<T> : UICollectionViewCell,Reusable{
     }
     
 
-    
-    //MARK: - Bind
-    var model: T? {
-        didSet {
-            if let model = model {
-                bind(model)
-            }
-        }
-    }
-    func bind(_ model: T) {}
     
     //MARK: - Setting Method
     func addView() {}

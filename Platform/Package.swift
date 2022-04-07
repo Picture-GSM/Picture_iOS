@@ -18,7 +18,9 @@ let package = Package(
         .library(
             name: "RIBsUtil",
             targets: ["RIBsUtil"]),
-
+        .library(
+            name: "FoundationUtil",
+            targets: ["FoundationUtil"]),
     ],
     dependencies: [
         .package(url: "https://github.com/uber/RIBs", .exactItem("0.10.0")),
@@ -43,6 +45,9 @@ let package = Package(
             dependencies: [
                 "RIBs"
             ]),
+        .target(
+            name: "FoundationUtil",
+            dependencies: [ ]),
 
     ]
 )

@@ -8,31 +8,35 @@
 import UIKit
 import PinLayout
 import UIUtil
+import FoundationUtil
 
-class ListCollectionViewCell : BaseCollectionViewCell<Any>{
+
+class ListCollectionViewCell : BaseCollectionViewCell{
     
-    private let iv  = UIImageView().then{
+    let iv  = UIImageView().then{
         $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
         $0.backgroundColor = .gray // 나중에 지워야함
     }
-    private let data = UILabel().then{
-        $0.text = "2022년 03월 18일" //지워야함
+    var date = UILabel().then{
         $0.font = UIFont.systemFont(ofSize: 13)
         $0.textColor = .black
+        $0.textAlignment = .center
         $0.numberOfLines = 2
     }
     
     //MARK: - Method
     override func configureUI() {
-        contentView.backgroundColor = .gray
+        contentView.backgroundColor = .white
     }
     //MARK: - AddView
     override func addView() {
-        addSubviews(iv, data)
+        contentView.addSubviews(iv ,date)
     }
     //MARK: - SetupLayout
     override func setUpLayout() {
-        iv.pin.top().left().right().bottom(20)
-        data.pin.bottom().right().left().height(20)
+        iv.pin.top().left().right().bottom(30)
+        date.pin.bottom().hCenter().width(contentView.frame.width).height(30)
+        contentView.layer.applySketchShadow(color: .gray, alpha: 0.25, x: 0, y: 10, blur: 10, spread: 0)
     }
 }

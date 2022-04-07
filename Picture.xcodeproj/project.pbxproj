@@ -33,9 +33,10 @@
 		EEC90ADC27FE8E7B005C2D0A /* ImageVerificationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AD827FE8E7B005C2D0A /* ImageVerificationBuilder.swift */; };
 		EEC90ADD27FE8E7B005C2D0A /* ImageVerificationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */; };
 		EEC90ADF27FEA1FA005C2D0A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */; };
-		EEC90AE227FED05C005C2D0A /* ImageSaveDocumentDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AE127FED05C005C2D0A /* ImageSaveDocumentDirectory.swift */; };
+		EEC90AE227FED05C005C2D0A /* ImageDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AE127FED05C005C2D0A /* ImageDirectory.swift */; };
 		EEC90AE827FEDBAC005C2D0A /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AE727FEDBAC005C2D0A /* ListModel.swift */; };
 		EEC90B1427FEEFC9005C2D0A /* RxRealmDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = EEC90B1327FEEFC9005C2D0A /* RxRealmDataSources */; };
+		EEC90B1627FEFEA7005C2D0A /* FoundationUtil in Frameworks */ = {isa = PBXBuildFile; productRef = EEC90B1527FEFEA7005C2D0A /* FoundationUtil */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
@@ -90,7 +91,7 @@
 		EEC90AD827FE8E7B005C2D0A /* ImageVerificationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVerificationBuilder.swift; sourceTree = "<group>"; };
 		EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVerificationInteractor.swift; sourceTree = "<group>"; };
 		EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
-		EEC90AE127FED05C005C2D0A /* ImageSaveDocumentDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSaveDocumentDirectory.swift; sourceTree = "<group>"; };
+		EEC90AE127FED05C005C2D0A /* ImageDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDirectory.swift; sourceTree = "<group>"; };
 		EEC90AE727FEDBAC005C2D0A /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		EEC90B1227FEEEF4005C2D0A /* RxRealmDataSources */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RxRealmDataSources; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 				EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */,
 				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
 				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
+				EEC90B1627FEFEA7005C2D0A /* FoundationUtil in Frameworks */,
 				EEED8B9427F1577700A7B052 /* RxUtil in Frameworks */,
 				EEC90AD427FE7FE7005C2D0A /* NVActivityIndicatorView in Frameworks */,
 				EEED8B9227F1577700A7B052 /* RIBsUtil in Frameworks */,
@@ -220,7 +222,7 @@
 				EEC90AD727FE8E7B005C2D0A /* ImageVerificationViewController.swift */,
 				EEC90AD827FE8E7B005C2D0A /* ImageVerificationBuilder.swift */,
 				EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */,
-				EEC90AE127FED05C005C2D0A /* ImageSaveDocumentDirectory.swift */,
+				EEC90AE127FED05C005C2D0A /* ImageDirectory.swift */,
 			);
 			path = ImageVerification;
 			sourceTree = "<group>";
@@ -393,6 +395,7 @@
 				EEED8B9527F1577700A7B052 /* UIUtil */,
 				EEC90AD327FE7FE7005C2D0A /* NVActivityIndicatorView */,
 				EEC90B1327FEEFC9005C2D0A /* RxRealmDataSources */,
+				EEC90B1527FEFEA7005C2D0A /* FoundationUtil */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -483,7 +486,7 @@
 				EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */,
 				EEC90ACC27FE5E80005C2D0A /* LoadingModalBuilder.swift in Sources */,
 				EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */,
-				EEC90AE227FED05C005C2D0A /* ImageSaveDocumentDirectory.swift in Sources */,
+				EEC90AE227FED05C005C2D0A /* ImageDirectory.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
 				EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */,
 				EEC90ADF27FEA1FA005C2D0A /* ImageManager.swift in Sources */,
@@ -657,7 +660,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -687,7 +690,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -795,6 +798,10 @@
 		EEC90B1327FEEFC9005C2D0A /* RxRealmDataSources */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RxRealmDataSources;
+		};
+		EEC90B1527FEFEA7005C2D0A /* FoundationUtil */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FoundationUtil;
 		};
 		EECB9AEE27E02FE000FF2124 /* RxRealm */ = {
 			isa = XCSwiftPackageProductDependency;
