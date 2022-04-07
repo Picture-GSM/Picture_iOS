@@ -9,7 +9,7 @@ import RIBs
 import UIUtil
 import RIBsUtil
 
-protocol ChooseImageInteractable: Interactable {
+protocol ChooseImageInteractable: Interactable , LoadingModalListener{
     var router: ChooseImageRouting? { get set }
     var listener: ChooseImageListener? { get set }
 }
@@ -21,12 +21,42 @@ protocol ChooseImageViewControllable: ViewControllable {
 final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseImageViewControllable>, ChooseImageRouting {
 
     
-    override init(
+
+    private let loadingModalBuidable : LoadingModalBuildable
+    private var loadingModalRouting : LoadingModalRouting?
+    
+    init(
         interactor: ChooseImageInteractable,
-        viewController: ChooseImageViewControllable
+        viewController: ChooseImageViewControllable,
+        loadingModalBuidable : LoadingModalBuildable
     ) {
+        self.loadingModalBuidable = loadingModalBuidable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
-
+    //MARK: - Attach
+    func attachLoading() {
+        if loadingModalRouting != nil{
+            return
+        }
+        let router = loadingModalBuidable.build(withListener: interactor)
+        presentWithPushModal(router.viewControllable, animated: false)
+        attachChild(router)
+        self.loadingModalRouting = router
+    }
+    //MARK: - Detach
+    func detachLoading() {
+        guard let router = loadingModalRouting else {
+            return
+        }
+        viewControllable.dismiss(completion: nil)
+        loadingModalRouting = nil
+        detachChild(router)
+    }
+    
+    //MARK: - Present Action
+    private func presentWithPushModal(_ viewControllable: ViewControllable, animated : Bool){
+        viewControllable.uiviewController.modalPresentationStyle = .custom
+        viewController.present(viewControllable, animated: animated, completion: nil)
+    }
 }

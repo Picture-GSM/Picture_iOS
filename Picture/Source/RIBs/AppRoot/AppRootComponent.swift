@@ -8,8 +8,11 @@
 import RIBs
 import RIBsUtil
 
-final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, ChooseImageDependency{
+final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, ChooseImageDependency, LoadingModalDependency{
     
+    lazy var loadingModalBuildable: LoadingModalBuildable = {
+       return LoadingModalBuilder(dependency: self)
+    }()
 
     lazy var chooseImageBuildable: ChooseImageBuildable = {
         return ChooseImageBuilder(dependency: self)

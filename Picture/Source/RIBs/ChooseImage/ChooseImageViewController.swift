@@ -15,6 +15,7 @@ import UIUtil
 
 protocol ChooseImagePresentableListener: AnyObject {
     func didTapBack()
+    func didTapStartButton()
 }
 
 final class ChooseImageViewController: BaseViewController, ChooseImagePresentable, ChooseImageViewControllable{
@@ -101,28 +102,29 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
     override func delegate() {
         imagePicker.delegate = self
     }
- 
         
     //MARK: - Bind
     override func bindView() {
         backButton.rx.tap
-            .subscribe(onNext:{[weak self] in
-                self?.listener?.didTapBack()
-            })
+            .bind{ [weak self] in self?.listener?.didTapBack()}
             .disposed(by: disposeBag)
         
         originalImageBtn.rx.tap
-            .subscribe(onNext:{ [weak self] in
+            .bind{ [weak self] in
                 self?.imageSelectStatus = true
                 self?.present(self!.alert, animated: true)
-            }).disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
         
         pieceImageBtn.rx.tap
-            .subscribe(onNext:{ [weak self] in
+            .bind{ [weak self] in
                 self?.imageSelectStatus = false
                 self?.present(self!.alert, animated: true)
-            }).disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
+        startBtn.rx.tap
+            .bind{ [weak self] in self?.listener?.didTapStartButton()}
+            .disposed(by: disposeBag)
     }
+
 }
 
 extension ChooseImageViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate{

@@ -11,7 +11,8 @@ import UIUtil
 import UIKit
 
 protocol ChooseImageRouting: ViewableRouting {
-    
+    func attachLoading()
+    func detachLoading()
 }
 
 protocol ChooseImagePresentable: Presentable {
@@ -51,5 +52,7 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         listener?.transportHomeDidClose()
     }
 
-    
+    func didTapStartButton() {
+        router?.attachLoading()
+    }
 }

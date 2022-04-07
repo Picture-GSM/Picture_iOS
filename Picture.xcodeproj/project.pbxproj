@@ -19,8 +19,6 @@
 		EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */; };
 		EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */; };
 		EE83C2F527E47E1800CB0C78 /* ListHomeCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F427E47E1800CB0C78 /* ListHomeCollectionViewSection.swift */; };
-		EEA0117227F6A06A00FEF909 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = EEA0117127F6A06A00FEF909 /* NVActivityIndicatorView */; };
-		EEA0117427F6A06A00FEF909 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = EEA0117327F6A06A00FEF909 /* NVActivityIndicatorViewExtended */; };
 		EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */; };
 		EEA102ED27F54DB00081AD84 /* ChooseImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E927F54DB00081AD84 /* ChooseImageRouter.swift */; };
 		EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */; };
@@ -34,6 +32,7 @@
 		EEC90ACB27FE5E80005C2D0A /* LoadingModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC727FE5E80005C2D0A /* LoadingModalViewController.swift */; };
 		EEC90ACC27FE5E80005C2D0A /* LoadingModalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC827FE5E80005C2D0A /* LoadingModalBuilder.swift */; };
 		EEC90ACD27FE5E80005C2D0A /* LoadingModalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC927FE5E80005C2D0A /* LoadingModalInteractor.swift */; };
+		EEC90AD427FE7FE7005C2D0A /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = EEC90AD327FE7FE7005C2D0A /* NVActivityIndicatorView */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
@@ -118,10 +117,9 @@
 				EE83C2E227E442CC00CB0C78 /* RxDataSources in Frameworks */,
 				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
 				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
-				EEA0117427F6A06A00FEF909 /* NVActivityIndicatorViewExtended in Frameworks */,
 				EEED8B9427F1577700A7B052 /* RxUtil in Frameworks */,
+				EEC90AD427FE7FE7005C2D0A /* NVActivityIndicatorView in Frameworks */,
 				EEED8B9227F1577700A7B052 /* RIBsUtil in Frameworks */,
-				EEA0117227F6A06A00FEF909 /* NVActivityIndicatorView in Frameworks */,
 				EE83C2E027E442CC00CB0C78 /* Differentiator in Frameworks */,
 				EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */,
 			);
@@ -359,8 +357,7 @@
 				EEED8B9127F1577700A7B052 /* RIBsUtil */,
 				EEED8B9327F1577700A7B052 /* RxUtil */,
 				EEED8B9527F1577700A7B052 /* UIUtil */,
-				EEA0117127F6A06A00FEF909 /* NVActivityIndicatorView */,
-				EEA0117327F6A06A00FEF909 /* NVActivityIndicatorViewExtended */,
+				EEC90AD327FE7FE7005C2D0A /* NVActivityIndicatorView */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -399,7 +396,7 @@
 				EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */,
 				EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */,
-				EEA0117027F6A06A00FEF909 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
 			projectDirPath = "";
@@ -696,17 +693,17 @@
 				kind = branch;
 			};
 		};
-		EEA0117027F6A06A00FEF909 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+		EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			repositoryURL = "https://github.com/kciter/Floaty.git";
 			requirement = {
 				branch = master;
 				kind = branch;
 			};
 		};
-		EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */ = {
+		EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kciter/Floaty.git";
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -770,15 +767,10 @@
 			package = EE83C2DE27E442CB00CB0C78 /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
 		};
-		EEA0117127F6A06A00FEF909 /* NVActivityIndicatorView */ = {
+		EEC90AD327FE7FE7005C2D0A /* NVActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EEA0117027F6A06A00FEF909 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			package = EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
-		};
-		EEA0117327F6A06A00FEF909 /* NVActivityIndicatorViewExtended */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEA0117027F6A06A00FEF909 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
-			productName = NVActivityIndicatorViewExtended;
 		};
 		EECB9AEE27E02FE000FF2124 /* RxRealm */ = {
 			isa = XCSwiftPackageProductDependency;
