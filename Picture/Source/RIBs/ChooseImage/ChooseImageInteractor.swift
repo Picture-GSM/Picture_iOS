@@ -11,7 +11,7 @@ import UIUtil
 import UIKit
 
 protocol ChooseImageRouting: ViewableRouting {
-    func attachLoading()
+    func attachLoading(originerImage : UIImage, pieceImage : UIImage)
     func detachLoading()
     
     func attachImageVerification()
@@ -55,8 +55,8 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         listener?.transportHomeDidClose()
     }
 
-    func didTapStartButton() {
-        router?.attachLoading()
+    func didTapStartButton(_ originerImage : UIImage, _ pieceImage : UIImage) {
+        router?.attachLoading(originerImage : originerImage, pieceImage : pieceImage)
     }
     //MARK: - Loading
     func didClearTrainingMachine() {

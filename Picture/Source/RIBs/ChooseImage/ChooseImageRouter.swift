@@ -8,6 +8,7 @@
 import RIBs
 import UIUtil
 import RIBsUtil
+import UIKit
 
 protocol ChooseImageInteractable: Interactable , LoadingModalListener, ImageVerificationListener{
     var router: ChooseImageRouting? { get set }
@@ -39,7 +40,7 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         interactor.router = self
     }
     //MARK: - Attach
-    func attachLoading() {
+    func attachLoading(originerImage: UIImage, pieceImage: UIImage) {
         if loadingModalRouting != nil{
             return
         }
