@@ -26,8 +26,6 @@
 		EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */; };
 		EEA102F327F588750081AD84 /* ImageBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102F227F588750081AD84 /* ImageBtn.swift */; };
 		EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */; };
-		EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */; };
-		EEC784C727FACCEB005ED2D1 /* PHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC784C627FACCEB005ED2D1 /* PHAsset.swift */; };
 		EEC90ACA27FE5E80005C2D0A /* LoadingModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC627FE5E80005C2D0A /* LoadingModalRouter.swift */; };
 		EEC90ACB27FE5E80005C2D0A /* LoadingModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC727FE5E80005C2D0A /* LoadingModalViewController.swift */; };
 		EEC90ACC27FE5E80005C2D0A /* LoadingModalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC827FE5E80005C2D0A /* LoadingModalBuilder.swift */; };
@@ -84,8 +82,6 @@
 		EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageInteractor.swift; sourceTree = "<group>"; };
 		EEA102F227F588750081AD84 /* ImageBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBtn.swift; sourceTree = "<group>"; };
 		EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBtn.swift; sourceTree = "<group>"; };
-		EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Util.swift"; sourceTree = "<group>"; };
-		EEC784C627FACCEB005ED2D1 /* PHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHAsset.swift; sourceTree = "<group>"; };
 		EEC90AC627FE5E80005C2D0A /* LoadingModalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModalRouter.swift; sourceTree = "<group>"; };
 		EEC90AC727FE5E80005C2D0A /* LoadingModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModalViewController.swift; sourceTree = "<group>"; };
 		EEC90AC827FE5E80005C2D0A /* LoadingModalBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModalBuilder.swift; sourceTree = "<group>"; };
@@ -175,8 +171,6 @@
 		EE9F6A3227DB91D9007F5F48 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				EEC4B6DF27F43AB30027D1EF /* UIImageView+Util.swift */,
-				EEC784C627FACCEB005ED2D1 /* PHAsset.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -480,7 +474,6 @@
 				EE4D0D9227E42465007D2918 /* AppHomeCollectionViewCell.swift in Sources */,
 				EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */,
 				EEC90ACC27FE5E80005C2D0A /* LoadingModalBuilder.swift in Sources */,
-				EEC784C727FACCEB005ED2D1 /* PHAsset.swift in Sources */,
 				EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
 				EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */,
@@ -488,7 +481,6 @@
 				EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */,
 				EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */,
 				EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */,
-				EEC4B6E027F43AB30027D1EF /* UIImageView+Util.swift in Sources */,
 				EEE5E41427DA0F68006FDD9E /* AppComponent.swift in Sources */,
 				EEC90ACA27FE5E80005C2D0A /* LoadingModalRouter.swift in Sources */,
 				EEFAEADD27DA67B900865B06 /* AppHomeViewController.swift in Sources */,
