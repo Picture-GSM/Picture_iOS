@@ -9,9 +9,10 @@ import RIBs
 import UIUtil
 import RIBsUtil
 
-protocol ChooseImageInteractable: Interactable , LoadingModalListener{
+protocol ChooseImageInteractable: Interactable , LoadingModalListener, ImageVerificationListener{
     var router: ChooseImageRouting? { get set }
     var listener: ChooseImageListener? { get set }
+    var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy { get }
 }
 
 protocol ChooseImageViewControllable: ViewControllable {
@@ -20,16 +21,19 @@ protocol ChooseImageViewControllable: ViewControllable {
 
 final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseImageViewControllable>, ChooseImageRouting {
 
-    
-
     private let loadingModalBuidable : LoadingModalBuildable
     private var loadingModalRouting : LoadingModalRouting?
+    
+    private let imageVerificationBuildable: ImageVerificationBuildable
+    private var imageVerificationRouting : Routing?
     
     init(
         interactor: ChooseImageInteractable,
         viewController: ChooseImageViewControllable,
-        loadingModalBuidable : LoadingModalBuildable
+        loadingModalBuidable : LoadingModalBuildable,
+        imageVerificationBuildable : ImageVerificationBuildable
     ) {
+        self.imageVerificationBuildable = imageVerificationBuildable
         self.loadingModalBuidable = loadingModalBuidable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
@@ -44,14 +48,38 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         attachChild(router)
         self.loadingModalRouting = router
     }
+    
+    func attachImageVerification() {
+        if imageVerificationRouting != nil{
+            return
+        }
+        let router = imageVerificationBuildable.build(withListener: interactor)
+        let navigation = NavigationControllerable(root: router.viewControllable)
+        navigation.navigationController.presentationController?.delegate = interactor.presentationDelegateProxy
+        viewControllable.present(navigation, animated: true, completion: nil)
+        
+        imageVerificationRouting = router
+        attachChild(router)
+    }
+    
     //MARK: - Detach
     func detachLoading() {
         guard let router = loadingModalRouting else {
             return
         }
         viewControllable.dismiss(animated: false, completion: nil)
-        loadingModalRouting = nil
         detachChild(router)
+        loadingModalRouting = nil
+    }
+    
+    func detachImageVerification() {
+        guard let router = imageVerificationRouting else{
+            return
+        }
+        viewControllable.dismiss(animated: true, completion: nil)
+
+        detachChild(router)
+        imageVerificationRouting = nil
     }
     
     //MARK: - Present Action

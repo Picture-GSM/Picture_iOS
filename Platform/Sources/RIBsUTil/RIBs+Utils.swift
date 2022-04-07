@@ -45,7 +45,7 @@ public extension ViewControllable {
     func dismiss(animated : Bool,completion: (() -> Void)?) {
         self.uiviewController.dismiss(animated: animated, completion: completion)
     }
-    
+
     func pushViewController(_ viewControllable: ViewControllable, animated: Bool) {
         if let nav = self.uiviewController as? UINavigationController {
             nav.pushViewController(viewControllable.uiviewController, animated: animated)

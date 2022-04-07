@@ -37,6 +37,7 @@
 		EEC90ADB27FE8E7B005C2D0A /* ImageVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AD727FE8E7B005C2D0A /* ImageVerificationViewController.swift */; };
 		EEC90ADC27FE8E7B005C2D0A /* ImageVerificationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AD827FE8E7B005C2D0A /* ImageVerificationBuilder.swift */; };
 		EEC90ADD27FE8E7B005C2D0A /* ImageVerificationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */; };
+		EEC90ADF27FEA1FA005C2D0A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
@@ -93,6 +94,7 @@
 		EEC90AD727FE8E7B005C2D0A /* ImageVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVerificationViewController.swift; sourceTree = "<group>"; };
 		EEC90AD827FE8E7B005C2D0A /* ImageVerificationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVerificationBuilder.swift; sourceTree = "<group>"; };
 		EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVerificationInteractor.swift; sourceTree = "<group>"; };
+		EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
@@ -150,8 +152,8 @@
 			children = (
 				EEDBCD1127E2B85A00B9B9A3 /* AppRoot */,
 				EEE5E42027DA2116006FDD9E /* AppHome */,
-				EEC90AC527FE5D1F005C2D0A /* Loading */,
 				EEA102E827F54D7B0081AD84 /* ChooseImage */,
+				EEC90AC527FE5D1F005C2D0A /* Loading */,
 				EEC90AD527FE8B20005C2D0A /* ImageVerification */,
 				EEFA58B727E2D1BA00DBB4A8 /* ListHome */,
 			);
@@ -225,12 +227,21 @@
 		EEC90AD527FE8B20005C2D0A /* ImageVerification */ = {
 			isa = PBXGroup;
 			children = (
+				EEC90AE027FEA1FE005C2D0A /* Class */,
 				EEC90AD627FE8E7B005C2D0A /* ImageVerificationRouter.swift */,
 				EEC90AD727FE8E7B005C2D0A /* ImageVerificationViewController.swift */,
 				EEC90AD827FE8E7B005C2D0A /* ImageVerificationBuilder.swift */,
 				EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */,
 			);
 			path = ImageVerification;
+			sourceTree = "<group>";
+		};
+		EEC90AE027FEA1FE005C2D0A /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		EEDBCD1127E2B85A00B9B9A3 /* AppRoot */ = {
@@ -473,6 +484,7 @@
 				EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */,
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
 				EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */,
+				EEC90ADF27FEA1FA005C2D0A /* ImageManager.swift in Sources */,
 				EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */,
 				EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */,
 				EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */,

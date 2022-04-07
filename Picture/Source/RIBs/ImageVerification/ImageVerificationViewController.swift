@@ -8,14 +8,41 @@
 import RIBs
 import RxSwift
 import UIKit
+import PinLayout
 
 protocol ImageVerificationPresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+    func didTapClose()
 }
 
-final class ImageVerificationViewController: UIViewController, ImageVerificationPresentable, ImageVerificationViewControllable {
+final class ImageVerificationViewController: BaseViewController, ImageVerificationPresentable, ImageVerificationViewControllable {
 
     weak var listener: ImageVerificationPresentableListener?
+    
+    private let imageView = UIImageView().then{
+        $0.backgroundColor = .lightGray
+    }
+    
+    //MARK: - Method
+    override func configureUI() {
+        title = "Verification"
+        setupNavigationItem(with: .close, target: self, action: #selector(didTapClose))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(didTapSave))
+    }
+    override func addView() {
+        view.addSubviews(imageView)
+    }
+    override func setLayout() {
+        imageView.pin.center().size(bounds.width)
+    }
+    
+    //MARK: - Navigation Action
+    @objc
+    private func didTapClose(){
+        listener?.didTapClose()
+    }
+    
+    @objc
+    private func didTapSave(){
+        
+    }
 }

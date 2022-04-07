@@ -28,12 +28,18 @@ final class LoadingModalBuilder: Builder<LoadingModalDependency>, LoadingModalBu
     override init(dependency: LoadingModalDependency) {
         super.init(dependency: dependency)
     }
-
+        
     func build(withListener listener: LoadingModalListener) -> LoadingModalRouting {
         let component = LoadingModalComponent(dependency: dependency)
         let viewController = LoadingModalViewController()
+        
         let interactor = LoadingModalInteractor(presenter: viewController)
         interactor.listener = listener
-        return LoadingModalRouter(interactor: interactor, viewController: viewController)
+        
+        
+        return LoadingModalRouter(
+            interactor: interactor,
+            viewController: viewController
+        )
     }
 }

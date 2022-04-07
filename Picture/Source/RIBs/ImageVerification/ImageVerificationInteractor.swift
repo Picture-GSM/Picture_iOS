@@ -18,7 +18,7 @@ protocol ImageVerificationPresentable: Presentable {
 }
 
 protocol ImageVerificationListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func didTapImageVerificationClose()
 }
 
 final class ImageVerificationInteractor: PresentableInteractor<ImageVerificationPresentable>, ImageVerificationInteractable, ImageVerificationPresentableListener {
@@ -41,5 +41,9 @@ final class ImageVerificationInteractor: PresentableInteractor<ImageVerification
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    func didTapClose() {
+        listener?.didTapImageVerificationClose()
     }
 }
