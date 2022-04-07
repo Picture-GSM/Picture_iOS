@@ -7,39 +7,55 @@
 
 import RIBs
 import RxSwift
+import UIKit
 
 protocol LoadingModalRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+
 }
 
 protocol LoadingModalPresentable: Presentable {
     var listener: LoadingModalPresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+    
+    func update(origin originerImage : UIImage, piece pieceImage : UIImage)
 }
 
 protocol LoadingModalListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func didClearTrainingMachine(image : UIImage)
 }
 
 final class LoadingModalInteractor: PresentableInteractor<LoadingModalPresentable>, LoadingModalInteractable, LoadingModalPresentableListener {
 
+
     weak var router: LoadingModalRouting?
     weak var listener: LoadingModalListener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic
-    // in constructor.
-    override init(presenter: LoadingModalPresentable) {
+    private let originerImage : UIImage
+    private let pieceImage : UIImage
+    
+    init(
+        presenter: LoadingModalPresentable,
+        originerImage : UIImage,
+        pieceImage : UIImage
+    ) {
+        self.originerImage = originerImage
+        self.pieceImage = pieceImage
         super.init(presenter: presenter)
         presenter.listener = self
     }
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+
+        presenter.update(origin: originerImage, piece: pieceImage)
     }
 
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
     }
+    
+    func didClearTrainingMachine(_ image: UIImage) {
+        listener?.didClearTrainingMachine(image: image)
+    }
+    
 }

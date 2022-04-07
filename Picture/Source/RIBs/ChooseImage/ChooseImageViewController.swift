@@ -15,12 +15,16 @@ import UIUtil
 
 protocol ChooseImagePresentableListener: AnyObject {
     func didTapBack()
+    func didTapStartButton(_ originerImage : UIImage, _ pieceImage : UIImage)
 }
 
 final class ChooseImageViewController: BaseViewController, ChooseImagePresentable, ChooseImageViewControllable{
     
     weak var listener: ChooseImagePresentableListener?
-        
+    
+    private var originerImageisEmpty = BehaviorSubject<Bool>(value: false)
+    private var pieceImageisEmty = BehaviorSubject<Bool>(value: false)
+    
     private var imageSelectStatus : Bool = false
     private let alert = UIAlertController(title: "선택!", message: "이미지 선정 방법을 선택해주세요", preferredStyle: .alert)
     
@@ -101,27 +105,36 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
     override func delegate() {
         imagePicker.delegate = self
     }
- 
         
     //MARK: - Bind
     override func bindView() {
         backButton.rx.tap
-            .subscribe(onNext:{[weak self] in
-                self?.listener?.didTapBack()
-            })
+            .bind{ [weak self] in self?.listener?.didTapBack()}
             .disposed(by: disposeBag)
         
         originalImageBtn.rx.tap
-            .subscribe(onNext:{ [weak self] in
+            .bind{ [weak self] in
                 self?.imageSelectStatus = true
                 self?.present(self!.alert, animated: true)
-            }).disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
         
         pieceImageBtn.rx.tap
-            .subscribe(onNext:{ [weak self] in
+            .bind{ [weak self] in
                 self?.imageSelectStatus = false
                 self?.present(self!.alert, animated: true)
-            }).disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
+        startBtn.rx.tap
+            .bind{ [weak self] in
+                self?.listener?.didTapStartButton(
+                (self?.originalImageBtn.imageView?.image!)!,
+                (self?.pieceImageBtn.imageView?.image!)!)
+            }
+            .disposed(by: disposeBag)
+    }
+    override func bindState() {
+        Observable.combineLatest(originerImageisEmpty,pieceImageisEmty) { $0 && $1}
+            .bind(to: startBtn.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
 }
 
@@ -137,8 +150,10 @@ extension ChooseImageViewController : UIImagePickerControllerDelegate, UINavigat
 
         if imageSelectStatus{
             originalImageBtn.setImage(image, for: .normal)
+            originerImageisEmpty.onNext(true)
         }else{
             pieceImageBtn.setImage(image, for: .normal)
+            pieceImageisEmty.onNext(true)
         }
         self.dismiss(animated: true)
     }

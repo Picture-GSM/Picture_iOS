@@ -6,6 +6,7 @@
 //
 
 import RIBs
+import UIUtil
 
 protocol LoadingModalInteractable: Interactable {
     var router: LoadingModalRouting? { get set }
@@ -18,9 +19,14 @@ protocol LoadingModalViewControllable: ViewControllable {
 
 final class LoadingModalRouter: ViewableRouter<LoadingModalInteractable, LoadingModalViewControllable>, LoadingModalRouting {
 
+    
     // TODO: Constructor inject child builder protocols to allow building children.
-    override init(interactor: LoadingModalInteractable, viewController: LoadingModalViewControllable) {
+    override init(
+        interactor: LoadingModalInteractable,
+        viewController: LoadingModalViewControllable
+    ) {
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
+    
 }

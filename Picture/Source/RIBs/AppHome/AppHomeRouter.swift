@@ -49,7 +49,7 @@ final class AppHomeRouter: ViewableRouter<AppHomeInteractable, AppHomeViewContro
             return
         }
         
-        viewController.dismiss(completion: nil)
+        viewController.dismiss(animated: true, completion: nil)
         self.chooseImageRouting = nil
         detachChild(router)
     }

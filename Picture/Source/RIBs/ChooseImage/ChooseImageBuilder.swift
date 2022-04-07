@@ -8,11 +8,12 @@
 import RIBs
 
 protocol ChooseImageDependency: Dependency {
+    var loadingModalBuildable : LoadingModalBuildable {get}
 
 }
 
-final class ChooseImageComponent: Component<ChooseImageDependency> {
-
+final class ChooseImageComponent: Component<ChooseImageDependency> , ImageVerificationDependency{
+    var loadingModalBuildable : LoadingModalBuildable {dependency.loadingModalBuildable}
 }
 
 // MARK: - Builder
@@ -34,10 +35,13 @@ final class ChooseImageBuilder: Builder<ChooseImageDependency>, ChooseImageBuild
         let interactor = ChooseImageInteractor(presenter: viewController)
         interactor.listener = listener
         
+        let imageVerificationBuiler = ImageVerificationBuilder(dependency: component)
         
         return ChooseImageRouter(
             interactor: interactor,
-            viewController: viewController
+            viewController: viewController,
+            loadingModalBuidable: component.loadingModalBuildable,
+            imageVerificationBuildable: imageVerificationBuiler
         )
     }
 }
