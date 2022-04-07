@@ -6,6 +6,7 @@
 //
 
 import RIBs
+import UIKit
 
 protocol ImageVerificationDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
@@ -20,7 +21,7 @@ final class ImageVerificationComponent: Component<ImageVerificationDependency> {
 // MARK: - Builder
 
 protocol ImageVerificationBuildable: Buildable {
-    func build(withListener listener: ImageVerificationListener) -> ImageVerificationRouting
+    func build(withListener listener: ImageVerificationListener, withImage image : UIImage) -> ImageVerificationRouting
 }
 
 final class ImageVerificationBuilder: Builder<ImageVerificationDependency>, ImageVerificationBuildable {
@@ -29,10 +30,10 @@ final class ImageVerificationBuilder: Builder<ImageVerificationDependency>, Imag
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: ImageVerificationListener) -> ImageVerificationRouting {
+    func build(withListener listener: ImageVerificationListener,withImage image : UIImage) -> ImageVerificationRouting {
         let component = ImageVerificationComponent(dependency: dependency)
         let viewController = ImageVerificationViewController()
-        let interactor = ImageVerificationInteractor(presenter: viewController)
+        let interactor = ImageVerificationInteractor(presenter: viewController, withImage: image)
         interactor.listener = listener
         return ImageVerificationRouter(interactor: interactor, viewController: viewController)
     }

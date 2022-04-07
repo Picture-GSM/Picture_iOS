@@ -44,17 +44,21 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         if loadingModalRouting != nil{
             return
         }
-        let router = loadingModalBuidable.build(withListener: interactor)
+        let router = loadingModalBuidable.build(
+            withListener: interactor,
+            originerImage: originerImage,
+            pieceImage: pieceImage
+        )
         presentWithPushModal(router.viewControllable, animated: false)
         attachChild(router)
         self.loadingModalRouting = router
     }
     
-    func attachImageVerification() {
+    func attachImageVerification(image: UIImage) {
         if imageVerificationRouting != nil{
             return
         }
-        let router = imageVerificationBuildable.build(withListener: interactor)
+        let router = imageVerificationBuildable.build(withListener: interactor, withImage: image)
         let navigation = NavigationControllerable(root: router.viewControllable)
         navigation.navigationController.presentationController?.delegate = interactor.presentationDelegateProxy
         viewControllable.present(navigation, animated: true, completion: nil)

@@ -17,12 +17,13 @@ protocol ImageVerificationPresentableListener: AnyObject {
 
 final class ImageVerificationViewController: BaseViewController, ImageVerificationPresentable, ImageVerificationViewControllable {
 
+    
+
     weak var listener: ImageVerificationPresentableListener?
     
     private let imageView = UIImageView().then{
         $0.backgroundColor = .lightGray
         $0.contentMode = .scaleAspectFill
-        $0.image = UIImage(named: "PageImage1")
     }
     
     //MARK: - Method
@@ -46,8 +47,12 @@ final class ImageVerificationViewController: BaseViewController, ImageVerificati
     
     @objc
     private func didTapSave(){
-        print("저장")
         ImageManager.shared.saveImage(image: imageView.image ?? UIImage())
         listener?.didTapSaveSuccess()
+    }
+    
+    //MARK: - Presenter
+    func update(image: UIImage) {
+        imageView.image = image
     }
 }

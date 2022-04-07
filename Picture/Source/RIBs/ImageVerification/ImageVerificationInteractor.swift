@@ -7,6 +7,7 @@
 
 import RIBs
 import RxSwift
+import UIKit
 
 protocol ImageVerificationRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -14,7 +15,7 @@ protocol ImageVerificationRouting: ViewableRouting {
 
 protocol ImageVerificationPresentable: Presentable {
     var listener: ImageVerificationPresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+    func update(image : UIImage)
 }
 
 protocol ImageVerificationListener: AnyObject {
@@ -27,16 +28,20 @@ final class ImageVerificationInteractor: PresentableInteractor<ImageVerification
     weak var router: ImageVerificationRouting?
     weak var listener: ImageVerificationListener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic
-    // in constructor.
-    override init(presenter: ImageVerificationPresentable) {
+    private let image : UIImage
+    
+    init(
+        presenter: ImageVerificationPresentable,
+        withImage image : UIImage
+    ) {
+        self.image = image
         super.init(presenter: presenter)
         presenter.listener = self
     }
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        presenter.update(image: image)
     }
 
     override func willResignActive() {

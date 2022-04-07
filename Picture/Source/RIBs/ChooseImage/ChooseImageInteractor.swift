@@ -14,7 +14,7 @@ protocol ChooseImageRouting: ViewableRouting {
     func attachLoading(originerImage : UIImage, pieceImage : UIImage)
     func detachLoading()
     
-    func attachImageVerification()
+    func attachImageVerification(image : UIImage)
     func detachImageVerification()
 }
 
@@ -59,9 +59,9 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
         router?.attachLoading(originerImage : originerImage, pieceImage : pieceImage)
     }
     //MARK: - Loading
-    func didClearTrainingMachine() {
+    func didClearTrainingMachine(image : UIImage) {
         router?.detachLoading()
-        router?.attachImageVerification()
+        router?.attachImageVerification(image: image)
     }
     
     //MARK: - ImageVerification

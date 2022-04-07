@@ -12,12 +12,16 @@ import PinLayout
 import NVActivityIndicatorView
 
 protocol LoadingModalPresentableListener: AnyObject {
-    func didClearTrainingMachine()
+    func didClearTrainingMachine(_ image : UIImage)
 }
 
 final class LoadingModalViewController: BaseViewController, LoadingModalPresentable, LoadingModalViewControllable {
 
+
     weak var listener: LoadingModalPresentableListener?
+    
+    private var originerImage : UIImage = .init()
+    private var pieceImage : UIImage = .init()
     
     private let bgView = UIView().then{
         $0.backgroundColor = .darkGray
@@ -55,8 +59,15 @@ final class LoadingModalViewController: BaseViewController, LoadingModalPresenta
     
     private func test(){
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            self.listener?.didClearTrainingMachine()
+            self.listener?.didClearTrainingMachine(self.originerImage)
             self.activityIndicator.stopAnimating()
         }
     }
+    
+    //MARK: - Listener
+    func update(origin originerImage: UIImage, piece pieceImage: UIImage) {
+        self.originerImage = originerImage
+        self.pieceImage = pieceImage
+    }
+    
 }
