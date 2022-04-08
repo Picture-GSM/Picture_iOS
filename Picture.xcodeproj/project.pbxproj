@@ -13,7 +13,6 @@
 		EE6ED5E427F2CC2600534E68 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ED5E327F2CC2600534E68 /* BaseViewController.swift */; };
 		EE6ED5E627F2CD2C00534E68 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6ED5E527F2CD2C00534E68 /* BaseCollectionViewCell.swift */; };
 		EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2D327E4259A00CB0C78 /* Reusable */; };
-		EE83C2E427E4615900CB0C78 /* AppHomeCollectionViewSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2E327E4615900CB0C78 /* AppHomeCollectionViewSection.swift */; };
 		EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */; };
 		EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */; };
 		EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */; };
@@ -72,7 +71,6 @@
 		EE6D065D27F151CA00C1E0A6 /* Platform */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Platform; sourceTree = "<group>"; };
 		EE6ED5E327F2CC2600534E68 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = Picture/Source/Base/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
 		EE6ED5E527F2CD2C00534E68 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseCollectionViewCell.swift; path = Picture/Source/Base/BaseCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		EE83C2E327E4615900CB0C78 /* AppHomeCollectionViewSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeCollectionViewSection.swift; sourceTree = "<group>"; };
 		EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoRealmData.swift; sourceTree = "<group>"; };
 		EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
 		EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerControllerDelegate.swift; sourceTree = "<group>"; };
@@ -197,7 +195,6 @@
 			children = (
 				EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */,
 				EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */,
-				EE83C2E327E4615900CB0C78 /* AppHomeCollectionViewSection.swift */,
 				EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */,
 			);
 			path = View;
@@ -464,7 +461,6 @@
 				EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */,
 				EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */,
 				EEA102ED27F54DB00081AD84 /* ChooseImageRouter.swift in Sources */,
-				EE83C2E427E4615900CB0C78 /* AppHomeCollectionViewSection.swift in Sources */,
 				EE09754227FC376600DE636A /* ImagePickerDelegate.swift in Sources */,
 				EEC90ADC27FE8E7B005C2D0A /* ImageVerificationBuilder.swift in Sources */,
 				EEFAEADC27DA67B900865B06 /* AppHomeRouter.swift in Sources */,

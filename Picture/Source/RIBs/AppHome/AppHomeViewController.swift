@@ -15,6 +15,8 @@ import RxUtil
 import Then
 import Reusable
 import PinLayout
+import RxRealmDataSources
+import RealmSwift
 
 //MARK: - Listener
 protocol AppHomePresentableListener: AnyObject {
@@ -22,7 +24,7 @@ protocol AppHomePresentableListener: AnyObject {
 }
 
 final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHomeViewControllable {
-
+    
     let images : [UIImage?] = [
         UIImage(named: "PageImage1"),
         UIImage(named: "PageImage2"),
@@ -64,8 +66,9 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .horizontal
-        
-        $0.backgroundColor = .red
+        $0.showsHorizontalScrollIndicator = false
+        $0.collectionViewLayout = layout
+        $0.register(AppHomeCollectionViewCell.self, forCellWithReuseIdentifier: "AppHomeCell")
     }
     
     private let addBtn = AddBtn().then{
@@ -81,7 +84,6 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         tabBarItem = UITabBarItem(title: "홈",
                                   image: UIImage(systemName: "house"),
                                   selectedImage: UIImage(systemName: "house.fill"))
-        
         pageImageSetting()
     }
     
@@ -90,15 +92,17 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     }
     
     override func setLayout() {
-        super.setLayout()
         scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
         pageControl.pin.bottomCenter(to: scrollView.anchor.bottomCenter).height(20).width(375)
         titleLabel.pin.left(bounds.width/18.75).below(of: scrollView).width(200).height(20)
-        collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/8.12)
+        collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/6)
         addBtn.pin.bottom(view.pin.safeArea.bottom + 20).right(20).size(50)
     }
-
-
+    override func delegate() {
+        collectionView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+    }
+    
     //MARK: - Bind
     override func bindView() {
         pageControl.rx.controlEvent(.valueChanged)
@@ -118,6 +122,22 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     }
     
     override func bindState() {
+        
+        let dataSource = RxCollectionViewRealmDataSource<Photo>(cellIdentifier: "AppHomeCell", cellType: AppHomeCollectionViewCell.self){ cell , indexPath, item in
+            
+            cell.label.text = Date().usingDate(time: item.date)
+            cell.imageView.image = ImageDirectory.shared.loadImageFromDocumentDirecotry(imageName: "\(item.id).png")
+            
+            
+        }
+        
+        let realm = try! Realm()
+        let photoset = Observable.changeset(from: realm.objects(Photo.self)).share()
+        photoset
+            .bind(to: collectionView.rx.realmChanges(dataSource))
+            .disposed(by: disposeBag)
+        
+        
         scrollView.rx.currentPage
             .bind(to: pageControl.rx.currentPage)
             .disposed(by: disposeBag)
@@ -141,5 +161,11 @@ private extension AppHomeViewController{
         
         scrollView.contentSize = CGSize(width: scrollView.bounds.width * CGFloat(images.count), height: scrollView.bounds.height)
         pageControl.numberOfPages = images.count
+    }
+}
+
+extension AppHomeViewController : UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: bounds.width/3.75 , height: bounds.width/3.75)
     }
 }
