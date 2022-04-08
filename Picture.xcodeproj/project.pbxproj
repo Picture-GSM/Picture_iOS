@@ -33,7 +33,6 @@
 		EEC90ADD27FE8E7B005C2D0A /* ImageVerificationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */; };
 		EEC90ADF27FEA1FA005C2D0A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */; };
 		EEC90AE227FED05C005C2D0A /* ImageDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AE127FED05C005C2D0A /* ImageDirectory.swift */; };
-		EEC90AE827FEDBAC005C2D0A /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AE727FEDBAC005C2D0A /* ListModel.swift */; };
 		EEC90B1427FEEFC9005C2D0A /* RxRealmDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = EEC90B1327FEEFC9005C2D0A /* RxRealmDataSources */; };
 		EEC90B1627FEFEA7005C2D0A /* FoundationUtil in Frameworks */ = {isa = PBXBuildFile; productRef = EEC90B1527FEFEA7005C2D0A /* FoundationUtil */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
@@ -90,7 +89,6 @@
 		EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVerificationInteractor.swift; sourceTree = "<group>"; };
 		EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		EEC90AE127FED05C005C2D0A /* ImageDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDirectory.swift; sourceTree = "<group>"; };
-		EEC90AE727FEDBAC005C2D0A /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		EEC90B1227FEEEF4005C2D0A /* RxRealmDataSources */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RxRealmDataSources; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
@@ -172,6 +170,7 @@
 		EEA102E827F54D7B0081AD84 /* ChooseImage */ = {
 			isa = PBXGroup;
 			children = (
+				EEC6ACF928000FCF002A9DF1 /* ImageRepository */,
 				EEA102F127F588670081AD84 /* View */,
 				EEA102E927F54DB00081AD84 /* ChooseImageRouter.swift */,
 				EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */,
@@ -198,6 +197,13 @@
 				EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		EEC6ACF928000FCF002A9DF1 /* ImageRepository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ImageRepository;
 			sourceTree = "<group>";
 		};
 		EEC90AC527FE5D1F005C2D0A /* Loading */ = {
@@ -230,14 +236,6 @@
 				EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */,
 			);
 			path = Class;
-			sourceTree = "<group>";
-		};
-		EEC90AE627FEDB9F005C2D0A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				EEC90AE727FEDBAC005C2D0A /* ListModel.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		EEC90B0927FEE5ED005C2D0A /* Utils */ = {
@@ -338,7 +336,6 @@
 		EEFA58B727E2D1BA00DBB4A8 /* ListHome */ = {
 			isa = PBXGroup;
 			children = (
-				EEC90AE627FEDB9F005C2D0A /* Models */,
 				EEFA58C327E3515E00DBB4A8 /* View */,
 				EEFA58B827E2D22900DBB4A8 /* ListHomeRouter.swift */,
 				EEFA58B927E2D22900DBB4A8 /* ListHomeViewController.swift */,
@@ -496,7 +493,6 @@
 				EEFA58BD27E2D22900DBB4A8 /* ListHomeViewController.swift in Sources */,
 				EEA102F327F588750081AD84 /* ImageBtn.swift in Sources */,
 				EEC90ADD27FE8E7B005C2D0A /* ImageVerificationInteractor.swift in Sources */,
-				EEC90AE827FEDBAC005C2D0A /* ListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
