@@ -21,6 +21,7 @@
 		EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */; };
 		EEA102F327F588750081AD84 /* ImageBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102F227F588750081AD84 /* ImageBtn.swift */; };
 		EEC348DC27E1FE7C00CC9132 /* AddBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */; };
+		EEC6ACFB28001118002A9DF1 /* PageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC6ACFA28001118002A9DF1 /* PageScrollView.swift */; };
 		EEC90ACA27FE5E80005C2D0A /* LoadingModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC627FE5E80005C2D0A /* LoadingModalRouter.swift */; };
 		EEC90ACB27FE5E80005C2D0A /* LoadingModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC727FE5E80005C2D0A /* LoadingModalViewController.swift */; };
 		EEC90ACC27FE5E80005C2D0A /* LoadingModalBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC90AC827FE5E80005C2D0A /* LoadingModalBuilder.swift */; };
@@ -77,6 +78,7 @@
 		EEA102EC27F54DB00081AD84 /* ChooseImageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageInteractor.swift; sourceTree = "<group>"; };
 		EEA102F227F588750081AD84 /* ImageBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBtn.swift; sourceTree = "<group>"; };
 		EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBtn.swift; sourceTree = "<group>"; };
+		EEC6ACFA28001118002A9DF1 /* PageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageScrollView.swift; sourceTree = "<group>"; };
 		EEC90AC627FE5E80005C2D0A /* LoadingModalRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModalRouter.swift; sourceTree = "<group>"; };
 		EEC90AC727FE5E80005C2D0A /* LoadingModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModalViewController.swift; sourceTree = "<group>"; };
 		EEC90AC827FE5E80005C2D0A /* LoadingModalBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModalBuilder.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			children = (
 				EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */,
 				EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */,
+				EEC6ACFA28001118002A9DF1 /* PageScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				EEDBCD1927E2B87100B9B9A3 /* AppRootInteractor.swift in Sources */,
 				EEC90ADA27FE8E7B005C2D0A /* ImageVerificationRouter.swift in Sources */,
 				EEFA58BE27E2D22900DBB4A8 /* ListHomeBuilder.swift in Sources */,
+				EEC6ACFB28001118002A9DF1 /* PageScrollView.swift in Sources */,
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
 				EEC90ACD27FE5E80005C2D0A /* LoadingModalInteractor.swift in Sources */,
 				EE6ED5E627F2CD2C00534E68 /* BaseCollectionViewCell.swift in Sources */,
