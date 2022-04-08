@@ -15,7 +15,7 @@ protocol ImageVerificationRouting: ViewableRouting {
 
 protocol ImageVerificationPresentable: Presentable {
     var listener: ImageVerificationPresentableListener? { get set }
-    func update(image : UIImage)
+    func update(image : UIImage, imageStateAlready : Bool)
 }
 
 protocol ImageVerificationListener: AnyObject {
@@ -29,11 +29,14 @@ final class ImageVerificationInteractor: PresentableInteractor<ImageVerification
     weak var listener: ImageVerificationListener?
 
     private let image : UIImage
+    private let imageStateAlready : Bool
     
     init(
         presenter: ImageVerificationPresentable,
-        withImage image : UIImage
+        withImage image : UIImage,
+        imageStateAlready : Bool
     ) {
+        self.imageStateAlready = imageStateAlready
         self.image = image
         super.init(presenter: presenter)
         presenter.listener = self
@@ -41,7 +44,7 @@ final class ImageVerificationInteractor: PresentableInteractor<ImageVerification
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        presenter.update(image: image)
+        presenter.update(image: image, imageStateAlready: imageStateAlready)
     }
 
     override func willResignActive() {

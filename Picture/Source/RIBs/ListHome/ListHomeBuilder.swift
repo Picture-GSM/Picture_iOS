@@ -8,13 +8,11 @@
 import RIBs
 
 protocol ListHomeDependency: Dependency {
-    // TODO: Declare the set of dependencies required by this RIB, but cannot be
-    // created by this RIB.
+    var imageVerificationBuildable : ImageVerificationBuildable {get}
 }
 
 final class ListHomeComponent: Component<ListHomeDependency> {
-
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+    var imageVerificationBuildable : ImageVerificationBuildable {dependency.imageVerificationBuildable}
 }
 
 // MARK: - Builder
@@ -34,6 +32,6 @@ final class ListHomeBuilder: Builder<ListHomeDependency>, ListHomeBuildable {
         let viewController = ListHomeViewController() 
         let interactor = ListHomeInteractor(presenter: viewController)
         interactor.listener = listener
-        return ListHomeRouter(interactor: interactor, viewController: viewController)
+        return ListHomeRouter(interactor: interactor, viewController: viewController, imageVerifivationBuildable: component.imageVerificationBuildable)
     }
 }

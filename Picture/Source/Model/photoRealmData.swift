@@ -10,8 +10,12 @@ import RealmSwift
 import Foundation
 import UIKit
 
-class photoRealmData : Object{
-    @objc dynamic var id = UUID().uuidString
-    @objc dynamic var image = UIImage()
-    @objc dynamic var date = DateFormatter().defaultDate!
+class Photo : Object{
+    @Persisted(primaryKey: true) var id : ObjectId //Primary Key
+    @Persisted var date = Date()// 등록일
+    
+    convenience init(date : Date){
+        self.init()
+        self.date = date
+    }
 }

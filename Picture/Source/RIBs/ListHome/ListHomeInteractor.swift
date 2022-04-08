@@ -7,30 +7,39 @@
 
 import RIBs
 import RxSwift
+import RealmSwift
+import UIUtil
 
 protocol ListHomeRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func attachImageVerification(id : String)
+    func detachImageVerification()
 }
 
 protocol ListHomePresentable: Presentable {
     var listener: ListHomePresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+    
 }
 
 protocol ListHomeListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
-final class ListHomeInteractor: PresentableInteractor<ListHomePresentable>, ListHomeInteractable, ListHomePresentableListener {
+final class ListHomeInteractor: PresentableInteractor<ListHomePresentable>, ListHomeInteractable, ListHomePresentableListener,AdaptivePresentationControllerDelegate{
 
+
+
+    
     weak var router: ListHomeRouting?
     weak var listener: ListHomeListener?
 
-    // TODO: Add additional dependencies to constructor. Do not perform any logic
-    // in constructor.
+    var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
+
+    
     override init(presenter: ListHomePresentable) {
+        self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()
         super.init(presenter: presenter)
         presenter.listener = self
+        presentationDelegateProxy.delegate = self
     }
 
     override func didBecomeActive() {
@@ -41,5 +50,19 @@ final class ListHomeInteractor: PresentableInteractor<ListHomePresentable>, List
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    func didTapCollectionViewRequest(_ id: String) {
+        router?.attachImageVerification(id: id)
+    }
+
+    func didTapImageVerificationClose() {
+        router?.detachImageVerification()
+    }
+    
+    func didTapImageVerificationSaveSuccess() {
+        router?.detachImageVerification()
+    }
+    func presetationControllerDidDismiss() {
+        router?.detachImageVerification()
     }
 }

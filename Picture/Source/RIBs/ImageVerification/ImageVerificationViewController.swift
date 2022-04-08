@@ -9,6 +9,8 @@ import RIBs
 import RxSwift
 import UIKit
 import PinLayout
+import RxRealm
+import RealmSwift
 
 protocol ImageVerificationPresentableListener: AnyObject {
     func didTapClose()
@@ -16,10 +18,14 @@ protocol ImageVerificationPresentableListener: AnyObject {
 }
 
 final class ImageVerificationViewController: BaseViewController, ImageVerificationPresentable, ImageVerificationViewControllable {
-
     
 
+
+    let localReam = try! Realm()
+    
     weak var listener: ImageVerificationPresentableListener?
+    
+    private var imageStateAlready : Bool = false
     
     private let imageView = UIImageView().then{
         $0.backgroundColor = .lightGray
@@ -30,7 +36,7 @@ final class ImageVerificationViewController: BaseViewController, ImageVerificati
     override func configureUI() {
         title = "Verification"
         setupNavigationItem(with: .close, target: self, action: #selector(didTapClose))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(didTapSave))
+        setupRightItem(with: "저장", target: self, action: #selector(didTapSave))
     }
     override func addView() {
         view.addSubviews(imageView)
@@ -47,12 +53,21 @@ final class ImageVerificationViewController: BaseViewController, ImageVerificati
     
     @objc
     private func didTapSave(){
+        if !imageStateAlready{
+            let task = Photo(date: Date())
+            try! localReam.write{
+                localReam.add(task)
+                ImageDirectory.shared.saveImageToDocumentDirectory(imageName: "\(task.id).png", image: imageView.image!)
+            }
+        }
+        
         ImageManager.shared.saveImage(image: imageView.image ?? UIImage())
         listener?.didTapSaveSuccess()
     }
     
     //MARK: - Presenter
-    func update(image: UIImage) {
+    func update(image: UIImage, imageStateAlready: Bool) {
         imageView.image = image
+        self.imageStateAlready = imageStateAlready
     }
 }

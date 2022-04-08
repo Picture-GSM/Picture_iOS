@@ -10,26 +10,32 @@ import Then
 import Reusable
 import UIUtil
 
-final class AppHomeCollectionViewCell : BaseCollectionViewCell<Any>{
+final class AppHomeCollectionViewCell : BaseCollectionViewCell{
     //MARK: - Properties
-    private let imageView = UIImageView(image: UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 15, weight: .regular))).then{
+    private let bgView = UIView().then{
+        $0.backgroundColor = .white
+        $0.layer.cornerRadius = 20
+        $0.layer.applySketchShadow(color: .gray, alpha: 0.4, x: 0, y: 10, blur: 14, spread: 0)
+    }
+    
+    let imageView = UIImageView(image: UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 15, weight: .regular))).then{
+        $0.layer.cornerRadius = 10
         $0.backgroundColor = .red
         $0.clipsToBounds = true
     }
-    private let label = UILabel().then{
-        $0.text = "2022-03-18"
-        $0.font = UIFont.systemFont(ofSize: 15)
-        $0.backgroundColor = .black
+    let label = UILabel().then{
+        $0.textAlignment = .center
+        $0.font = UIFont.systemFont(ofSize: 10)
     }
     //MARK: - initalizer
-    override func configureUI() {
-        backgroundColor = .yellow
-    }
     override func addView() {
-        addSubviews(imageView,label)
+        contentView.addSubviews(bgView)
+        bgView.addSubviews(imageView,label)
     }
     override func setUpLayout() {
-        imageView.pin.top().left().right().bottom(10)
-        label.pin.bottom().left().right().height(10)
+        bgView.pin.all()
+        
+        imageView.pin.top(10).hCenter().size(contentView.frame.width/1.5)
+        label.pin.bottom(5).width(contentView.frame.width).height(10)
     }
 }

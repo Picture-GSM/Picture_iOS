@@ -58,7 +58,7 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         if imageVerificationRouting != nil{
             return
         }
-        let router = imageVerificationBuildable.build(withListener: interactor, withImage: image)
+        let router = imageVerificationBuildable.build(withListener: interactor, withImage: image, withState: false)
         let navigation = NavigationControllerable(root: router.viewControllable)
         navigation.navigationController.presentationController?.delegate = interactor.presentationDelegateProxy
         viewControllable.present(navigation, animated: true, completion: nil)

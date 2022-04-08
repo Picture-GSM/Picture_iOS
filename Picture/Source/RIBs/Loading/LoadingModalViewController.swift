@@ -17,14 +17,13 @@ protocol LoadingModalPresentableListener: AnyObject {
 
 final class LoadingModalViewController: BaseViewController, LoadingModalPresentable, LoadingModalViewControllable {
 
-
     weak var listener: LoadingModalPresentableListener?
     
     private var originerImage : UIImage = .init()
     private var pieceImage : UIImage = .init()
     
     private let bgView = UIView().then{
-        $0.backgroundColor = .darkGray
+        $0.backgroundColor = .darkGray.withAlphaComponent(0.7)
         $0.layer.cornerRadius = 20
     }
     private lazy var activityIndicator = NVActivityIndicatorView(
@@ -43,7 +42,6 @@ final class LoadingModalViewController: BaseViewController, LoadingModalPresenta
     override func configureUI() {
         view.backgroundColor = .black.withAlphaComponent(0.1)
         activityIndicator.startAnimating()
-        
         test()
     }
     override func addView() {
@@ -54,9 +52,9 @@ final class LoadingModalViewController: BaseViewController, LoadingModalPresenta
     override func setLayout() {
         bgView.pin.center().size(bounds.width/1.85)
         activityIndicator.pin.top(bounds.height/20).hCenter()
-        label.pin.bottomCenter(bounds.height/20).width(bgView.frame.width).height(20)
+        label.pin.bottomCenter(bounds.height/20).width(bgView.frame.width).height(30)
     }
-    
+    //MARK: - 임의
     private func test(){
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             self.listener?.didClearTrainingMachine(self.originerImage)
