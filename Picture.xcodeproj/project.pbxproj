@@ -15,7 +15,6 @@
 		EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2D327E4259A00CB0C78 /* Reusable */; };
 		EE83C2E627E463FB00CB0C78 /* photoRealmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */; };
 		EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */; };
-		EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */; };
 		EEA102ED27F54DB00081AD84 /* ChooseImageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102E927F54DB00081AD84 /* ChooseImageRouter.swift */; };
 		EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */; };
 		EEA102EF27F54DB00081AD84 /* ChooseImageBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */; };
@@ -72,7 +71,6 @@
 		EE6ED5E527F2CD2C00534E68 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseCollectionViewCell.swift; path = Picture/Source/Base/BaseCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		EE83C2E527E463FB00CB0C78 /* photoRealmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoRealmData.swift; sourceTree = "<group>"; };
 		EE83C2F227E47B6500CB0C78 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
-		EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerControllerDelegate.swift; sourceTree = "<group>"; };
 		EEA102E927F54DB00081AD84 /* ChooseImageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageRouter.swift; sourceTree = "<group>"; };
 		EEA102EA27F54DB00081AD84 /* ChooseImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageViewController.swift; sourceTree = "<group>"; };
 		EEA102EB27F54DB00081AD84 /* ChooseImageBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageBuilder.swift; sourceTree = "<group>"; };
@@ -194,7 +192,6 @@
 			children = (
 				EEC348DB27E1FE7C00CC9132 /* AddBtn.swift */,
 				EE4D0D9127E42465007D2918 /* AppHomeCollectionViewCell.swift */,
-				EEA102A927F535B10081AD84 /* ImagePickerControllerDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -474,7 +471,6 @@
 				EEFAEADF27DA67B900865B06 /* AppHomeInteractor.swift in Sources */,
 				EEC90ACD27FE5E80005C2D0A /* LoadingModalInteractor.swift in Sources */,
 				EE6ED5E627F2CD2C00534E68 /* BaseCollectionViewCell.swift in Sources */,
-				EEA102AA27F535B10081AD84 /* ImagePickerControllerDelegate.swift in Sources */,
 				EE4D0D9227E42465007D2918 /* AppHomeCollectionViewCell.swift in Sources */,
 				EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */,
 				EEC90ACC27FE5E80005C2D0A /* LoadingModalBuilder.swift in Sources */,
