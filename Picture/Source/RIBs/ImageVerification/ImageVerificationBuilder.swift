@@ -21,7 +21,7 @@ final class ImageVerificationComponent: Component<ImageVerificationDependency> {
 // MARK: - Builder
 
 protocol ImageVerificationBuildable: Buildable {
-    func build(withListener listener: ImageVerificationListener, withImage image : UIImage) -> ImageVerificationRouting
+    func build(withListener listener: ImageVerificationListener, withImage image : UIImage, withState imageStateAlready : Bool) -> ImageVerificationRouting
 }
 
 final class ImageVerificationBuilder: Builder<ImageVerificationDependency>, ImageVerificationBuildable {
@@ -30,10 +30,10 @@ final class ImageVerificationBuilder: Builder<ImageVerificationDependency>, Imag
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: ImageVerificationListener,withImage image : UIImage) -> ImageVerificationRouting {
+    func build(withListener listener: ImageVerificationListener,withImage image : UIImage,withState imageStateAlready: Bool) -> ImageVerificationRouting {
         let component = ImageVerificationComponent(dependency: dependency)
         let viewController = ImageVerificationViewController()
-        let interactor = ImageVerificationInteractor(presenter: viewController, withImage: image)
+        let interactor = ImageVerificationInteractor(presenter: viewController, withImage: image, imageStateAlready: imageStateAlready)
         interactor.listener = listener
         return ImageVerificationRouter(interactor: interactor, viewController: viewController)
     }

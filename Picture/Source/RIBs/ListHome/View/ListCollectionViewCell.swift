@@ -18,12 +18,13 @@ class ListCollectionViewCell : BaseCollectionViewCell{
         $0.clipsToBounds = true
         $0.backgroundColor = .gray // 나중에 지워야함
     }
-    var date = UILabel().then{
+    let date = UILabel().then{
         $0.font = UIFont.systemFont(ofSize: 13)
         $0.textColor = .black
         $0.textAlignment = .center
         $0.numberOfLines = 2
     }
+
     
     //MARK: - Method
     override func configureUI() {
@@ -31,12 +32,13 @@ class ListCollectionViewCell : BaseCollectionViewCell{
     }
     //MARK: - AddView
     override func addView() {
-        contentView.addSubviews(iv ,date)
+        contentView.addSubviews(iv,date)
     }
     //MARK: - SetupLayout
     override func setUpLayout() {
+        contentView.layer.applySketchShadow(color: .gray, alpha: 0.25, x: 0, y: 10, blur: 10, spread: 0)
+        
         iv.pin.top().left().right().bottom(30)
         date.pin.bottom().hCenter().width(contentView.frame.width).height(30)
-        contentView.layer.applySketchShadow(color: .gray, alpha: 0.25, x: 0, y: 10, blur: 10, spread: 0)
     }
 }

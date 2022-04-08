@@ -640,13 +640,14 @@
 				DEVELOPMENT_TEAM = 7JA353ZJMP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Picture/Supporting/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Camera permissions for taking photos and videos";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Album permissions to save videos";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera permissions for taking photos and video";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Album permissions to save Photo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortraitUpsideDown;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -670,13 +671,14 @@
 				DEVELOPMENT_TEAM = 7JA353ZJMP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Picture/Supporting/Info.plist;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Camera permissions for taking photos and videos";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Album permissions to save videos";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Camera permissions for taking photos and video";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Album permissions to save Photo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortraitUpsideDown;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -6,10 +6,14 @@
 //
 
 import RIBs
+import UIKit
+import RIBsUtil
+import UIUtil
 
-protocol ListHomeInteractable: Interactable {
+protocol ListHomeInteractable: Interactable , ImageVerificationListener{
     var router: ListHomeRouting? { get set }
     var listener: ListHomeListener? { get set }
+    var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy { get }
 }
 
 protocol ListHomeViewControllable: ViewControllable {
@@ -18,9 +22,45 @@ protocol ListHomeViewControllable: ViewControllable {
 
 final class ListHomeRouter: ViewableRouter<ListHomeInteractable, ListHomeViewControllable>, ListHomeRouting {
 
-    // TODO: Constructor inject child builder protocols to allow building children.
-    override init(interactor: ListHomeInteractable, viewController: ListHomeViewControllable) {
+    private let imageVerificationBuildable : ImageVerificationBuildable
+    private var imageVerificationRouting : Routing?
+    
+    
+    init(
+        interactor: ListHomeInteractable,
+        viewController: ListHomeViewControllable,
+        imageVerifivationBuildable : ImageVerificationBuildable
+    ) {
+        self.imageVerificationBuildable = imageVerifivationBuildable
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
     }
+    //MARK: - Attach
+    func attachImageVerification(id: String) {
+        if imageVerificationRouting != nil{
+            return
+        }
+        let router = imageVerificationBuildable.build(
+            withListener: interactor,
+            withImage: ImageDirectory.shared.loadImageFromDocumentDirecotry(imageName: "\(id).png") ?? UIImage(),
+            withState: true
+        )
+        
+        let navigation = NavigationControllerable(root: router.viewControllable)
+        navigation.navigationController.presentationController?.delegate = interactor.presentationDelegateProxy
+        viewControllable.present(navigation, animated: true, completion: nil)
+        
+        imageVerificationRouting = router
+        attachChild(router)
+    }
+    func detachImageVerification() {
+        guard let router = imageVerificationRouting else{
+            return
+        }
+        viewControllable.dismiss(animated: true, completion: nil)
+
+        detachChild(router)
+        imageVerificationRouting = nil
+    }
+    
 }

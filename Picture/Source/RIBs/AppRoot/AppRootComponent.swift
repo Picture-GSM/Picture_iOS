@@ -8,7 +8,13 @@
 import RIBs
 import RIBsUtil
 
-final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, ChooseImageDependency, LoadingModalDependency{
+final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, ChooseImageDependency, LoadingModalDependency, ImageVerificationDependency{
+    
+    
+
+    lazy var imageVerificationBuildable: ImageVerificationBuildable = {
+        return ImageVerificationBuilder(dependency: self)
+    }()
     
     lazy var loadingModalBuildable: LoadingModalBuildable = {
        return LoadingModalBuilder(dependency: self)

@@ -96,7 +96,7 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         scrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
         pageControl.pin.bottomCenter(to: scrollView.anchor.bottomCenter).height(20).width(375)
         titleLabel.pin.left(bounds.width/18.75).below(of: scrollView).width(200).height(20)
-        collectionView.pin.below(of: titleLabel).left().right().height(bounds.height/6)
+        collectionView.pin.below(of: titleLabel).left().right().height(140)
         addBtn.pin.bottom(view.pin.safeArea.bottom + 20).right(20).size(50)
     }
     override func delegate() {
@@ -125,7 +125,6 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     override func bindState() {
         
         let dataSource = RxCollectionViewRealmDataSource<Photo>(cellIdentifier: "AppHomeCell", cellType: AppHomeCollectionViewCell.self){ cell , indexPath, item in
-            
             cell.label.text = Date().usingDate(time: item.date)
             cell.imageView.image = ImageDirectory.shared.loadImageFromDocumentDirecotry(imageName: "\(item.id).png")
             
@@ -169,4 +168,5 @@ extension AppHomeViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: bounds.width/3.75 , height: bounds.width/3.75)
     }
+    
 }

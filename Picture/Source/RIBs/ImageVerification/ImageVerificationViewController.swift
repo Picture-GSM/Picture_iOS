@@ -18,10 +18,14 @@ protocol ImageVerificationPresentableListener: AnyObject {
 }
 
 final class ImageVerificationViewController: BaseViewController, ImageVerificationPresentable, ImageVerificationViewControllable {
+    
+
 
     let localReam = try! Realm()
     
     weak var listener: ImageVerificationPresentableListener?
+    
+    private var imageStateAlready : Bool = false
     
     private let imageView = UIImageView().then{
         $0.backgroundColor = .lightGray
@@ -49,17 +53,21 @@ final class ImageVerificationViewController: BaseViewController, ImageVerificati
     
     @objc
     private func didTapSave(){
-        let task = Photo(date: Date())
-        try! localReam.write{
-            localReam.add(task)
-            ImageDirectory.shared.saveImageToDocumentDirectory(imageName: "\(task.id).png", image: imageView.image!)
+        if !imageStateAlready{
+            let task = Photo(date: Date())
+            try! localReam.write{
+                localReam.add(task)
+                ImageDirectory.shared.saveImageToDocumentDirectory(imageName: "\(task.id).png", image: imageView.image!)
+            }
         }
+        
         ImageManager.shared.saveImage(image: imageView.image ?? UIImage())
         listener?.didTapSaveSuccess()
     }
     
     //MARK: - Presenter
-    func update(image: UIImage) {
+    func update(image: UIImage, imageStateAlready: Bool) {
         imageView.image = image
+        self.imageStateAlready = imageStateAlready
     }
 }

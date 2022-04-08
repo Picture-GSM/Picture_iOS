@@ -14,13 +14,15 @@ import RxRealm
 import RxRealmDataSources
 
 protocol ListHomePresentableListener: AnyObject {
-
+    func didTapCollectionViewRequest(_ id : String)
 }
 
 final class ListHomeViewController: BaseViewController, ListHomePresentable, ListHomeViewControllable {
     
     //MARK: - Listener
     weak var listener: ListHomePresentableListener?
+    
+    private var deleteState : Bool = true
     
     //MARK: - Properties
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
@@ -34,8 +36,7 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
     override func configureUI() {
         title = "List"
         tabBarItem = UITabBarItem(title: "목록",image: UIImage(systemName: "doc"),selectedImage: UIImage(systemName: "doc.fill"))
-        setupRightItem(with: "삭제", target: self, action: #selector(didTapDeleteItem))
-        collectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0)
     }
     //MARK: - addView
     override func addView() {
@@ -53,26 +54,34 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
     }
     
     //MARK: - Bind
+
+    
     override func bindView() {
-        
+
     }
     override func bindState() {
         let dataSource = RxCollectionViewRealmDataSource<Photo>(cellIdentifier: "List", cellType: ListCollectionViewCell.self){ cell , indexPath, item in
             
             cell.date.text = Date().usingDate(time: item.date)
             cell.iv.image = ImageDirectory.shared.loadImageFromDocumentDirecotry(imageName: "\(item.id).png")
+            
         }
+        
         let realm = try! Realm()
         let photoset = Observable.changeset(from: realm.objects(Photo.self)).share()
+        
+        print("root : \(Realm.Configuration.defaultConfiguration.fileURL!)")
+        
         photoset
             .bind(to: collectionView.rx.realmChanges(dataSource))
             .disposed(by: disposeBag)
+        
+        collectionView.rx.realmModelSelected(Photo.self)
+            .subscribe(onNext : { [weak self] in
+                self?.listener?.didTapCollectionViewRequest($0.id.stringValue)
+            }).disposed(by: disposeBag)
     }
     
-    @objc
-    private func didTapDeleteItem(){
-        
-    }
 }
 
 extension ListHomeViewController : UICollectionViewDelegateFlowLayout{

@@ -24,7 +24,6 @@ final class AppHomeCollectionViewCell : BaseCollectionViewCell{
         $0.clipsToBounds = true
     }
     let label = UILabel().then{
-        $0.text = "2022-03-18"
         $0.textAlignment = .center
         $0.font = UIFont.systemFont(ofSize: 10)
     }
