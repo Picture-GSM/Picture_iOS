@@ -24,8 +24,6 @@ final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , 
         return ChooseImageBuilder(dependency: self)
     }()
     
-    
-    
     private let rootViewController : ViewControllable
 
      init(

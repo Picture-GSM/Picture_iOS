@@ -69,9 +69,7 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
         
         let realm = try! Realm()
         let photoset = Observable.changeset(from: realm.objects(Photo.self)).share()
-        
-        print("root : \(Realm.Configuration.defaultConfiguration.fileURL!)")
-        
+                
         photoset
             .bind(to: collectionView.rx.realmChanges(dataSource))
             .disposed(by: disposeBag)
