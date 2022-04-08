@@ -35,6 +35,7 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
         title = "List"
         tabBarItem = UITabBarItem(title: "목록",image: UIImage(systemName: "doc"),selectedImage: UIImage(systemName: "doc.fill"))
         setupRightItem(with: "삭제", target: self, action: #selector(didTapDeleteItem))
+        collectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
     }
     //MARK: - addView
     override func addView() {

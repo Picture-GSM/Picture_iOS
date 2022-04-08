@@ -85,6 +85,7 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
                                   image: UIImage(systemName: "house"),
                                   selectedImage: UIImage(systemName: "house.fill"))
         pageImageSetting()
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: bounds.width/20, bottom: 0, right: bounds.width/20)
     }
     
     override func addView() {
