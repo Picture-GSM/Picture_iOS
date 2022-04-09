@@ -8,13 +8,13 @@
 import RIBs
 
 protocol AppHomeDependency: Dependency {
+    var imageRepository: ImageRepository{get}
     var chooseImageBuildable: ChooseImageBuildable {get}
 }
 
-final class AppHomeComponent: Component<AppHomeDependency>  {
-    
+final class AppHomeComponent: Component<AppHomeDependency> , AppHomeInteractorDependency{
+    var imageRepository: ImageRepository {dependency.imageRepository}
     var chooseImageBuildable: ChooseImageBuildable { dependency.chooseImageBuildable }
-
 }
 
 // MARK: - Builder
@@ -31,7 +31,10 @@ final class AppHomeBuilder: Builder<AppHomeDependency>, AppHomeBuildable {
     func build(withListener listener: AppHomeListener) -> AppHomeRouter{
         let component = AppHomeComponent(dependency: dependency)
         let viewController = AppHomeViewController()
-        let interactor = AppHomeInteractor(presenter: viewController)
+        let interactor = AppHomeInteractor(
+            presenter: viewController,
+            dependency: component
+        )
         interactor.listener = listener
         
         return AppHomeRouter(

@@ -37,6 +37,7 @@
 		EEC90B1627FEFEA7005C2D0A /* FoundationUtil in Frameworks */ = {isa = PBXBuildFile; productRef = EEC90B1527FEFEA7005C2D0A /* FoundationUtil */; };
 		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
 		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
+		EED11FA02801A8730094686F /* ImageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED11F9F2801A8730094686F /* ImageRepository.swift */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
 		EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */; };
 		EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */; };
@@ -90,6 +91,7 @@
 		EEC90ADE27FEA1FA005C2D0A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		EEC90AE127FED05C005C2D0A /* ImageDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDirectory.swift; sourceTree = "<group>"; };
 		EEC90B1227FEEEF4005C2D0A /* RxRealmDataSources */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RxRealmDataSources; sourceTree = "<group>"; };
+		EED11F9F2801A8730094686F /* ImageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepository.swift; sourceTree = "<group>"; };
 		EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootRouter.swift; sourceTree = "<group>"; };
 		EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootBuilder.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 		EEC6ACF928000FCF002A9DF1 /* ImageRepository */ = {
 			isa = PBXGroup;
 			children = (
+				EED11F9F2801A8730094686F /* ImageRepository.swift */,
 			);
 			path = ImageRepository;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */,
 				EEA102F027F54DB00081AD84 /* ChooseImageInteractor.swift in Sources */,
 				EEC90ADF27FEA1FA005C2D0A /* ImageManager.swift in Sources */,
+				EED11FA02801A8730094686F /* ImageRepository.swift in Sources */,
 				EE83C2F327E47B6500CB0C78 /* ListCollectionViewCell.swift in Sources */,
 				EEA102EE27F54DB00081AD84 /* ChooseImageViewController.swift in Sources */,
 				EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */,

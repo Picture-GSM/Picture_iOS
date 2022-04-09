@@ -21,17 +21,25 @@ protocol AppHomePresentable: Presentable {
 protocol AppHomeListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
+protocol AppHomeInteractorDependency{
+    var imageRepository : ImageRepository {get}
+}
 
 final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHomeInteractable, AppHomePresentableListener {
 
     
-    
     weak var router: AppHomeRouting?
     weak var listener: AppHomeListener?
+    
+    private let dependency : AppHomeInteractorDependency
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: AppHomePresentable) {
+    init(
+        presenter: AppHomePresentable,
+        dependency : AppHomeInteractorDependency
+    ) {
+        self.dependency = dependency
         super.init(presenter: presenter)
         presenter.listener = self
     }
