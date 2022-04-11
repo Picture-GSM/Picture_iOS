@@ -47,6 +47,8 @@ let package = Package(
                 .product(name: "UIUtil", package: "Platform"),
                 .product(name: "RIBsUtil", package: "Platform"),
                 .product(name: "ImageVerification", package: "ChooseImage"),
+                .product(name: "ImageRepository", package: "ChooseImage"),
+                .product(name: "ImageEntity", package: "ChooseImage"),
             ],
             resources: [
                 .process("Resources")

@@ -2,6 +2,7 @@ import RIBs
 import ImageVerification
 import ImageRepository
 import ListHome
+import ImageEntity
 
 public protocol ListHomeDependency: Dependency {
     var imageVerificationBuildable : ImageVerificationBuildable {get}

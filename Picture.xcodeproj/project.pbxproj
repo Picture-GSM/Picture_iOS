@@ -14,6 +14,7 @@
 		EE51DDBE2803F46600FA18EA /* ImageVerificationImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDBD2803F46600FA18EA /* ImageVerificationImp */; };
 		EE51DDC02803FBC300FA18EA /* ChooseImageImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDBF2803FBC300FA18EA /* ChooseImageImp */; };
 		EE51DDC2280400C100FA18EA /* LoadingImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDC1280400C100FA18EA /* LoadingImp */; };
+		EE51DDCF280426DB00FA18EA /* ImageEntity in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDCE280426DB00FA18EA /* ImageEntity */; };
 		EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2D327E4259A00CB0C78 /* Reusable */; };
 		EEC7E8D02803C7F4006470C8 /* ChooseImage in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8CF2803C7F4006470C8 /* ChooseImage */; };
 		EEC7E8D22803D5CD006470C8 /* ImageRepository in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8D12803D5CD006470C8 /* ImageRepository */; };
@@ -73,6 +74,7 @@
 				EEC7E8D22803D5CD006470C8 /* ImageRepository in Frameworks */,
 				EE51DDC02803FBC300FA18EA /* ChooseImageImp in Frameworks */,
 				EE51DDBA2803E46500FA18EA /* ListHome in Frameworks */,
+				EE51DDCF280426DB00FA18EA /* ImageEntity in Frameworks */,
 				EE51DDB82803E1ED00FA18EA /* Base in Frameworks */,
 				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
 				EE51DDBC2803E48900FA18EA /* ListHomeImp in Frameworks */,
@@ -217,6 +219,7 @@
 				EE51DDBD2803F46600FA18EA /* ImageVerificationImp */,
 				EE51DDBF2803FBC300FA18EA /* ChooseImageImp */,
 				EE51DDC1280400C100FA18EA /* LoadingImp */,
+				EE51DDCE280426DB00FA18EA /* ImageEntity */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -598,6 +601,10 @@
 		EE51DDC1280400C100FA18EA /* LoadingImp */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LoadingImp;
+		};
+		EE51DDCE280426DB00FA18EA /* ImageEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ImageEntity;
 		};
 		EE83C2D327E4259A00CB0C78 /* Reusable */ = {
 			isa = XCSwiftPackageProductDependency;

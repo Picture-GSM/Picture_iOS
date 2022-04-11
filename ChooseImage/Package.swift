@@ -29,6 +29,12 @@ let package = Package(
         .library(
             name: "ImageRepository",
             targets: ["ImageRepository"]),
+        .library(
+            name: "ImageEntity",
+            targets: ["ImageEntity"]),
+        .library(
+            name: "ImageRepositoryTestSupport",
+            targets: ["ImageRepositoryTestSupport"]),
     ],
     dependencies: [
         .package(name: "RIBs", url: "https://github.com/uber/RIBs", .exactItem("0.10.0")),
@@ -101,14 +107,38 @@ let package = Package(
                 "RxRealm",
                 "ImageVerification",
                 .product(name: "Base", package: "Platform"),
+                .product(name: "UIUtil", package: "Platform"),
             ]
         ),
         .target(
-            name: "ImageRepository",
+            name: "ImageEntity",
             dependencies: [
                 "RxSwift",
                 "RxRealm"
             ]
         ),
+        .target(
+            name: "ImageRepository",
+            dependencies: [
+                "ImageEntity",
+                "RxSwift",
+                "RxRealm"
+            ]
+        ),
+        .target(
+            name: "ImageRepositoryTestSupport",
+            dependencies: [
+                "ImageEntity",
+                "ImageRepository",
+                "RxSwift",
+                "RxRealm"
+            ]
+        ),
+        .testTarget(
+            name: "ImageVerificationTests",
+            dependencies: [
+                "ImageVerificationImp",
+            ]
+        )
     ]
 )
