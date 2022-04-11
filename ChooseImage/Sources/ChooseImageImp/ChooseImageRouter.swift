@@ -11,6 +11,7 @@ import RIBsUtil
 import UIKit
 import Loading
 import ImageVerification
+import ChooseImage
 
 protocol ChooseImageInteractable: Interactable , LoadingModalListener, ImageVerificationListener{
     var router: ChooseImageRouting? { get set }

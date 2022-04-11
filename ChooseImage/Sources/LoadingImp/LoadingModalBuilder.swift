@@ -7,6 +7,7 @@
 
 import RIBs
 import UIKit
+import Loading
 
 public protocol LoadingModalDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
@@ -19,10 +20,6 @@ final class LoadingModalComponent: Component<LoadingModalDependency> {
 }
 
 // MARK: - Builder
-
-public protocol LoadingModalBuildable: Buildable {
-    func build(withListener listener: LoadingModalListener, originerImage: UIImage, pieceImage: UIImage) -> ViewableRouting
-}
 
 public final class LoadingModalBuilder: Builder<LoadingModalDependency>, LoadingModalBuildable {
 

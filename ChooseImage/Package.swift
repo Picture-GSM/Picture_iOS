@@ -12,11 +12,20 @@ let package = Package(
             name: "ChooseImage",
             targets: ["ChooseImage"]),
         .library(
+            name: "ChooseImageImp",
+            targets: ["ChooseImageImp"]),
+        .library(
             name: "Loading",
             targets: ["Loading"]),
         .library(
+            name: "LoadingImp",
+            targets: ["LoadingImp"]),
+        .library(
             name: "ImageVerification",
             targets: ["ImageVerification"]),
+        .library(
+            name: "ImageVerificationImp",
+            targets: ["ImageVerificationImp"]),
         .library(
             name: "ImageRepository",
             targets: ["ImageRepository"]),
@@ -36,6 +45,12 @@ let package = Package(
         .target(
             name: "ChooseImage",
             dependencies: [
+                "RIBs"
+            ]
+        ),
+        .target(
+            name: "ChooseImageImp",
+            dependencies: [
                 "Loading",
                 "ImageVerification",
                 "ImageRepository",
@@ -43,6 +58,8 @@ let package = Package(
                 "Then",
                 "PinLayout",
                 "RIBs",
+                "ImageVerificationImp",
+                "ChooseImage",
                 .product(name: "UIUtil", package: "Platform"),
                 .product(name: "RIBsUtil", package: "Platform"),
                 .product(name: "Base", package: "Platform"),
@@ -51,18 +68,30 @@ let package = Package(
         .target(
             name: "Loading",
             dependencies: [
+                "RIBs",
+            ]
+        ),
+        .target(
+            name: "LoadingImp",
+            dependencies: [
                 "NVActivityIndicatorView",
                 "RxSwift",
                 "Then",
                 "PinLayout",
                 "RIBs",
+                "Loading",
                 .product(name: "UIUtil", package: "Platform"),
                 .product(name: "Base", package: "Platform"),
-
             ]
         ),
         .target(
             name: "ImageVerification",
+            dependencies: [
+                "RIBs",
+            ]
+        ),
+        .target(
+            name: "ImageVerificationImp",
             dependencies: [
                 "RxSwift",
                 "ImageRepository",
@@ -70,8 +99,8 @@ let package = Package(
                 "PinLayout",
                 "RIBs",
                 "RxRealm",
+                "ImageVerification",
                 .product(name: "Base", package: "Platform"),
-
             ]
         ),
         .target(

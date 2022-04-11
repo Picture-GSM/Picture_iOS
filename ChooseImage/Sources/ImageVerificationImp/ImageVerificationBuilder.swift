@@ -8,6 +8,7 @@
 import RIBs
 import UIKit
 import ImageRepository
+import ImageVerification
 
 public protocol ImageVerificationDependency: Dependency {
     var imageRepository: ImageRepository{get}
@@ -18,10 +19,6 @@ final class ImageVerificationComponent: Component<ImageVerificationDependency> ,
 }
 
 // MARK: - Builder
-
-public protocol ImageVerificationBuildable: Buildable {
-    func build(withListener listener: ImageVerificationListener, withImage image : UIImage, withState imageStateAlready : Bool) -> ViewableRouting
-}
 
 public final class ImageVerificationBuilder: Builder<ImageVerificationDependency>, ImageVerificationBuildable {
 

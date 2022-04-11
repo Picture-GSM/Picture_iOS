@@ -11,6 +11,9 @@
 		EE51DDB82803E1ED00FA18EA /* Base in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDB72803E1ED00FA18EA /* Base */; };
 		EE51DDBA2803E46500FA18EA /* ListHome in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDB92803E46500FA18EA /* ListHome */; };
 		EE51DDBC2803E48900FA18EA /* ListHomeImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDBB2803E48900FA18EA /* ListHomeImp */; };
+		EE51DDBE2803F46600FA18EA /* ImageVerificationImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDBD2803F46600FA18EA /* ImageVerificationImp */; };
+		EE51DDC02803FBC300FA18EA /* ChooseImageImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDBF2803FBC300FA18EA /* ChooseImageImp */; };
+		EE51DDC2280400C100FA18EA /* LoadingImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDC1280400C100FA18EA /* LoadingImp */; };
 		EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2D327E4259A00CB0C78 /* Reusable */; };
 		EEC7E8D02803C7F4006470C8 /* ChooseImage in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8CF2803C7F4006470C8 /* ChooseImage */; };
 		EEC7E8D22803D5CD006470C8 /* ImageRepository in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8D12803D5CD006470C8 /* ImageRepository */; };
@@ -68,15 +71,18 @@
 				EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */,
 				EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */,
 				EEC7E8D22803D5CD006470C8 /* ImageRepository in Frameworks */,
+				EE51DDC02803FBC300FA18EA /* ChooseImageImp in Frameworks */,
 				EE51DDBA2803E46500FA18EA /* ListHome in Frameworks */,
 				EE51DDB82803E1ED00FA18EA /* Base in Frameworks */,
 				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
 				EE51DDBC2803E48900FA18EA /* ListHomeImp in Frameworks */,
 				EEC7E8D42803D5E2006470C8 /* ImageVerification in Frameworks */,
 				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
+				EE51DDC2280400C100FA18EA /* LoadingImp in Frameworks */,
 				EEC90B1627FEFEA7005C2D0A /* FoundationUtil in Frameworks */,
 				EEED8B9427F1577700A7B052 /* RxUtil in Frameworks */,
 				EEC7E8D02803C7F4006470C8 /* ChooseImage in Frameworks */,
+				EE51DDBE2803F46600FA18EA /* ImageVerificationImp in Frameworks */,
 				EEC90AD427FE7FE7005C2D0A /* NVActivityIndicatorView in Frameworks */,
 				EEED8B9227F1577700A7B052 /* RIBsUtil in Frameworks */,
 				EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */,
@@ -208,6 +214,9 @@
 				EE51DDB72803E1ED00FA18EA /* Base */,
 				EE51DDB92803E46500FA18EA /* ListHome */,
 				EE51DDBB2803E48900FA18EA /* ListHomeImp */,
+				EE51DDBD2803F46600FA18EA /* ImageVerificationImp */,
+				EE51DDBF2803FBC300FA18EA /* ChooseImageImp */,
+				EE51DDC1280400C100FA18EA /* LoadingImp */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -577,6 +586,18 @@
 		EE51DDBB2803E48900FA18EA /* ListHomeImp */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ListHomeImp;
+		};
+		EE51DDBD2803F46600FA18EA /* ImageVerificationImp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ImageVerificationImp;
+		};
+		EE51DDBF2803FBC300FA18EA /* ChooseImageImp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ChooseImageImp;
+		};
+		EE51DDC1280400C100FA18EA /* LoadingImp */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoadingImp;
 		};
 		EE83C2D327E4259A00CB0C78 /* Reusable */ = {
 			isa = XCSwiftPackageProductDependency;

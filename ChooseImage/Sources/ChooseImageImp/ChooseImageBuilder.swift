@@ -8,13 +8,14 @@
 import RIBs
 import Loading
 import ImageVerification
+import ImageVerificationImp
 import ImageRepository
+import ChooseImage
 
 public protocol ChooseImageDependency: Dependency {
     var loadingModalBuildable : LoadingModalBuildable {get}
     var imageVerificationBuildable : ImageVerificationBuildable {get}
     var imageRepository: ImageRepository {get}
-
 }
 
 final class ChooseImageComponent: Component<ChooseImageDependency> , ImageVerificationDependency{
@@ -25,11 +26,6 @@ final class ChooseImageComponent: Component<ChooseImageDependency> , ImageVerifi
 }
 
 // MARK: - Builder
-
-public protocol ChooseImageBuildable: Buildable {
-    func build(withListener listener: ChooseImageListener) -> ViewableRouting
-}
-
 public final class ChooseImageBuilder: Builder<ChooseImageDependency>, ChooseImageBuildable {
     
     public override init(dependency: ChooseImageDependency) {

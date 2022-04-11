@@ -9,6 +9,7 @@ import RIBs
 import RxSwift
 import UIUtil
 import UIKit
+import ChooseImage
 
 protocol ChooseImageRouting: ViewableRouting {
     func attachLoading(originerImage : UIImage, pieceImage : UIImage)
@@ -24,15 +25,9 @@ protocol ChooseImagePresentable: Presentable {
     var listener: ChooseImagePresentableListener? { get set }
 }
 
-public protocol ChooseImageListener: AnyObject {
-    func transportHomeDidClose()
-}
+
 
 final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener,AdaptivePresentationControllerDelegate{
-
-    
-
-    
 
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?

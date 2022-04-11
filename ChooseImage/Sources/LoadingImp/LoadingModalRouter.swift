@@ -7,6 +7,7 @@
 
 import RIBs
 import UIUtil
+import Loading
 
 protocol LoadingModalInteractable: Interactable {
     var router: LoadingModalRouting? { get set }
