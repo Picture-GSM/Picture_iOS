@@ -9,6 +9,7 @@ import RIBs
 import RxSwift
 import RealmSwift
 import UIUtil
+import RxRealm
 
 protocol ListHomeRouting: ViewableRouting {
     func attachImageVerification(id : String)
@@ -17,24 +18,31 @@ protocol ListHomeRouting: ViewableRouting {
 
 protocol ListHomePresentable: Presentable {
     var listener: ListHomePresentableListener? { get set }
-    
+    func update(_ photoSet :Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>)
 }
 
 protocol ListHomeListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
+protocol ListHomeInteractorDependency{
+    var imageRepository : ImageRepository {get}
+}
 final class ListHomeInteractor: PresentableInteractor<ListHomePresentable>, ListHomeInteractable, ListHomePresentableListener,AdaptivePresentationControllerDelegate{
 
-    
     weak var router: ListHomeRouting?
     weak var listener: ListHomeListener?
 
     var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
 
+    private let dependency : ListHomeInteractorDependency
     
-    override init(presenter: ListHomePresentable) {
+    init(
+        presenter: ListHomePresentable,
+        dependency : ListHomeInteractorDependency
+    ) {
         self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()
+        self.dependency = dependency
         super.init(presenter: presenter)
         presenter.listener = self
         presentationDelegateProxy.delegate = self
@@ -42,7 +50,7 @@ final class ListHomeInteractor: PresentableInteractor<ListHomePresentable>, List
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        presenter.update(dependency.imageRepository.fetch())
     }
 
     override func willResignActive() {

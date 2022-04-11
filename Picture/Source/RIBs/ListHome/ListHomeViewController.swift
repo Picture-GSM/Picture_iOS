@@ -18,6 +18,7 @@ protocol ListHomePresentableListener: AnyObject {
 }
 
 final class ListHomeViewController: BaseViewController, ListHomePresentable, ListHomeViewControllable {
+
     
     //MARK: - Listener
     weak var listener: ListHomePresentableListener?
@@ -62,21 +63,18 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
                 self?.listener?.didTapCollectionViewRequest($0.id.stringValue)
             }).disposed(by: disposeBag)
     }
-    override func bindState() {
+
+    func update(_ photoSet: Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>) {
         let dataSource = RxCollectionViewRealmDataSource<Photo>(cellIdentifier: "List", cellType: ListCollectionViewCell.self){ cell , indexPath, item in
             
             cell.date.text = Date().usingDate(time: item.date)
             cell.iv.image = ImageDirectory.shared.loadImageFromDocumentDirecotry(imageName: "\(item.id).png")
             
         }
-        
-        let realm = try! Realm()
-        let photoset = Observable.changeset(from: realm.objects(Photo.self)).share()
-                
-        photoset
-            .bind(to: collectionView.rx.realmChanges(dataSource))
+        photoSet.bind(to: collectionView.rx.realmChanges(dataSource))
             .disposed(by: disposeBag)
     }
+    
     
 }
 
