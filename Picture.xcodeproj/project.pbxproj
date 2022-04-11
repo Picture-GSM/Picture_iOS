@@ -205,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				EED11F9F2801A8730094686F /* ImageRepository.swift */,
+				EEC90AE127FED05C005C2D0A /* ImageDirectory.swift */,
 			);
 			path = ImageRepository;
 			sourceTree = "<group>";
@@ -228,7 +229,6 @@
 				EEC90AD727FE8E7B005C2D0A /* ImageVerificationViewController.swift */,
 				EEC90AD827FE8E7B005C2D0A /* ImageVerificationBuilder.swift */,
 				EEC90AD927FE8E7B005C2D0A /* ImageVerificationInteractor.swift */,
-				EEC90AE127FED05C005C2D0A /* ImageDirectory.swift */,
 			);
 			path = ImageVerification;
 			sourceTree = "<group>";

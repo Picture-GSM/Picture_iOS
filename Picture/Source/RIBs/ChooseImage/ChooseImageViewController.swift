@@ -70,7 +70,6 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
         $0.setTitle("시작", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
     }
-
     
     //MARK: - Method
     override func configureUI() {

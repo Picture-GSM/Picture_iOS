@@ -55,8 +55,6 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
     }
     
     //MARK: - Bind
-
-    
     override func bindView() {
         collectionView.rx.realmModelSelected(Photo.self)
             .subscribe(onNext : { [weak self] in
@@ -74,8 +72,6 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
         photoSet.bind(to: collectionView.rx.realmChanges(dataSource))
             .disposed(by: disposeBag)
     }
-    
-    
 }
 
 extension ListHomeViewController : UICollectionViewDelegateFlowLayout{
