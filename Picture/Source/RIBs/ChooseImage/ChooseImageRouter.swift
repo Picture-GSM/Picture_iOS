@@ -22,6 +22,7 @@ protocol ChooseImageViewControllable: ViewControllable {
 
 final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseImageViewControllable>, ChooseImageRouting {
 
+
     private let loadingModalBuidable : LoadingModalBuildable
     private var loadingModalRouting : LoadingModalRouting?
     
@@ -86,6 +87,16 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
         detachChild(router)
         imageVerificationRouting = nil
     }
+    
+    func detachImagePresenter() {
+        guard let router = imageVerificationRouting else{
+            return
+        }
+
+        detachChild(router)
+        imageVerificationRouting = nil
+    }
+    
     
     //MARK: - Present Action
     private func presentWithPushModal(_ viewControllable: ViewControllable, animated : Bool){

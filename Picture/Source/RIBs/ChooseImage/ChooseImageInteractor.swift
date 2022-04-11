@@ -16,6 +16,8 @@ protocol ChooseImageRouting: ViewableRouting {
     
     func attachImageVerification(image : UIImage)
     func detachImageVerification()
+    
+    func detachImagePresenter()
 }
 
 protocol ChooseImagePresentable: Presentable {
@@ -27,17 +29,21 @@ protocol ChooseImageListener: AnyObject {
     func transportHomeDidClose()
 }
 
-final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener,AdaptivePresentationControllerDelegate{
+final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener,AdaptivePresentationControllerDelegate,ImagePickerDelegate{
 
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?
     var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
-    
+    var imagePickerDelegateProxy : ImagePickerDelegateProxy
+    var originerState: Bool
 
     override init(presenter: ChooseImagePresentable) {
         self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()
+        self.imagePickerDelegateProxy = ImagePickerDelegateProxy()
+        self.originerState = false
         super.init(presenter: presenter)
         presenter.listener = self
+        presentationDelegateProxy.delegate = self
     }
 
     override func didBecomeActive() {
@@ -76,7 +82,10 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     
     //MARK: - presentationControllable
     func presetationControllerDidDismiss() {
-        router?.detachImageVerification()
+        router?.detachImagePresenter()
+    }
+    func imageDidSelect(_ image: UIImage) {
+        print("이미지 나옴")
     }
     
 }
