@@ -14,19 +14,13 @@ import RealmSwift
 
 protocol ImageVerificationPresentableListener: AnyObject {
     func didTapClose()
-    func didTapSaveSuccess()
+    func didTapSaveSuccess(_ image : UIImage)
 }
 
 final class ImageVerificationViewController: BaseViewController, ImageVerificationPresentable, ImageVerificationViewControllable {
     
-
-
-    let localReam = try! Realm()
-    
     weak var listener: ImageVerificationPresentableListener?
-    
-    private var imageStateAlready : Bool = false
-    
+        
     private let imageView = UIImageView().then{
         $0.backgroundColor = .lightGray
         $0.contentMode = .scaleAspectFill
@@ -50,24 +44,13 @@ final class ImageVerificationViewController: BaseViewController, ImageVerificati
     private func didTapClose(){
         listener?.didTapClose()
     }
-    
     @objc
     private func didTapSave(){
-        if !imageStateAlready{
-            let task = Photo(date: Date())
-            try! localReam.write{
-                localReam.add(task)
-                ImageDirectory.shared.saveImageToDocumentDirectory(imageName: "\(task.id).png", image: imageView.image!)
-            }
-        }
-        
-        ImageManager.shared.saveImage(image: imageView.image ?? UIImage())
-        listener?.didTapSaveSuccess()
+        listener?.didTapSaveSuccess(imageView.image ?? UIImage())
     }
     
     //MARK: - Presenter
-    func update(image: UIImage, imageStateAlready: Bool) {
+    func update(image: UIImage) {
         imageView.image = image
-        self.imageStateAlready = imageStateAlready
     }
 }

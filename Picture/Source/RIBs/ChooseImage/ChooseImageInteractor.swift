@@ -16,11 +16,12 @@ protocol ChooseImageRouting: ViewableRouting {
     
     func attachImageVerification(image : UIImage)
     func detachImageVerification()
+    
+    func detachImagePresenter()
 }
 
 protocol ChooseImagePresentable: Presentable {
     var listener: ChooseImagePresentableListener? { get set }
-    
 }
 
 protocol ChooseImageListener: AnyObject {
@@ -29,15 +30,19 @@ protocol ChooseImageListener: AnyObject {
 
 final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>, ChooseImageInteractable, ChooseImagePresentableListener,AdaptivePresentationControllerDelegate{
 
+    
+
+    
+
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?
     var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
-
-
+    
     override init(presenter: ChooseImagePresentable) {
         self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()
         super.init(presenter: presenter)
         presenter.listener = self
+        presentationDelegateProxy.delegate = self
     }
 
     override func didBecomeActive() {
@@ -76,7 +81,8 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     
     //MARK: - presentationControllable
     func presetationControllerDidDismiss() {
-        router?.detachImageVerification()
+        router?.detachImagePresenter()
     }
-    
+
+
 }

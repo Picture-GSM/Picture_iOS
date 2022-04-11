@@ -7,6 +7,8 @@
 
 import RIBs
 import RxSwift
+import RxRealm
+import RealmSwift
 
 protocol AppHomeRouting: ViewableRouting {
     func attachChooseImage()
@@ -15,30 +17,38 @@ protocol AppHomeRouting: ViewableRouting {
 
 protocol AppHomePresentable: Presentable {
     var listener: AppHomePresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+    func update(_ photoSet :Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>)
 }
 
 protocol AppHomeListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
+protocol AppHomeInteractorDependency{
+    var imageRepository : ImageRepository {get}
+}
 
 final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHomeInteractable, AppHomePresentableListener {
 
     
-    
     weak var router: AppHomeRouting?
     weak var listener: AppHomeListener?
+    
+    private let dependency : AppHomeInteractorDependency
 
     // TODO: Add additional dependencies to constructor. Do not perform any logic
     // in constructor.
-    override init(presenter: AppHomePresentable) {
+    init(
+        presenter: AppHomePresentable,
+        dependency : AppHomeInteractorDependency
+    ) {
+        self.dependency = dependency
         super.init(presenter: presenter)
         presenter.listener = self
     }
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        presenter.update(dependency.imageRepository.fetch())
     }
 
     override func willResignActive() {
@@ -53,5 +63,4 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
     func transportHomeDidClose() {
         router?.detachChooseImage()
     }
-    
 }

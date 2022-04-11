@@ -9,13 +9,11 @@ import RIBs
 import UIKit
 
 protocol ImageVerificationDependency: Dependency {
-    // TODO: Declare the set of dependencies required by this RIB, but cannot be
-    // created by this RIB.
+    var imageRepository: ImageRepository{get}
 }
 
-final class ImageVerificationComponent: Component<ImageVerificationDependency> {
-
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+final class ImageVerificationComponent: Component<ImageVerificationDependency> , ImageVerificationInteractorDependency{
+    var imageRepository: ImageRepository{dependency.imageRepository}
 }
 
 // MARK: - Builder
@@ -33,7 +31,12 @@ final class ImageVerificationBuilder: Builder<ImageVerificationDependency>, Imag
     func build(withListener listener: ImageVerificationListener,withImage image : UIImage,withState imageStateAlready: Bool) -> ImageVerificationRouting {
         let component = ImageVerificationComponent(dependency: dependency)
         let viewController = ImageVerificationViewController()
-        let interactor = ImageVerificationInteractor(presenter: viewController, withImage: image, imageStateAlready: imageStateAlready)
+        let interactor = ImageVerificationInteractor(
+            presenter: viewController,
+            withImage: image,
+            imageStateAlready: imageStateAlready,
+            dependency: component
+        )
         interactor.listener = listener
         return ImageVerificationRouter(interactor: interactor, viewController: viewController)
     }

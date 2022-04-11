@@ -15,7 +15,7 @@ protocol ImageVerificationRouting: ViewableRouting {
 
 protocol ImageVerificationPresentable: Presentable {
     var listener: ImageVerificationPresentableListener? { get set }
-    func update(image : UIImage, imageStateAlready : Bool)
+    func update(image : UIImage)
 }
 
 protocol ImageVerificationListener: AnyObject {
@@ -23,19 +23,29 @@ protocol ImageVerificationListener: AnyObject {
     func didTapImageVerificationSaveSuccess()
 }
 
+protocol ImageVerificationInteractorDependency{
+    var imageRepository : ImageRepository {get}
+}
+
 final class ImageVerificationInteractor: PresentableInteractor<ImageVerificationPresentable>, ImageVerificationInteractable, ImageVerificationPresentableListener {
+
+    
 
     weak var router: ImageVerificationRouting?
     weak var listener: ImageVerificationListener?
 
+    private let dependency : ImageVerificationInteractorDependency
+    
     private let image : UIImage
     private let imageStateAlready : Bool
     
     init(
         presenter: ImageVerificationPresentable,
         withImage image : UIImage,
-        imageStateAlready : Bool
+        imageStateAlready : Bool,
+        dependency : ImageVerificationInteractorDependency
     ) {
+        self.dependency = dependency
         self.imageStateAlready = imageStateAlready
         self.image = image
         super.init(presenter: presenter)
@@ -44,7 +54,7 @@ final class ImageVerificationInteractor: PresentableInteractor<ImageVerification
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        presenter.update(image: image, imageStateAlready: imageStateAlready)
+        presenter.update(image: image)
     }
 
     override func willResignActive() {
@@ -55,7 +65,12 @@ final class ImageVerificationInteractor: PresentableInteractor<ImageVerification
     func didTapClose() {
         listener?.didTapImageVerificationClose()
     }
-    func didTapSaveSuccess() {
+
+    func didTapSaveSuccess(_ image: UIImage) {
+        if !imageStateAlready{
+            dependency.imageRepository.addImage(saveImage: image)
+        }
+        ImageManager.shared.saveImage(image: image)
         listener?.didTapImageVerificationSaveSuccess()
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import Photos
-
+//MARK: - Photo save inside Album
 class ImageManager{
     static let shared: ImageManager = ImageManager()
     

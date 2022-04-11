@@ -70,7 +70,6 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
         $0.setTitle("시작", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
     }
-
     
     //MARK: - Method
     override func configureUI() {
@@ -101,11 +100,10 @@ final class ChooseImageViewController: BaseViewController, ChooseImagePresentabl
         pieceImageBtn.pin.size(bounds.width/2.5).centerRight(20)
         startBtn.pin.bottom(bounds.height/15).hCenter().width(80%).maxWidth(300).height(40)
     }
-    
     override func delegate() {
         imagePicker.delegate = self
     }
-        
+    
     //MARK: - Bind
     override func bindView() {
         backButton.rx.tap

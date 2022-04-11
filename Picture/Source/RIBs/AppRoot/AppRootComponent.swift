@@ -10,6 +10,7 @@ import RIBsUtil
 
 final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, ChooseImageDependency, LoadingModalDependency, ImageVerificationDependency{
     
+    var imageRepository: ImageRepository
     
 
     lazy var imageVerificationBuildable: ImageVerificationBuildable = {
@@ -31,6 +32,7 @@ final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , 
         rootViewController: ViewControllable
     ) {
         self.rootViewController = rootViewController
+        self.imageRepository = ImageRepositoryImp()
         super.init(dependency: dependency)
     }
 }

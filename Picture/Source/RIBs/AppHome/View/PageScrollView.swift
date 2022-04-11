@@ -62,7 +62,7 @@ class PageScrollView : UIView{
     }
     private func setlayout(){
         scrollView.pin.top(self.pin.safeArea.top).right().left().height(frame.height)
-        pageControl.pin.bottomCenter(to: scrollView.anchor.bottomCenter).height(20).width(375)
+        pageControl.pin.bottomCenter(to: scrollView.anchor.bottomCenter).height(20).width(frame.width)
         pageImageSetting()
     }
     //MARK: - Bind

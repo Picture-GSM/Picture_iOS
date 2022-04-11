@@ -17,6 +17,7 @@ import Reusable
 import PinLayout
 import RxRealmDataSources
 import RealmSwift
+import RxRealm
 
 //MARK: - Listener
 protocol AppHomePresentableListener: AnyObject {
@@ -24,10 +25,11 @@ protocol AppHomePresentableListener: AnyObject {
 }
 
 final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHomeViewControllable {
+
     
     //MARK: - Properties
     weak var listener: AppHomePresentableListener?
-    
+
     private let pageScrollView = PageScrollView(images: [
         UIImage(named: "PageImage1"),
         UIImage(named: "PageImage2"),
@@ -47,8 +49,9 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         $0.numberOfLines = 0
         $0.font  = .systemFont(ofSize: 13)
     }
-    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
+    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: bounds.width/3.75 , height: bounds.width/3.75)
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .horizontal
         $0.showsHorizontalScrollIndicator = false
@@ -78,42 +81,26 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     
     override func setLayout() {
         pageScrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
-        titleLabel.pin.left(bounds.width/18.75).below(of: pageScrollView).width(200).height(20)
+        titleLabel.pin.left(bounds.width/18.75).below(of: pageScrollView).width(100%).height(20)
         collectionView.pin.below(of: titleLabel).left().right().height(140)
         addBtn.pin.bottom(view.pin.safeArea.bottom + 20).right(20).size(50)
     }
-    override func delegate() {
-        collectionView.rx.setDelegate(self)
-            .disposed(by: disposeBag)
-    }
-    
+
     //MARK: - Bind
     override func bindView() {
-        
         addBtn.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.listener?.didTapAddBtn()
             })
             .disposed(by: disposeBag)
-        
     }
-    
-    override func bindState() {
+    //MARK: - Presenter
+    func update(_ photoSet: Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>) {
         let dataSource = RxCollectionViewRealmDataSource<Photo>(cellIdentifier: "AppHomeCell", cellType: AppHomeCollectionViewCell.self){ cell , indexPath, item in
             cell.label.text = Date().usingDate(time: item.date)
             cell.imageView.image = ImageDirectory.shared.loadImageFromDocumentDirecotry(imageName: "\(item.id).png")
         }
-        let realm = try! Realm()
-        let photoset = Observable.changeset(from: realm.objects(Photo.self)).share()
-        photoset
-            .bind(to: collectionView.rx.realmChanges(dataSource))
+        photoSet.bind(to: collectionView.rx.realmChanges(dataSource))
             .disposed(by: disposeBag)
-    }
-}
-
-//MARK: - Page
-extension AppHomeViewController : UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: bounds.width/3.75 , height: bounds.width/3.75)
     }
 }
