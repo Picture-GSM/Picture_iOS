@@ -96,18 +96,9 @@
 			isa = PBXGroup;
 			children = (
 				EEE5E41227D9FFA9006FDD9E /* AppDelegate */,
-				EEFA58C427E3528100DBB4A8 /* Model */,
 				EE9F6A2F27DB8F5A007F5F48 /* RIBs */,
-				EEC90B0927FEE5ED005C2D0A /* Utils */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		EEC90B0927FEE5ED005C2D0A /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		EEDBCD1127E2B85A00B9B9A3 /* AppRoot */ = {
@@ -185,13 +176,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		EEFA58C427E3528100DBB4A8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
