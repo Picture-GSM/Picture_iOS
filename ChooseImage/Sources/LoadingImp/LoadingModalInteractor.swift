@@ -8,6 +8,7 @@
 import RIBs
 import RxSwift
 import UIKit
+import Loading
 
 protocol LoadingModalRouting: ViewableRouting {
 
@@ -17,10 +18,6 @@ protocol LoadingModalPresentable: Presentable {
     var listener: LoadingModalPresentableListener? { get set }
     
     func update(origin originerImage : UIImage, piece pieceImage : UIImage)
-}
-
-public protocol LoadingModalListener: AnyObject {
-    func didClearTrainingMachine(image : UIImage)
 }
 
 final class LoadingModalInteractor: PresentableInteractor<LoadingModalPresentable>, LoadingModalInteractable, LoadingModalPresentableListener {

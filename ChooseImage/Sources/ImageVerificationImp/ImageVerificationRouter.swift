@@ -6,6 +6,7 @@
 //
 
 import RIBs
+import ImageVerification
 
 protocol ImageVerificationInteractable: Interactable {
     var router: ImageVerificationRouting? { get set }

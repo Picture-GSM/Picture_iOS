@@ -11,6 +11,7 @@ import RealmSwift
 import UIUtil
 import RxRealm
 import ImageRepository
+import ListHome
 
 protocol ListHomeRouting: ViewableRouting {
     func attachImageVerification(id : String)
@@ -20,10 +21,6 @@ protocol ListHomeRouting: ViewableRouting {
 protocol ListHomePresentable: Presentable {
     var listener: ListHomePresentableListener? { get set }
     func update(_ photoSet :Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>)
-}
-
-public protocol ListHomeListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 
 protocol ListHomeInteractorDependency{
