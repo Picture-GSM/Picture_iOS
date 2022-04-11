@@ -17,7 +17,7 @@ protocol ImageRepository{
 }
 
 final class ImageRepositoryImp: ImageRepository{
-
+    
     func addImage(saveImage image: UIImage) {
         let task = Photo(date: Date())
         try! realm.write{
@@ -34,6 +34,5 @@ final class ImageRepositoryImp: ImageRepository{
     init(){
         
     }
-    
 }
 

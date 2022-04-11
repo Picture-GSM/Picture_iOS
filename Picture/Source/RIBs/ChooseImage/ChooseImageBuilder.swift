@@ -10,10 +10,13 @@ import RIBs
 protocol ChooseImageDependency: Dependency {
     var loadingModalBuildable : LoadingModalBuildable {get}
     var imageVerificationBuildable : ImageVerificationBuildable {get}
+    var imageRepository: ImageRepository {get}
 
 }
 
 final class ChooseImageComponent: Component<ChooseImageDependency> , ImageVerificationDependency{
+    var imageRepository: ImageRepository {dependency.imageRepository}
+    
     var loadingModalBuildable : LoadingModalBuildable {dependency.loadingModalBuildable}
     var imageVerificationBuildable : ImageVerificationBuildable {dependency.imageVerificationBuildable}
 }
