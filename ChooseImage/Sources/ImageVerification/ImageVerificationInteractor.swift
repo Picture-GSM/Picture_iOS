@@ -8,6 +8,7 @@
 import RIBs
 import RxSwift
 import UIKit
+import ImageRepository
 
 protocol ImageVerificationRouting: ViewableRouting {
     // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
@@ -18,7 +19,7 @@ protocol ImageVerificationPresentable: Presentable {
     func update(image : UIImage)
 }
 
-protocol ImageVerificationListener: AnyObject {
+public protocol ImageVerificationListener: AnyObject {
     func didTapImageVerificationClose()
     func didTapImageVerificationSaveSuccess()
 }

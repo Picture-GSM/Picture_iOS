@@ -8,10 +8,10 @@
 import RealmSwift
 import UIKit
 
-class ImageDirectory {
-    static let shared : ImageDirectory = ImageDirectory()
+public class ImageDirectory {
+    static public let shared : ImageDirectory = ImageDirectory()
     
-    func saveImageToDocumentDirectory(imageName: String, image: UIImage) {
+    public func saveImageToDocumentDirectory(imageName: String, image: UIImage) {
             guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
             let imageURL = documentDirectory.appendingPathComponent(imageName)
             
@@ -35,7 +35,7 @@ class ImageDirectory {
             }
         }
     
-    func loadImageFromDocumentDirecotry(imageName : String) -> UIImage?{
+    public func loadImageFromDocumentDirecotry(imageName : String) -> UIImage?{
         // 1. 도큐먼트 폴더 경로가져오기
         let documentDirectory = FileManager.SearchPathDirectory.documentDirectory
         let userDomainMask = FileManager.SearchPathDomainMask.userDomainMask

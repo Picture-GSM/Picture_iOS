@@ -9,6 +9,8 @@ import RIBs
 import UIUtil
 import RIBsUtil
 import UIKit
+import Loading
+import ImageVerification
 
 protocol ChooseImageInteractable: Interactable , LoadingModalListener, ImageVerificationListener{
     var router: ChooseImageRouting? { get set }
@@ -24,7 +26,7 @@ final class ChooseImageRouter: ViewableRouter<ChooseImageInteractable, ChooseIma
 
 
     private let loadingModalBuidable : LoadingModalBuildable
-    private var loadingModalRouting : LoadingModalRouting?
+    private var loadingModalRouting : Routing?
     
     private let imageVerificationBuildable: ImageVerificationBuildable
     private var imageVerificationRouting : Routing?

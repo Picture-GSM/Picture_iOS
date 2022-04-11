@@ -8,7 +8,7 @@
 import RIBs
 import UIKit
 
-protocol LoadingModalDependency: Dependency {
+public protocol LoadingModalDependency: Dependency {
     // TODO: Declare the set of dependencies required by this RIB, but cannot be
     // created by this RIB.
 }
@@ -20,17 +20,17 @@ final class LoadingModalComponent: Component<LoadingModalDependency> {
 
 // MARK: - Builder
 
-protocol LoadingModalBuildable: Buildable {
-    func build(withListener listener: LoadingModalListener, originerImage: UIImage, pieceImage: UIImage) -> LoadingModalRouting
+public protocol LoadingModalBuildable: Buildable {
+    func build(withListener listener: LoadingModalListener, originerImage: UIImage, pieceImage: UIImage) -> ViewableRouting
 }
 
-final class LoadingModalBuilder: Builder<LoadingModalDependency>, LoadingModalBuildable {
+public final class LoadingModalBuilder: Builder<LoadingModalDependency>, LoadingModalBuildable {
 
-    override init(dependency: LoadingModalDependency) {
+    public override init(dependency: LoadingModalDependency) {
         super.init(dependency: dependency)
     }
         
-    func build(withListener listener: LoadingModalListener,originerImage: UIImage, pieceImage: UIImage) -> LoadingModalRouting {
+    public func build(withListener listener: LoadingModalListener,originerImage: UIImage, pieceImage: UIImage) -> ViewableRouting {
         let component = LoadingModalComponent(dependency: dependency)
         let viewController = LoadingModalViewController()
         

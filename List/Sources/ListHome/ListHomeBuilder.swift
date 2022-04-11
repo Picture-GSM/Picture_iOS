@@ -6,8 +6,10 @@
 //
 
 import RIBs
+import ImageVerification
+import ImageRepository
 
-protocol ListHomeDependency: Dependency {
+public protocol ListHomeDependency: Dependency {
     var imageVerificationBuildable : ImageVerificationBuildable {get}
     var imageRepository: ImageRepository{get}
 }
@@ -19,17 +21,17 @@ final class ListHomeComponent: Component<ListHomeDependency>, ListHomeInteractor
 
 // MARK: - Builder
 
-protocol ListHomeBuildable: Buildable {
-    func build(withListener listener: ListHomeListener) -> ListHomeRouting
+public protocol ListHomeBuildable: Buildable {
+    func build(withListener listener: ListHomeListener) -> ViewableRouting
 }
 
-final class ListHomeBuilder: Builder<ListHomeDependency>, ListHomeBuildable {
+public final class ListHomeBuilder: Builder<ListHomeDependency>, ListHomeBuildable {
 
-    override init(dependency: ListHomeDependency) {
+    public override init(dependency: ListHomeDependency) {
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: ListHomeListener) -> ListHomeRouting {
+    public func build(withListener listener: ListHomeListener) -> ViewableRouting {
         let component = ListHomeComponent(dependency: dependency)
         let viewController = ListHomeViewController() 
         let interactor = ListHomeInteractor(
@@ -37,6 +39,8 @@ final class ListHomeBuilder: Builder<ListHomeDependency>, ListHomeBuildable {
             dependency: component
         )
         interactor.listener = listener
-        return ListHomeRouter(interactor: interactor, viewController: viewController, imageVerifivationBuildable: component.imageVerificationBuildable)
+        return ListHomeRouter(interactor: interactor,
+                              viewController: viewController,
+                              imageVerifivationBuildable: component.imageVerificationBuildable)
     }
 }

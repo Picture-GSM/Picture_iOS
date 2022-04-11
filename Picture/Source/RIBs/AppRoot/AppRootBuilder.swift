@@ -6,6 +6,7 @@
 //
 
 import RIBs
+import ListHome
 
 protocol AppRootDependency: Dependency {
 }

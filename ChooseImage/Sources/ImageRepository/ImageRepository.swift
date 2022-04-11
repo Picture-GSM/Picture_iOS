@@ -11,7 +11,7 @@ import UIKit
 import RealmSwift
 import RxRealm
 
-protocol ImageRepository{
+public protocol ImageRepository{
     func addImage(saveImage image : UIImage)
     func fetch() -> Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>
 }

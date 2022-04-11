@@ -10,9 +10,9 @@ import RealmSwift
 import Foundation
 import UIKit
 
-class Photo : Object{
-    @Persisted(primaryKey: true) var id : ObjectId //Primary Key
-    @Persisted var date = Date()// 등록일
+public class Photo : Object{
+    @Persisted(primaryKey: true) public var id : ObjectId //Primary Key
+    @Persisted public var date = Date()// 등록일
     
     convenience init(date : Date){
         self.init()

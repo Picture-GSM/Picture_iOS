@@ -6,6 +6,9 @@
 //
 
 import RIBs
+import Loading
+import ImageVerification
+import ImageRepository
 
 protocol ChooseImageDependency: Dependency {
     var loadingModalBuildable : LoadingModalBuildable {get}

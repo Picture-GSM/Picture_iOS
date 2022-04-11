@@ -9,7 +9,7 @@ import UIKit
 import PinLayout
 import UIUtil
 import FoundationUtil
-
+import Base
 
 class ListCollectionViewCell : BaseCollectionViewCell{
     

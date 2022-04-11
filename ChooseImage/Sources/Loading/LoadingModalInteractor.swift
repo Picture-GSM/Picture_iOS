@@ -19,7 +19,7 @@ protocol LoadingModalPresentable: Presentable {
     func update(origin originerImage : UIImage, piece pieceImage : UIImage)
 }
 
-protocol LoadingModalListener: AnyObject {
+public protocol LoadingModalListener: AnyObject {
     func didClearTrainingMachine(image : UIImage)
 }
 
