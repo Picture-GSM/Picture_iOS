@@ -32,7 +32,7 @@ final class ChooseImageInteractor: PresentableInteractor<ChooseImagePresentable>
     weak var router: ChooseImageRouting?
     weak var listener: ChooseImageListener?
     var presentationDelegateProxy: AdaptivePresentationControllerDelegateProxy
-
+    
 
     override init(presenter: ChooseImagePresentable) {
         self.presentationDelegateProxy = AdaptivePresentationControllerDelegateProxy()

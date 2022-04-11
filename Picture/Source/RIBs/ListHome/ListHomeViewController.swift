@@ -22,12 +22,11 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
     
     //MARK: - Listener
     weak var listener: ListHomePresentableListener?
-    
-    private var deleteState : Bool = true
-    
+        
     //MARK: - Properties
-    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
+    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: bounds.width/2 - 5 , height: bounds.height/3.25)
         $0.register(ListCollectionViewCell.self, forCellWithReuseIdentifier: "List")
         $0.showsVerticalScrollIndicator = false
         $0.collectionViewLayout = layout
@@ -43,12 +42,7 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
     override func addView() {
         view.addSubview(collectionView)
     }
-    //MARK: - delegate
-    override func delegate() {
-        collectionView.rx.setDelegate(self)
-            .disposed(by: disposeBag)
-    }
-    
+
     //MARK: - Setlayout
     override func setLayout() {
         collectionView.pin.all(view.pin.safeArea)
@@ -71,11 +65,5 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
         }
         photoSet.bind(to: collectionView.rx.realmChanges(dataSource))
             .disposed(by: disposeBag)
-    }
-}
-
-extension ListHomeViewController : UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: bounds.width/2 - 5 , height: bounds.height/3.25)
     }
 }
