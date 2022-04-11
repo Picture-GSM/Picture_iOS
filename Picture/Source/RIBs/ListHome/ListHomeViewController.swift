@@ -57,7 +57,10 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
 
     
     override func bindView() {
-
+        collectionView.rx.realmModelSelected(Photo.self)
+            .subscribe(onNext : { [weak self] in
+                self?.listener?.didTapCollectionViewRequest($0.id.stringValue)
+            }).disposed(by: disposeBag)
     }
     override func bindState() {
         let dataSource = RxCollectionViewRealmDataSource<Photo>(cellIdentifier: "List", cellType: ListCollectionViewCell.self){ cell , indexPath, item in
@@ -73,11 +76,6 @@ final class ListHomeViewController: BaseViewController, ListHomePresentable, Lis
         photoset
             .bind(to: collectionView.rx.realmChanges(dataSource))
             .disposed(by: disposeBag)
-        
-        collectionView.rx.realmModelSelected(Photo.self)
-            .subscribe(onNext : { [weak self] in
-                self?.listener?.didTapCollectionViewRequest($0.id.stringValue)
-            }).disposed(by: disposeBag)
     }
     
 }

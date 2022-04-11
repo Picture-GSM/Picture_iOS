@@ -26,8 +26,6 @@ protocol ListHomeListener: AnyObject {
 
 final class ListHomeInteractor: PresentableInteractor<ListHomePresentable>, ListHomeInteractable, ListHomePresentableListener,AdaptivePresentationControllerDelegate{
 
-
-
     
     weak var router: ListHomeRouting?
     weak var listener: ListHomeListener?

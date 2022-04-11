@@ -7,6 +7,8 @@
 
 import RIBs
 import RxSwift
+import RxRealm
+import RealmSwift
 
 protocol AppHomeRouting: ViewableRouting {
     func attachChooseImage()
@@ -15,7 +17,7 @@ protocol AppHomeRouting: ViewableRouting {
 
 protocol AppHomePresentable: Presentable {
     var listener: AppHomePresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+    func update(_ photoSet :Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>)
 }
 
 protocol AppHomeListener: AnyObject {
@@ -46,7 +48,7 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        // TODO: Implement business logic here.
+        presenter.update(dependency.imageRepository.fetch())
     }
 
     override func willResignActive() {
@@ -61,5 +63,4 @@ final class AppHomeInteractor: PresentableInteractor<AppHomePresentable>, AppHom
     func transportHomeDidClose() {
         router?.detachChooseImage()
     }
-    
 }

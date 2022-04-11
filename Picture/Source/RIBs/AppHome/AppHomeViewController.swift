@@ -17,6 +17,7 @@ import Reusable
 import PinLayout
 import RxRealmDataSources
 import RealmSwift
+import RxRealm
 
 //MARK: - Listener
 protocol AppHomePresentableListener: AnyObject {
@@ -24,10 +25,11 @@ protocol AppHomePresentableListener: AnyObject {
 }
 
 final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHomeViewControllable {
+
     
     //MARK: - Properties
     weak var listener: AppHomePresentableListener?
-    
+
     private let pageScrollView = PageScrollView(images: [
         UIImage(named: "PageImage1"),
         UIImage(named: "PageImage2"),
@@ -95,18 +97,16 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
             })
             .disposed(by: disposeBag)
     }
-    
-    override func bindState() {
+    //MARK: - Presenter
+    func update(_ photoSet: Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>) {
         let dataSource = RxCollectionViewRealmDataSource<Photo>(cellIdentifier: "AppHomeCell", cellType: AppHomeCollectionViewCell.self){ cell , indexPath, item in
             cell.label.text = Date().usingDate(time: item.date)
             cell.imageView.image = ImageDirectory.shared.loadImageFromDocumentDirecotry(imageName: "\(item.id).png")
         }
-        let realm = try! Realm()
-        let photoset = Observable.changeset(from: realm.objects(Photo.self)).share()
-        photoset
-            .bind(to: collectionView.rx.realmChanges(dataSource))
+        photoSet.bind(to: collectionView.rx.realmChanges(dataSource))
             .disposed(by: disposeBag)
     }
+    
 }
 
 //MARK: - Page
