@@ -8,7 +8,7 @@
 import RIBs
 import RIBsUtil
 import ListHome
-
+import AppHome
 
 protocol AppRootInteractable: Interactable ,
                                 AppHomeListener,

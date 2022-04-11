@@ -9,6 +9,7 @@ import RIBs
 import RxSwift
 import RxRealm
 import RealmSwift
+import ImageRepository
 
 protocol AppHomeRouting: ViewableRouting {
     func attachChooseImage()
@@ -20,7 +21,7 @@ protocol AppHomePresentable: Presentable {
     func update(_ photoSet :Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>)
 }
 
-protocol AppHomeListener: AnyObject {
+public protocol AppHomeListener: AnyObject {
     // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
 }
 protocol AppHomeInteractorDependency{

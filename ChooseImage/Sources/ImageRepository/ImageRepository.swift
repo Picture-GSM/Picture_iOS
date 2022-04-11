@@ -16,9 +16,9 @@ public protocol ImageRepository{
     func fetch() -> Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>
 }
 
-final class ImageRepositoryImp: ImageRepository{
+public final class ImageRepositoryImp: ImageRepository{
     
-    func addImage(saveImage image: UIImage) {
+    public func addImage(saveImage image: UIImage) {
         let task = Photo(date: Date())
         try! realm.write{
             realm.add(task)
@@ -26,12 +26,12 @@ final class ImageRepositoryImp: ImageRepository{
         }
     }
     
-    func fetch() -> Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>{
+    public func fetch() -> Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>{
         return Observable.changeset(from: realm.objects(Photo.self)).share()
     }
     private let realm = try! Realm()
     
-    init(){
+    public init(){
         
     }
 }

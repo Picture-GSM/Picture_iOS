@@ -24,7 +24,7 @@ protocol ChooseImagePresentable: Presentable {
     var listener: ChooseImagePresentableListener? { get set }
 }
 
-protocol ChooseImageListener: AnyObject {
+public protocol ChooseImageListener: AnyObject {
     func transportHomeDidClose()
 }
 

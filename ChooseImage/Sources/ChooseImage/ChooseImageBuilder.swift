@@ -10,7 +10,7 @@ import Loading
 import ImageVerification
 import ImageRepository
 
-protocol ChooseImageDependency: Dependency {
+public protocol ChooseImageDependency: Dependency {
     var loadingModalBuildable : LoadingModalBuildable {get}
     var imageVerificationBuildable : ImageVerificationBuildable {get}
     var imageRepository: ImageRepository {get}
@@ -26,17 +26,17 @@ final class ChooseImageComponent: Component<ChooseImageDependency> , ImageVerifi
 
 // MARK: - Builder
 
-protocol ChooseImageBuildable: Buildable {
+public protocol ChooseImageBuildable: Buildable {
     func build(withListener listener: ChooseImageListener) -> ViewableRouting
 }
 
-final class ChooseImageBuilder: Builder<ChooseImageDependency>, ChooseImageBuildable {
+public final class ChooseImageBuilder: Builder<ChooseImageDependency>, ChooseImageBuildable {
     
-    override init(dependency: ChooseImageDependency) {
+    public override init(dependency: ChooseImageDependency) {
         super.init(dependency: dependency)
     }
     
-    func build(withListener listener: ChooseImageListener) -> ViewableRouting {
+    public func build(withListener listener: ChooseImageListener) -> ViewableRouting {
         let component = ChooseImageComponent(dependency: dependency)
         let viewController = ChooseImageViewController()
         

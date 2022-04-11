@@ -8,6 +8,7 @@
 import RIBs
 import RIBsUtil
 import UIUtil
+import ChooseImage
 
 protocol AppHomeInteractable: Interactable ,ChooseImageListener{
     var router: AppHomeRouting? { get set }

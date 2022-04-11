@@ -9,7 +9,7 @@ import UIKit
 import Then
 import Reusable
 import UIUtil
-
+import Base
 final class AppHomeCollectionViewCell : BaseCollectionViewCell{
     //MARK: - Properties
     private let bgView = UIView().then{
