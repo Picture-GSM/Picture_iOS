@@ -7,6 +7,12 @@
 
 import RIBs
 import RIBsUtil
+import ImageVerification
+import ListHome
+import ChooseImage
+import Loading
+import ImageRepository
+import AppHome
 
 final class AppRootComponent: Component<AppRootDependency>, AppHomeDependency , ListHomeDependency, ChooseImageDependency, LoadingModalDependency, ImageVerificationDependency{
     
