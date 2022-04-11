@@ -1,10 +1,3 @@
-//
-//  ListHomeBuilder.swift
-//  Picture
-//
-//  Created by Ji-hoon Ahn on 2022/03/17.
-//
-
 import RIBs
 import ImageVerification
 import ImageRepository
@@ -20,11 +13,6 @@ final class ListHomeComponent: Component<ListHomeDependency>, ListHomeInteractor
 }
 
 // MARK: - Builder
-
-public protocol ListHomeBuildable: Buildable {
-    func build(withListener listener: ListHomeListener) -> ViewableRouting
-}
-
 public final class ListHomeBuilder: Builder<ListHomeDependency>, ListHomeBuildable {
 
     public override init(dependency: ListHomeDependency) {

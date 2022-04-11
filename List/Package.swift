@@ -11,6 +11,9 @@ let package = Package(
         .library(
             name: "ListHome",
             targets: ["ListHome"]),
+        .library(
+            name: "ListHomeImp",
+            targets: ["ListHomeImp"]),
     ],
     dependencies: [
         .package(name: "RIBs", url: "https://github.com/uber/RIBs", .exactItem("0.10.0")),
@@ -28,15 +31,25 @@ let package = Package(
         .target(
             name: "ListHome",
             dependencies: [
+                "RIBs"
+            ]
+        ),
+        .target(
+            name: "ListHomeImp",
+            dependencies: [
                 "RIBs",
                 "PinLayout",
                 "RxRealm",
                 "RxSwift",
                 "Then",
+                "ListHome",
                 .product(name: "RxRealmDataSources", package: "RxRealmDataSources"),
                 .product(name: "UIUtil", package: "Platform"),
                 .product(name: "RIBsUtil", package: "Platform"),
                 .product(name: "ImageVerification", package: "ChooseImage"),
+            ],
+            resources: [
+                .process("Resources")
             ]
         ),
     ]

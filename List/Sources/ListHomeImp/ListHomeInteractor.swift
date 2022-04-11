@@ -22,10 +22,6 @@ protocol ListHomePresentable: Presentable {
     func update(_ photoSet :Observable<(AnyRealmCollection<Results<Photo>.ElementType>, RealmChangeset?)>)
 }
 
-public protocol ListHomeListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
-}
-
 protocol ListHomeInteractorDependency{
     var imageRepository : ImageRepository {get}
 }
