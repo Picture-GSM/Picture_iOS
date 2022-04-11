@@ -84,19 +84,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EE9F6A2F27DB8F5A007F5F48 /* RIBs */ = {
-			isa = PBXGroup;
-			children = (
-				EEDBCD1127E2B85A00B9B9A3 /* AppRoot */,
-			);
-			path = RIBs;
-			sourceTree = "<group>";
-		};
 		EE9F6A3027DB8F84007F5F48 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				EEE5E41227D9FFA9006FDD9E /* AppDelegate */,
-				EE9F6A2F27DB8F5A007F5F48 /* RIBs */,
+				EEDBCD1127E2B85A00B9B9A3 /* AppRoot */,
 			);
 			path = Source;
 			sourceTree = "<group>";
