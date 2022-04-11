@@ -49,8 +49,9 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         $0.numberOfLines = 0
         $0.font  = .systemFont(ofSize: 13)
     }
-    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
+    private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: .init()).then{
         let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: bounds.width/3.75 , height: bounds.width/3.75)
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .horizontal
         $0.showsHorizontalScrollIndicator = false
@@ -84,11 +85,7 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         collectionView.pin.below(of: titleLabel).left().right().height(140)
         addBtn.pin.bottom(view.pin.safeArea.bottom + 20).right(20).size(50)
     }
-    override func delegate() {
-        collectionView.rx.setDelegate(self)
-            .disposed(by: disposeBag)
-    }
-    
+
     //MARK: - Bind
     override func bindView() {
         addBtn.rx.tap
@@ -106,12 +103,5 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
         photoSet.bind(to: collectionView.rx.realmChanges(dataSource))
             .disposed(by: disposeBag)
     }
-    
 }
 
-//MARK: - Page
-extension AppHomeViewController : UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: bounds.width/3.75 , height: bounds.width/3.75)
-    }
-}
