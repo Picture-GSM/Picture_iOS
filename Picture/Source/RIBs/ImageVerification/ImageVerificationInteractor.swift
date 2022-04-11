@@ -15,7 +15,7 @@ protocol ImageVerificationRouting: ViewableRouting {
 
 protocol ImageVerificationPresentable: Presentable {
     var listener: ImageVerificationPresentableListener? { get set }
-    func update(image : UIImage, imageStateAlready : Bool)
+    func update(image : UIImage)
 }
 
 protocol ImageVerificationListener: AnyObject {
@@ -54,7 +54,7 @@ final class ImageVerificationInteractor: PresentableInteractor<ImageVerification
 
     override func didBecomeActive() {
         super.didBecomeActive()
-        presenter.update(image: image, imageStateAlready: imageStateAlready)
+        presenter.update(image: image)
     }
 
     override func willResignActive() {

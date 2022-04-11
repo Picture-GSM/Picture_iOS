@@ -19,14 +19,8 @@ protocol ImageVerificationPresentableListener: AnyObject {
 
 final class ImageVerificationViewController: BaseViewController, ImageVerificationPresentable, ImageVerificationViewControllable {
     
-
-
-    let localReam = try! Realm()
-    
     weak var listener: ImageVerificationPresentableListener?
-    
-    private var imageStateAlready : Bool = false
-    
+        
     private let imageView = UIImageView().then{
         $0.backgroundColor = .lightGray
         $0.contentMode = .scaleAspectFill
@@ -50,15 +44,13 @@ final class ImageVerificationViewController: BaseViewController, ImageVerificati
     private func didTapClose(){
         listener?.didTapClose()
     }
-    
     @objc
     private func didTapSave(){
         listener?.didTapSaveSuccess(imageView.image ?? UIImage())
     }
     
     //MARK: - Presenter
-    func update(image: UIImage, imageStateAlready: Bool) {
+    func update(image: UIImage) {
         imageView.image = image
-        self.imageStateAlready = imageStateAlready
     }
 }
