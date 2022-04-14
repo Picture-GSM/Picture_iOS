@@ -15,6 +15,7 @@ import RxRealm
 import RxRealmDataSources
 import ImageRepository
 import Base
+import ImageEntity
 
 protocol ListHomePresentableListener: AnyObject {
     func didTapCollectionViewRequest(_ id : String)

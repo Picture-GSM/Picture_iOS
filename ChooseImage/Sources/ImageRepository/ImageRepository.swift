@@ -10,6 +10,7 @@ import RxSwift
 import UIKit
 import RealmSwift
 import RxRealm
+import ImageEntity
 
 public protocol ImageRepository{
     func addImage(saveImage image : UIImage)
@@ -19,7 +20,7 @@ public protocol ImageRepository{
 public final class ImageRepositoryImp: ImageRepository{
     
     public func addImage(saveImage image: UIImage) {
-        let task = Photo(date: Date())
+        let task = Photo(value: Date())
         try! realm.write{
             realm.add(task)
             ImageDirectory.shared.saveImageToDocumentDirectory(imageName: "\(task.id).png", image: image)

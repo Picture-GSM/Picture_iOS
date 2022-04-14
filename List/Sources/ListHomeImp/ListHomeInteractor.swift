@@ -12,6 +12,7 @@ import UIUtil
 import RxRealm
 import ImageRepository
 import ListHome
+import ImageEntity
 
 protocol ListHomeRouting: ViewableRouting {
     func attachImageVerification(id : String)

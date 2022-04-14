@@ -21,6 +21,7 @@ import RealmSwift
 import RxRealm
 import ImageRepository
 import Base
+import ImageEntity
 
 //MARK: - Listener
 protocol AppHomePresentableListener: AnyObject {

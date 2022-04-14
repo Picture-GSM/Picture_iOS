@@ -26,8 +26,6 @@ protocol ImageVerificationInteractorDependency{
 
 final class ImageVerificationInteractor: PresentableInteractor<ImageVerificationPresentable>, ImageVerificationInteractable, ImageVerificationPresentableListener {
 
-    
-
     weak var router: ImageVerificationRouting?
     weak var listener: ImageVerificationListener?
 

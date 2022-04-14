@@ -10,6 +10,7 @@ import RxSwift
 import RxRealm
 import RealmSwift
 import ImageRepository
+import ImageEntity
 
 protocol AppHomeRouting: ViewableRouting {
     func attachChooseImage()
