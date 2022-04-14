@@ -15,7 +15,6 @@
 		EE51DDC02803FBC300FA18EA /* ChooseImageImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDBF2803FBC300FA18EA /* ChooseImageImp */; };
 		EE51DDC2280400C100FA18EA /* LoadingImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDC1280400C100FA18EA /* LoadingImp */; };
 		EE51DDCF280426DB00FA18EA /* ImageEntity in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDCE280426DB00FA18EA /* ImageEntity */; };
-		EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */ = {isa = PBXBuildFile; productRef = EE83C2D327E4259A00CB0C78 /* Reusable */; };
 		EEC7E8D02803C7F4006470C8 /* ChooseImage in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8CF2803C7F4006470C8 /* ChooseImage */; };
 		EEC7E8D22803D5CD006470C8 /* ImageRepository in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8D12803D5CD006470C8 /* ImageRepository */; };
 		EEC7E8D42803D5E2006470C8 /* ImageVerification in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8D32803D5E2006470C8 /* ImageVerification */; };
@@ -87,7 +86,6 @@
 				EE51DDBE2803F46600FA18EA /* ImageVerificationImp in Frameworks */,
 				EEC90AD427FE7FE7005C2D0A /* NVActivityIndicatorView in Frameworks */,
 				EEED8B9227F1577700A7B052 /* RIBsUtil in Frameworks */,
-				EE83C2D427E4259A00CB0C78 /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +200,6 @@
 				EEEA2C6827D9E46F00356B33 /* PinLayout */,
 				EECB9AEE27E02FE000FF2124 /* RxRealm */,
 				EECB9AF327E034C100FF2124 /* RIBs */,
-				EE83C2D327E4259A00CB0C78 /* Reusable */,
 				EEED8B9127F1577700A7B052 /* RIBsUtil */,
 				EEED8B9327F1577700A7B052 /* RxUtil */,
 				EEED8B9527F1577700A7B052 /* UIUtil */,
@@ -255,7 +252,6 @@
 				EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */,
 				EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */,
 				EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */,
-				EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */,
 				EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */,
 				EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
@@ -511,14 +507,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AliSoftware/Reusable.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kciter/Floaty.git";
@@ -605,11 +593,6 @@
 		EE51DDCE280426DB00FA18EA /* ImageEntity */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ImageEntity;
-		};
-		EE83C2D327E4259A00CB0C78 /* Reusable */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EE83C2D227E4259A00CB0C78 /* XCRemoteSwiftPackageReference "Reusable" */;
-			productName = Reusable;
 		};
 		EEC7E8CF2803C7F4006470C8 /* ChooseImage */ = {
 			isa = XCSwiftPackageProductDependency;

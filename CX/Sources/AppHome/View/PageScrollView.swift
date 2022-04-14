@@ -17,7 +17,6 @@ class PageScrollView : UIView{
     private let images : [UIImage?]
     
     private let scrollView = UIScrollView().then{
-        $0.backgroundColor = .blue
         $0.bounces = false
         $0.isScrollEnabled = true
         $0.isPagingEnabled = true

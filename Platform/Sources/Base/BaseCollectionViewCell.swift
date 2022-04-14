@@ -6,10 +6,9 @@
 //
 
 import UIKit
-import Reusable
 import RxSwift
 
-open class BaseCollectionViewCell : UICollectionViewCell,Reusable{
+open class BaseCollectionViewCell : UICollectionViewCell{
     
     open var disposeBag = DisposeBag()
     
