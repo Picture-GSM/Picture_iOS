@@ -16,6 +16,7 @@
 		EE51DDC02803FBC300FA18EA /* ChooseImageImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDBF2803FBC300FA18EA /* ChooseImageImp */; };
 		EE51DDC2280400C100FA18EA /* LoadingImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDC1280400C100FA18EA /* LoadingImp */; };
 		EE51DDCF280426DB00FA18EA /* ImageEntity in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDCE280426DB00FA18EA /* ImageEntity */; };
+		EE8103232816935100C2F1E8 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = EE8103222816935100C2F1E8 /* Swinject */; };
 		EEC7E8D02803C7F4006470C8 /* ChooseImage in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8CF2803C7F4006470C8 /* ChooseImage */; };
 		EEC7E8D22803D5CD006470C8 /* ImageRepository in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8D12803D5CD006470C8 /* ImageRepository */; };
 		EEC7E8D42803D5E2006470C8 /* ImageVerification in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8D32803D5E2006470C8 /* ImageVerification */; };
@@ -91,6 +92,7 @@
 				EEC90AD427FE7FE7005C2D0A /* NVActivityIndicatorView in Frameworks */,
 				EEED8B9227F1577700A7B052 /* RIBsUtil in Frameworks */,
 				62564DE21FB0F9E13FFA85F7 /* Pods_Picture.framework in Frameworks */,
+				EE8103232816935100C2F1E8 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +105,6 @@
 				597F08C084CD7525CDA5E488 /* Pods-Picture.debug.xcconfig */,
 				BEEFB97C55094CEFB0E34743 /* Pods-Picture.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -235,6 +236,7 @@
 				EE51DDBF2803FBC300FA18EA /* ChooseImageImp */,
 				EE51DDC1280400C100FA18EA /* LoadingImp */,
 				EE51DDCE280426DB00FA18EA /* ImageEntity */,
+				EE8103222816935100C2F1E8 /* Swinject */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -265,13 +267,14 @@
 			);
 			mainGroup = EEEA2C3327D9DCE000356B33;
 			packageReferences = (
-				EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture.git" */,
+				EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture" */,
 				EEEA2C5927D9E42300356B33 /* XCRemoteSwiftPackageReference "Then" */,
-				EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout.git" */,
-				EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm.git" */,
-				EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs.git" */,
-				EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty.git" */,
-				EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */,
+				EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */,
+				EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */,
+				EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */,
+				EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */,
+				EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				EE810321281690B200C2F1E8 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
 			projectDirPath = "";
@@ -552,7 +555,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty.git" */ = {
+		EE810321281690B200C2F1E8 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kciter/Floaty.git";
 			requirement = {
@@ -560,7 +571,7 @@
 				kind = branch;
 			};
 		};
-		EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */ = {
+		EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
 			requirement = {
@@ -568,7 +579,7 @@
 				kind = branch;
 			};
 		};
-		EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm.git" */ = {
+		EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxRealm.git";
 			requirement = {
@@ -576,7 +587,7 @@
 				kind = branch;
 			};
 		};
-		EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs.git" */ = {
+		EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/uber/RIBs.git";
 			requirement = {
@@ -584,7 +595,7 @@
 				kind = branch;
 			};
 		};
-		EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture.git" */ = {
+		EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture.git";
 			requirement = {
@@ -600,7 +611,7 @@
 				kind = branch;
 			};
 		};
-		EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout.git" */ = {
+		EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/layoutBox/PinLayout.git";
 			requirement = {
@@ -639,6 +650,11 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = ImageEntity;
 		};
+		EE8103222816935100C2F1E8 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE810321281690B200C2F1E8 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
 		EEC7E8CF2803C7F4006470C8 /* ChooseImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ChooseImage;
@@ -657,7 +673,7 @@
 		};
 		EEC90AD327FE7FE7005C2D0A /* NVActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */;
+			package = EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
 		};
 		EEC90B1327FEEFC9005C2D0A /* RxRealmDataSources */ = {
@@ -670,17 +686,17 @@
 		};
 		EECB9AEE27E02FE000FF2124 /* RxRealm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm.git" */;
+			package = EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */;
 			productName = RxRealm;
 		};
 		EECB9AF327E034C100FF2124 /* RIBs */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs.git" */;
+			package = EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */;
 			productName = RIBs;
 		};
 		EEEA2C5727D9E41500356B33 /* RxGesture */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture.git" */;
+			package = EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture" */;
 			productName = RxGesture;
 		};
 		EEEA2C5A27D9E42300356B33 /* Then */ = {
@@ -690,7 +706,7 @@
 		};
 		EEEA2C6827D9E46F00356B33 /* PinLayout */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout.git" */;
+			package = EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */;
 			productName = PinLayout;
 		};
 		EEED8B9127F1577700A7B052 /* RIBsUtil */ = {

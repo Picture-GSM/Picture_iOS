@@ -7,11 +7,23 @@
 
 import UIKit
 import RIBs
+import Swinject
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate  {
 
     var window: UIWindow?
+    
+    let countainer : Container = {
+        let container = Container()
+        container.register(AppComponent.self) { _ in AppComponent()}
+        
+        container.register(AppRootBuilder.self) { resolver in
+            let result = AppRootBuilder(dependency: resolver.resolve(AppComponent.self)!)
+            return result
+        }
+        return container
+    }()
     
     private var launchRouter : LaunchRouting?
 
@@ -19,11 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
-        let result = AppRootBuilder(dependency: AppComponent()).build()
+        let result = countainer.resolve(AppRootBuilder.self)?.build()
         self.launchRouter = result
         //MARK: - Image Setting
-        result.launch(from: window)
-        
+        result?.launch(from: window)
         return true
     }
     
