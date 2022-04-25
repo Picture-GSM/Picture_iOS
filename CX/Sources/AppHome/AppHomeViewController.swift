@@ -21,6 +21,7 @@ import RxRealm
 import ImageRepository
 import Base
 import ImageEntity
+import PageImageScrollView
 
 //MARK: - Listener
 protocol AppHomePresentableListener: AnyObject {
@@ -32,13 +33,17 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     
     //MARK: - Properties
     weak var listener: AppHomePresentableListener?
-
-    private let pageScrollView = PageScrollView(images: [
-        UIImage(named: "PageImage1"),
-        UIImage(named: "PageImage2"),
-        UIImage(named: "PageImage3"),
-        UIImage(named: "PageImage4")
-    ])
+    
+    private let pageImageScrollView = PageImageScrollView(
+        pageIndicatorTintColor: .white,
+        currentPageIndicatorTintColor: .systemBlue,
+        images:  [
+            UIImage(named: "PageImage1"),
+            UIImage(named: "PageImage2"),
+            UIImage(named: "PageImage3"),
+            UIImage(named: "PageImage4")
+        ]).then{$0.translatesAutoresizingMaskIntoConstraints = true}
+    
     
     private let imagePicker = UIImagePickerController().then{
         $0.sourceType = .photoLibrary
@@ -79,12 +84,12 @@ final class AppHomeViewController: BaseViewController, AppHomePresentable, AppHo
     }
     
     override func addView() {
-        view.addSubviews(pageScrollView,titleLabel,collectionView,addBtn)
+        view.addSubviews(pageImageScrollView,titleLabel,collectionView,addBtn)
     }
     
     override func setLayout() {
-        pageScrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
-        titleLabel.pin.left(bounds.width/18.75).below(of: pageScrollView).width(100%).height(20)
+        pageImageScrollView.pin.top(self.view.pin.safeArea.top).right().left().height(bounds.height/2)
+        titleLabel.pin.left(bounds.width/18.75).below(of: pageImageScrollView).width(100%).height(20)
         collectionView.pin.below(of: titleLabel).left().right().height(140)
         addBtn.pin.bottom(view.pin.safeArea.bottom + 20).right(20).size(50)
     }

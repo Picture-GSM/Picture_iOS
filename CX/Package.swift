@@ -18,6 +18,7 @@ let package = Package(
         .package(name: "RxRealm", url: "https://github.com/RxSwiftCommunity/RxRealm", .exactItem("5.0.5")),
         .package(name: "RxSwift", url: "https://github.com/ReactiveX/RxSwift", .exactItem("6.5.0")),
         .package(name: "Then", url: "https://github.com/devxoul/Then", .exactItem("2.7.0")),
+        .package(name: "PageImageScrollView", url: "https://github.com/JiHoonAHN/PageImageScrollView", .exactItem("0.1.7")),
         .package(path: "../Platform"),
         .package(path: "../RxRealmDataSources"),
         .package(path: "../ChooseImage")
@@ -30,6 +31,7 @@ let package = Package(
             dependencies: [
                 "RIBs",
                 "PinLayout",
+                "PageImageScrollView",
                 "RxRealm",
                 "RxSwift",
                 "Then",

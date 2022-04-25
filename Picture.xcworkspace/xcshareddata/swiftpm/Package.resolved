@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "pageimagescrollview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JiHoonAHN/PageImageScrollView.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4e0c754e853662ebfb51d59b32bce60105a3f02a"
+      }
+    },
+    {
       "identity" : "pinlayout",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/layoutBox/PinLayout.git",
