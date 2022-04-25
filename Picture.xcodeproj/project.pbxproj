@@ -16,6 +16,7 @@
 		EE51DDC02803FBC300FA18EA /* ChooseImageImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDBF2803FBC300FA18EA /* ChooseImageImp */; };
 		EE51DDC2280400C100FA18EA /* LoadingImp in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDC1280400C100FA18EA /* LoadingImp */; };
 		EE51DDCF280426DB00FA18EA /* ImageEntity in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDCE280426DB00FA18EA /* ImageEntity */; };
+		EE8058332816BCE700D7D6AF /* PageImageScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = EE8058322816BCE700D7D6AF /* PageImageScrollView */; };
 		EE8103232816935100C2F1E8 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = EE8103222816935100C2F1E8 /* Swinject */; };
 		EEC7E8D02803C7F4006470C8 /* ChooseImage in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8CF2803C7F4006470C8 /* ChooseImage */; };
 		EEC7E8D22803D5CD006470C8 /* ImageRepository in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8D12803D5CD006470C8 /* ImageRepository */; };
@@ -86,6 +87,7 @@
 				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
 				EE51DDC2280400C100FA18EA /* LoadingImp in Frameworks */,
 				EEC90B1627FEFEA7005C2D0A /* FoundationUtil in Frameworks */,
+				EE8058332816BCE700D7D6AF /* PageImageScrollView in Frameworks */,
 				EEED8B9427F1577700A7B052 /* RxUtil in Frameworks */,
 				EEC7E8D02803C7F4006470C8 /* ChooseImage in Frameworks */,
 				EE51DDBE2803F46600FA18EA /* ImageVerificationImp in Frameworks */,
@@ -237,6 +239,7 @@
 				EE51DDC1280400C100FA18EA /* LoadingImp */,
 				EE51DDCE280426DB00FA18EA /* ImageEntity */,
 				EE8103222816935100C2F1E8 /* Swinject */,
+				EE8058322816BCE700D7D6AF /* PageImageScrollView */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -275,6 +278,7 @@
 				EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */,
 				EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				EE810321281690B200C2F1E8 /* XCRemoteSwiftPackageReference "Swinject" */,
+				EE8058312816BCE700D7D6AF /* XCRemoteSwiftPackageReference "PageImageScrollView" */,
 			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
 			projectDirPath = "";
@@ -555,6 +559,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		EE8058312816BCE700D7D6AF /* XCRemoteSwiftPackageReference "PageImageScrollView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JiHoonAHN/PageImageScrollView.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		EE810321281690B200C2F1E8 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
@@ -649,6 +661,11 @@
 		EE51DDCE280426DB00FA18EA /* ImageEntity */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ImageEntity;
+		};
+		EE8058322816BCE700D7D6AF /* PageImageScrollView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE8058312816BCE700D7D6AF /* XCRemoteSwiftPackageReference "PageImageScrollView" */;
+			productName = PageImageScrollView;
 		};
 		EE8103222816935100C2F1E8 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
