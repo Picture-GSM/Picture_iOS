@@ -1,0 +1,104 @@
+{
+  "pins" : [
+    {
+      "identity" : "floaty",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kciter/Floaty.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f8f6cf9970a3d92e98fcc2cf123b1bdef15e8778"
+      }
+    },
+    {
+      "identity" : "nvactivityindicatorview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ninjaprox/NVActivityIndicatorView.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "bcb52371f2259254bac6690f92bb474a61768c47"
+      }
+    },
+    {
+      "identity" : "pinlayout",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/layoutBox/PinLayout.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e02435e1076aaabf6ffc7f2da89150bac575598b"
+      }
+    },
+    {
+      "identity" : "realm-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-core",
+      "state" : {
+        "revision" : "dcd3788f75bafb0cc397d145e1651aab3ad4bf0e",
+        "version" : "11.12.0"
+      }
+    },
+    {
+      "identity" : "realm-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-swift.git",
+      "state" : {
+        "revision" : "628cf20632d65d3a3e90ae8aaf52bce596d7ad8f",
+        "version" : "10.24.2"
+      }
+    },
+    {
+      "identity" : "ribs",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/uber/RIBs.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "de683812acb9df5dad84cc2cdbac848f683bd027"
+      }
+    },
+    {
+      "identity" : "rxgesture",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxGesture.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "53ebed7fe3f15021bf518d9d1e8b147e2ddffa0a"
+      }
+    },
+    {
+      "identity" : "rxrealm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/RxSwiftCommunity/RxRealm.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5431fe18e341c41b9eeb56cf68e709ba8e54d4c9"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
+        "version" : "6.5.0"
+      }
+    },
+    {
+      "identity" : "swinject",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swinject/Swinject.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "f10b6e9ebff440f985c43008f7c2d097639fcb81"
+      }
+    },
+    {
+      "identity" : "then",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/devxoul/Then",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e421a7b3440a271834337694e6050133a3958bc7"
+      }
+    }
+  ],
+  "version" : 2
+}
