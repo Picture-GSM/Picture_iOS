@@ -19,7 +19,7 @@ let package = Package(
             targets: ["Loading"]),
         .library(
             name: "LoadingImp",
-            targets: ["LoadingImp"]),
+            targets: ["LoadingImp","PytorchModule"]),
         .library(
             name: "ImageVerification",
             targets: ["ImageVerification"]),
@@ -43,8 +43,6 @@ let package = Package(
         .package(path: "../Platform"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "ChooseImage",
             dependencies: [
@@ -80,11 +78,20 @@ let package = Package(
                 "NVActivityIndicatorView",
                 "RxSwift",
                 "Then",
+                "PytorchModule",
                 "PinLayout",
                 "RIBs",
                 "Loading",
                 .product(name: "UIUtil", package: "Platform"),
                 .product(name: "Base", package: "Platform"),
+            ],
+            path: "Sources/LoadingImp"
+        ),
+        .target(
+            name: "PytorchModule",
+            publicHeadersPath: "TorchBridge/Include",
+            linkerSettings: [
+                .linkedFramework("LibTorch"),
             ]
         ),
         .target(

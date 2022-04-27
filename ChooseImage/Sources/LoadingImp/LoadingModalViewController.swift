@@ -13,6 +13,7 @@ import NVActivityIndicatorView
 import Then
 import Base
 
+
 protocol LoadingModalPresentableListener: AnyObject {
     func didClearTrainingMachine(_ image : UIImage)
 }
