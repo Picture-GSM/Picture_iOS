@@ -21,6 +21,9 @@ let package = Package(
             name: "LoadingImp",
             targets: ["LoadingImp"]),
         .library(
+            name: "LoadingRepository",
+            targets: ["LoadingRepository"]),
+        .library(
             name: "ImageVerification",
             targets: ["ImageVerification"]),
         .library(
@@ -43,8 +46,12 @@ let package = Package(
         .package(path: "../Platform"),
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
+        .target(
+            name: "LoadingRepository",
+            dependencies: [
+                
+            ]
+        ),
         .target(
             name: "ChooseImage",
             dependencies: [
