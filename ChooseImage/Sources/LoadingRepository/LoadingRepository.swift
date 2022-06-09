@@ -6,5 +6,7 @@ public protocol LoadingRepository {
 
 public final class LoadingRepositoryImp : LoadingRepository{
     
-    public init(){}
+    public init(){
+
+    }
 }
