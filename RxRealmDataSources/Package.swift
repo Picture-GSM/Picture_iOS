@@ -13,7 +13,7 @@ let package = Package(
             targets: ["RxRealmDataSources"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/ReactiveX/RxSwift", .exactItem("6.5.0")),
+        .package(url: "https://github.com/ReactiveX/RxSwift", branch: "main"),
         .package(url: "https://github.com/RxSwiftCommunity/RxRealm", branch: "main")
     ],
     targets: [

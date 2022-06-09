@@ -59,7 +59,7 @@ final class LoadingModalViewController: BaseViewController, LoadingModalPresenta
     //MARK: - 임의
     private func test(){
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
-            self.listener?.didClearTrainingMachine(self.originerImage)
+            self.listener?.didClearTrainingMachine(self.originerImage.conbineWith(image: self.pieceImage))
             self.activityIndicator.stopAnimating()
         }
     }

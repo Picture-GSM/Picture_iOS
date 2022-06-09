@@ -16,18 +16,16 @@ let package = Package(
             targets: ["ListHomeImp"]),
     ],
     dependencies: [
-        .package(name: "RIBs", url: "https://github.com/uber/RIBs", .exactItem("0.10.0")),
-        .package(name: "PinLayout", url: "https://github.com/layoutBox/PinLayout", .exactItem("1.10.2")),
-        .package(name: "RxRealm", url: "https://github.com/RxSwiftCommunity/RxRealm", .exactItem("5.0.5")),
-        .package(name: "RxSwift", url: "https://github.com/ReactiveX/RxSwift", .exactItem("6.5.0")),
-        .package(name: "Then", url: "https://github.com/devxoul/Then", .exactItem("2.7.0")),
+        .package( url: "https://github.com/uber/RIBs", branch: "main"),
+        .package( url: "https://github.com/layoutBox/PinLayout", branch: "master"),
+        .package( url: "https://github.com/RxSwiftCommunity/RxRealm", branch: "main"),
+        .package(url: "https://github.com/ReactiveX/RxSwift", branch: "main"),
+        .package(url: "https://github.com/devxoul/Then", branch: "master"),
         .package(path: "../Platform"),
         .package(path: "../RxRealmDataSources"),
         .package(path: "../ChooseImage")
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "ListHome",
             dependencies: [
@@ -49,9 +47,6 @@ let package = Package(
                 .product(name: "ImageVerification", package: "ChooseImage"),
                 .product(name: "ImageRepository", package: "ChooseImage"),
                 .product(name: "ImageEntity", package: "ChooseImage"),
-            ],
-            resources: [
-                .process("Resources")
             ]
         ),
     ]

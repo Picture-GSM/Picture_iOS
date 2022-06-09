@@ -17,6 +17,14 @@
 		EE51DDCF280426DB00FA18EA /* ImageEntity in Frameworks */ = {isa = PBXBuildFile; productRef = EE51DDCE280426DB00FA18EA /* ImageEntity */; };
 		EE8058332816BCE700D7D6AF /* PageImageScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = EE8058322816BCE700D7D6AF /* PageImageScrollView */; };
 		EE8103232816935100C2F1E8 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = EE8103222816935100C2F1E8 /* Swinject */; };
+		EEB7BE7228519F9000FCC459 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = EEB7BE7128519F9000FCC459 /* RxBlocking */; };
+		EEB7BE7428519F9000FCC459 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = EEB7BE7328519F9000FCC459 /* RxCocoa */; };
+		EEB7BE7628519F9000FCC459 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = EEB7BE7528519F9000FCC459 /* RxRelay */; };
+		EEB7BE7828519F9000FCC459 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EEB7BE7728519F9000FCC459 /* RxSwift */; };
+		EEB7BE7B28519FB900FCC459 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EEB7BE7A28519FB900FCC459 /* RxRealm */; };
+		EEB7BE7E28519FDE00FCC459 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EEB7BE7D28519FDE00FCC459 /* RIBs */; };
+		EEB7BE812851B4A600FCC459 /* LoadingRepository in Frameworks */ = {isa = PBXBuildFile; productRef = EEB7BE802851B4A600FCC459 /* LoadingRepository */; };
+		EEB7BE902851D19B00FCC459 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EEB7BE8F2851D19B00FCC459 /* Then */; };
 		EEC7E8D02803C7F4006470C8 /* ChooseImage in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8CF2803C7F4006470C8 /* ChooseImage */; };
 		EEC7E8D22803D5CD006470C8 /* ImageRepository in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8D12803D5CD006470C8 /* ImageRepository */; };
 		EEC7E8D42803D5E2006470C8 /* ImageVerification in Frameworks */ = {isa = PBXBuildFile; productRef = EEC7E8D32803D5E2006470C8 /* ImageVerification */; };
@@ -24,8 +32,6 @@
 		EEC90AD427FE7FE7005C2D0A /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = EEC90AD327FE7FE7005C2D0A /* NVActivityIndicatorView */; };
 		EEC90B1427FEEFC9005C2D0A /* RxRealmDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = EEC90B1327FEEFC9005C2D0A /* RxRealmDataSources */; };
 		EEC90B1627FEFEA7005C2D0A /* FoundationUtil in Frameworks */ = {isa = PBXBuildFile; productRef = EEC90B1527FEFEA7005C2D0A /* FoundationUtil */; };
-		EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AEE27E02FE000FF2124 /* RxRealm */; };
-		EECB9AF427E034C100FF2124 /* RIBs in Frameworks */ = {isa = PBXBuildFile; productRef = EECB9AF327E034C100FF2124 /* RIBs */; };
 		EEDBCD1627E2B87100B9B9A3 /* AppRootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1227E2B87100B9B9A3 /* AppRootRouter.swift */; };
 		EEDBCD1727E2B87100B9B9A3 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1327E2B87100B9B9A3 /* RootTabBarController.swift */; };
 		EEDBCD1827E2B87100B9B9A3 /* AppRootBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDBCD1427E2B87100B9B9A3 /* AppRootBuilder.swift */; };
@@ -34,8 +40,6 @@
 		EEEA2C4027D9DCE000356B33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEEA2C3F27D9DCE000356B33 /* AppDelegate.swift */; };
 		EEEA2C4927D9DCE100356B33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEEA2C4827D9DCE100356B33 /* Assets.xcassets */; };
 		EEEA2C4C27D9DCE100356B33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEEA2C4A27D9DCE100356B33 /* LaunchScreen.storyboard */; };
-		EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5727D9E41500356B33 /* RxGesture */; };
-		EEEA2C5B27D9E42300356B33 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C5A27D9E42300356B33 /* Then */; };
 		EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */ = {isa = PBXBuildFile; productRef = EEEA2C6827D9E46F00356B33 /* PinLayout */; };
 		EEED8B9227F1577700A7B052 /* RIBsUtil in Frameworks */ = {isa = PBXBuildFile; productRef = EEED8B9127F1577700A7B052 /* RIBsUtil */; };
 		EEED8B9427F1577700A7B052 /* RxUtil in Frameworks */ = {isa = PBXBuildFile; productRef = EEED8B9327F1577700A7B052 /* RxUtil */; };
@@ -68,24 +72,28 @@
 			files = (
 				EEC90B1427FEEFC9005C2D0A /* RxRealmDataSources in Frameworks */,
 				EEED8B9627F1577700A7B052 /* UIUtil in Frameworks */,
-				EECB9AF427E034C100FF2124 /* RIBs in Frameworks */,
+				EEB7BE7828519F9000FCC459 /* RxSwift in Frameworks */,
+				EEB7BE902851D19B00FCC459 /* Then in Frameworks */,
+				EEB7BE812851B4A600FCC459 /* LoadingRepository in Frameworks */,
+				EEB7BE7428519F9000FCC459 /* RxCocoa in Frameworks */,
 				EEC7E8D62803D769006470C8 /* AppHome in Frameworks */,
-				EEEA2C5827D9E41500356B33 /* RxGesture in Frameworks */,
 				EEEA2C6927D9E46F00356B33 /* PinLayout in Frameworks */,
 				EEC7E8D22803D5CD006470C8 /* ImageRepository in Frameworks */,
+				EEB7BE7628519F9000FCC459 /* RxRelay in Frameworks */,
 				EE51DDC02803FBC300FA18EA /* ChooseImageImp in Frameworks */,
 				EE51DDBA2803E46500FA18EA /* ListHome in Frameworks */,
+				EEB7BE7B28519FB900FCC459 /* RxRealm in Frameworks */,
 				EE51DDCF280426DB00FA18EA /* ImageEntity in Frameworks */,
 				EE51DDB82803E1ED00FA18EA /* Base in Frameworks */,
-				EEEA2C5B27D9E42300356B33 /* Then in Frameworks */,
 				EE51DDBC2803E48900FA18EA /* ListHomeImp in Frameworks */,
 				EEC7E8D42803D5E2006470C8 /* ImageVerification in Frameworks */,
-				EECB9AEF27E02FE000FF2124 /* RxRealm in Frameworks */,
 				EE51DDC2280400C100FA18EA /* LoadingImp in Frameworks */,
+				EEB7BE7E28519FDE00FCC459 /* RIBs in Frameworks */,
 				EEC90B1627FEFEA7005C2D0A /* FoundationUtil in Frameworks */,
 				EE8058332816BCE700D7D6AF /* PageImageScrollView in Frameworks */,
 				EEED8B9427F1577700A7B052 /* RxUtil in Frameworks */,
 				EEC7E8D02803C7F4006470C8 /* ChooseImage in Frameworks */,
+				EEB7BE7228519F9000FCC459 /* RxBlocking in Frameworks */,
 				EE51DDBE2803F46600FA18EA /* ImageVerificationImp in Frameworks */,
 				EEC90AD427FE7FE7005C2D0A /* NVActivityIndicatorView in Frameworks */,
 				EEED8B9227F1577700A7B052 /* RIBsUtil in Frameworks */,
@@ -103,6 +111,13 @@
 				EEDBCD1127E2B85A00B9B9A3 /* AppRoot */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		EEB7BE7F2851B4A600FCC459 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EEDBCD1127E2B85A00B9B9A3 /* AppRoot */ = {
@@ -153,6 +168,7 @@
 				EE6D065927F14C4700C1E0A6 /* CX */,
 				EEEA2C3E27D9DCE000356B33 /* Picture */,
 				EEEA2C3D27D9DCE000356B33 /* Products */,
+				EEB7BE7F2851B4A600FCC459 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,11 +207,7 @@
 			);
 			name = Picture;
 			packageProductDependencies = (
-				EEEA2C5727D9E41500356B33 /* RxGesture */,
-				EEEA2C5A27D9E42300356B33 /* Then */,
 				EEEA2C6827D9E46F00356B33 /* PinLayout */,
-				EECB9AEE27E02FE000FF2124 /* RxRealm */,
-				EECB9AF327E034C100FF2124 /* RIBs */,
 				EEED8B9127F1577700A7B052 /* RIBsUtil */,
 				EEED8B9327F1577700A7B052 /* RxUtil */,
 				EEED8B9527F1577700A7B052 /* UIUtil */,
@@ -215,6 +227,14 @@
 				EE51DDCE280426DB00FA18EA /* ImageEntity */,
 				EE8103222816935100C2F1E8 /* Swinject */,
 				EE8058322816BCE700D7D6AF /* PageImageScrollView */,
+				EEB7BE7128519F9000FCC459 /* RxBlocking */,
+				EEB7BE7328519F9000FCC459 /* RxCocoa */,
+				EEB7BE7528519F9000FCC459 /* RxRelay */,
+				EEB7BE7728519F9000FCC459 /* RxSwift */,
+				EEB7BE7A28519FB900FCC459 /* RxRealm */,
+				EEB7BE7D28519FDE00FCC459 /* RIBs */,
+				EEB7BE802851B4A600FCC459 /* LoadingRepository */,
+				EEB7BE8F2851D19B00FCC459 /* Then */,
 			);
 			productName = Picture;
 			productReference = EEEA2C3C27D9DCE000356B33 /* Picture.app */;
@@ -245,15 +265,15 @@
 			);
 			mainGroup = EEEA2C3327D9DCE000356B33;
 			packageReferences = (
-				EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture" */,
-				EEEA2C5927D9E42300356B33 /* XCRemoteSwiftPackageReference "Then" */,
 				EEEA2C6727D9E46F00356B33 /* XCRemoteSwiftPackageReference "PinLayout" */,
-				EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */,
-				EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */,
 				EEB0E84827E7787B004EDC14 /* XCRemoteSwiftPackageReference "Floaty" */,
 				EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				EE810321281690B200C2F1E8 /* XCRemoteSwiftPackageReference "Swinject" */,
 				EE8058312816BCE700D7D6AF /* XCRemoteSwiftPackageReference "PageImageScrollView" */,
+				EEB7BE7028519F9000FCC459 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				EEB7BE7928519FB900FCC459 /* XCRemoteSwiftPackageReference "RxRealm" */,
+				EEB7BE7C28519FDE00FCC459 /* XCRemoteSwiftPackageReference "RIBs" */,
+				EEB7BE8E2851D19A00FCC459 /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = EEEA2C3D27D9DCE000356B33 /* Products */;
 			projectDirPath = "";
@@ -531,15 +551,15 @@
 				kind = branch;
 			};
 		};
-		EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+		EEB7BE7028519F9000FCC459 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
-				branch = master;
+				branch = main;
 				kind = branch;
 			};
 		};
-		EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */ = {
+		EEB7BE7928519FB900FCC459 /* XCRemoteSwiftPackageReference "RxRealm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxRealm.git";
 			requirement = {
@@ -547,25 +567,25 @@
 				kind = branch;
 			};
 		};
-		EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */ = {
+		EEB7BE7C28519FDE00FCC459 /* XCRemoteSwiftPackageReference "RIBs" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/uber/RIBs.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/RxSwiftCommunity/RxGesture.git";
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
-		EEEA2C5927D9E42300356B33 /* XCRemoteSwiftPackageReference "Then" */ = {
+		EEB7BE8E2851D19A00FCC459 /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		EEC90AD227FE7FD4005C2D0A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
 			requirement = {
 				branch = master;
 				kind = branch;
@@ -620,6 +640,45 @@
 			package = EE810321281690B200C2F1E8 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
 		};
+		EEB7BE7128519F9000FCC459 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEB7BE7028519F9000FCC459 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		EEB7BE7328519F9000FCC459 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEB7BE7028519F9000FCC459 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		EEB7BE7528519F9000FCC459 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEB7BE7028519F9000FCC459 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		EEB7BE7728519F9000FCC459 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEB7BE7028519F9000FCC459 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		EEB7BE7A28519FB900FCC459 /* RxRealm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEB7BE7928519FB900FCC459 /* XCRemoteSwiftPackageReference "RxRealm" */;
+			productName = RxRealm;
+		};
+		EEB7BE7D28519FDE00FCC459 /* RIBs */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEB7BE7C28519FDE00FCC459 /* XCRemoteSwiftPackageReference "RIBs" */;
+			productName = RIBs;
+		};
+		EEB7BE802851B4A600FCC459 /* LoadingRepository */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LoadingRepository;
+		};
+		EEB7BE8F2851D19B00FCC459 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEB7BE8E2851D19A00FCC459 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
 		EEC7E8CF2803C7F4006470C8 /* ChooseImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ChooseImage;
@@ -648,26 +707,6 @@
 		EEC90B1527FEFEA7005C2D0A /* FoundationUtil */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FoundationUtil;
-		};
-		EECB9AEE27E02FE000FF2124 /* RxRealm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EECB9AED27E02FE000FF2124 /* XCRemoteSwiftPackageReference "RxRealm" */;
-			productName = RxRealm;
-		};
-		EECB9AF327E034C100FF2124 /* RIBs */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EECB9AF227E034C000FF2124 /* XCRemoteSwiftPackageReference "RIBs" */;
-			productName = RIBs;
-		};
-		EEEA2C5727D9E41500356B33 /* RxGesture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEEA2C5627D9E41500356B33 /* XCRemoteSwiftPackageReference "RxGesture" */;
-			productName = RxGesture;
-		};
-		EEEA2C5A27D9E42300356B33 /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EEEA2C5927D9E42300356B33 /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
 		};
 		EEEA2C6827D9E46F00356B33 /* PinLayout */ = {
 			isa = XCSwiftPackageProductDependency;

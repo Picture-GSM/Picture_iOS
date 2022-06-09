@@ -37,12 +37,12 @@ let package = Package(
             targets: ["ImageEntity"]),
     ],
     dependencies: [
-        .package(name: "RIBs", url: "https://github.com/uber/RIBs", .exactItem("0.10.0")),
-        .package(name: "PinLayout", url: "https://github.com/layoutBox/PinLayout", .exactItem("1.10.2")),
-        .package(name: "RxRealm", url: "https://github.com/RxSwiftCommunity/RxRealm", .exactItem("5.0.5")),
-        .package(name: "RxSwift", url: "https://github.com/ReactiveX/RxSwift", .exactItem("6.5.0")),
-        .package(name: "Then", url: "https://github.com/devxoul/Then", .exactItem("2.7.0")),
-        .package(name: "NVActivityIndicatorView", url: "https://github.com/ninjaprox/NVActivityIndicatorView",  .exactItem("5.1.1")),
+        .package(url: "https://github.com/uber/RIBs", branch: "main"),
+        .package(url: "https://github.com/layoutBox/PinLayout", branch: "master"),
+        .package( url: "https://github.com/RxSwiftCommunity/RxRealm", branch: "main"),
+        .package(url: "https://github.com/ReactiveX/RxSwift", branch: "main"),
+        .package( url: "https://github.com/devxoul/Then", branch: "master"),
+        .package(url: "https://github.com/ninjaprox/NVActivityIndicatorView",  branch: "master"),
         .package(path: "../Platform"),
     ],
     targets: [
@@ -50,6 +50,9 @@ let package = Package(
             name: "LoadingRepository",
             dependencies: [
                 
+            ],
+            resources: [
+                .copy("CoreML/style_transfer.mlmodel")
             ]
         ),
         .target(

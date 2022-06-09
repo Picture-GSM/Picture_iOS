@@ -26,7 +26,7 @@ final class ImageVerificationViewController: BaseViewController, ImageVerificati
         
     private let imageView = UIImageView().then{
         $0.backgroundColor = .lightGray
-        $0.contentMode = .scaleAspectFill
+        $0.contentMode = .scaleAspectFit
     }
     
     //MARK: - Method
