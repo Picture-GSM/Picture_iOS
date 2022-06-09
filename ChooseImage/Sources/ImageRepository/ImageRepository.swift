@@ -1,10 +1,3 @@
-//
-//  ImageRepository.swift
-//  Picture
-//
-//  Created by Ji-hoon Ahn on 2022/04/09.
-//
-
 import Foundation
 import RxSwift
 import UIKit
