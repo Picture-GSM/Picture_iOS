@@ -84,6 +84,7 @@ let package = Package(
         .target(
             name: "LoadingImp",
             dependencies: [
+                "LoadingRepository",
                 "NVActivityIndicatorView",
                 "RxSwift",
                 "Then",
