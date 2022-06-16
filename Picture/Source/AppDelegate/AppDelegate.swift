@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
 
     var window: UIWindow?
     
-    let countainer : Container = {
+    static let countainer : Container = {
         let container = Container()
         container.register(AppComponent.self) { _ in AppComponent()}
         
@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate  {
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
         
-        let result = countainer.resolve(AppRootBuilder.self)?.build()
+        let result = AppDelegate.countainer.resolve(AppRootBuilder.self)?.build()
         self.launchRouter = result
         //MARK: - Image Setting
         result?.launch(from: window)
