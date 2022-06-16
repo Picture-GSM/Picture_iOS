@@ -52,7 +52,7 @@ let package = Package(
                 
             ],
             resources: [
-                .process("style_transfer.mlmodel")
+                .process("CoreML/style_transfer.mlmodel")
             ]
         ),
         .target(

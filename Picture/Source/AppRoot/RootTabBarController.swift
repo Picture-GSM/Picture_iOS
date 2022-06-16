@@ -10,7 +10,7 @@ import RxSwift
 import UIKit
 
 protocol AppRootPresentableListener: AnyObject {
-    
+
 }
 
 final class RootTabBarController: UITabBarController, AppRootPresentable, AppRootViewControllable {
